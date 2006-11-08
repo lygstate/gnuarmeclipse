@@ -842,7 +842,7 @@
             id="org.eclipse.cdt.gnuarm.exe.target.gnu"
             isAbstract="false"
             isTest="false"
-            name="Executalbe (ARM)">
+            name="Executable (ARM)">
          <configuration
                artifactExtension="elf"
                cleanCommand="rm -rf"
