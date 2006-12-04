@@ -298,10 +298,11 @@
                   name="Announce version (--version)"
                   valueType="boolean"/>
             <inputType
+                  dependencyExtensions="S,s"
                   id="org.eclipse.cdt.gnuarm.as.input"
                   name="Input"
                   sourceContentType="org.eclipse.cdt.core.asmSource"
-                  sources="s, S"/>
+                  sources="S,s"/>
             <outputType
                   buildVariable="OBJS"
                   id="org.eclipse.cdt.gnuarm.as"
@@ -905,11 +906,11 @@
                   name="Debug"
                   osList="linux"
                   secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;"
-                  targetTool="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.ld;">
+                  targetTool="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.ld;">
                <targetPlatform
                      archList="all"
                      binaryParser="org.eclipse.cdt.core.ELF"
-                     id="org.eclipse.cdt.gnuarm.targetPlatform1"
+                     id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.Platform"
                      isAbstract="false"
                      name="Platformname"
                      osList="Linux"/>
@@ -947,7 +948,7 @@
 <!-- win32 test -->
 
       <projectType
-            id="org.eclipse.cdt.gnuarm.exe.target.gnu"
+            id="org.eclipse.cdt.gnuarm.exe.target.win32"
             isAbstract="false"
             isTest="false"
             name="Executable (ARM)">
@@ -955,50 +956,50 @@
                artifactExtension="elf"
                cleanCommand="rm -rf"
                errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser"
-               id="org.eclipse.cdt.gnuarm.exe.target.gnu.release"
+               id="org.eclipse.cdt.gnuarm.exe.target.win32.release"
                name="Release">
             <toolChain
                   archList="all"
-                  id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc"
+                  id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc"
                   isAbstract="false"
                   name="Release"
                   osList="win32"
                   secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;"
-                  targetTool="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.ld;">
+                  targetTool="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.ld;">
                <targetPlatform
                      archList="all"
                      binaryParser="org.eclipse.cdt.core.ELF"
-                     id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.Platform"
+                     id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.Platform"
                      isAbstract="false"
                      name="Platformname"
                      osList="win32"/>
                <builder
-                     id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.builder"
+                     id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.builder"
                      isAbstract="false"
                      isVariableCaseSensitive="false"
                      name="Builder"
                      superClass="org.eclipse.cdt.gnuarm.make"/>
                <tool
                      command="arm-elf-as"
-                     id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.as"
+                     id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.as"
                      isAbstract="false"
                      name="Assembler"
                      superClass="org.eclipse.cdt.gnuarm.as"/>
                <tool
                      command="arm-elf-gcc"
-                     id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.gcc"
+                     id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.gcc"
                      isAbstract="false"
                      name="C Compiler"
                      superClass="org.eclipse.cdt.gnuarm.gcc"/>
                <tool
                      command="arm-elf-ld"
-                     id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.ld"
+                     id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.ld"
                      isAbstract="false"
                      name="C Linker"
                      superClass="org.eclipse.cdt.gnuarm.ld"/>
                <tool
                      command="arm-elf-objcopy"
-                     id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.objcopyflash"
+                     id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.objcopyflash"
                      isAbstract="false"
                      name="ObjCopyFlash"
                      superClass="org.eclipse.cdt.gnuarm.objcopyflash"/>
@@ -1008,50 +1009,50 @@
                artifactExtension="elf"
                cleanCommand="rm -rf"
                errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser"
-               id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug"
+               id="org.eclipse.cdt.gnuarm.exe.target.win32.debug"
                name="Debug">
             <toolChain
                   archList="all"
-                  id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc"
+                  id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc"
                   isAbstract="false"
                   name="Debug"
                   osList="win32"
                   secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;"
-                  targetTool="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.ld;">
+                  targetTool="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.ld;">
                <targetPlatform
                      archList="all"
                      binaryParser="org.eclipse.cdt.core.ELF"
-                     id="org.eclipse.cdt.gnuarm.targetPlatform1"
+                     id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.Platform"
                      isAbstract="false"
                      name="Platformname"
                      osList="win32"/>
                <builder
-                     id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.builder"
+                     id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.builder"
                      isAbstract="false"
                      isVariableCaseSensitive="false"
                      name="Builder"
                      superClass="org.eclipse.cdt.gnuarm.make"/>
                <tool
                      command="arm-elf-as"
-                     id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.as"
+                     id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.as"
                      isAbstract="false"
                      name="Assembler"
                      superClass="org.eclipse.cdt.gnuarm.as"/>
                <tool
                      command="arm-elf-gcc"
-                     id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.gcc"
+                     id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.gcc"
                      isAbstract="false"
                      name="C Compiler"
                      superClass="org.eclipse.cdt.gnuarm.gcc"/>
                <tool
                      command="arm-elf-ld"
-                     id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.ld"
+                     id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.ld"
                      isAbstract="false"
                      name="C Linker"
                      superClass="org.eclipse.cdt.gnuarm.ld"/>
                <tool
                      command="arm-elf-objcopy"
-                     id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.objcopyflash"
+                     id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.objcopyflash"
                      isAbstract="false"
                      name="ObjCopyFlash"
                      superClass="org.eclipse.cdt.gnuarm.objcopyflash"/>
