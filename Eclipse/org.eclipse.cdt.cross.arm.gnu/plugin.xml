@@ -674,6 +674,15 @@
                   name="General"
                   owner="org.eclipse.cdt.gnuarm.ld"/>
             <option
+                  browseType="file"
+                  category="org.eclipse.cdt.gnuarm.ld.general"
+                  command="-T"
+                  id="org.eclipse.cdt.gnuarm.ld.general.scriptfile"
+                  isAbstract="false"
+                  name="Script (-T)"
+                  resourceFilter="all"
+                  valueType="string"/>
+            <option
                   category="org.eclipse.cdt.gnuarm.ld.general"
                   command="-nostdlib"
                   id="org.eclipse.cdt.gnuarm.ld.general.nostdlib"
