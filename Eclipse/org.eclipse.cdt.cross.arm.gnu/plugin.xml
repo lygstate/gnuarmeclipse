@@ -27,7 +27,6 @@
          point="org.eclipse.cdt.managedbuilder.core.buildDefinitions">
       <managedBuildRevision fileVersion="0.0.1"/>
          <tool
-               command="arm-elf-linux-gnu-as"
                id="org.eclipse.cdt.gnuarm.as"
                name="GNU ARM Assembler"
                natureFilter="cnature"
@@ -310,7 +309,6 @@
                   outputs="o"/>
          </tool>
          <tool
-               command="arm-elf-linux-gnu-gcc"
                id="org.eclipse.cdt.gnuarm.gcc"
                name="GNU ARM C Compiler"
                natureFilter="cnature"
@@ -664,7 +662,6 @@
                   outputs="o"/>
          </tool>
          <tool
-               command="arm-elf-linux-gnu-ld"
                id="org.eclipse.cdt.gnuarm.ld"
                name="GNU ARM C Linker"
                natureFilter="cnature"
@@ -742,7 +739,6 @@
                   outputs="elf"/>
          </tool>
          <tool
-               command="arm-elf-linux-gnu-objcopy"
                id="org.eclipse.cdt.gnuarm.objcopyflash"
                name="GNU ARM Object Copy Flash"
                natureFilter="both"
@@ -881,21 +877,25 @@
                      name="Builder"
                      superClass="org.eclipse.cdt.gnuarm.make"/>
                <tool
+                     command="arm-elf-linux-gnu-as"
                      id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.as"
                      isAbstract="false"
                      name="Assembler"
                      superClass="org.eclipse.cdt.gnuarm.as"/>
                <tool
+                     command="arm-elf-linux-gnu-gcc"
                      id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.gcc"
                      isAbstract="false"
                      name="C Compiler"
                      superClass="org.eclipse.cdt.gnuarm.gcc"/>
                <tool
+                     command="arm-elf-linux-gnu-ld"
                      id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.ld"
                      isAbstract="false"
                      name="C Linker"
                      superClass="org.eclipse.cdt.gnuarm.ld"/>
                <tool
+                     command="arm-elf-linux-gnu-objcopy"
                      id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.objcopyflash"
                      isAbstract="false"
                      name="ObjCopyFlash"
@@ -930,21 +930,25 @@
                      name="Builder"
                      superClass="org.eclipse.cdt.gnuarm.make"/>
                <tool
+                     command="arm-elf-linux-gnu-as"
                      id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.as"
                      isAbstract="false"
                      name="Assembler"
                      superClass="org.eclipse.cdt.gnuarm.as"/>
                <tool
+                     command="arm-elf-linux-gnu-gcc"
                      id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.gcc"
                      isAbstract="false"
                      name="C Compiler"
                      superClass="org.eclipse.cdt.gnuarm.gcc"/>
                <tool
+                     command="arm-elf-linux-gnu-ld"
                      id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.ld"
                      isAbstract="false"
                      name="C Linker"
                      superClass="org.eclipse.cdt.gnuarm.ld"/>
                <tool
+                     command="arm-elf-linux-gnu-objcopy"
                      id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.objcopyflash"
                      isAbstract="false"
                      name="ObjCopyFlash"
