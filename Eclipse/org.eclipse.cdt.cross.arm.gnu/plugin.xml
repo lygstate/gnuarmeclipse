@@ -389,8 +389,8 @@
         <toolChain archList="all" id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc" isAbstract="false" name="Release" osList="linux" secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;" targetTool="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.ld;">
           <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.Platform" isAbstract="false" name="Platformname" osList="Linux" />
           <builder id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.builder" isAbstract="false" isVariableCaseSensitive="false" name="Builder" superClass="org.eclipse.cdt.gnuarm.make" />
-          <tool command="arm-elf-linux-gnu-as" id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.as" isAbstract="false" name="Assembler" superClass="org.eclipse.cdt.gnuarm.as" />
-          <tool command="arm-elf-linux-gnu-as" id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.aspp" isAbstract="false" name="Assembler" superClass="org.eclipse.cdt.gnuarm.aspp" />
+          <tool command="arm-elf-linux-gnu-as" id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.as" isAbstract="false" name="C Assembler" superClass="org.eclipse.cdt.gnuarm.as" />
+          <tool command="arm-elf-linux-gnu-as" id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.aspp" isAbstract="false" name="C++ Assembler" superClass="org.eclipse.cdt.gnuarm.aspp" /> 
           <tool command="arm-elf-linux-gnu-gcc" id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.gcc" isAbstract="false" name="C Compiler" superClass="org.eclipse.cdt.gnuarm.gcc" />
           <tool command="arm-elf-linux-gnu-g++" id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.gpp" isAbstract="false" name="C++ Compiler" superClass="org.eclipse.cdt.gnuarm.gpp" />
           <tool command="arm-elf-linux-gnu-ld" id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.ld" isAbstract="false" name="C Linker" superClass="org.eclipse.cdt.gnuarm.ld" />
@@ -402,8 +402,8 @@
         <toolChain archList="all" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc" isAbstract="false" name="Debug" osList="linux" secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;" targetTool="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.ld;">
           <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.Platform" isAbstract="false" name="Platformname" osList="Linux" />
           <builder id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.builder" isAbstract="false" isVariableCaseSensitive="false" name="Builder" superClass="org.eclipse.cdt.gnuarm.make" />
-          <tool command="arm-elf-linux-gnu-as" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.as" isAbstract="false" name="Assembler" superClass="org.eclipse.cdt.gnuarm.as" />
-          <tool command="arm-elf-linux-gnu-as" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.aspp" isAbstract="false" name="Assembler" superClass="org.eclipse.cdt.gnuarm.aspp" />
+          <tool command="arm-elf-linux-gnu-as" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.as" isAbstract="false" name="C Assembler" superClass="org.eclipse.cdt.gnuarm.as" />
+          <tool command="arm-elf-linux-gnu-as" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.aspp" isAbstract="false" name="C++ Assembler" superClass="org.eclipse.cdt.gnuarm.aspp" /> 
           <tool command="arm-elf-linux-gnu-gcc" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.gcc" isAbstract="false" name="C Compiler" superClass="org.eclipse.cdt.gnuarm.gcc" />
           <tool command="arm-elf-linux-gnu-g++" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.gpp" isAbstract="false" name="C++ Compiler" superClass="org.eclipse.cdt.gnuarm.gpp" />
           <tool command="arm-elf-linux-gnu-ld" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.ld" isAbstract="false" name="C Linker" superClass="org.eclipse.cdt.gnuarm.ld" />
