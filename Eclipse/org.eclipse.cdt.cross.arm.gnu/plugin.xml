@@ -13,11 +13,11 @@
     <!--# This plugin was created by Wilfried Holzke.                                 #-->
     <!--# Modification-History:                                                       #-->
     <!--# Name          Date                                                          #-->
-    <!--# Le Viet Bach  22.02.2007                                                    #-->
+    <!--# Le Viet Bach  23.02.2007                                                    #-->
     <!--###############################################################################-->
     <!---->
     <managedBuildRevision fileVersion="0.0.1" />
-    <tool id="org.eclipse.cdt.gnuarm.as" name="GNU ARM C Assembler" natureFilter="cnature" outputFlag="-o">
+    <tool id="org.eclipse.cdt.gnuarm.as" name="GNU ARM Assembler" natureFilter="both" outputFlag="-o">
       <optionCategory id="org.eclipse.cdt.gnuarm.as.target" name="Target" owner="org.eclipse.cdt.gnuarm.as" />
       <option category="org.eclipse.cdt.gnuarm.as.target" id="org.eclipse.cdt.gnuarm.as.target.mcpu" name="Target (-mcpu)" valueType="enumerated">
         <enumeratedOptionValue command="-mcpu=arm2" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm2" name="arm2" />
@@ -86,76 +86,6 @@
       <option category="org.eclipse.cdt.gnuarm.as.general" command="--version" id="org.eclipse.cdt.gnuarm.as.general.version" name="Announce version (--version)" valueType="boolean" />
       <inputType dependencyExtensions="S,s" id="org.eclipse.cdt.gnuarm.as.input" name="Input" sourceContentType="org.eclipse.cdt.core.asmSource" sources="S,s" />
       <outputType buildVariable="OBJS" id="org.eclipse.cdt.gnuarm.as" name="Output" outputs="o" />
-    </tool>
-    <tool id="org.eclipse.cdt.gnuarm.aspp" name="GNU ARM C++ Assembler" natureFilter="ccnature" outputFlag="-o">
-      <optionCategory id="org.eclipse.cdt.gnuarm.aspp.target" name="Target" owner="org.eclipse.cdt.gnuarm.aspp" />
-      <option category="org.eclipse.cdt.gnuarm.aspp.target" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu" name="Target (-mcpu)" valueType="enumerated">
-        <enumeratedOptionValue command="-mcpu=arm2" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm2" name="arm2" />
-        <enumeratedOptionValue command="-mcpu=arm250" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm250" name="arm250" />
-        <enumeratedOptionValue command="-mcpu=arm3" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm3" name="arm3" />
-        <enumeratedOptionValue command="-mcpu=arm6" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm6" name="arm6" />
-        <enumeratedOptionValue command="-mcpu=arm60" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm60" name="arm60" />
-        <enumeratedOptionValue command="-mcpu=arm600" id="org.eclipse.cdt.gnuarm.aspparget.mcpu.arm600" name="arm600" />
-        <enumeratedOptionValue command="-mcpu=arm610" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm610" name="arm610" />
-        <enumeratedOptionValue command="-mcpu=arm620" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm620" name="arm620" />
-        <enumeratedOptionValue command="-mcpu=arm7" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm7" name="arm7" />
-        <enumeratedOptionValue command="-mcpu=arm7m" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm7m" name="arm7m" />
-        <enumeratedOptionValue command="-mcpu=arm7d" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm7d" name="arm7d" />
-        <enumeratedOptionValue command="-mcpu=arm7dm" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm7dm" name="arm7dm" />
-        <enumeratedOptionValue command="-mcpu=arm7di" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm7di" name="arm7di" />
-        <enumeratedOptionValue command="-mcpu=arm7dmi" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm7dmi" name="arm7dmi" />
-        <enumeratedOptionValue command="-mcpu=arm70" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm70" name="arm70" />
-        <enumeratedOptionValue command="-mcpu=arm700" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm700" name="arm700" />
-        <enumeratedOptionValue command="-mcpu=arm700i" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm700i" name="arm700i" />
-        <enumeratedOptionValue command="-mcpu=arm710" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm710" name="arm710" />
-        <enumeratedOptionValue command="-mcpu=arm710c" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm710c" name="arm710c" />
-        <enumeratedOptionValue command="-mcpu=arm7100" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm7100" name="arm7100" />
-        <enumeratedOptionValue command="-mcpu=arm7500" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm7500" name="arm7500" />
-        <enumeratedOptionValue command="-mcpu=arm7500fe" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm7500fe" name="arm7500fe" />
-        <enumeratedOptionValue command="-mcpu=arm7tdmi" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm7tdmi" isDefault="true" name="arm7tdmi" />
-        <enumeratedOptionValue command="-mcpu=arm7tdmi-s" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm7tdmi-s" name="arm7tdmi-s" />
-        <enumeratedOptionValue command="-mcpu=arm8" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm8" name="arm8" />
-        <enumeratedOptionValue command="-mcpu=strongarm" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.strongarm" name="strongarm" />
-        <enumeratedOptionValue command="-mcpu=strongarm110" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.strongarm110" name="strongarm110" />
-        <enumeratedOptionValue command="-mcpu=strongarm1100" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.strongarm1100" name="strongarm1100" />
-        <enumeratedOptionValue command="-mcpu=arm8" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm8" name="arm8" />
-        <enumeratedOptionValue command="-mcpu=arm810" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm810" name="arm810" />
-        <enumeratedOptionValue command="-mcpu=arm9" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm9" name="arm9" />
-        <enumeratedOptionValue command="-mcpu=arm9e" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm9e" name="arm9e" />
-        <enumeratedOptionValue command="-mcpu=arm920" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm920" name="arm920" />
-        <enumeratedOptionValue command="-mcpu=arm920t" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm920t" name="arm920t" />
-        <enumeratedOptionValue command="-mcpu=arm922t" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm922t" name="arm922t" />
-        <enumeratedOptionValue command="-mcpu=arm946e-s" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm946e-s" name="arm946e-s" />
-        <enumeratedOptionValue command="-mcpu=arm966e-s" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm966e-s" name="arm966e-s" />
-        <enumeratedOptionValue command="-mcpu=arm968e-s" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm968e-s" name="arm968e-s" />
-        <enumeratedOptionValue command="-mcpu=arm926ej-s" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm926ej-s" name="arm926ej-s" />
-        <enumeratedOptionValue command="-mcpu=arm940t" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm940t" name="arm940t" />
-        <enumeratedOptionValue command="-mcpu=arm9tdmi" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm9tdmi" name="arm9tdmi" />
-        <enumeratedOptionValue command="-mcpu=arm10tdmi" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm10tdmi" name="arm10tdmi" />
-        <enumeratedOptionValue command="-mcpu=arm1020t" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm1020t" name="arm1020t" />
-        <enumeratedOptionValue command="-mcpu=arm1026ej-s" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm1026ej-s" name="arm1026ej-s" />
-        <enumeratedOptionValue command="-mcpu=arm10e" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm10e" name="arm10e" />
-        <enumeratedOptionValue command="-mcpu=arm1020e" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm1020e" name="arm1020e" />
-        <enumeratedOptionValue command="-mcpu=arm1022e" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm1022e" name="arm1022e" />
-        <enumeratedOptionValue command="-mcpu=arm1136j-s" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm1136j-s" name="arm1136j-s" />
-        <enumeratedOptionValue command="-mcpu=arm1136jf-s" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm1136jf-s" name="arm1136jf-s" />
-        <enumeratedOptionValue command="-mcpu=mpcore" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.mpcore" name="mpcore" />
-        <enumeratedOptionValue command="-mcpu=mpcorenovfp" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.mpcorenovfp" name="mpcorenovfp" />
-        <enumeratedOptionValue command="-mcpu=arm1176jz-s" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm1176jz-s" name="arm1176jz-s" />
-        <enumeratedOptionValue command="-mcpu=arm1176jzf-s" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.arm1176jzf-s" name="arm1176jzf-s" />
-        <enumeratedOptionValue command="-mcpu=xscale" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.xscale" name="xscale" />
-        <enumeratedOptionValue command="-mcpu=iwmmxt" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.iwmmxt" isDefault="false" name="iwmmxt" />
-        <enumeratedOptionValue command="-mcpu=ep9312" id="org.eclipse.cdt.gnuarm.aspp.target.mcpu.ep9312" name="ep9312" />
-      </option>
-      <optionCategory id="org.eclipse.cdt.gnuarm.aspp.debug" name="Debugging" owner="org.eclipse.cdt.gnuarm.aspp" />
-      <option category="org.eclipse.cdt.gnuarm.aspp.debug" id="org.eclipse.cdt.gnuarm.aspp.debug.flags" defaultValue="-gdwarf-2" name="Debugging flags" valueType="string" />
-      <optionCategory id="org.eclipse.cdt.gnuarm.aspp.general" name="General" owner="org.eclipse.cdt.gnuarm.aspp" />
-      <option category="org.eclipse.cdt.gnuarm.aspp.general" id="org.eclipse.cdt.gnuarm.aspp.general.otherflags" name="Assembler flags" valueType="string" />
-      <option browseType="directory" category="org.eclipse.cdt.gnuarm.aspp.general" command="-I" id="org.eclipse.cdt.gnuarm.aspp.general.incpath" name="Include path (-I)" valueType="includePath" />
-      <option category="org.eclipse.cdt.gnuarm.aspp.general" command="--no-warn" commandFalse="--warn" id="org.eclipse.cdt.gnuarm.aspp.general.warnings" name="Suppress warnings (--no-warn)" valueType="boolean" />
-      <option category="org.eclipse.cdt.gnuarm.aspp.general" command="--version" id="org.eclipse.cdt.gnuarm.aspp.general.version" name="Announce version (--version)" valueType="boolean" />
-      <inputType dependencyExtensions="S,s" id="org.eclipse.cdt.gnuarm.aspp.input" name="Input" sourceContentType="org.eclipse.cdt.core.asmSource" sources="S,s" />
-      <outputType buildVariable="OBJS" id="org.eclipse.cdt.gnuarm.aspp" name="Output" outputs="o" />
     </tool>
     <tool id="org.eclipse.cdt.gnuarm.gcc" name="GNU ARM C Compiler" natureFilter="cnature" outputFlag="-o">
       <optionCategory id="org.eclipse.cdt.gnuarm.gcc.target" name="Target" owner="org.eclipse.cdt.gnuarm.gcc" />
@@ -226,8 +156,8 @@
       <optionCategory id="org.eclipse.cdt.gnuarm.gcc.optimization" name="Optimization" owner="org.eclipse.cdt.gnuarm.gcc" />
       <option category="org.eclipse.cdt.gnuarm.gcc.optimization" id="org.eclipse.cdt.gnuarm.gcc.optimization.level" name="Optimization Level" valueType="enumerated">
         <enumeratedOptionValue command="-O0" id="org.eclipse.cdt.gnuarm.gcc.optimization.00" name="None (-O0)" />
+        <enumeratedOptionValue command="-O1" id="org.eclipse.cdt.gnuarm.gcc.optimization.01" name="Optimize (-O1)" />
         <enumeratedOptionValue command="-O2" id="org.eclipse.cdt.gnuarm.gcc.optimization.02" name="Optimize more (-O2)" />
-        <enumeratedOptionValue command="-O1" id="org.eclipse.cdt.gnuarm.gcc.optimization.03" name="Optimize (-O1)" />
         <enumeratedOptionValue command="-O3" id="org.eclipse.cdt.gnuarm.gcc.optimization.03" isDefault="true" name="Optimize most (-O3)" />
       </option>
       <option category="org.eclipse.cdt.gnuarm.gcc.optimization" id="org.eclipse.cdt.gnuarm.gcc.optimization.other" name="Other optimization flags" valueType="string" />
@@ -310,8 +240,8 @@
       <optionCategory id="org.eclipse.cdt.gnuarm.gpp.optimization" name="Optimization" owner="org.eclipse.cdt.gnuarm.gpp" />
       <option category="org.eclipse.cdt.gnuarm.gpp.optimization" id="org.eclipse.cdt.gnuarm.gpp.optimization.level" name="Optimization Level" valueType="enumerated">
         <enumeratedOptionValue command="-O0" id="org.eclipse.cdt.gnuarm.gpp.optimization.00" name="None (-O0)" />
+        <enumeratedOptionValue command="-O1" id="org.eclipse.cdt.gnuarm.gpp.optimization.01" name="Optimize (-O1)" />
         <enumeratedOptionValue command="-O2" id="org.eclipse.cdt.gnuarm.gpp.optimization.02" name="Optimize more (-O2)" />
-        <enumeratedOptionValue command="-O1" id="org.eclipse.cdt.gnuarm.gpp.optimization.03" name="Optimize (-O1)" />
         <enumeratedOptionValue command="-O3" id="org.eclipse.cdt.gnuarm.gpp.optimization.03" isDefault="true" name="Optimize most (-O3)" />
       </option>
       <option category="org.eclipse.cdt.gnuarm.gpp.optimization" id="org.eclipse.cdt.gnuarm.gpp.optimization.other" name="Other optimization flags" valueType="string" />
@@ -337,7 +267,7 @@
       <option category="org.eclipse.cdt.gnuarm.ld.libraries" command="-l" id="org.eclipse.cdt.gnuarm.ld.libraries.list" name="Libraries (-l)" valueType="stringList" />
       <option browseType="directory" category="org.eclipse.cdt.gnuarm.ld.libraries" command="-L" id="org.eclipse.cdt.gnuarm.ld.libraries.searchpath" name="Library search path (-L)" valueType="includePath" />
       <optionCategory id="org.eclipse.cdt.gnuarm.ld.misc" name="Miscellaneous" owner="org.eclipse.cdt.gnuarm.ld" />
-      <option category="org.eclipse.cdt.gnuarm.ld.misc" id="org.eclipse.cdt.gnuarm.ld.misc.linkerflags" name="Linker flags" valueType="string" />
+      <option category="org.eclipse.cdt.gnuarm.ld.misc" id="org.eclipse.cdt.gnuarm.ld.misc.linkerflags" name="Linker flags" valueType="string" defaultValue="-Map=${BuildArtifactFileBaseName}.map" />
       <inputType buildVariable="OBJS" dependencyCalculator="org.eclipse.cdt.managedbuilder.makegen.internal.DefaultNoDependencyCalculator" id="org.eclipse.cdt.gnuarm.ld.input" multipleOfType="true" name="Input" sourceContentType="org.eclipse.cdt.managedbuilder.core.compiledObjectFile" sources="o">
         <additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)" />
         <additionalInput kind="additionalinput" paths="$(LIBS)" />
@@ -355,14 +285,14 @@
       <option category="org.eclipse.cdt.gnuarm.ldpp.libraries" command="-l" id="org.eclipse.cdt.gnuarm.ldpp.libraries.list" name="Libraries (-l)" valueType="stringList" />
       <option browseType="directory" category="org.eclipse.cdt.gnuarm.ldpp.libraries" command="-L" id="org.eclipse.cdt.gnuarm.ldpp.libraries.searchpath" name="Library search path (-L)" valueType="includePath" />
       <optionCategory id="org.eclipse.cdt.gnuarm.ldpp.misc" name="Miscellaneous" owner="org.eclipse.cdt.gnuarm.ldpp" />
-      <option category="org.eclipse.cdt.gnuarm.ldpp.misc" id="org.eclipse.cdt.gnuarm.ldpp.misc.linkerflags" name="Linker flags" valueType="string" />
+      <option category="org.eclipse.cdt.gnuarm.ldpp.misc" id="org.eclipse.cdt.gnuarm.ldpp.misc.linkerflags" name="Linker flags" valueType="string" defaultValue="-Map=${BuildArtifactFileBaseName}.map" />
       <inputType buildVariable="OBJS" dependencyCalculator="org.eclipse.cdt.managedbuilder.makegen.internal.DefaultNoDependencyCalculator" id="org.eclipse.cdt.gnuarm.ldpp.input" multipleOfType="true" name="Input" sourceContentType="org.eclipse.cdt.managedbuilder.core.compiledObjectFile" sources="o">
         <additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)" />
         <additionalInput kind="additionalinput" paths="$(LIBS)" />
       </inputType>
       <outputType buildVariable="EXECUTABLES" id="org.eclipse.cdt.gnuarm.ldpp.output" name="Output" outputs="elf" />
     </tool>
-    <tool id="org.eclipse.cdt.gnuarm.objcopyflash" name="GNU ARM Object Copy Flash" natureFilter="both" outputFlag="-j .intvect -j .text -j .data ">
+    <tool id="org.eclipse.cdt.gnuarm.objcopyflash" name="GNU ARM Object Copy Flash" natureFilter="both" outputFlag="">
       <optionCategory id="org.eclipse.cdt.gnuarm.objcopyflash.out" name="Output" owner="org.eclipse.cdt.gnuarm.objcopyflash" />
       <option category="org.eclipse.cdt.gnuarm.objcopyflash.out" id="org.eclipse.cdt.gnuarm.objcopyflash.out.choice" name="Output file format (-O)" valueType="enumerated">
         <enumeratedOptionValue command="-O ihex" id="org.eclipse.cdt.gnuarm.objcopyflash.out.choice.ihex" name="ihex" />
@@ -375,6 +305,34 @@
         <enumeratedOptionValue command="-O tekhex" id="org.eclipse.cdt.gnuarm.objcopyflash.out.choice.tekhex" name="tekhex" />
         <enumeratedOptionValue command="-O binary" id="org.eclipse.cdt.gnuarm.objcopyflash.out.choice.binary" name="binary" />
       </option>
+            <optionCategory
+            id="org.eclipse.cdt.gnuarm.objcopyflash.section"
+            name="Section"
+            owner="org.eclipse.cdt.gnuarm.objcopyflash"/>
+      <option
+            category="org.eclipse.cdt.gnuarm.objcopyflash.section"
+            command="-j .text"
+            id="org.eclipse.cdt.gnuarm.objcopyflash.section.text"
+            isAbstract="false"
+            name="Section: -j .text"
+            resourceFilter="all"
+            valueType="boolean"/>
+      <option
+            category="org.eclipse.cdt.gnuarm.objcopyflash.section"
+            command="-j .data"
+            id="org.eclipse.cdt.gnuarm.objcopyflash.section.data"
+            isAbstract="false"
+            name="Section: -j .data"
+            resourceFilter="all"
+            valueType="boolean"/>
+      <option
+            category="org.eclipse.cdt.gnuarm.objcopyflash.section"
+            command="-j "
+            id="org.eclipse.cdt.gnuarm.option1"
+            isAbstract="false"
+            name="Other (-j)"
+            resourceFilter="all"
+            valueType="stringList"/>
       <optionCategory id="org.eclipse.cdt.gnuarm.objcopyflash.misc" name="Miscellaneous" owner="org.eclipse.cdt.gnuarm.objcopyflash" />
       <option category="org.eclipse.cdt.gnuarm.objcopyflash.misc" id="org.eclipse.cdt.gnuarm.objcopyflash.misc.otheropt" name="Other options" valueType="stringList" />
       <inputType id="org.eclipse.cdt.gnuarm.objcopyflash.input" name="Input" multipleOfType="true" option="org.eclipse.cdt.gnuarm.objcopyflash.InFileName" sources="elf" />
@@ -387,10 +345,9 @@
     <projectType id="org.eclipse.cdt.gnuarm.exe.target.gnu" isAbstract="false" isTest="false" name="Executable (ARM)">
       <configuration artifactExtension="elf" cleanCommand="rm -rf" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" id="org.eclipse.cdt.gnuarm.exe.target.gnu.release" name="Release">
         <toolChain archList="all" id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc" isAbstract="false" name="Release" osList="linux" secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;" targetTool="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.ld;">
-          <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.Platform" isAbstract="false" name="Platformname" osList="Linux" />
+          <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.Platform" isAbstract="false" name="Platformname" osList="linux" />
           <builder id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.builder" isAbstract="false" isVariableCaseSensitive="false" name="Builder" superClass="org.eclipse.cdt.gnuarm.make" />
-          <tool command="arm-elf-linux-gnu-as" id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.as" isAbstract="false" name="C Assembler" superClass="org.eclipse.cdt.gnuarm.as" />
-          <tool command="arm-elf-linux-gnu-as" id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.aspp" isAbstract="false" name="C++ Assembler" superClass="org.eclipse.cdt.gnuarm.aspp" /> 
+          <tool command="arm-elf-linux-gnu-as" id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.as" isAbstract="false" name="Assembler" superClass="org.eclipse.cdt.gnuarm.as" />
           <tool command="arm-elf-linux-gnu-gcc" id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.gcc" isAbstract="false" name="C Compiler" superClass="org.eclipse.cdt.gnuarm.gcc" />
           <tool command="arm-elf-linux-gnu-g++" id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.gpp" isAbstract="false" name="C++ Compiler" superClass="org.eclipse.cdt.gnuarm.gpp" />
           <tool command="arm-elf-linux-gnu-ld" id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.ld" isAbstract="false" name="C Linker" superClass="org.eclipse.cdt.gnuarm.ld" />
@@ -400,10 +357,9 @@
       </configuration>
       <configuration artifactExtension="elf" cleanCommand="rm -rf" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug" name="Debug">
         <toolChain archList="all" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc" isAbstract="false" name="Debug" osList="linux" secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;" targetTool="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.ld;">
-          <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.Platform" isAbstract="false" name="Platformname" osList="Linux" />
+          <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.Platform" isAbstract="false" name="Platformname" osList="linux" />
           <builder id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.builder" isAbstract="false" isVariableCaseSensitive="false" name="Builder" superClass="org.eclipse.cdt.gnuarm.make" />
-          <tool command="arm-elf-linux-gnu-as" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.as" isAbstract="false" name="C Assembler" superClass="org.eclipse.cdt.gnuarm.as" />
-          <tool command="arm-elf-linux-gnu-as" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.aspp" isAbstract="false" name="C++ Assembler" superClass="org.eclipse.cdt.gnuarm.aspp" /> 
+          <tool command="arm-elf-linux-gnu-as" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.as" isAbstract="false" name="Assembler" superClass="org.eclipse.cdt.gnuarm.as" />
           <tool command="arm-elf-linux-gnu-gcc" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.gcc" isAbstract="false" name="C Compiler" superClass="org.eclipse.cdt.gnuarm.gcc" />
           <tool command="arm-elf-linux-gnu-g++" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.gpp" isAbstract="false" name="C++ Compiler" superClass="org.eclipse.cdt.gnuarm.gpp" />
           <tool command="arm-elf-linux-gnu-ld" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.ld" isAbstract="false" name="C Linker" superClass="org.eclipse.cdt.gnuarm.ld" />
@@ -419,7 +375,6 @@
           <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.Platform" isAbstract="false" name="Platformname" osList="win32" />
           <builder id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.builder" isAbstract="false" isVariableCaseSensitive="false" name="Builder" superClass="org.eclipse.cdt.gnuarm.make" />
           <tool command="arm-elf-as" id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.as" isAbstract="false" name="C Assembler" superClass="org.eclipse.cdt.gnuarm.as" />
-          <tool command="arm-elf-as" id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.aspp" isAbstract="false" name="C++ Assembler" superClass="org.eclipse.cdt.gnuarm.aspp" />
           <tool command="arm-elf-gcc" id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.gcc" isAbstract="false" name="C Compiler" superClass="org.eclipse.cdt.gnuarm.gcc" />
           <tool command="arm-elf-g++" id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.gpp" isAbstract="false" name="C++ Compiler" superClass="org.eclipse.cdt.gnuarm.gpp" />
           <tool command="arm-elf-ld" id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.ld" isAbstract="false" name="C Linker" superClass="org.eclipse.cdt.gnuarm.ld" />
@@ -432,7 +387,6 @@
           <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.Platform" isAbstract="false" name="Platformname" osList="win32" />
           <builder id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.builder" isAbstract="false" isVariableCaseSensitive="false" name="Builder" superClass="org.eclipse.cdt.gnuarm.make" />
           <tool command="arm-elf-as" id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.as" isAbstract="false" name="C Assembler" superClass="org.eclipse.cdt.gnuarm.as" />
-          <tool command="arm-elf-as" id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.aspp" isAbstract="false" name="C++ Assembler" superClass="org.eclipse.cdt.gnuarm.aspp" />
           <tool command="arm-elf-gcc" id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.gcc" isAbstract="false" name="C Compiler" superClass="org.eclipse.cdt.gnuarm.gcc" />
           <tool command="arm-elf-g++" id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.gpp" isAbstract="false" name="C++ Compiler" superClass="org.eclipse.cdt.gnuarm.gpp" />
           <tool command="arm-elf-ld" id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.ld" isAbstract="false" name="C Linker" superClass="org.eclipse.cdt.gnuarm.ld" />

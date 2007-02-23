@@ -6,3 +6,4 @@ Bundle-Version: 0.0.8
 Bundle-Vendor: Wilfried Holzke
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.cdt.managedbuilder.core
+Eclipse-LazyStart: true
