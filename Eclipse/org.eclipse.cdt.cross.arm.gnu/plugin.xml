@@ -412,7 +412,7 @@
     <!-- Win32 - static library -->
     <projectType id="org.eclipse.cdt.gnuarm.staticlib.target.win32" isAbstract="false" isTest="false" name="Static Library (ARM)">
       <configuration artifactExtension="a" cleanCommand="rm -rf" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" id="org.eclipse.cdt.gnuarm.staticlib.target.win32.release" name="Release">
-        <toolChain archList="all" id="org.eclipse.cdt.gnuarm.staticlib.target.win32.release.tc" isAbstract="false" name="Release" osList="linux" targetTool="org.eclipse.cdt.gnuarm.staticlib.target.win32.release.tc.ar;">
+        <toolChain archList="all" id="org.eclipse.cdt.gnuarm.staticlib.target.win32.release.tc" isAbstract="false" name="Release" osList="win32" targetTool="org.eclipse.cdt.gnuarm.staticlib.target.win32.release.tc.ar;">
           <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="org.eclipse.cdt.gnuarm.staticlib.target.win32.release.tc.Platform" isAbstract="false" name="Platformname" osList="win32" />
           <builder id="org.eclipse.cdt.gnuarm.staticlib.target.win32.release.tc.builder" isAbstract="false" isVariableCaseSensitive="false" name="Builder" superClass="org.eclipse.cdt.gnuarm.make" />
           <tool command="arm-elf-linux-gnu-as" id="org.eclipse.cdt.gnuarm.staticlib.target.win32.release.tc.as" isAbstract="false" name="Assembler" superClass="org.eclipse.cdt.gnuarm.as" />
@@ -422,7 +422,7 @@
         </toolChain>
       </configuration>
       <configuration artifactExtension="a" cleanCommand="rm -rf" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" id="org.eclipse.cdt.gnuarm.staticlib.target.win32.debug" name="Debug">
-        <toolChain archList="all" id="org.eclipse.cdt.gnuarm.staticlib.target.win32.debug.tc" isAbstract="false" name="Debug" osList="linux" targetTool="org.eclipse.cdt.gnuarm.staticlib.target.win32.debug.tc.ar;">
+        <toolChain archList="all" id="org.eclipse.cdt.gnuarm.staticlib.target.win32.debug.tc" isAbstract="false" name="Debug" osList="win32" targetTool="org.eclipse.cdt.gnuarm.staticlib.target.win32.debug.tc.ar;">
           <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="org.eclipse.cdt.gnuarm.staticlib.target.win32.debug.tc.Platform" isAbstract="false" name="Platformname" osList="win32" />
           <builder id="org.eclipse.cdt.gnuarm.staticlib.target.win32.debug.tc.builder" isAbstract="false" isVariableCaseSensitive="false" name="Builder" superClass="org.eclipse.cdt.gnuarm.make" />
           <tool command="arm-elf-linux-gnu-as" id="org.eclipse.cdt.gnuarm.staticlib.target.win32.debug.tc.as" isAbstract="false" name="Assembler" superClass="org.eclipse.cdt.gnuarm.as" />
@@ -464,7 +464,7 @@
     <!-- Max OS-X - static library -->
     <projectType id="org.eclipse.cdt.gnuarm.staticlib.target.macosx" isAbstract="false" isTest="false" name="Static Library (ARM)">
       <configuration artifactExtension="a" cleanCommand="rm -rf" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" id="org.eclipse.cdt.gnuarm.staticlib.target.macosx.release" name="Release">
-        <toolChain archList="all" id="org.eclipse.cdt.gnuarm.staticlib.target.macosx.release.tc" isAbstract="false" name="Release" osList="linux" targetTool="org.eclipse.cdt.gnuarm.staticlib.target.macosx.release.tc.ar;">
+        <toolChain archList="all" id="org.eclipse.cdt.gnuarm.staticlib.target.macosx.release.tc" isAbstract="false" name="Release" osList="macosx" targetTool="org.eclipse.cdt.gnuarm.staticlib.target.macosx.release.tc.ar;">
           <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="org.eclipse.cdt.gnuarm.staticlib.target.macosx.release.tc.Platform" isAbstract="false" name="Platformname" osList="macosx" />
           <builder id="org.eclipse.cdt.gnuarm.staticlib.target.macosx.release.tc.builder" isAbstract="false" isVariableCaseSensitive="false" name="Builder" superClass="org.eclipse.cdt.gnuarm.make" />
           <tool command="arm-elf-linux-gnu-as" id="org.eclipse.cdt.gnuarm.staticlib.target.macosx.release.tc.as" isAbstract="false" name="Assembler" superClass="org.eclipse.cdt.gnuarm.as" />
@@ -474,7 +474,7 @@
         </toolChain>
       </configuration>
       <configuration artifactExtension="a" cleanCommand="rm -rf" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" id="org.eclipse.cdt.gnuarm.staticlib.target.macosx.debug" name="Debug">
-        <toolChain archList="all" id="org.eclipse.cdt.gnuarm.staticlib.target.macosx.debug.tc" isAbstract="false" name="Debug" osList="linux" targetTool="org.eclipse.cdt.gnuarm.staticlib.target.macosx.debug.tc.ar;">
+        <toolChain archList="all" id="org.eclipse.cdt.gnuarm.staticlib.target.macosx.debug.tc" isAbstract="false" name="Debug" osList="macosx" targetTool="org.eclipse.cdt.gnuarm.staticlib.target.macosx.debug.tc.ar;">
           <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="org.eclipse.cdt.gnuarm.staticlib.target.macosx.debug.tc.Platform" isAbstract="false" name="Platformname" osList="macosx" />
           <builder id="org.eclipse.cdt.gnuarm.staticlib.target.macosx.debug.tc.builder" isAbstract="false" isVariableCaseSensitive="false" name="Builder" superClass="org.eclipse.cdt.gnuarm.make" />
           <tool command="arm-elf-linux-gnu-as" id="org.eclipse.cdt.gnuarm.staticlib.target.macosx.debug.tc.as" isAbstract="false" name="Assembler" superClass="org.eclipse.cdt.gnuarm.as" />
