@@ -12,71 +12,98 @@
     <!--###############################################################################-->
     <!--# This plugin was created by Wilfried Holzke.                                 #-->
     <!--# Modification-History:                                                       #-->
-    <!--# Name          Date                                                          #-->
-    <!--# Le Viet Bach  23.02.2007                                                    #-->
+    <!--# Name               Date                                                     #-->
+    <!--# Le Viet Bach       23.02.2007                                               #-->
+    <!--# Michael Loeffler   31.05.2007                                               #-->
     <!--###############################################################################-->
     <!---->
-    <managedBuildRevision fileVersion="0.0.1" />
-    <tool id="org.eclipse.cdt.gnuarm.as" name="GNU ARM Assembler" natureFilter="both" outputFlag="-o">
-      <optionCategory id="org.eclipse.cdt.gnuarm.as.target" name="Target" owner="org.eclipse.cdt.gnuarm.as" />
-      <option category="org.eclipse.cdt.gnuarm.as.target" id="org.eclipse.cdt.gnuarm.as.target.mcpu" name="Target (-mcpu)" valueType="enumerated">
-        <enumeratedOptionValue command="-mcpu=arm2" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm2" name="arm2" />
-        <enumeratedOptionValue command="-mcpu=arm250" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm250" name="arm250" />
-        <enumeratedOptionValue command="-mcpu=arm3" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm3" name="arm3" />
-        <enumeratedOptionValue command="-mcpu=arm6" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm6" name="arm6" />
-        <enumeratedOptionValue command="-mcpu=arm60" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm60" name="arm60" />
+    <managedBuildRevision fileVersion="0.0.1" />    
+    
+    <tool id="org.eclipse.cdt.gnuarm.targetselector"
+     	name="GNU ARM Toolchain"
+     	isAbstract="true"
+     	natureFilter="both">
+     	
+      <optionCategory id="org.eclipse.cdt.gnuarm.targetselector.target" 
+      	name="Target" 
+      	owner="org.eclipse.cdt.gnuarm.targetselector" 
+      />
+      <option 
+      	category="org.eclipse.cdt.gnuarm.targetselector.target"
+      	command="-mthumb"
+      	id="org.eclipse.cdt.gnuarm.targetselector.target.thumb" 
+      	name="Generate 16-bit thumb code" 
+      	valueType="boolean"
+      	defaultValue="false"
+      	isAbstract="true"
+      />
+
+      <option 
+      	category="org.eclipse.cdt.gnuarm.targetselector.target"
+      	id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu" 
+      	name="Target (-mcpu)" 
+      	valueType="enumerated">
+        <enumeratedOptionValue command="-mcpu=arm2" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm2" name="arm2" />
+        <enumeratedOptionValue command="-mcpu=arm250" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm250" name="arm250" />
+        <enumeratedOptionValue command="-mcpu=arm3" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm3" name="arm3" />
+        <enumeratedOptionValue command="-mcpu=arm6" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm6" name="arm6" />
+        <enumeratedOptionValue command="-mcpu=arm60" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm60" name="arm60" />
         <enumeratedOptionValue command="-mcpu=arm600" id="org.eclipse.cdt.gnuarm.asarget.mcpu.arm600" name="arm600" />
-        <enumeratedOptionValue command="-mcpu=arm610" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm610" name="arm610" />
-        <enumeratedOptionValue command="-mcpu=arm620" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm620" name="arm620" />
-        <enumeratedOptionValue command="-mcpu=arm7" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm7" name="arm7" />
-        <enumeratedOptionValue command="-mcpu=arm7m" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm7m" name="arm7m" />
-        <enumeratedOptionValue command="-mcpu=arm7d" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm7d" name="arm7d" />
-        <enumeratedOptionValue command="-mcpu=arm7dm" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm7dm" name="arm7dm" />
-        <enumeratedOptionValue command="-mcpu=arm7di" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm7di" name="arm7di" />
-        <enumeratedOptionValue command="-mcpu=arm7dmi" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm7dmi" name="arm7dmi" />
-        <enumeratedOptionValue command="-mcpu=arm70" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm70" name="arm70" />
-        <enumeratedOptionValue command="-mcpu=arm700" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm700" name="arm700" />
-        <enumeratedOptionValue command="-mcpu=arm700i" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm700i" name="arm700i" />
-        <enumeratedOptionValue command="-mcpu=arm710" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm710" name="arm710" />
-        <enumeratedOptionValue command="-mcpu=arm710c" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm710c" name="arm710c" />
-        <enumeratedOptionValue command="-mcpu=arm7100" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm7100" name="arm7100" />
-        <enumeratedOptionValue command="-mcpu=arm7500" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm7500" name="arm7500" />
-        <enumeratedOptionValue command="-mcpu=arm7500fe" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm7500fe" name="arm7500fe" />
-        <enumeratedOptionValue command="-mcpu=arm7tdmi" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm7tdmi" isDefault="true" name="arm7tdmi" />
+        <enumeratedOptionValue command="-mcpu=arm610" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm610" name="arm610" />
+        <enumeratedOptionValue command="-mcpu=arm620" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm620" name="arm620" />
+        <enumeratedOptionValue command="-mcpu=arm7" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm7" name="arm7" />
+        <enumeratedOptionValue command="-mcpu=arm7m" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm7m" name="arm7m" />
+        <enumeratedOptionValue command="-mcpu=arm7d" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm7d" name="arm7d" />
+        <enumeratedOptionValue command="-mcpu=arm7dm" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm7dm" name="arm7dm" />
+        <enumeratedOptionValue command="-mcpu=arm7di" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm7di" name="arm7di" />
+        <enumeratedOptionValue command="-mcpu=arm7dmi" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm7dmi" name="arm7dmi" />
+        <enumeratedOptionValue command="-mcpu=arm70" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm70" name="arm70" />
+        <enumeratedOptionValue command="-mcpu=arm700" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm700" name="arm700" />
+        <enumeratedOptionValue command="-mcpu=arm700i" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm700i" name="arm700i" />
+        <enumeratedOptionValue command="-mcpu=arm710" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm710" name="arm710" />
+        <enumeratedOptionValue command="-mcpu=arm710c" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm710c" name="arm710c" />
+        <enumeratedOptionValue command="-mcpu=arm7100" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm7100" name="arm7100" />
+        <enumeratedOptionValue command="-mcpu=arm7500" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm7500" name="arm7500" />
+        <enumeratedOptionValue command="-mcpu=arm7500fe" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm7500fe" name="arm7500fe" />
+        <enumeratedOptionValue command="-mcpu=arm7tdmi" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm7tdmi" name="arm7tdmi" isDefault="true" />
         <enumeratedOptionValue command="-mcpu=arm7tdmi-s" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm7tdmi-s" name="arm7tdmi-s" />
-        <enumeratedOptionValue command="-mcpu=arm8" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm8" name="arm8" />
-        <enumeratedOptionValue command="-mcpu=strongarm" id="org.eclipse.cdt.gnuarm.as.target.mcpu.strongarm" name="strongarm" />
-        <enumeratedOptionValue command="-mcpu=strongarm110" id="org.eclipse.cdt.gnuarm.as.target.mcpu.strongarm110" name="strongarm110" />
-        <enumeratedOptionValue command="-mcpu=strongarm1100" id="org.eclipse.cdt.gnuarm.as.target.mcpu.strongarm1100" name="strongarm1100" />
-        <enumeratedOptionValue command="-mcpu=arm8" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm8" name="arm8" />
-        <enumeratedOptionValue command="-mcpu=arm810" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm810" name="arm810" />
-        <enumeratedOptionValue command="-mcpu=arm9" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm9" name="arm9" />
-        <enumeratedOptionValue command="-mcpu=arm9e" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm9e" name="arm9e" />
-        <enumeratedOptionValue command="-mcpu=arm920" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm920" name="arm920" />
-        <enumeratedOptionValue command="-mcpu=arm920t" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm920t" name="arm920t" />
-        <enumeratedOptionValue command="-mcpu=arm922t" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm922t" name="arm922t" />
-        <enumeratedOptionValue command="-mcpu=arm946e-s" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm946e-s" name="arm946e-s" />
-        <enumeratedOptionValue command="-mcpu=arm966e-s" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm966e-s" name="arm966e-s" />
-        <enumeratedOptionValue command="-mcpu=arm968e-s" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm968e-s" name="arm968e-s" />
-        <enumeratedOptionValue command="-mcpu=arm926ej-s" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm926ej-s" name="arm926ej-s" />
-        <enumeratedOptionValue command="-mcpu=arm940t" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm940t" name="arm940t" />
-        <enumeratedOptionValue command="-mcpu=arm9tdmi" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm9tdmi" name="arm9tdmi" />
-        <enumeratedOptionValue command="-mcpu=arm10tdmi" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm10tdmi" name="arm10tdmi" />
-        <enumeratedOptionValue command="-mcpu=arm1020t" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm1020t" name="arm1020t" />
-        <enumeratedOptionValue command="-mcpu=arm1026ej-s" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm1026ej-s" name="arm1026ej-s" />
-        <enumeratedOptionValue command="-mcpu=arm10e" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm10e" name="arm10e" />
-        <enumeratedOptionValue command="-mcpu=arm1020e" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm1020e" name="arm1020e" />
-        <enumeratedOptionValue command="-mcpu=arm1022e" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm1022e" name="arm1022e" />
-        <enumeratedOptionValue command="-mcpu=arm1136j-s" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm1136j-s" name="arm1136j-s" />
-        <enumeratedOptionValue command="-mcpu=arm1136jf-s" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm1136jf-s" name="arm1136jf-s" />
-        <enumeratedOptionValue command="-mcpu=mpcore" id="org.eclipse.cdt.gnuarm.as.target.mcpu.mpcore" name="mpcore" />
-        <enumeratedOptionValue command="-mcpu=mpcorenovfp" id="org.eclipse.cdt.gnuarm.as.target.mcpu.mpcorenovfp" name="mpcorenovfp" />
-        <enumeratedOptionValue command="-mcpu=arm1176jz-s" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm1176jz-s" name="arm1176jz-s" />
-        <enumeratedOptionValue command="-mcpu=arm1176jzf-s" id="org.eclipse.cdt.gnuarm.as.target.mcpu.arm1176jzf-s" name="arm1176jzf-s" />
-        <enumeratedOptionValue command="-mcpu=xscale" id="org.eclipse.cdt.gnuarm.as.target.mcpu.xscale" name="xscale" />
-        <enumeratedOptionValue command="-mcpu=iwmmxt" id="org.eclipse.cdt.gnuarm.as.target.mcpu.iwmmxt" isDefault="false" name="iwmmxt" />
-        <enumeratedOptionValue command="-mcpu=ep9312" id="org.eclipse.cdt.gnuarm.as.target.mcpu.ep9312" name="ep9312" />
+        <enumeratedOptionValue command="-mcpu=arm8" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm8" name="arm8" />
+        <enumeratedOptionValue command="-mcpu=strongarm" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.strongarm" name="strongarm" />
+        <enumeratedOptionValue command="-mcpu=strongarm110" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.strongarm110" name="strongarm110" />
+        <enumeratedOptionValue command="-mcpu=strongarm1100" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.strongarm1100" name="strongarm1100" />
+        <enumeratedOptionValue command="-mcpu=arm8" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm8" name="arm8" />
+        <enumeratedOptionValue command="-mcpu=arm810" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm810" name="arm810" />
+        <enumeratedOptionValue command="-mcpu=arm9" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm9" name="arm9" />
+        <enumeratedOptionValue command="-mcpu=arm9e" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm9e" name="arm9e" />
+        <enumeratedOptionValue command="-mcpu=arm920" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm920" name="arm920" />
+        <enumeratedOptionValue command="-mcpu=arm920t" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm920t" name="arm920t" />
+        <enumeratedOptionValue command="-mcpu=arm922t" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm922t" name="arm922t" />
+        <enumeratedOptionValue command="-mcpu=arm946e-s" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm946e-s" name="arm946e-s" />
+        <enumeratedOptionValue command="-mcpu=arm966e-s" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm966e-s" name="arm966e-s" />
+        <enumeratedOptionValue command="-mcpu=arm968e-s" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm968e-s" name="arm968e-s" />
+        <enumeratedOptionValue command="-mcpu=arm926ej-s" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm926ej-s" name="arm926ej-s" />
+        <enumeratedOptionValue command="-mcpu=arm940t" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm940t" name="arm940t" />
+        <enumeratedOptionValue command="-mcpu=arm9tdmi" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm9tdmi" name="arm9tdmi" />
+        <enumeratedOptionValue command="-mcpu=arm10tdmi" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm10tdmi" name="arm10tdmi" />
+        <enumeratedOptionValue command="-mcpu=arm1020t" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm1020t" name="arm1020t" />
+        <enumeratedOptionValue command="-mcpu=arm1026ej-s" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm1026ej-s" name="arm1026ej-s" />
+        <enumeratedOptionValue command="-mcpu=arm10e" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm10e" name="arm10e" />
+        <enumeratedOptionValue command="-mcpu=arm1020e" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm1020e" name="arm1020e" />
+        <enumeratedOptionValue command="-mcpu=arm1022e" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm1022e" name="arm1022e" />
+        <enumeratedOptionValue command="-mcpu=arm1136j-s" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm1136j-s" name="arm1136j-s" />
+        <enumeratedOptionValue command="-mcpu=arm1136jf-s" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm1136jf-s" name="arm1136jf-s" />
+        <enumeratedOptionValue command="-mcpu=mpcore" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.mpcore" name="mpcore" />
+        <enumeratedOptionValue command="-mcpu=mpcorenovfp" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.mpcorenovfp" name="mpcorenovfp" />
+        <enumeratedOptionValue command="-mcpu=arm1176jz-s" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm1176jz-s" name="arm1176jz-s" />
+        <enumeratedOptionValue command="-mcpu=arm1176jzf-s" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.arm1176jzf-s" name="arm1176jzf-s" />
+        <enumeratedOptionValue command="-mcpu=xscale" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.xscale" name="xscale" />
+        <enumeratedOptionValue command="-mcpu=iwmmxt" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.iwmmxt" name="iwmmxt" />
+        <enumeratedOptionValue command="-mcpu=ep9312" id="org.eclipse.cdt.gnuarm.targetselector.target.mcpu.ep9312" name="ep9312" />
       </option>
+     </tool>
+
+
+    <tool id="org.eclipse.cdt.gnuarm.as" name="GNU ARM Assembler" natureFilter="both" outputFlag="-o" superClass="org.eclipse.cdt.gnuarm.targetselector">
       <optionCategory id="org.eclipse.cdt.gnuarm.as.debug" name="Debugging" owner="org.eclipse.cdt.gnuarm.as" />
       <option category="org.eclipse.cdt.gnuarm.as.debug" id="org.eclipse.cdt.gnuarm.as.debug.flags" defaultValue="-gdwarf-2" name="Debugging flags" valueType="string" />
       <optionCategory id="org.eclipse.cdt.gnuarm.as.general" name="General" owner="org.eclipse.cdt.gnuarm.as" />
@@ -87,67 +114,10 @@
       <inputType dependencyExtensions="S,s" id="org.eclipse.cdt.gnuarm.as.input" name="Input" sourceContentType="org.eclipse.cdt.core.asmSource" sources="S,s" />
       <outputType buildVariable="OBJS" id="org.eclipse.cdt.gnuarm.as" name="Output" outputs="o" />
     </tool>
-    <tool id="org.eclipse.cdt.gnuarm.gcc" name="GNU ARM C Compiler" natureFilter="cnature" outputFlag="-o">
-      <optionCategory id="org.eclipse.cdt.gnuarm.gcc.target" name="Target" owner="org.eclipse.cdt.gnuarm.gcc" />
-      <option category="org.eclipse.cdt.gnuarm.gcc.target" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu" name="Target (-mcpu)" valueType="enumerated">
-        <enumeratedOptionValue command="-mcpu=arm2" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm2" name="arm2" />
-        <enumeratedOptionValue command="-mcpu=arm250" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm250" name="arm250" />
-        <enumeratedOptionValue command="-mcpu=arm3" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm3" name="arm3" />
-        <enumeratedOptionValue command="-mcpu=arm6" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm6" name="arm6" />
-        <enumeratedOptionValue command="-mcpu=arm60" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm60" name="arm60" />
-        <enumeratedOptionValue command="-mcpu=arm600" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm600" name="arm600" />
-        <enumeratedOptionValue command="-mcpu=arm610" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm610" name="arm610" />
-        <enumeratedOptionValue command="-mcpu=arm620" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm620" name="arm620" />
-        <enumeratedOptionValue command="-mcpu=arm7" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm7" name="arm7" />
-        <enumeratedOptionValue command="-mcpu=arm7m" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm7m" name="arm7m" />
-        <enumeratedOptionValue command="-mcpu=arm7d" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm7d" name="arm7d" />
-        <enumeratedOptionValue command="-mcpu=arm7dm" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm7dm" name="arm7dm" />
-        <enumeratedOptionValue command="-mcpu=arm7di" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm7di" name="arm7di" />
-        <enumeratedOptionValue command="-mcpu=arm7dmi" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm7dmi" name="arm7dmi" />
-        <enumeratedOptionValue command="-mcpu=arm70" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm70" name="arm70" />
-        <enumeratedOptionValue command="-mcpu=arm700" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm700" name="arm700" />
-        <enumeratedOptionValue command="-mcpu=arm700i" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm700i" name="arm700i" />
-        <enumeratedOptionValue command="-mcpu=arm710" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm710" name="arm710" />
-        <enumeratedOptionValue command="-mcpu=arm710c" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm710c" name="arm710c" />
-        <enumeratedOptionValue command="-mcpu=arm7100" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm7100" name="arm7100" />
-        <enumeratedOptionValue command="-mcpu=arm7500" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm7500" name="arm7500" />
-        <enumeratedOptionValue command="-mcpu=arm7500fe" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm7500fe" name="arm7500fe" />
-        <enumeratedOptionValue command="-mcpu=arm7tdmi" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm7tdmi" isDefault="true" name="arm7tdmi" />
-        <enumeratedOptionValue command="-mcpu=arm7tdmi-s" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm7tdmi-s" name="arm7tdmi-s" />
-        <enumeratedOptionValue command="-mcpu=arm8" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm8" name="arm8" />
-        <enumeratedOptionValue command="-mcpu=strongarm" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.strongarm" name="strongarm" />
-        <enumeratedOptionValue command="-mcpu=strongarm110" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.strongarm110" name="strongarm110" />
-        <enumeratedOptionValue command="-mcpu=strongarm1100" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.strongarm1100" name="strongarm1100" />
-        <enumeratedOptionValue command="-mcpu=arm8" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm8" name="arm8" />
-        <enumeratedOptionValue command="-mcpu=arm810" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm810" name="arm810" />
-        <enumeratedOptionValue command="-mcpu=arm9" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm9" name="arm9" />
-        <enumeratedOptionValue command="-mcpu=arm9e" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm9e" name="arm9e" />
-        <enumeratedOptionValue command="-mcpu=arm920" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm920" name="arm920" />
-        <enumeratedOptionValue command="-mcpu=arm920t" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm920t" name="arm920t" />
-        <enumeratedOptionValue command="-mcpu=arm922t" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm922t" name="arm922t" />
-        <enumeratedOptionValue command="-mcpu=arm946e-s" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm946e-s" name="arm946e-s" />
-        <enumeratedOptionValue command="-mcpu=arm966e-s" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm966e-s" name="arm966e-s" />
-        <enumeratedOptionValue command="-mcpu=arm968e-s" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm968e-s" name="arm968e-s" />
-        <enumeratedOptionValue command="-mcpu=arm926ej-s" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm926ej-s" name="arm926ej-s" />
-        <enumeratedOptionValue command="-mcpu=arm940t" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm940t" name="arm940t" />
-        <enumeratedOptionValue command="-mcpu=arm9tdmi" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm9tdmi" name="arm9tdmi" />
-        <enumeratedOptionValue command="-mcpu=arm10tdmi" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm10tdmi" name="arm10tdmi" />
-        <enumeratedOptionValue command="-mcpu=arm1020t" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm1020t" name="arm1020t" />
-        <enumeratedOptionValue command="-mcpu=arm1026ej-s" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm1026ej-s" name="arm1026ej-s" />
-        <enumeratedOptionValue command="-mcpu=arm10e" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm10e" name="arm10e" />
-        <enumeratedOptionValue command="-mcpu=arm1020e" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm1020e" name="arm1020e" />
-        <enumeratedOptionValue command="-mcpu=arm1022e" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm1022e" name="arm1022e" />
-        <enumeratedOptionValue command="-mcpu=arm1136j-s" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm1136j-s" name="arm1136j-s" />
-        <enumeratedOptionValue command="-mcpu=arm1136jf-s" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm1136jf-s" name="arm1136jf-s" />
-        <enumeratedOptionValue command="-mcpu=mpcore" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.mpcore" name="mpcore" />
-        <enumeratedOptionValue command="-mcpu=mpcorenovfp" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.mpcorenovfp" name="mpcorenovfp" />
-        <enumeratedOptionValue command="-mcpu=arm1176jz-s" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm1176jz-s" name="arm1176jz-s" />
-        <enumeratedOptionValue command="-mcpu=arm1176jzf-s" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.arm1176jzf-s" name="arm1176jzf-s" />
-        <enumeratedOptionValue command="-mcpu=xscale" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.xscale" name="xscale" />
-        <enumeratedOptionValue command="-mcpu=iwmmxt" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.iwmmxt" isDefault="false" name="iwmmxt" />
-        <enumeratedOptionValue command="-mcpu=ep9312" id="org.eclipse.cdt.gnuarm.gcc.target.mcpu.ep9312" name="ep9312" />
-      </option>
-      <option category="org.eclipse.cdt.gnuarm.gcc.target" command="-mthumb" id="org.eclipse.cdt.gnuarm.gcc.target.thumb" name="Generate 16-bit thumb code" valueType="boolean" />
+    
+    
+    <tool id="org.eclipse.cdt.gnuarm.gcc" name="GNU ARM C Compiler" natureFilter="cnature" outputFlag="-o" superClass="org.eclipse.cdt.gnuarm.targetselector">
+      <option superClass="org.eclipse.cdt.gnuarm.targetselector.target.thumb" id="org.eclipse.cdt.gnuarm.gcc.target.thumb"/>
       <optionCategory id="org.eclipse.cdt.gnuarm.gcc.symbols" name="Symbols" owner="org.eclipse.cdt.gnuarm.gcc" />
       <option category="org.eclipse.cdt.gnuarm.gcc.symbols" command="-D" id="org.eclipse.cdt.gnuarm.gcc.symbols.defined" name="Defined symbols (-D)" valueType="stringList" />
       <option category="org.eclipse.cdt.gnuarm.gcc.symbols" command="-U" id="org.eclipse.cdt.gnuarm.gcc.symbols.undefined" name="Undefined symbols (-U)" valueType="stringList" />
@@ -171,67 +141,10 @@
       <inputType dependencyCalculator="org.eclipse.cdt.managedbuilder.makegen.gnu.DefaultGCCDependencyCalculator" dependencyContentType="org.eclipse.cdt.core.cHeader" dependencyExtensions="h,H" id="org.eclipse.cdt.gnuarm.gcc.input" name="Input" sourceContentType="org.eclipse.cdt.core.cSource" sources="c,C" />
       <outputType buildVariable="OBJS" id="org.eclipse.cdt.gnuarm.gcc.output" name="Output" outputs="o" />
     </tool>
-    <tool id="org.eclipse.cdt.gnuarm.gpp" name="GNU ARM C++ Compiler" natureFilter="ccnature" outputFlag="-o">
-      <optionCategory id="org.eclipse.cdt.gnuarm.gpp.target" name="Target" owner="org.eclipse.cdt.gnuarm.gpp" />
-      <option category="org.eclipse.cdt.gnuarm.gpp.target" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu" name="Target (-mcpu)" valueType="enumerated">
-        <enumeratedOptionValue command="-mcpu=arm2" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm2" name="arm2" />
-        <enumeratedOptionValue command="-mcpu=arm250" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm250" name="arm250" />
-        <enumeratedOptionValue command="-mcpu=arm3" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm3" name="arm3" />
-        <enumeratedOptionValue command="-mcpu=arm6" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm6" name="arm6" />
-        <enumeratedOptionValue command="-mcpu=arm60" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm60" name="arm60" />
-        <enumeratedOptionValue command="-mcpu=arm600" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm600" name="arm600" />
-        <enumeratedOptionValue command="-mcpu=arm610" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm610" name="arm610" />
-        <enumeratedOptionValue command="-mcpu=arm620" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm620" name="arm620" />
-        <enumeratedOptionValue command="-mcpu=arm7" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm7" name="arm7" />
-        <enumeratedOptionValue command="-mcpu=arm7m" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm7m" name="arm7m" />
-        <enumeratedOptionValue command="-mcpu=arm7d" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm7d" name="arm7d" />
-        <enumeratedOptionValue command="-mcpu=arm7dm" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm7dm" name="arm7dm" />
-        <enumeratedOptionValue command="-mcpu=arm7di" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm7di" name="arm7di" />
-        <enumeratedOptionValue command="-mcpu=arm7dmi" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm7dmi" name="arm7dmi" />
-        <enumeratedOptionValue command="-mcpu=arm70" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm70" name="arm70" />
-        <enumeratedOptionValue command="-mcpu=arm700" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm700" name="arm700" />
-        <enumeratedOptionValue command="-mcpu=arm700i" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm700i" name="arm700i" />
-        <enumeratedOptionValue command="-mcpu=arm710" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm710" name="arm710" />
-        <enumeratedOptionValue command="-mcpu=arm710c" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm710c" name="arm710c" />
-        <enumeratedOptionValue command="-mcpu=arm7100" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm7100" name="arm7100" />
-        <enumeratedOptionValue command="-mcpu=arm7500" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm7500" name="arm7500" />
-        <enumeratedOptionValue command="-mcpu=arm7500fe" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm7500fe" name="arm7500fe" />
-        <enumeratedOptionValue command="-mcpu=arm7tdmi" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm7tdmi" isDefault="true" name="arm7tdmi" />
-        <enumeratedOptionValue command="-mcpu=arm7tdmi-s" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm7tdmi-s" name="arm7tdmi-s" />
-        <enumeratedOptionValue command="-mcpu=arm8" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm8" name="arm8" />
-        <enumeratedOptionValue command="-mcpu=strongarm" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.strongarm" name="strongarm" />
-        <enumeratedOptionValue command="-mcpu=strongarm110" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.strongarm110" name="strongarm110" />
-        <enumeratedOptionValue command="-mcpu=strongarm1100" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.strongarm1100" name="strongarm1100" />
-        <enumeratedOptionValue command="-mcpu=arm8" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm8" name="arm8" />
-        <enumeratedOptionValue command="-mcpu=arm810" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm810" name="arm810" />
-        <enumeratedOptionValue command="-mcpu=arm9" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm9" name="arm9" />
-        <enumeratedOptionValue command="-mcpu=arm9e" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm9e" name="arm9e" />
-        <enumeratedOptionValue command="-mcpu=arm920" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm920" name="arm920" />
-        <enumeratedOptionValue command="-mcpu=arm920t" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm920t" name="arm920t" />
-        <enumeratedOptionValue command="-mcpu=arm922t" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm922t" name="arm922t" />
-        <enumeratedOptionValue command="-mcpu=arm946e-s" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm946e-s" name="arm946e-s" />
-        <enumeratedOptionValue command="-mcpu=arm966e-s" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm966e-s" name="arm966e-s" />
-        <enumeratedOptionValue command="-mcpu=arm968e-s" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm968e-s" name="arm968e-s" />
-        <enumeratedOptionValue command="-mcpu=arm926ej-s" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm926ej-s" name="arm926ej-s" />
-        <enumeratedOptionValue command="-mcpu=arm940t" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm940t" name="arm940t" />
-        <enumeratedOptionValue command="-mcpu=arm9tdmi" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm9tdmi" name="arm9tdmi" />
-        <enumeratedOptionValue command="-mcpu=arm10tdmi" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm10tdmi" name="arm10tdmi" />
-        <enumeratedOptionValue command="-mcpu=arm1020t" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm1020t" name="arm1020t" />
-        <enumeratedOptionValue command="-mcpu=arm1026ej-s" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm1026ej-s" name="arm1026ej-s" />
-        <enumeratedOptionValue command="-mcpu=arm10e" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm10e" name="arm10e" />
-        <enumeratedOptionValue command="-mcpu=arm1020e" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm1020e" name="arm1020e" />
-        <enumeratedOptionValue command="-mcpu=arm1022e" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm1022e" name="arm1022e" />
-        <enumeratedOptionValue command="-mcpu=arm1136j-s" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm1136j-s" name="arm1136j-s" />
-        <enumeratedOptionValue command="-mcpu=arm1136jf-s" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm1136jf-s" name="arm1136jf-s" />
-        <enumeratedOptionValue command="-mcpu=mpcore" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.mpcore" name="mpcore" />
-        <enumeratedOptionValue command="-mcpu=mpcorenovfp" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.mpcorenovfp" name="mpcorenovfp" />
-        <enumeratedOptionValue command="-mcpu=arm1176jz-s" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm1176jz-s" name="arm1176jz-s" />
-        <enumeratedOptionValue command="-mcpu=arm1176jzf-s" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.arm1176jzf-s" name="arm1176jzf-s" />
-        <enumeratedOptionValue command="-mcpu=xscale" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.xscale" name="xscale" />
-        <enumeratedOptionValue command="-mcpu=iwmmxt" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.iwmmxt" isDefault="false" name="iwmmxt" />
-        <enumeratedOptionValue command="-mcpu=ep9312" id="org.eclipse.cdt.gnuarm.gpp.target.mcpu.ep9312" name="ep9312" />
-      </option>
-      <option category="org.eclipse.cdt.gnuarm.gpp.target" command="-mthumb" id="org.eclipse.cdt.gnuarm.gpp.target.thumb" name="Generate 16-bit thumb code" valueType="boolean" />
+    
+    
+    <tool id="org.eclipse.cdt.gnuarm.gpp" name="GNU ARM C++ Compiler" natureFilter="ccnature" outputFlag="-o" superClass="org.eclipse.cdt.gnuarm.targetselector">
+      <option superClass="org.eclipse.cdt.gnuarm.targetselector.target.thumb" id="org.eclipse.cdt.gnuarm.gpp.target.thumb"/>
       <optionCategory id="org.eclipse.cdt.gnuarm.gpp.symbols" name="Symbols" owner="org.eclipse.cdt.gnuarm.gpp" />
       <option category="org.eclipse.cdt.gnuarm.gpp.symbols" command="-D" id="org.eclipse.cdt.gnuarm.gpp.symbols.defined" name="Defined symbols (-D)" valueType="stringList" />
       <option category="org.eclipse.cdt.gnuarm.gpp.symbols" command="-U" id="org.eclipse.cdt.gnuarm.gpp.symbols.undefined" name="Undefined symbols (-U)" valueType="stringList" />
@@ -256,15 +169,20 @@
       <inputType dependencyCalculator="org.eclipse.cdt.managedbuilder.makegen.gnu.DefaultGCCDependencyCalculator" dependencyContentType="org.eclipse.cdt.core.cxxHeader" dependencyExtensions="h,H,hpp" id="org.eclipse.cdt.gnuarm.gpp.input" name="Input" sourceContentType="org.eclipse.cdt.core.cxxSource" sources="c,C,cc,cxx,cpp" />
       <outputType buildVariable="OBJS" id="org.eclipse.cdt.gnuarm.gpp.output" name="Output" outputs="o" />
     </tool>
-    <tool id="org.eclipse.cdt.gnuarm.ld" name="GNU ARM C Linker" natureFilter="cnature" outputFlag="-o">
+    
+    
+    <tool id="org.eclipse.cdt.gnuarm.ld" name="GNU ARM C Linker" natureFilter="cnature" outputFlag="-o" commandLinePattern="${COMMAND} ${INPUTS} ${OUTPUT_FLAG}${OUTPUT} ${FLAGS}">
       <optionCategory id="org.eclipse.cdt.gnuarm.ld.general" name="General" owner="org.eclipse.cdt.gnuarm.ld" />
-      <option browseType="file" category="org.eclipse.cdt.gnuarm.ld.general" command="-T" id="org.eclipse.cdt.gnuarm.ld.general.scriptfile" isAbstract="false" name="Script (-T)" resourceFilter="all" valueType="string" />
+      <option browseType="file" category="org.eclipse.cdt.gnuarm.ld.general" command="-T&quot;${value}&quot;" id="org.eclipse.cdt.gnuarm.ld.general.scriptfile" isAbstract="false" name="Script (-T)" resourceFilter="all" valueType="string" />
       <option category="org.eclipse.cdt.gnuarm.ld.general" command="-nostartfiles" id="org.eclipse.cdt.gnuarm.ld.general.nostartfiles" name="Do not use standard start files (-nostartfiles)" valueType="boolean" />
       <option category="org.eclipse.cdt.gnuarm.ld.general" command="-nodefaultlibs" id="org.eclipse.cdt.gnuarm.ld.general.nodefaultlibs" name="Do not use default libraries (-nodefaultlibs)" valueType="boolean" />
-      <option category="org.eclipse.cdt.gnuarm.ld.general" command="-nostdlib" id="org.eclipse.cdt.gnuarm.ld.general.nostdlib" name="No startup or default libs (-nostdlib)" valueType="boolean" defaultValue="true" />
+      <option category="org.eclipse.cdt.gnuarm.ld.general" command="-nostdlib" id="org.eclipse.cdt.gnuarm.ld.general.nostdlib" name="No startup or default libs (-nostdlib)" valueType="boolean" defaultValue="false" />
       <option category="org.eclipse.cdt.gnuarm.ld.general" command="-static" id="org.eclipse.cdt.gnuarm.ld.general.static" name="No shared libraries (-static)" valueType="boolean" defaultValue="true" />
       <optionCategory id="org.eclipse.cdt.gnuarm.ld.libraries" name="Libraries" owner="org.eclipse.cdt.gnuarm.ld" />
-      <option category="org.eclipse.cdt.gnuarm.ld.libraries" command="-l" id="org.eclipse.cdt.gnuarm.ld.libraries.list" name="Libraries (-l)" valueType="stringList" />
+      <option category="org.eclipse.cdt.gnuarm.ld.libraries" command="-l" id="org.eclipse.cdt.gnuarm.ld.libraries.list" name="Libraries (-l)" valueType="stringList" tip="Add library names without preliminary 'lib', dot and ending">
+               <listOptionValue value="c" />
+               <listOptionValue value="gcc" />
+      </option>
       <option browseType="directory" category="org.eclipse.cdt.gnuarm.ld.libraries" command="-L" id="org.eclipse.cdt.gnuarm.ld.libraries.searchpath" name="Library search path (-L)" valueType="includePath" />
       <optionCategory id="org.eclipse.cdt.gnuarm.ld.misc" name="Miscellaneous" owner="org.eclipse.cdt.gnuarm.ld" />
       <option category="org.eclipse.cdt.gnuarm.ld.misc" id="org.eclipse.cdt.gnuarm.ld.misc.linkerflags" name="Linker flags" valueType="string" defaultValue="-Map=${BuildArtifactFileBaseName}.map" />
@@ -274,12 +192,14 @@
       </inputType>
       <outputType buildVariable="EXECUTABLES" id="org.eclipse.cdt.gnuarm.ld.output" name="Output" outputs="elf" />
     </tool>
+    
+    
     <tool id="org.eclipse.cdt.gnuarm.ldpp" name="GNU ARM C++ Linker" natureFilter="ccnature" outputFlag="-o">
       <optionCategory id="org.eclipse.cdt.gnuarm.ldpp.general" name="General" owner="org.eclipse.cdt.gnuarm.ldpp" />
-      <option browseType="file" category="org.eclipse.cdt.gnuarm.ldpp.general" command="-T" id="org.eclipse.cdt.gnuarm.ldpp.general.scriptfile" isAbstract="false" name="Script (-T)" resourceFilter="all" valueType="string" />
+      <option browseType="file" category="org.eclipse.cdt.gnuarm.ldpp.general" command="-T&quot;${value}&quot;" id="org.eclipse.cdt.gnuarm.ldpp.general.scriptfile" isAbstract="false" name="Script (-T)" resourceFilter="all" valueType="string" />
       <option category="org.eclipse.cdt.gnuarm.ldpp.general" command="-nostartfiles" id="org.eclipse.cdt.gnuarm.ldpp.general.nostartfiles" name="Do not use standard start files (-nostartfiles)" valueType="boolean" />
       <option category="org.eclipse.cdt.gnuarm.ldpp.general" command="-nodefaultlibs" id="org.eclipse.cdt.gnuarm.ldpp.general.nodefaultlibs" name="Do not use default libraries (-nodefaultlibs)" valueType="boolean" />
-      <option category="org.eclipse.cdt.gnuarm.ldpp.general" command="-nostdlib" id="org.eclipse.cdt.gnuarm.ldpp.general.nostdlib" name="No startup or default libs (-nostdlib)" valueType="boolean" defaultValue="true" />
+      <option category="org.eclipse.cdt.gnuarm.ldpp.general" command="-nostdlib" id="org.eclipse.cdt.gnuarm.ldpp.general.nostdlib" name="No startup or default libs (-nostdlib)" valueType="boolean" defaultValue="false" />
       <option category="org.eclipse.cdt.gnuarm.ldpp.general" command="-static" id="org.eclipse.cdt.gnuarm.ldpp.general.static" name="No shared libraries (-static)" valueType="boolean" defaultValue="true" />
       <optionCategory id="org.eclipse.cdt.gnuarm.ldpp.libraries" name="Libraries" owner="org.eclipse.cdt.gnuarm.ldpp" />
       <option category="org.eclipse.cdt.gnuarm.ldpp.libraries" command="-l" id="org.eclipse.cdt.gnuarm.ldpp.libraries.list" name="Libraries (-l)" valueType="stringList" />
@@ -292,6 +212,7 @@
       </inputType>
       <outputType buildVariable="EXECUTABLES" id="org.eclipse.cdt.gnuarm.ldpp.output" name="Output" outputs="elf" />
     </tool>
+
 
     <tool id="org.eclipse.cdt.gnuarm.objcopyflash" name="GNU ARM Object Copy Flash" natureFilter="both" outputFlag="">
       <optionCategory id="org.eclipse.cdt.gnuarm.objcopyflash.out" name="Output" owner="org.eclipse.cdt.gnuarm.objcopyflash" />
@@ -312,11 +233,11 @@
       <option category="org.eclipse.cdt.gnuarm.objcopyflash.section" command="-j " id="org.eclipse.cdt.gnuarm.option1" isAbstract="false" name="Other (-j)" resourceFilter="all" valueType="stringList"/>
       <optionCategory id="org.eclipse.cdt.gnuarm.objcopyflash.misc" name="Miscellaneous" owner="org.eclipse.cdt.gnuarm.objcopyflash" />
       <option category="org.eclipse.cdt.gnuarm.objcopyflash.misc" id="org.eclipse.cdt.gnuarm.objcopyflash.misc.otheropt" name="Other options" valueType="stringList" />
+      <outputType buildVariable="OBJCOPY_FLASH" id="org.eclipse.cdt.gnuarm.objcopyflash.output" name="Output" outputNames="${BuildArtifactFileBaseName}.hex" outputContentType="gnuarm.contenttype.hex" outputs="hex" />
       <inputType id="org.eclipse.cdt.gnuarm.objcopyflash.input" name="Input" multipleOfType="true" option="org.eclipse.cdt.gnuarm.objcopyflash.InFileName" sources="elf" />
-      <outputType buildVariable="OBJCOPY_FLASH" id="org.eclipse.cdt.gnuarm.objcopyflash.output" name="Output" option="org.eclipse.cdt.gnuarm.objcopyflash.OutFileName" outputContentType="gnuarm.contenttype.hex" outputs="hex" />
-      <option id="org.eclipse.cdt.gnuarm.objcopyflash.InFileName" isAbstract="true" resourceFilter="all" value="${BuildArtifactFileName}" valueType="string" />
-      <option id="org.eclipse.cdt.gnuarm.objcopyflash.OutFileName" isAbstract="true" resourceFilter="all" value="${BuildArtifactFileBaseName}.hex" valueType="string" />
+      <option id="org.eclipse.cdt.gnuarm.objcopyflash.InFileName" resourceFilter="all" value="${BuildArtifactFileName}" valueType="string" />
     </tool>
+    
     
     <tool id="org.eclipse.cdt.gnuarm.ar" name="GNU ARM Archiver" natureFilter="both" outputFlag="">
       <optionCategory id="org.eclipse.cdt.gnuarm.ar.general" name="General" owner="org.eclipse.cdt.gnuarm.ar" />
@@ -327,7 +248,30 @@
       <outputType buildVariable="EXECUTABLES" id="org.eclipse.cdt.gnuarm.ar.output" name="Output" outputs="a" />
     </tool>
     
-    <builder arguments="-k" buildfileGenerator="org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator" command="make" id="org.eclipse.cdt.gnuarm.make" isAbstract="true" isVariableCaseSensitive="true" macroInputDirRelPathValue="$(dir $&lt;)" macroInputFileBaseNameValue="$(basename $(notdir $&lt;))" macroInputFileExtValue="$(suffix $(notdir $&lt;))" macroInputFileNameValue="$(notdir $&lt;)" macroInputFileRelPathValue="$&lt;" macroOutputDirRelPathValue="$(dir $@)" macroOutputFileBaseNameValue="$(basename $(notdir $@))" macroOutputFileExtValue="$(suffix $(notdir $@))" macroOutputFileNameValue="$(notdir $@)" macroOutputFileRelPathValue="$@" name="BuilderName" reservedMacroNames="ROOT,DEPS,OBJS,.*_SRCS,EXECUTABLES,SUBDIRS,LIBS,USER_OBJS,.*_INPUTS,.*_OUTPUTS" variableFormat="${=}" />
+    
+    <builder 
+    	arguments="-k" 
+    	buildfileGenerator="org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator" 
+    	command="make" 
+    	id="org.eclipse.cdt.gnuarm.make" 
+    	isAbstract="true" 
+    	isVariableCaseSensitive="true" 
+    	macroInputDirRelPathValue="$(dir $&lt;)" 
+    	macroInputFileBaseNameValue="$(basename $(notdir $&lt;))" 
+    	macroInputFileExtValue="$(suffix $(notdir $&lt;))" 
+    	macroInputFileNameValue="$(notdir $&lt;)" 
+    	macroInputFileRelPathValue="$&lt;" 
+    	macroOutputDirRelPathValue="$(dir $@)" 
+    	macroOutputFileBaseNameValue="$(basename $(notdir $@))" 
+    	macroOutputFileExtValue="$(suffix $(notdir $@))" 
+    	macroOutputFileNameValue="$(notdir $@)" 
+    	macroOutputFileRelPathValue="$@" 
+    	name="BuilderName" 
+    	reservedMacroNames="ROOT,DEPS,OBJS,.*_SRCS,EXECUTABLES,SUBDIRS,LIBS,USER_OBJS,.*_INPUTS,.*_OUTPUTS" 
+    	variableFormat="${=}"
+    />
+    
+    
     
     <!--# Linux version - executable -->
     <projectType id="org.eclipse.cdt.gnuarm.exe.target.gnu" isAbstract="false" isTest="false" name="Executable (ARM)">
