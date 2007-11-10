@@ -498,7 +498,7 @@
         	targetTool="org.eclipse.cdt.gnuarm.staticlib.target.win32.debug.tc.ar;">
           <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="org.eclipse.cdt.gnuarm.staticlib.target.win32.debug.tc.Platform" isAbstract="false" name="Platformname" osList="win32" />
           <builder id="org.eclipse.cdt.gnuarm.staticlib.target.win32.debug.tc.builder" isAbstract="false" isVariableCaseSensitive="false" name="Builder" superClass="org.eclipse.cdt.gnuarm.make" />
-          <tool command="arm-elf-gnu-as" id="org.eclipse.cdt.gnuarm.staticlib.target.win32.debug.tc.as" isAbstract="false" name="Assembler" superClass="org.eclipse.cdt.gnuarm.as" />
+          <tool command="arm-elf-as" id="org.eclipse.cdt.gnuarm.staticlib.target.win32.debug.tc.as" isAbstract="false" name="Assembler" superClass="org.eclipse.cdt.gnuarm.as" />
           <tool command="arm-elf-gcc" id="org.eclipse.cdt.gnuarm.staticlib.target.win32.debug.tc.gcc" isAbstract="false" name="C Compiler" superClass="org.eclipse.cdt.gnuarm.gcc" />
           <tool command="arm-elf-g++" id="org.eclipse.cdt.gnuarm.staticlib.target.win32.debug.tc.gpp" isAbstract="false" name="C++ Compiler" superClass="org.eclipse.cdt.gnuarm.gpp" />
           <tool command="arm-elf-ar" id="org.eclipse.cdt.gnuarm.staticlib.target.win32.debug.tc.ar" isAbstract="false" name="Archiver" superClass="org.eclipse.cdt.gnuarm.ar" />
