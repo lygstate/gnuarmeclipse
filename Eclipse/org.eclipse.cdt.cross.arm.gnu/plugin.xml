@@ -136,7 +136,7 @@
       <optionCategory id="org.eclipse.cdt.gnuarm.gcc.directories" name="Directories" owner="org.eclipse.cdt.gnuarm.gcc" />
       <option browseType="directory" category="org.eclipse.cdt.gnuarm.gcc.directories" command="-I" id="org.eclipse.cdt.gnuarm.gcc.directories.select" name="Include path (-I)" valueType="includePath" />
       <optionCategory id="org.eclipse.cdt.gnuarm.gcc.optimization" name="Optimization" owner="org.eclipse.cdt.gnuarm.gcc" />
-      <option category="org.eclipse.cdt.gnuarm.gcc.optimization" id="org.eclipse.cdt.gnuarm.gcc.optimization.level" name="Optimization Level" valueType="enumerated">
+      <option category="org.eclipse.cdt.gnuarm.gcc.optimization" id="org.eclipse.cdt.gnuarm.gcc.optimization" name="Optimization Level" valueType="enumerated">
         <enumeratedOptionValue command="-O0" id="org.eclipse.cdt.gnuarm.gcc.optimization.00" name="None (-O0)" />
         <enumeratedOptionValue command="-O1" id="org.eclipse.cdt.gnuarm.gcc.optimization.01" name="Optimize (-O1)" />
         <enumeratedOptionValue command="-O2" id="org.eclipse.cdt.gnuarm.gcc.optimization.02" name="Optimize more (-O2)" />
@@ -169,7 +169,7 @@
       <optionCategory id="org.eclipse.cdt.gnuarm.gpp.directories" name="Directories" owner="org.eclipse.cdt.gnuarm.gpp" />
       <option browseType="directory" category="org.eclipse.cdt.gnuarm.gpp.directories" command="-I" id="org.eclipse.cdt.gnuarm.gpp.directories.select" name="Include path (-I)" valueType="includePath" />
       <optionCategory id="org.eclipse.cdt.gnuarm.gpp.optimization" name="Optimization" owner="org.eclipse.cdt.gnuarm.gpp" />
-      <option category="org.eclipse.cdt.gnuarm.gpp.optimization" id="org.eclipse.cdt.gnuarm.gpp.optimization.level" name="Optimization Level" valueType="enumerated">
+      <option category="org.eclipse.cdt.gnuarm.gpp.optimization" id="org.eclipse.cdt.gnuarm.gpp.optimization" name="Optimization Level" valueType="enumerated">
         <enumeratedOptionValue command="-O0" id="org.eclipse.cdt.gnuarm.gpp.optimization.00" name="None (-O0)" />
         <enumeratedOptionValue command="-O1" id="org.eclipse.cdt.gnuarm.gpp.optimization.01" name="Optimize (-O1)" />
         <enumeratedOptionValue command="-O2" id="org.eclipse.cdt.gnuarm.gpp.optimization.02" name="Optimize more (-O2)" />
@@ -423,8 +423,12 @@
           <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.Platform" isAbstract="false" name="Platformname" osList="win32" />
           <builder id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.builder" isAbstract="false" isVariableCaseSensitive="false" name="Builder" superClass="org.eclipse.cdt.gnuarm.make" />
           <tool command="arm-elf-as" id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.as" isAbstract="false" name="C Assembler" superClass="org.eclipse.cdt.gnuarm.as" />
-          <tool command="arm-elf-gcc" id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.gcc" isAbstract="false" name="C Compiler" superClass="org.eclipse.cdt.gnuarm.gcc" />
-          <tool command="arm-elf-g++" id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.gpp" isAbstract="false" name="C++ Compiler" superClass="org.eclipse.cdt.gnuarm.gpp" />
+          <tool command="arm-elf-gcc" id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.gcc" isAbstract="false" name="C Compiler" superClass="org.eclipse.cdt.gnuarm.gcc">
+				<option defaultValue="org.eclipse.cdt.gnuarm.gcc.optimization.03" id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.gcc.optimization" superClass="org.eclipse.cdt.gnuarm.gcc.optimization"/>
+          </tool>
+          <tool command="arm-elf-g++" id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.gpp" isAbstract="false" name="C++ Compiler" superClass="org.eclipse.cdt.gnuarm.gpp">
+				<option defaultValue="org.eclipse.cdt.gnuarm.gpp.optimization.03" id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.gpp.optimization" superClass="org.eclipse.cdt.gnuarm.gpp.optimization"/>
+          </tool>
           <tool command="arm-elf-ld" id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.ld" isAbstract="false" name="C Linker" superClass="org.eclipse.cdt.gnuarm.ld" />
           <tool command="arm-elf-ld" id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.ldpp" isAbstract="false" name="C++ Linker" superClass="org.eclipse.cdt.gnuarm.ldpp" />
           <tool command="arm-elf-objcopy" id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.objcopyflash" isAbstract="false" name="ObjCopyFlash" superClass="org.eclipse.cdt.gnuarm.objcopyflash" />
@@ -447,8 +451,12 @@
           <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.Platform" isAbstract="false" name="Platformname" osList="win32" />
           <builder id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.builder" isAbstract="false" isVariableCaseSensitive="false" name="Builder" superClass="org.eclipse.cdt.gnuarm.make" />
           <tool command="arm-elf-as" id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.as" isAbstract="false" name="C Assembler" superClass="org.eclipse.cdt.gnuarm.as" />
-          <tool command="arm-elf-gcc" id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.gcc" isAbstract="false" name="C Compiler" superClass="org.eclipse.cdt.gnuarm.gcc" />
-          <tool command="arm-elf-g++" id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.gpp" isAbstract="false" name="C++ Compiler" superClass="org.eclipse.cdt.gnuarm.gpp" />
+          <tool command="arm-elf-gcc" id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.gcc" isAbstract="false" name="C Compiler" superClass="org.eclipse.cdt.gnuarm.gcc">
+				<option defaultValue="org.eclipse.cdt.gnuarm.gcc.optimization.00" id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.gcc.optimization" superClass="org.eclipse.cdt.gnuarm.gcc.optimization"/>
+		  </tool>          
+          <tool command="arm-elf-g++" id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.gpp" isAbstract="false" name="C++ Compiler" superClass="org.eclipse.cdt.gnuarm.gpp">
+				<option defaultValue="org.eclipse.cdt.gnuarm.gpp.optimization.00" id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.gpp.optimization" superClass="org.eclipse.cdt.gnuarm.gpp.optimization"/>
+		  </tool>          
           <tool command="arm-elf-ld" id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.ld" isAbstract="false" name="C Linker" superClass="org.eclipse.cdt.gnuarm.ld" />
           <tool command="arm-elf-ld" id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.ldpp" isAbstract="false" name="C++ Linker" superClass="org.eclipse.cdt.gnuarm.ldpp" />
           <tool command="arm-elf-objcopy" id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.objcopyflash" isAbstract="false" name="ObjCopyFlash" superClass="org.eclipse.cdt.gnuarm.objcopyflash" />
