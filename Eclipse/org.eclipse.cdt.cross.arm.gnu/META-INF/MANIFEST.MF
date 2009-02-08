@@ -1,6 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Gnuarm Plug-in
+Bundle-Name: GNUARM Plug-in
 Bundle-SymbolicName: org.eclipse.cdt.gnuarm;singleton:=true
-Bundle-Version: 0.5.0
+Bundle-Version: 0.5.1
 Require-Bundle: org.eclipse.cdt.managedbuilder.core
+Bundle-Vendor: SourceForge Project
