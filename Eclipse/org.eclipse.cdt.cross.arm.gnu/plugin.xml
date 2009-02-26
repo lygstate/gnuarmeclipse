@@ -203,7 +203,15 @@
       <optionCategory id="org.eclipse.cdt.gnuarm.gcc.misc" name="Miscellaneous" owner="org.eclipse.cdt.gnuarm.gcc" />
       <option category="org.eclipse.cdt.gnuarm.gcc.misc" defaultValue="-c" id="org.eclipse.cdt.gnuarm.gcc.misc.otherflags" name="Other flags" valueType="string" />
       <option id="org.eclipse.cdt.gnuarm.gcc.target.list" name="Target" valueType="enumerated" />
-      <inputType dependencyCalculator="org.eclipse.cdt.managedbuilder.makegen.gnu.DefaultGCCDependencyCalculator" dependencyContentType="org.eclipse.cdt.core.cHeader" dependencyExtensions="h,H" id="org.eclipse.cdt.gnuarm.gcc.input" name="Input" sourceContentType="org.eclipse.cdt.core.cSource" sources="c,C" />
+      <inputType
+            dependencyCalculator="org.eclipse.cdt.managedbuilder.makegen.gnu.DefaultGCCDependencyCalculator"
+            dependencyContentType="org.eclipse.cdt.core.cHeader"
+            dependencyExtensions="h,H"
+            id="org.eclipse.cdt.gnuarm.gcc.input"
+            name="C Source"
+            scannerConfigDiscoveryProfileId="org.eclipse.cdt.managedbuilder.core.GCCWinARMCSManagedMakePerProjectProfileC"
+            sourceContentType="org.eclipse.cdt.core.cSource"
+            sources="c,C"/>
       <outputType buildVariable="OBJS" id="org.eclipse.cdt.gnuarm.gcc.output" name="Output" outputs="o" />
     </tool>
     
@@ -253,7 +261,15 @@
       <optionCategory id="org.eclipse.cdt.gnuarm.gpp.misc" name="Miscellaneous" owner="org.eclipse.cdt.gnuarm.gpp" />
       <option category="org.eclipse.cdt.gnuarm.gpp.misc" defaultValue="-c -fno-rtti -fno-exceptions" id="org.eclipse.cdt.gnuarm.gpp.misc.otherflags" name="Other flags" valueType="string" />
       <option id="org.eclipse.cdt.gnuarm.gpp.target.list" name="Target" valueType="enumerated" />
-      <inputType dependencyCalculator="org.eclipse.cdt.managedbuilder.makegen.gnu.DefaultGCCDependencyCalculator" dependencyContentType="org.eclipse.cdt.core.cxxHeader" dependencyExtensions="h,H,hpp" id="org.eclipse.cdt.gnuarm.gpp.input" name="Input" sourceContentType="org.eclipse.cdt.core.cxxSource" sources="c,C,cc,cxx,cpp" />
+      <inputType
+            dependencyCalculator="org.eclipse.cdt.managedbuilder.makegen.gnu.DefaultGCCDependencyCalculator"
+            dependencyContentType="org.eclipse.cdt.core.cxxHeader"
+            dependencyExtensions="h,H,hpp"
+            id="org.eclipse.cdt.gnuarm.gpp.input"
+            name="C++ Input"
+            scannerConfigDiscoveryProfileId="org.eclipse.cdt.managedbuilder.core.GCCWinARMCSManagedMakePerProjectProfileCPP"
+            sourceContentType="org.eclipse.cdt.core.cxxSource"
+            sources="c,C,cc,cxx,cpp"/>
       <outputType buildVariable="OBJS" id="org.eclipse.cdt.gnuarm.gpp.output" name="Output" outputs="o" />
     </tool>
     
@@ -279,7 +295,14 @@
       <option browseType="directory" category="org.eclipse.cdt.gnuarm.ld.libraries" command="-L" id="org.eclipse.cdt.gnuarm.ld.libraries.searchpath" name="Library search path (-L)" valueType="includePath" />
       <optionCategory id="org.eclipse.cdt.gnuarm.ld.misc" name="Miscellaneous" owner="org.eclipse.cdt.gnuarm.ld" />
       <option category="org.eclipse.cdt.gnuarm.ld.misc" id="org.eclipse.cdt.gnuarm.ld.misc.linkerflags" name="Linker flags" valueType="string" defaultValue="-Wl,-Map=${BuildArtifactFileBaseName}.map" />
-      <inputType buildVariable="OBJS" dependencyCalculator="org.eclipse.cdt.managedbuilder.makegen.internal.DefaultNoDependencyCalculator" id="org.eclipse.cdt.gnuarm.ld.input" multipleOfType="true" name="Input" sourceContentType="org.eclipse.cdt.managedbuilder.core.compiledObjectFile" sources="o">
+      <inputType
+            buildVariable="OBJS"
+            dependencyCalculator="org.eclipse.cdt.managedbuilder.makegen.internal.DefaultNoDependencyCalculator"
+            id="org.eclipse.cdt.gnuarm.ld.input"
+            multipleOfType="true"
+            name="Input"
+            sourceContentType="org.eclipse.cdt.managedbuilder.core.compiledObjectFile"
+            sources="o">
         <additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)" />
         <additionalInput kind="additionalinput" paths="$(LIBS)" />
       </inputType>
@@ -305,7 +328,14 @@
       <option browseType="directory" category="org.eclipse.cdt.gnuarm.ldpp.libraries" command="-L" id="org.eclipse.cdt.gnuarm.ldpp.libraries.searchpath" name="Library search path (-L)" valueType="includePath" />
       <optionCategory id="org.eclipse.cdt.gnuarm.ldpp.misc" name="Miscellaneous" owner="org.eclipse.cdt.gnuarm.ldpp" />
       <option category="org.eclipse.cdt.gnuarm.ldpp.misc" id="org.eclipse.cdt.gnuarm.ldpp.misc.linkerflags" name="Linker flags" valueType="string" defaultValue="-Wl,-Map=${BuildArtifactFileBaseName}.map" />
-      <inputType buildVariable="OBJS" dependencyCalculator="org.eclipse.cdt.managedbuilder.makegen.internal.DefaultNoDependencyCalculator" id="org.eclipse.cdt.gnuarm.ldpp.input" multipleOfType="true" name="Input" sourceContentType="org.eclipse.cdt.managedbuilder.core.compiledObjectFile" sources="o">
+      <inputType
+            buildVariable="OBJS"
+            dependencyCalculator="org.eclipse.cdt.managedbuilder.makegen.internal.DefaultNoDependencyCalculator"
+            id="org.eclipse.cdt.gnuarm.ldpp.input"
+            multipleOfType="true"
+            name="Input"
+            sourceContentType="org.eclipse.cdt.managedbuilder.core.compiledObjectFile"
+            sources="o">
         <additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)" />
         <additionalInput kind="additionalinput" paths="$(LIBS)" />
       </inputType>
@@ -332,9 +362,118 @@
       <option category="org.eclipse.cdt.gnuarm.objcopyflash.section" command="-j " id="org.eclipse.cdt.gnuarm.option1" isAbstract="false" name="Other (-j)" resourceFilter="all" valueType="stringList"/>
       <optionCategory id="org.eclipse.cdt.gnuarm.objcopyflash.misc" name="Miscellaneous" owner="org.eclipse.cdt.gnuarm.objcopyflash" />
       <option category="org.eclipse.cdt.gnuarm.objcopyflash.misc" id="org.eclipse.cdt.gnuarm.objcopyflash.misc.otheropt" name="Other options" valueType="stringList" />
-      <outputType buildVariable="OBJCOPY_FLASH" id="org.eclipse.cdt.gnuarm.objcopyflash.output" name="Output" outputNames="${BuildArtifactFileBaseName}.hex" outputContentType="gnuarm.contenttype.hex" outputs="hex" />
+      <outputType buildVariable="SECONDARY_FLASH" id="org.eclipse.cdt.gnuarm.objcopyflash.output" name="Output" outputNames="${BuildArtifactFileBaseName}.hex" outputContentType="gnuarm.contenttype.hex" outputs="hex" />
       <inputType id="org.eclipse.cdt.gnuarm.objcopyflash.input" name="Input" multipleOfType="true" option="org.eclipse.cdt.gnuarm.objcopyflash.InFileName" sources="elf" />
       <option id="org.eclipse.cdt.gnuarm.objcopyflash.InFileName" resourceFilter="all" value="${BuildArtifactFileName}" valueType="string" />
+    </tool>
+    <tool
+          id="org.eclipse.cdt.gnuarm.objdumplist"
+          name="GNU ARM Create Listing"
+          natureFilter="both"
+          outputFlag="&gt;">
+       <optionCategory
+             id="org.eclipse.cdt.gnuarm.objdumplist.misc"
+             name="General"
+             owner="org.eclipse.cdt.gnuarm.objdumplist">
+       </optionCategory>
+       <option
+             category="org.eclipse.cdt.gnuarm.objdumplist.misc"
+             defaultValue="-h -S"
+             id="org.eclipse.cdt.gnuarm.objdumplist.misc.otherflags"
+             name="Other flags"
+             valueType="string">
+       </option>
+       <outputType
+             buildVariable="SECONDARY_LIST"
+             id="org.eclipse.cdt.gnuarm.objdumplist.output"
+             name="Output"
+             outputContentType="gnuarm.contenttype.lst"
+             outputNames="${BuildArtifactFileBaseName}.lst"
+             outputs="lst">
+       </outputType>
+       <inputType
+             id="org.eclipse.cdt.gnuarm.objdumplist.input"
+             multipleOfType="true"
+             name="Input"
+             option="org.eclipse.cdt.gnuarm.objdumplist.InFileName"
+             sources="elf">
+       </inputType>
+       <option
+             id="org.eclipse.cdt.gnuarm.objdumplist.InFileName"
+             resourceFilter="all"
+             value="${BuildArtifactFileName}"
+             valueType="string">
+       </option>
+    </tool>
+    <tool
+          commandLinePattern="${COMMAND} ${INPUTS} ${FLAGS}"
+          id="org.eclipse.cdt.gnuarm.size"
+          name="GNU ARM Print Size"
+          natureFilter="both">
+       <optionCategory
+             id="org.eclipse.cdt.gnuarm.size.misc"
+             name="General"
+             owner="org.eclipse.cdt.gnuarm.size">
+       </optionCategory>
+       <option
+             category="org.eclipse.cdt.gnuarm.size.misc"
+             id="org.eclipse.cdt.gnuarm.size.misc.format"
+             name="Size Format"
+             valueType="enumerated">
+          <enumeratedOptionValue
+                command="--format=berkeley"
+                id="org.eclipse.cdt.gnuarm.size.misc.format.berkeley"
+                isDefault="true"
+                name="Berkeley">
+          </enumeratedOptionValue>
+          <enumeratedOptionValue
+                command="--format=sysv"
+                id="org.eclipse.cdt.gnuarm.size.misc.format.sysv"
+                name="SysV">
+          </enumeratedOptionValue>
+       </option>
+       <option
+             category="org.eclipse.cdt.gnuarm.size.misc"
+             command="-x"
+             defaultValue="false"
+             id="org.eclipse.cdt.gnuarm.size.misc.hex"
+             name="Hex"
+             valueType="boolean">
+       </option>
+       <option
+             category="org.eclipse.cdt.gnuarm.size.misc"
+             command="-t"
+             defaultValue="false"
+             id="org.eclipse.cdt.gnuarm.size.misc.totals"
+             name="Show Totals"
+             valueType="boolean">
+       </option>
+       <option
+             category="org.eclipse.cdt.gnuarm.size.misc"
+             id="org.eclipse.cdt.gnuarm.size.misc.otherflags"
+             name="Other flags"
+             valueType="string">
+       </option>
+       <outputType
+             buildVariable="SECONDARY_SIZE"
+             id="org.eclipse.cdt.gnuarm.size.output"
+             name="Output"
+             outputNames="${BuildArtifactFileBaseName}.siz"
+             outputs="siz">
+       </outputType>
+       <inputType
+             id="org.eclipse.cdt.gnuarm.size.input"
+             multipleOfType="true"
+             name="Input"
+             option="org.eclipse.cdt.gnuarm.size.InFileName"
+             sources="elf">
+       </inputType>
+       <option
+             id="org.eclipse.cdt.gnuarm.size.InFileName"
+             resourceFilter="all"
+             value="${BuildArtifactFileName}"
+             valueType="string">
+       </option>
     </tool>
     
     
@@ -388,7 +527,7 @@
         	isAbstract="false" 
         	name="Linux ARM GCC" 
         	osList="linux" 
-        	secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;" 
+        	secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;org.eclipse.cdt.gnuarm.objdumplist.output;org.eclipse.cdt.gnuarm.size.output" 
         	targetTool="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.ld;">
           <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.Platform" isAbstract="false" name="Platform Name" osList="linux" />
           <builder id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.builder" isAbstract="false" isVariableCaseSensitive="false" superClass="org.eclipse.cdt.gnuarm.make" />
@@ -401,9 +540,23 @@
 				<option defaultValue="org.eclipse.cdt.gnuarm.gpp.optimization.level.03" id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.gpp.optimization" superClass="org.eclipse.cdt.gnuarm.gpp.optimization.level"/>
 				<option defaultValue="org.eclipse.cdt.gnuarm.gpp.debug.info.0"          id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.gpp.debug"        superClass="org.eclipse.cdt.gnuarm.gpp.debug.info"/>
           </tool>
-          <tool command="arm-elf-linux-gnu-ld" id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.ld" isAbstract="false" name="C Linker" superClass="org.eclipse.cdt.gnuarm.ld" />
-          <tool command="arm-elf-linux-gnu-ld" id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.ldpp" isAbstract="false" name="C++ Linker" superClass="org.eclipse.cdt.gnuarm.ldpp" />
+          <tool command="arm-elf-linux-gnu-gcc" id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.ld" isAbstract="false" name="C Linker" superClass="org.eclipse.cdt.gnuarm.ld" />
+          <tool command="arm-elf-linux-gnu-g++" id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.ldpp" isAbstract="false" name="C++ Linker" superClass="org.eclipse.cdt.gnuarm.ldpp" />
           <tool command="arm-elf-linux-gnu-objcopy" id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.objcopyflash" isAbstract="false" name="Create Flash Image" superClass="org.eclipse.cdt.gnuarm.objcopyflash" />
+          <tool
+                command="arm-elf-linux-gnu-objdump"
+                id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.objdumplist"
+                isAbstract="false"
+                name="Create Listing"
+                superClass="org.eclipse.cdt.gnuarm.objdumplist">
+          </tool>
+          <tool
+                command="arm-elf-linux-gnu-size"
+                id="org.eclipse.cdt.gnuarm.exe.target.gnu.release.tc.size"
+                isAbstract="false"
+                name="Print Size"
+                superClass="org.eclipse.cdt.gnuarm.size">
+          </tool>
         </toolChain>
       </configuration>
       <configuration 
@@ -416,7 +569,7 @@
         	id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc" 
         	isAbstract="false" 
         	name="Linux ARM GCC" 
-        	osList="linux" secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;" targetTool="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.ld;">
+        	osList="linux" secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;org.eclipse.cdt.gnuarm.objdumplist.output;org.eclipse.cdt.gnuarm.size.output" targetTool="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.ld;">
           <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.Platform" isAbstract="false" name="Platform Name" osList="linux" />
           <builder id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.builder" isAbstract="false" isVariableCaseSensitive="false" superClass="org.eclipse.cdt.gnuarm.make" />
           <tool command="arm-elf-linux-gnu-as" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.as" isAbstract="false" name="Assembler" superClass="org.eclipse.cdt.gnuarm.as" />
@@ -428,9 +581,23 @@
 				<option defaultValue="org.eclipse.cdt.gnuarm.gpp.optimization.level.00" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.gpp.optimization" superClass="org.eclipse.cdt.gnuarm.gpp.optimization.level"/>
 				<option defaultValue="org.eclipse.cdt.gnuarm.gpp.debug.info.3"          id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.gpp.debug"        superClass="org.eclipse.cdt.gnuarm.gpp.debug.info"/>
           </tool>
-          <tool command="arm-elf-linux-gnu-ld" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.ld" isAbstract="false" name="C Linker" superClass="org.eclipse.cdt.gnuarm.ld" />
-          <tool command="arm-elf-linux-gnu-ld" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.ldpp" isAbstract="false" name="C++ Linker" superClass="org.eclipse.cdt.gnuarm.ldpp" />
+          <tool command="arm-elf-linux-gnu-gcc" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.ld" isAbstract="false" name="C Linker" superClass="org.eclipse.cdt.gnuarm.ld" />
+          <tool command="arm-elf-linux-gnu-g++" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.ldpp" isAbstract="false" name="C++ Linker" superClass="org.eclipse.cdt.gnuarm.ldpp" />
           <tool command="arm-elf-linux-gnu-objcopy" id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.objcopyflash" isAbstract="false" name="Create Flash Image" superClass="org.eclipse.cdt.gnuarm.objcopyflash" />
+          <tool
+                command="arm-elf-linux-gnu-objdump"
+                id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.objdumplist"
+                isAbstract="false"
+                name="Create Listing"
+                superClass="org.eclipse.cdt.gnuarm.objdumplist">
+          </tool>
+          <tool
+                command="arm-elf-linux-gnu-size"
+                id="org.eclipse.cdt.gnuarm.exe.target.gnu.debug.tc.size"
+                isAbstract="false"
+                name="Print Size"
+                superClass="org.eclipse.cdt.gnuarm.size">
+          </tool>
         </toolChain>
       </configuration>  
     </projectType>
@@ -453,7 +620,7 @@
                 isAbstract="false"
                 name="CodeSourcery Linux ARM GCC"
                 osList="linux"
-                secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;"
+                secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;org.eclipse.cdt.gnuarm.objdumplist.output;org.eclipse.cdt.gnuarm.size.output"
                 targetTool="org.eclipse.cdt.gnuarm.exe.target.cs.gnu.release.tc.ld;">
              <targetPlatform
                    archList="all"
@@ -511,14 +678,14 @@
                 </option>
              </tool>
              <tool
-                   command="arm-none-linux-gnueabi-ld"
+                   command="arm-none-linux-gnueabi-gcc"
                    id="org.eclipse.cdt.gnuarm.exe.target.cs.gnu.release.tc.ld"
                    isAbstract="false"
                    name="C Linker"
                    superClass="org.eclipse.cdt.gnuarm.ld">
              </tool>
              <tool
-                   command="arm-none-linux-gnueabi-ld"
+                   command="arm-none-linux-gnueabi-g++"
                    id="org.eclipse.cdt.gnuarm.exe.target.cs.gnu.release.tc.ldpp"
                    isAbstract="false"
                    name="C++ Linker"
@@ -530,6 +697,20 @@
                    isAbstract="false"
                    name="Create Flash Image"
                    superClass="org.eclipse.cdt.gnuarm.objcopyflash">
+             </tool>
+             <tool
+                   command="arm-none-linux-gnueabi-objdump"
+                   id="org.eclipse.cdt.gnuarm.exe.target.cs.gnu.release.tc.objdumplist"
+                   isAbstract="false"
+                   name="Create Listing"
+                   superClass="org.eclipse.cdt.gnuarm.objdumplist">
+             </tool>
+             <tool
+                   command="arm-none-linux-gnueabi-size"
+                   id="org.eclipse.cdt.gnuarm.exe.target.cs.gnu.release.tc.size"
+                   isAbstract="false"
+                   name="Print Size"
+                   superClass="org.eclipse.cdt.gnuarm.size">
              </tool>
           </toolChain>
        </configuration>
@@ -545,7 +726,7 @@
                 isAbstract="false"
                 name="CodeSourcery Linux ARM GCC"
                 osList="linux"
-                secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;"
+                secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;org.eclipse.cdt.gnuarm.objdumplist.output;org.eclipse.cdt.gnuarm.size.output"
                 targetTool="org.eclipse.cdt.gnuarm.exe.target.cs.gnu.debug.tc.ld;">
              <targetPlatform
                    archList="all"
@@ -603,14 +784,14 @@
                 </option>
              </tool>
              <tool
-                   command="arm-none-linux-gnueabi-ld"
+                   command="arm-none-linux-gnueabi-gcc"
                    id="org.eclipse.cdt.gnuarm.exe.target.cs.gnu.debug.tc.ld"
                    isAbstract="false"
                    name="C Linker"
                    superClass="org.eclipse.cdt.gnuarm.ld">
              </tool>
              <tool
-                   command="arm-none-linux-gnueabi-ld"
+                   command="arm-none-linux-gnueabi-g++"
                    id="org.eclipse.cdt.gnuarm.exe.target.cs.gnu.debug.tc.ldpp"
                    isAbstract="false"
                    name="C++ Linker"
@@ -622,6 +803,20 @@
                    isAbstract="false"
                    name="Create Flash Image"
                    superClass="org.eclipse.cdt.gnuarm.objcopyflash">
+             </tool>
+             <tool
+                   command="arm-none-linux-gnueabi-objdump"
+                   id="org.eclipse.cdt.gnuarm.exe.target.cs.gnu.debug.tc.objdumplist"
+                   isAbstract="false"
+                   name="Create Listing"
+                   superClass="org.eclipse.cdt.gnuarm.objdumplist">
+             </tool>
+             <tool
+                   command="arm-none-linux-gnueabi-size"
+                   id="org.eclipse.cdt.gnuarm.exe.target.cs.gnu.debug.tc.size"
+                   isAbstract="false"
+                   name="Print Size"
+                   superClass="org.eclipse.cdt.gnuarm.size">
              </tool>
           </toolChain>
        </configuration>
@@ -815,7 +1010,7 @@
         	isAbstract="false" 
         	name="GNUARM, WinARM, Yagarto ARM GCC" 
         	osList="win32" 
-        	secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;" targetTool="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.ld;">
+        	secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;org.eclipse.cdt.gnuarm.objdumplist.output;org.eclipse.cdt.gnuarm.size.output" targetTool="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.ld;">
           <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.Platform" isAbstract="false" name="Platform Name" osList="win32" />
           <builder id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.builder" isAbstract="false" isVariableCaseSensitive="false" superClass="org.eclipse.cdt.gnuarm.make" />
           <tool command="arm-elf-as" id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.as" isAbstract="false" name="Assembler" superClass="org.eclipse.cdt.gnuarm.as" />
@@ -830,6 +1025,20 @@
           <tool command="arm-elf-ld" id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.ld" isAbstract="false" name="C Linker" superClass="org.eclipse.cdt.gnuarm.ld" />
           <tool command="arm-elf-ld" id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.ldpp" isAbstract="false" name="C++ Linker" superClass="org.eclipse.cdt.gnuarm.ldpp" />
           <tool command="arm-elf-objcopy" id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.objcopyflash" isAbstract="false" name="Create Flash Image" superClass="org.eclipse.cdt.gnuarm.objcopyflash" />
+          <tool
+                command="arm-elf-objdump"
+                id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.objdumplist"
+                isAbstract="false"
+                name="Create Listing"
+                superClass="org.eclipse.cdt.gnuarm.objdumplist">
+          </tool>
+          <tool
+                command="arm-elf-size"
+                id="org.eclipse.cdt.gnuarm.exe.target.win32.release.tc.size"
+                isAbstract="false"
+                name="Print Size"
+                superClass="org.eclipse.cdt.gnuarm.size">
+          </tool>
         </toolChain>
       </configuration>
       <configuration 
@@ -844,7 +1053,7 @@
         	isAbstract="false" 
         	name="GNUARM, WinARM, Yagarto ARM GCC" 
         	osList="win32" 
-        	secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;" 
+        	secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;org.eclipse.cdt.gnuarm.objdumplist.output;org.eclipse.cdt.gnuarm.size.output" 
         	targetTool="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.ld;">
           <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.Platform" isAbstract="false" name="Platform Name" osList="win32" />
           <builder id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.builder" isAbstract="false" isVariableCaseSensitive="false" superClass="org.eclipse.cdt.gnuarm.make" />
@@ -860,6 +1069,20 @@
           <tool command="arm-elf-ld" id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.ld" isAbstract="false" name="C Linker" superClass="org.eclipse.cdt.gnuarm.ld" />
           <tool command="arm-elf-ld" id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.ldpp" isAbstract="false" name="C++ Linker" superClass="org.eclipse.cdt.gnuarm.ldpp" />
           <tool command="arm-elf-objcopy" id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.objcopyflash" isAbstract="false" name="Create Flash Image" superClass="org.eclipse.cdt.gnuarm.objcopyflash" />
+          <tool
+                command="arm-elf-objdump"
+                id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.objdumplist"
+                isAbstract="false"
+                name="Create Listing"
+                superClass="org.eclipse.cdt.gnuarm.objdumplist">
+          </tool>
+          <tool
+                command="arm-elf-size"
+                id="org.eclipse.cdt.gnuarm.exe.target.win32.debug.tc.size"
+                isAbstract="false"
+                name="Print Size"
+                superClass="org.eclipse.cdt.gnuarm.size">
+          </tool>
         </toolChain>
       </configuration> 
     </projectType>
@@ -882,7 +1105,7 @@
                 isAbstract="false"
                 name="CodeSourcery Win ARM GCC"
                 osList="win32"
-                secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;"
+                secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;org.eclipse.cdt.gnuarm.objdumplist.output;org.eclipse.cdt.gnuarm.size.output"
                 targetTool="org.eclipse.cdt.gnuarm.exe.target.cs.win32.release.tc.ld;">
              <targetPlatform
                    archList="all"
@@ -962,6 +1185,20 @@
                    name="Create Flash Image"
                    superClass="org.eclipse.cdt.gnuarm.objcopyflash">
              </tool>
+             <tool
+                   command="arm-none-eabi-objdump"
+                   id="org.eclipse.cdt.gnuarm.exe.target.cs.win32.release.tc.objdumplist"
+                   isAbstract="false"
+                   name="Create Listing"
+                   superClass="org.eclipse.cdt.gnuarm.objdumplist">
+             </tool>
+             <tool
+                   command="arm-none-eabi-size"
+                   id="org.eclipse.cdt.gnuarm.exe.target.cs.win32.release.tc.size"
+                   isAbstract="false"
+                   name="Print Size"
+                   superClass="org.eclipse.cdt.gnuarm.size">
+             </tool>
           </toolChain>
        </configuration>
        <configuration
@@ -976,7 +1213,7 @@
                 isAbstract="false"
                 name="CodeSourcery Win ARM GCC"
                 osList="win32"
-                secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;"
+                secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;;org.eclipse.cdt.gnuarm.objdumplist.output;org.eclipse.cdt.gnuarm.size.output"
                 targetTool="org.eclipse.cdt.gnuarm.exe.target.cs.win32.debug.tc.ld;">
              <targetPlatform
                    archList="all"
@@ -1055,6 +1292,20 @@
                    isAbstract="false"
                    name="Create Flash Image"
                    superClass="org.eclipse.cdt.gnuarm.objcopyflash">
+             </tool>
+             <tool
+                   command="arm-none-eabi-objdump"
+                   id="org.eclipse.cdt.gnuarm.exe.target.cs.win32.debug.tc.objdumplist"
+                   isAbstract="false"
+                   name="Create Listing"
+                   superClass="org.eclipse.cdt.gnuarm.objdumplist">
+             </tool>
+             <tool
+                   command="arm-none-eabi-size"
+                   id="org.eclipse.cdt.gnuarm.exe.target.cs.win32.debug.tc.size"
+                   isAbstract="false"
+                   name="Print Size"
+                   superClass="org.eclipse.cdt.gnuarm.size">
              </tool>
           </toolChain>
        </configuration>
@@ -1251,7 +1502,7 @@
         	isAbstract="false" 
         	name="MacOSX ARM GCC" 
         	osList="macosx" 
-        	secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;" 
+        	secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;org.eclipse.cdt.gnuarm.objdumplist.output;org.eclipse.cdt.gnuarm.size.output" 
         	targetTool="org.eclipse.cdt.gnuarm.exe.target.macosx.release.tc.ld;">
           <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="org.eclipse.cdt.gnuarm.exe.target.macosx.release.tc.Platform" isAbstract="false" name="Platform Name" osList="macosx" />
           <builder id="org.eclipse.cdt.gnuarm.exe.target.macosx.release.tc.builder" isAbstract="false" isVariableCaseSensitive="false" superClass="org.eclipse.cdt.gnuarm.make" />
@@ -1264,9 +1515,23 @@
 				<option defaultValue="org.eclipse.cdt.gnuarm.gpp.optimization.level.03" id="org.eclipse.cdt.gnuarm.exe.target.macosx.release.tc.gpp.optimization" superClass="org.eclipse.cdt.gnuarm.gpp.optimization.level"/>
 				<option defaultValue="org.eclipse.cdt.gnuarm.gpp.debug.info.0"          id="org.eclipse.cdt.gnuarm.exe.target.macosx.release.tc.gpp.debug"        superClass="org.eclipse.cdt.gnuarm.gpp.debug.info"/>
           </tool>
-          <tool command="arm-elf-ld" id="org.eclipse.cdt.gnuarm.exe.target.macosx.release.tc.ld" isAbstract="false" name="C Linker" superClass="org.eclipse.cdt.gnuarm.ld" />
-          <tool command="arm-elf-ld" id="org.eclipse.cdt.gnuarm.exe.target.macosx.release.tc.ldpp" isAbstract="false" name="C++ Linker" superClass="org.eclipse.cdt.gnuarm.ldpp" />
+          <tool command="arm-elf-gcc" id="org.eclipse.cdt.gnuarm.exe.target.macosx.release.tc.ld" isAbstract="false" name="C Linker" superClass="org.eclipse.cdt.gnuarm.ld" />
+          <tool command="arm-elf-g++" id="org.eclipse.cdt.gnuarm.exe.target.macosx.release.tc.ldpp" isAbstract="false" name="C++ Linker" superClass="org.eclipse.cdt.gnuarm.ldpp" />
           <tool command="arm-elf-objcopy" id="org.eclipse.cdt.gnuarm.exe.target.macosx.release.tc.objcopyflash" isAbstract="false" name="Create Flash Image" superClass="org.eclipse.cdt.gnuarm.objcopyflash" />
+          <tool
+                command="arm-elf-objdump"
+                id="org.eclipse.cdt.gnuarm.exe.target.macosx.release.tc.objdumplist"
+                isAbstract="false"
+                name="Create Listing"
+                superClass="org.eclipse.cdt.gnuarm.objdumplist">
+          </tool>
+          <tool
+                command="arm-elf-size"
+                id="org.eclipse.cdt.gnuarm.exe.target.macosx.release.tc.size"
+                isAbstract="false"
+                name="Print Size"
+                superClass="org.eclipse.cdt.gnuarm.size">
+          </tool>
         </toolChain>
       </configuration>
      <configuration 
@@ -1280,7 +1545,7 @@
         	isAbstract="false" 
         	name="MacOSX ARM GCC" 
         	osList="macosx" 
-        	secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;" 
+        	secondaryOutputs="org.eclipse.cdt.gnuarm.objcopyflash.output;org.eclipse.cdt.gnuarm.objdumplist.output;org.eclipse.cdt.gnuarm.size.output" 
         	targetTool="org.eclipse.cdt.gnuarm.exe.target.macosx.debug.tc.ld;">
           <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="org.eclipse.cdt.gnuarm.exe.target.macosx.debug.tc.Platform" isAbstract="false" name="Platform Name" osList="macosx" />
           <builder id="org.eclipse.cdt.gnuarm.exe.target.macosx.debug.tc.builder" isAbstract="false" isVariableCaseSensitive="false" superClass="org.eclipse.cdt.gnuarm.make" />
@@ -1293,9 +1558,23 @@
 				<option defaultValue="org.eclipse.cdt.gnuarm.gpp.optimization.level.00" id="org.eclipse.cdt.gnuarm.exe.target.macosx.debug.tc.gpp.optimization" superClass="org.eclipse.cdt.gnuarm.gpp.optimization.level"/>
 				<option defaultValue="org.eclipse.cdt.gnuarm.gpp.debug.info.3"          id="org.eclipse.cdt.gnuarm.exe.target.macosx.debug.tc.gpp.debug"        superClass="org.eclipse.cdt.gnuarm.gpp.debug.info"/>
           </tool>
-          <tool command="arm-elf-ld" id="org.eclipse.cdt.gnuarm.exe.target.macosx.debug.tc.ld" isAbstract="false" name="C Linker" superClass="org.eclipse.cdt.gnuarm.ld" />
-          <tool command="arm-elf-ld" id="org.eclipse.cdt.gnuarm.exe.target.macosx.debug.tc.ldpp" isAbstract="false" name="C++ Linker" superClass="org.eclipse.cdt.gnuarm.ldpp" />
+          <tool command="arm-elf-gcc" id="org.eclipse.cdt.gnuarm.exe.target.macosx.debug.tc.ld" isAbstract="false" name="C Linker" superClass="org.eclipse.cdt.gnuarm.ld" />
+          <tool command="arm-elf-g++" id="org.eclipse.cdt.gnuarm.exe.target.macosx.debug.tc.ldpp" isAbstract="false" name="C++ Linker" superClass="org.eclipse.cdt.gnuarm.ldpp" />
           <tool command="arm-elf-objcopy" id="org.eclipse.cdt.gnuarm.exe.target.macosx.debug.tc.objcopyflash" isAbstract="false" name="Create Flash Image" superClass="org.eclipse.cdt.gnuarm.objcopyflash" />
+          <tool
+                command="arm-elf-objdump"
+                id="org.eclipse.cdt.gnuarm.exe.target.macosx.debug.tc.objdumplist"
+                isAbstract="false"
+                name="Create Listing"
+                superClass="org.eclipse.cdt.gnuarm.objdumplist">
+          </tool>
+          <tool
+                command="arm-elf-size"
+                id="org.eclipse.cdt.gnuarm.exe.target.macosx.debug.tc.size"
+                isAbstract="false"
+                name="Print Size"
+                superClass="org.eclipse.cdt.gnuarm.size">
+          </tool>
         </toolChain>
       </configuration>
     </projectType>  
@@ -1348,4 +1627,61 @@
       </configuration> 
     </projectType>  
 	</extension>
+   <extension
+         id="GCCWinARMCSManagedMakePerProjectProfile"
+         name="GNU C/C++ ARM CodeSourcery managed make per project SCD profile (Windows)"
+         point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+      <scannerInfoCollector
+            class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.DefaultGnuWinScannerInfoCollector"
+            scope="project"/>
+      <buildOutputProvider>
+         <open/>
+         <scannerInfoConsoleParser class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.ManagedGCCScannerInfoConsoleParser"/>
+      </buildOutputProvider>
+      <scannerInfoProvider providerId="specsFile">
+         <run
+               arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}"
+               command="arm-none-linux-gnueabi-gcc"
+               class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"/>
+         <scannerInfoConsoleParser class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser"/>
+      </scannerInfoProvider>
+   </extension>
+   <extension
+         id="GCCWinARMCSManagedMakePerProjectProfileCPP"
+         name="GNU C/C++ ARM CodeSourcery managed make per project SCD profile (Windows)"
+         point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+      <scannerInfoCollector
+            class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.DefaultGnuWinScannerInfoCollector"
+            scope="project"/>
+      <buildOutputProvider>
+         <open/>
+         <scannerInfoConsoleParser class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.ManagedGCCScannerInfoConsoleParser"/>
+      </buildOutputProvider>
+      <scannerInfoProvider providerId="specsFile">
+         <run
+               arguments="-E -P -v -dD ${plugin_state_location}/specs.cpp"
+               command="arm-none-linux-gnueabi-g++"
+               class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"/>
+         <scannerInfoConsoleParser class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser"/>
+      </scannerInfoProvider>
+   </extension>
+   <extension
+         id="GCCWinARMCSManagedMakePerProjectProfileC"
+         name="GNU C/C++ ARM CodeSourcery managed make per project SCD profile (Windows)"
+         point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+      <scannerInfoCollector
+            class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.DefaultGnuWinScannerInfoCollector"
+            scope="project"/>
+      <buildOutputProvider>
+         <open/>
+         <scannerInfoConsoleParser class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.ManagedGCCScannerInfoConsoleParser"/>
+      </buildOutputProvider>
+      <scannerInfoProvider providerId="specsFile">
+         <run
+               arguments="-E -P -v -dD ${plugin_state_location}/specs.c"
+               command="arm-none-linux-gnueabi-gcc"
+               class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"/>
+         <scannerInfoConsoleParser class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser"/>
+      </scannerInfoProvider>
+   </extension>
 </plugin>
