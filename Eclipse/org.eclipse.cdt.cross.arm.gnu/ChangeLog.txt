@@ -1,0 +1,19 @@
+[20090407]
+
+- C Linker empty makefile bug fixed (spaces in secondaryOutputs/targetTool)
+
+- about.* files moved here from the feature project; the ARM icon is now
+visible in the Help -> About window.
+
+- update site URL renamed from http://gnuarmeclipse.sourceforge.net/update
+to http://gnuarmeclipse.sourceforge.net/updates
+
+
+[20090403]
+
+- org.eclipse.cdt.core.templateAssociations (schema in org.eclipse.cdt.core)
+points to all toolchain bases, as specified in schema examples and used in
+org.eclipse.cdt.managebuilder.gnu.ui. (not yet functional)
+
+
+
