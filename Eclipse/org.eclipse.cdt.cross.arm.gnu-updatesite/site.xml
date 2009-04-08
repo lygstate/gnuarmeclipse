@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.eclipse.cdt.cross.arm.gnu_0.5.3.200904072239.jar" id="org.eclipse.cdt.cross.arm.gnu" version="0.5.3.200904072239" os="linux,macosx,win32">
+      <category name="org.eclipse.cdt.cross.arm.gnu"/>
+   </feature>
+   <category-def name="org.eclipse.cdt.cross.arm.gnu" label="GNU ARM Features">
+      <description>
+         GNU ARM Features
+      </description>
+   </category-def>
+</site>
