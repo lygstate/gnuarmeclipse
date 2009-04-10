@@ -765,7 +765,7 @@
       </builder>
       <tool
             command="arm-elf-gcc"
-            commandLineGenerator="org.eclipse.cdt.cross.arm.gnu.mbs.ARMManagedCommandLineGenerator"
+            commandLineGenerator="org.eclipse.cdt.cross.arm.gnu.ARMManagedCommandLineGenerator"
             errorParsers="org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GASErrorParser"
             id="org.eclipse.cdt.cross.arm.gnu.assembler"
             isAbstract="false"
@@ -957,7 +957,7 @@
       </tool>
       <tool
             command="arm-elf-gcc"
-            commandLineGenerator="org.eclipse.cdt.cross.arm.gnu.mbs.ARMManagedCommandLineGenerator"
+            commandLineGenerator="org.eclipse.cdt.cross.arm.gnu.ARMManagedCommandLineGenerator"
             errorParsers="org.eclipse.cdt.core.GCCErrorParser"
             id="org.eclipse.cdt.cross.arm.gnu.c.compiler"
             isAbstract="false"
@@ -1232,7 +1232,7 @@
       </tool>
       <tool
             command="arm-elf-g++"
-            commandLineGenerator="org.eclipse.cdt.cross.arm.gnu.mbs.ARMManagedCommandLineGenerator"
+            commandLineGenerator="org.eclipse.cdt.cross.arm.gnu.ARMManagedCommandLineGenerator"
             errorParsers="org.eclipse.cdt.core.GCCErrorParser"
             id="org.eclipse.cdt.cross.arm.gnu.cpp.compiler"
             isAbstract="false"
@@ -1514,7 +1514,7 @@
       </tool>
       <tool
             command="arm-elf-gcc"
-            commandLineGenerator="org.eclipse.cdt.cross.arm.gnu.mbs.ARMManagedCommandLineGenerator"
+            commandLineGenerator="org.eclipse.cdt.cross.arm.gnu.ARMManagedCommandLineGenerator"
             errorParsers="org.eclipse.cdt.core.GLDErrorParser"
             id="org.eclipse.cdt.cross.arm.gnu.c.linker"
             isAbstract="false"
@@ -1686,7 +1686,7 @@
       </tool>
       <tool
             command="arm-elf-g++"
-            commandLineGenerator="org.eclipse.cdt.cross.arm.gnu.mbs.ARMManagedCommandLineGenerator"
+            commandLineGenerator="org.eclipse.cdt.cross.arm.gnu.ARMManagedCommandLineGenerator"
             errorParsers="org.eclipse.cdt.core.GLDErrorParser"
             id="org.eclipse.cdt.cross.arm.gnu.cpp.linker"
             isAbstract="false"
