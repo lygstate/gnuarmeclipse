@@ -2,7 +2,8 @@
 
 - install Eclipse for RCP/Plug-in Developers (eclipse-rcp-ganymede-SR2-win32.zip)
 
-- DO NOT update
+- DO NOT update to the latest versions of Plug-in Development (if you do so, 
+launching Eclipse to test the plug-in might end with a strange error).
 
 - add 'C and C++ Development' plug-ins from the Ganymede update site
 
@@ -11,9 +12,9 @@
 so attempts to add new elements to the extensions will not be possible,
 and only 'Generic' elements will be offered).
 
-- add SVN and SVN connector plug-ins
+- add SVN and SVN connector plug-ins (see Tortoise update site)
 
-- check out from 
+- SVN check out from 
 
 https://gnuarmeclipse.svn.sourceforge.net/svnroot/gnuarmeclipse/trunk/
 

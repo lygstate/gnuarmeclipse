@@ -1,4 +1,5 @@
-TThis is a functional beta version of the new 
+
+This is a functional beta version of the new 
 GNU ARM Eclipse Plug-in (Second Edition).
 
 https://sourceforge.net/projects/gnuarmeclipse/
@@ -9,7 +10,8 @@ Installation
 
 The recommended way is to use the Eclipse standard update mechanism:
 
-http://gnuarmeclipse.sourceforge.net/updates
+Help -> Software Updated -> Available Software -> 
+Add Site -> http://gnuarmeclipse.sourceforge.net/updates
 
 The alternate solution to the online site is to download the archive 
 from SourceForge and to to point the Eclipse update mechanism to it
@@ -23,7 +25,7 @@ Requirements
 ------------
 
 - Eclipse 3.4
-- CDT 5.0
+- CDT 5.0.2 (!)
 - Java JRE 1.5
 - Cygwin (note: although CodeSourcery provides cs-make, if the sources 
 are organized in subdirectories, like 'src', the generated makefiles
@@ -62,8 +64,10 @@ Similarly, the link step is done by 'gcc/g++', instead of 'ld'.
 Bug Fixes & Changes since 0.5.3.200904072239
 --------------------------------------------
 
-- Discovery Options implemented for all toolchains. 
-
+- Discovery Options implemented for all toolchains.
+(Note: be sure you update to CDT 5.0.2, on 5.0.0 support
+for Discovery is buggy).
+ 
 
 Bug Fixes & Changes since 0.5.3.200903302247
 --------------------------------------------
@@ -84,9 +88,6 @@ Known Bugs
 
 - toolchain presence is not yet verified, so missing toolchains 
 are also offered for selection
-
-- 'Empty Project' template may not show for all platforms/configurations
-below ARM Cross Target Application/Static Library
 
 - screen update after selecting/deselecting additional tools requires 
 leaving that tab and returning
