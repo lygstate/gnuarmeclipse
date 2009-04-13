@@ -1,0 +1,37 @@
+- install Sun JRE1.5 or later
+
+- install Eclipse for RCP/Plug-in Developers (eclipse-rcp-ganymede-SR2-win32.zip)
+
+- DO NOT update
+
+- add 'C and C++ Development' plug-ins from the Ganymede update site
+
+- add 'C and C++ Development Tools Source' from the CDT update site
+(without CDT sources the extension point schemas will not be available
+so attempts to add new elements to the extensions will not be possible,
+and only 'Generic' elements will be offered).
+
+- add SVN and SVN connector plug-ins
+
+- check out from 
+
+https://gnuarmeclipse.svn.sourceforge.net/svnroot/gnuarmeclipse/trunk/
+
+the following 3 projects:
+
+org.eclipse.cdt.cross.arm.gnu
+org.eclipse.cdt.cross.arm.gnu-feature
+org.eclipse.cdt.cross.arm.gnu-updatesite
+
+- in gnu-updatesite remove features/* plugins/* artifacts.xml content.xml
+
+- open site.xml
+
+- press the 'Build All' button
+
+- features, plugins, artifacts.xml and content.xml should be rebuild
+
+- pack the content of gnu-updatesite into a .zip archive
+
+- use this file as an archived update site
+
