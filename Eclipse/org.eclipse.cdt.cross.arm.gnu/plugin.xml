@@ -66,13 +66,13 @@
          name="ARM CodeSourcery GNU C/C++ managed make per project SCD profile"
          point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
       <scannerInfoCollector
-            class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.DefaultGnuScannerInfoCollector"
-            scope="file">
+            class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMGCCScannerInfoCollector"
+            scope="project">
       </scannerInfoCollector>
       <buildOutputProvider>
          <open></open>
          <scannerInfoConsoleParser
-               class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.ManagedGCCScannerInfoConsoleParser">
+               class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMManagedGCCScannerInfoConsoleParser">
          </scannerInfoConsoleParser>
       </buildOutputProvider>
       <scannerInfoProvider
@@ -80,7 +80,7 @@
          <run
                arguments="-E -P -v -dD ${plugin_state_location}/specs.c"
                class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"
-               command="arm-none-eabi-gcc">
+               command="arm-none-linux-gnueabi-gcc">
          </run>
          <scannerInfoConsoleParser
                class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser">
@@ -92,13 +92,13 @@
          name="ARM CodeSourcery GNU C/C++ managed make per project SCD profile"
          point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
       <scannerInfoCollector
-            class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.DefaultGnuScannerInfoCollector"
+            class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMGCCScannerInfoCollector"
             scope="project">
       </scannerInfoCollector>
       <buildOutputProvider>
          <open></open>
          <scannerInfoConsoleParser
-               class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.ManagedGCCScannerInfoConsoleParser">
+               class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMManagedGCCScannerInfoConsoleParser">
          </scannerInfoConsoleParser>
       </buildOutputProvider>
       <scannerInfoProvider
@@ -106,27 +106,73 @@
          <run
                arguments="-E -P -v -dD ${plugin_state_location}/specs.cpp"
                class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"
-               command="arm-none-eabi-g++">
+               command="arm-none-linux-gnueabi-g++">
          </run>
          <scannerInfoConsoleParser
-               class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.ManagedGCCScannerInfoConsoleParser">
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser">
          </scannerInfoConsoleParser>
+      </scannerInfoProvider>
+   </extension>
+   <extension
+         id="ARM_CS_GCCStandardMakePerProjectProfile"
+         name="ARM CodeSourcery GNU C/C++ Scanner Info per project profile"
+         point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+      <scannerInfoCollector
+            class="org.eclipse.cdt.make.internal.core.scannerconfig2.PerProjectSICollector"
+            scope="project"/>
+      <buildOutputProvider>
+         <open/>
+         <scannerInfoConsoleParser class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCScannerInfoConsoleParser"/>
+      </buildOutputProvider>
+      <scannerInfoProvider providerId="specsFile">
+         <run
+               command="arm-none-linux-gnueabi-gcc"
+               arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}"
+               class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"/>
+         <scannerInfoConsoleParser class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser"/>
+      </scannerInfoProvider>
+   </extension>
+   
+   <extension
+         id="ARM_CS_GCCStandardMakePerFileProfile"
+         name="ARM CodeSourcery GNU C/C++ Scanner Info per file profile"
+         point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+      <scannerInfoCollector
+            class="org.eclipse.cdt.make.internal.core.scannerconfig2.PerFileSICollector"
+            scope="file"/>
+      <buildOutputProvider>
+         <open/>
+         <scannerInfoConsoleParser class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCPerFileBOPConsoleParser"/>
+      </buildOutputProvider>
+      <scannerInfoProvider providerId="makefileGenerator">
+         <run
+               arguments="-f ${project_name}_scd.mk"
+               command="make"
+               class="org.eclipse.cdt.make.internal.core.scannerconfig2.SCDMakefileGenerator"/>
+         <scannerInfoConsoleParser class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCPerFileSIPConsoleParser"/>
       </scannerInfoProvider>
    </extension>
    <extension
          point="org.eclipse.cdt.make.ui.DiscoveryProfilePage">
       <profilePage
             class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
-            name="Sourcery G++ GCC C discovery profile"
+            name="Managed Build System - per project scanner info profile (Sourcery G++ Lite/C)"
             profileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCManagedMakePerProjectProfileC">
       </profilePage>
-   </extension>
-   <extension
-         point="org.eclipse.cdt.make.ui.DiscoveryProfilePage">
       <profilePage
             class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
-            name="Sourcery G++ GCC C++ discovery profile"
+            name="Managed Build System - per project scanner info profile (Sourcery G++ Lite/C++)"
             profileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCManagedMakePerProjectProfileCPP">
+      </profilePage>
+      <profilePage
+            class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
+            name="GCC per project scanner info profile (Sourcery G++ Lite)"
+            profileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCStandardMakePerProjectProfile">
+      </profilePage>
+      <profilePage
+            class="org.eclipse.cdt.make.ui.dialogs.GCCPerFileSCDProfilePage"
+            name="GCC per file scanner info profile (Sourcery G++ Lite)"
+            profileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCStandardMakePerFileProfile">
       </profilePage>
    </extension>
    <extension
@@ -134,13 +180,13 @@
          name="ARM CodeSourcery GNU C/C++ managed make per project SCD profile (Windows)"
          point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
       <scannerInfoCollector
-            class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.DefaultGnuWinScannerInfoCollector"
+            class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMGnuWinScannerInfoCollector"
             scope="project">
       </scannerInfoCollector>
       <buildOutputProvider>
          <open></open>
          <scannerInfoConsoleParser
-               class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.ManagedGCCScannerInfoConsoleParser">
+               class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMManagedGCCScannerInfoConsoleParser">
          </scannerInfoConsoleParser>
       </buildOutputProvider>
       <scannerInfoProvider
@@ -156,17 +202,17 @@
       </scannerInfoProvider>
    </extension>
    <extension
-         id="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileCPP"
+         id="ARM_CS_GCCWinManagedMakePerProjectProfileCPP"
          name="ARM CodeSourcery GNU C/C++ managed make per project SCD profile (Windows)"
          point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
       <scannerInfoCollector
-            class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.DefaultGnuWinScannerInfoCollector"
+            class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMGnuWinScannerInfoCollector"
             scope="project">
       </scannerInfoCollector>
       <buildOutputProvider>
          <open></open>
          <scannerInfoConsoleParser
-               class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.ManagedGCCScannerInfoConsoleParser">
+               class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMManagedGCCScannerInfoConsoleParser">
          </scannerInfoConsoleParser>
       </buildOutputProvider>
       <scannerInfoProvider
@@ -177,7 +223,59 @@
                command="arm-none-eabi-g++">
          </run>
          <scannerInfoConsoleParser
-               class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.ManagedGCCScannerInfoConsoleParser">
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser">
+         </scannerInfoConsoleParser>
+      </scannerInfoProvider>
+   </extension>
+   <extension
+         id="ARM_CS_GCCWinStandardMakePerProjectProfile"
+         name="ARM CodeSourcery GNU C/C++ Scanner Info per project profile (Windows)"
+         point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+      <scannerInfoCollector
+            class="org.eclipse.cdt.make.internal.core.scannerconfig2.PerProjectSICollector"
+            scope="project">
+      </scannerInfoCollector>
+      <buildOutputProvider>
+         <open></open>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCScannerInfoConsoleParser">
+         </scannerInfoConsoleParser>
+      </buildOutputProvider>
+      <scannerInfoProvider
+            providerId="specsFile">
+         <run
+               arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}"
+               class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"
+               command="arm-none-eabi-gcc">
+         </run>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser">
+         </scannerInfoConsoleParser>
+      </scannerInfoProvider>
+   </extension>
+   <extension
+         id="ARM_CS_GCCWinStandardMakePerFileProfile"
+         name="ARM CodeSourcery GNU C/C++ Scanner Info per file profile (Windows)"
+         point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+      <scannerInfoCollector
+            class="org.eclipse.cdt.make.internal.core.scannerconfig2.PerFileSICollector"
+            scope="file">
+      </scannerInfoCollector>
+      <buildOutputProvider>
+         <open></open>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCPerFileBOPConsoleParser">
+         </scannerInfoConsoleParser>
+      </buildOutputProvider>
+      <scannerInfoProvider
+            providerId="makefileGenerator">
+         <run
+               arguments="-f ${project_name}_scd.mk"
+               class="org.eclipse.cdt.make.internal.core.scannerconfig2.SCDMakefileGenerator"
+               command="cs-make">
+         </run>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCPerFileSIPConsoleParser">
          </scannerInfoConsoleParser>
       </scannerInfoProvider>
    </extension>
@@ -185,18 +283,268 @@
          point="org.eclipse.cdt.make.ui.DiscoveryProfilePage">
       <profilePage
             class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
-            name="Sourcery G++ Windows GCC C discovery profile"
+            name="Managed Build System - per project scanner info profile (Sourcery G++ Lite Windows/C)"
             profileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC">
       </profilePage>
+      <profilePage
+            class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
+            name="Managed Build System - per project scanner info profile (Sourcery G++ Lite Windows/C++)"
+            profileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileCPP">
+      </profilePage>
+      <profilePage
+            class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
+            name="GCC per project scanner info profile (Sourcery G++ Lite Windows)"
+            profileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinStandardMakePerProjectProfile">
+      </profilePage>
+      <profilePage
+            class="org.eclipse.cdt.make.ui.dialogs.GCCPerFileSCDProfilePage"
+            name="GCC per file scanner info profile (Sourcery G++ Lite Windows)"
+            profileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinStandardMakePerFileProfile">
+      </profilePage>
+   </extension>
+
+   <extension
+         id="ARM_GCCManagedMakePerProjectProfileC"
+         name="ARM GNU C/C++ managed make per project SCD profile"
+         point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+      <scannerInfoCollector
+            class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMGCCScannerInfoCollector"
+            scope="project">
+      </scannerInfoCollector>
+      <buildOutputProvider>
+         <open></open>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMManagedGCCScannerInfoConsoleParser">
+         </scannerInfoConsoleParser>
+      </buildOutputProvider>
+      <scannerInfoProvider
+            providerId="specsFile">
+         <run
+               arguments="-E -P -v -dD ${plugin_state_location}/specs.c"
+               class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"
+               command="arm-elf-gcc">
+         </run>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser">
+         </scannerInfoConsoleParser>
+      </scannerInfoProvider>
+   </extension>
+   <extension
+         id="ARM_GCCManagedMakePerProjectProfileCPP"
+         name="ARM GNU C/C++ managed make per project SCD profile"
+         point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+      <scannerInfoCollector
+            class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMGCCScannerInfoCollector"
+            scope="project">
+      </scannerInfoCollector>
+      <buildOutputProvider>
+         <open></open>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMManagedGCCScannerInfoConsoleParser">
+         </scannerInfoConsoleParser>
+      </buildOutputProvider>
+      <scannerInfoProvider
+            providerId="specsFile">
+         <run
+               arguments="-E -P -v -dD ${plugin_state_location}/specs.cpp"
+               class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"
+               command="arm-elf-g++">
+         </run>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser">
+         </scannerInfoConsoleParser>
+      </scannerInfoProvider>
+   </extension>
+   <extension
+         id="ARM_GCCStandardMakePerProjectProfile"
+         name="ARM GNU C/C++ Scanner Info per project profile"
+         point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+      <scannerInfoCollector
+            class="org.eclipse.cdt.make.internal.core.scannerconfig2.PerProjectSICollector"
+            scope="project"/>
+      <buildOutputProvider>
+         <open/>
+         <scannerInfoConsoleParser class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCScannerInfoConsoleParser"/>
+      </buildOutputProvider>
+      <scannerInfoProvider providerId="specsFile">
+         <run
+               command="arm-elf-gcc"
+               arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}"
+               class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"/>
+         <scannerInfoConsoleParser class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser"/>
+      </scannerInfoProvider>
+   </extension>
+   
+   <extension
+         id="ARM_GCCStandardMakePerFileProfile"
+         name="ARM GNU C/C++ Scanner Info per file profile"
+         point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+      <scannerInfoCollector
+            class="org.eclipse.cdt.make.internal.core.scannerconfig2.PerFileSICollector"
+            scope="file"/>
+      <buildOutputProvider>
+         <open/>
+         <scannerInfoConsoleParser class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCPerFileBOPConsoleParser"/>
+      </buildOutputProvider>
+      <scannerInfoProvider providerId="makefileGenerator">
+         <run
+               arguments="-f ${project_name}_scd.mk"
+               command="make"
+               class="org.eclipse.cdt.make.internal.core.scannerconfig2.SCDMakefileGenerator"/>
+         <scannerInfoConsoleParser class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCPerFileSIPConsoleParser"/>
+      </scannerInfoProvider>
    </extension>
    <extension
          point="org.eclipse.cdt.make.ui.DiscoveryProfilePage">
       <profilePage
             class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
-            name="Sourcery G++ Windows GCC C++ discovery profile"
-            profileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileCPP">
+            name="Managed Build System - per project scanner info profile (GNUARM/C)"
+            profileId="org.eclipse.cdt.cross.arm.gnu.ARM_GCCManagedMakePerProjectProfileC">
+      </profilePage>
+      <profilePage
+            class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
+            name="Managed Build System - per project scanner info profile (GNUARM/C++)"
+            profileId="org.eclipse.cdt.cross.arm.gnu.ARM_GCCManagedMakePerProjectProfileCPP">
+      </profilePage>
+      <profilePage
+            class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
+            name="GCC per project scanner info profile (GNUARM)"
+            profileId="org.eclipse.cdt.cross.arm.gnu.ARM_GCCStandardMakePerProjectProfile">
+      </profilePage>
+      <profilePage
+            class="org.eclipse.cdt.make.ui.dialogs.GCCPerFileSCDProfilePage"
+            name="GCC per file scanner info profile (GNUARM)"
+            profileId="org.eclipse.cdt.cross.arm.gnu.ARM_GCCStandardMakePerFileProfile">
       </profilePage>
    </extension>
+   <extension
+         id="ARM_GCCWinManagedMakePerProjectProfileC"
+         name="ARM GNU C/C++ managed make per project SCD profile (Windows)"
+         point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+      <scannerInfoCollector
+            class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMGnuWinScannerInfoCollector"
+            scope="project">
+      </scannerInfoCollector>
+      <buildOutputProvider>
+         <open></open>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMManagedGCCScannerInfoConsoleParser">
+         </scannerInfoConsoleParser>
+      </buildOutputProvider>
+      <scannerInfoProvider
+            providerId="specsFile">
+         <run
+               arguments="-E -P -v -dD ${plugin_state_location}/specs.c"
+               class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"
+               command="arm-elf-gcc">
+         </run>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser">
+         </scannerInfoConsoleParser>
+      </scannerInfoProvider>
+   </extension>
+   <extension
+         id="ARM_GCCWinManagedMakePerProjectProfileCPP"
+         name="ARM GNU C/C++ managed make per project SCD profile (Windows)"
+         point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+      <scannerInfoCollector
+            class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMGnuWinScannerInfoCollector"
+            scope="project">
+      </scannerInfoCollector>
+      <buildOutputProvider>
+         <open></open>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMManagedGCCScannerInfoConsoleParser">
+         </scannerInfoConsoleParser>
+      </buildOutputProvider>
+      <scannerInfoProvider
+            providerId="specsFile">
+         <run
+               arguments="-E -P -v -dD ${plugin_state_location}/specs.cpp"
+               class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"
+               command="arm-elf-g++">
+         </run>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser">
+         </scannerInfoConsoleParser>
+      </scannerInfoProvider>
+   </extension>
+   <extension
+         id="ARM_GCCWinStandardMakePerProjectProfile"
+         name="ARM GNU C/C++ Scanner Info per project profile (Windows)"
+         point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+      <scannerInfoCollector
+            class="org.eclipse.cdt.make.internal.core.scannerconfig2.PerProjectSICollector"
+            scope="project">
+      </scannerInfoCollector>
+      <buildOutputProvider>
+         <open></open>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCScannerInfoConsoleParser">
+         </scannerInfoConsoleParser>
+      </buildOutputProvider>
+      <scannerInfoProvider
+            providerId="specsFile">
+         <run
+               arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}"
+               class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"
+               command="arm-elf-gcc">
+         </run>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser">
+         </scannerInfoConsoleParser>
+      </scannerInfoProvider>
+   </extension>
+   <extension
+         id="ARM_GCCWinStandardMakePerFileProfile"
+         name="ARM GNU C/C++ Scanner Info per file profile (Windows)"
+         point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+      <scannerInfoCollector
+            class="org.eclipse.cdt.make.internal.core.scannerconfig2.PerFileSICollector"
+            scope="file">
+      </scannerInfoCollector>
+      <buildOutputProvider>
+         <open></open>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCPerFileBOPConsoleParser">
+         </scannerInfoConsoleParser>
+      </buildOutputProvider>
+      <scannerInfoProvider
+            providerId="makefileGenerator">
+         <run
+               arguments="-f ${project_name}_scd.mk"
+               class="org.eclipse.cdt.make.internal.core.scannerconfig2.SCDMakefileGenerator"
+               command="make">
+         </run>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCPerFileSIPConsoleParser">
+         </scannerInfoConsoleParser>
+      </scannerInfoProvider>
+   </extension>
+   <extension
+         point="org.eclipse.cdt.make.ui.DiscoveryProfilePage">
+      <profilePage
+            class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
+            name="Managed Build System - per project scanner info profile (GNUARM Windows/C)"
+            profileId="org.eclipse.cdt.cross.arm.gnu.ARM_GCCWinManagedMakePerProjectProfileC">
+      </profilePage>
+      <profilePage
+            class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
+            name="Managed Build System - per project scanner info profile (GNUARM Windows/C++)"
+            profileId="org.eclipse.cdt.cross.arm.gnu.ARM_GCCWinManagedMakePerProjectProfileCPP">
+      </profilePage>
+      <profilePage
+            class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
+            name="GCC per project scanner info profile (GNUARM Windows)"
+            profileId="org.eclipse.cdt.cross.arm.gnu.ARM_GCCWinStandardMakePerProjectProfile">
+      </profilePage>
+      <profilePage
+            class="org.eclipse.cdt.make.ui.dialogs.GCCPerFileSCDProfilePage"
+            name="GCC per file scanner info profile (GNUARM Windows)"
+            profileId="org.eclipse.cdt.cross.arm.gnu.ARM_GCCWinStandardMakePerFileProfile">
+      </profilePage>
+   </extension>
+
    <extension
          id="ARM_GCC_BuildDefinitions"
          name="Managed Build Definitions"
@@ -2440,7 +2788,7 @@
                superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.assembler">
             <inputType
                   id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input"
-                  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC"
+                  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC|org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinStandardMakePerFileProfile"
                   superClass="org.eclipse.cdt.cross.arm.gnu.assembler.input">
             </inputType>
          </tool>
@@ -2451,7 +2799,7 @@
                superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.c.compiler">
             <inputType
                   id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.input"
-                  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC"
+                  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC|org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinStandardMakePerFileProfile"
                   superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.input">
             </inputType>
          </tool>
@@ -2462,7 +2810,7 @@
                superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.cpp.compiler">
             <inputType
                   id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.cpp.compiler.base.input"
-                  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileCPP"
+                  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileCPP|org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinStandardMakePerFileProfile"
                   superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.input">
             </inputType>
          </tool>
@@ -2891,7 +3239,7 @@
                superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.assembler">
             <inputType
                   id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.assembler.base.input"
-                  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCManagedMakePerProjectProfileC"
+                  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCManagedMakePerProjectProfileC|org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCStandardMakePerFileProfile"
                   superClass="org.eclipse.cdt.cross.arm.gnu.assembler.input">
             </inputType>
          </tool>
@@ -2903,7 +3251,7 @@
                superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.c.compiler">
             <inputType
                   id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.c.compiler.base.input"
-                  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCManagedMakePerProjectProfileC"
+                  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCManagedMakePerProjectProfileC|org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCStandardMakePerFileProfile"
                   superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.input">
             </inputType>
          </tool>
@@ -2915,7 +3263,7 @@
                superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.cpp.compiler">
             <inputType
                   id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.cpp.compiler.base.input"
-                  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCManagedMakePerProjectProfileCPP"
+                  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCManagedMakePerProjectProfileCPP|org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCStandardMakePerFileProfile"
                   superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.input">
             </inputType>
          </tool>
@@ -3350,7 +3698,7 @@
                superClass="org.eclipse.cdt.cross.arm.gnu.assembler">
             <inputType
                   id="org.eclipse.cdt.cross.arm.gnu.windows.assembler.base.input"
-				  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC"
+				  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_GCCWinManagedMakePerProjectProfileC|org.eclipse.cdt.cross.arm.gnu.ARM_GCCWinStandardMakePerFileProfile"
                   superClass="org.eclipse.cdt.cross.arm.gnu.assembler.input">
             </inputType>
          </tool>
@@ -3361,7 +3709,7 @@
                superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler">
             <inputType
                   id="org.eclipse.cdt.cross.arm.gnu.windows.c.compiler.base.input"
-				  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC"
+				  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_GCCWinManagedMakePerProjectProfileC|org.eclipse.cdt.cross.arm.gnu.ARM_GCCWinStandardMakePerFileProfile"
                   superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.input">
             </inputType>
          </tool>
@@ -3372,7 +3720,7 @@
                superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler">
             <inputType
                   id="org.eclipse.cdt.cross.arm.gnu.windows.cpp.compiler.base.input"
-				  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileCPP"
+				  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_GCCWinManagedMakePerProjectProfileCPP|org.eclipse.cdt.cross.arm.gnu.ARM_GCCWinStandardMakePerFileProfile"
                   superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.input">
             </inputType>
          </tool>
@@ -3801,7 +4149,7 @@
                superClass="org.eclipse.cdt.cross.arm.gnu.assembler">
             <inputType
                   id="org.eclipse.cdt.cross.arm.gnu.linux.assembler.base.input"
-				  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCManagedMakePerProjectProfileC"
+				  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_GCCManagedMakePerProjectProfileC|org.eclipse.cdt.cross.arm.gnu.ARM_GCCStandardMakePerFileProfile"
                   superClass="org.eclipse.cdt.cross.arm.gnu.assembler.input">
             </inputType>
          </tool>
@@ -3812,7 +4160,7 @@
                superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler">
             <inputType
                   id="org.eclipse.cdt.cross.arm.gnu.linux.c.compiler.base.input"
-				  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCManagedMakePerProjectProfileC"
+				  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_GCCManagedMakePerProjectProfileC|org.eclipse.cdt.cross.arm.gnu.ARM_GCCStandardMakePerFileProfile"
                   superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.input">
             </inputType>
          </tool>
@@ -3823,7 +4171,7 @@
                superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler">
             <inputType
                   id="org.eclipse.cdt.cross.arm.gnu.linux.cpp.compiler.base.input"
-				  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCManagedMakePerProjectProfileCPP"
+				  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_GCCManagedMakePerProjectProfileCPP|org.eclipse.cdt.cross.arm.gnu.ARM_GCCStandardMakePerFileProfile"
                   superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.input">
             </inputType>
          </tool>
@@ -4252,7 +4600,7 @@
                superClass="org.eclipse.cdt.cross.arm.gnu.assembler">
             <inputType
                   id="org.eclipse.cdt.cross.arm.gnu.macosx.assembler.base.input"
-				  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCManagedMakePerProjectProfileC"
+				  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_GCCManagedMakePerProjectProfileC|org.eclipse.cdt.cross.arm.gnu.ARM_GCCStandardMakePerFileProfile"
                   superClass="org.eclipse.cdt.cross.arm.gnu.assembler.input">
             </inputType>
          </tool>
@@ -4263,7 +4611,7 @@
                superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler">
             <inputType
                   id="org.eclipse.cdt.cross.arm.gnu.macosx.c.compiler.base.input"
-				  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCManagedMakePerProjectProfileC"
+				  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_GCCManagedMakePerProjectProfileC|org.eclipse.cdt.cross.arm.gnu.ARM_GCCStandardMakePerFileProfile"
                   superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.input">
             </inputType>
          </tool>
@@ -4274,7 +4622,7 @@
                superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler">
             <inputType
                   id="org.eclipse.cdt.cross.arm.gnu.macosx.cpp.compiler.base.input"
-				  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCManagedMakePerProjectProfileCPP"
+				  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_GCCManagedMakePerProjectProfileCPP|org.eclipse.cdt.cross.arm.gnu.ARM_GCCStandardMakePerFileProfile"
                   superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.input">
             </inputType>
          </tool>
@@ -4589,4 +4937,5 @@
       </projectType>
       
    </extension>
+
 </plugin>
