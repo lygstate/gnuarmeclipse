@@ -1,5 +1,5 @@
-This is a functional beta version of the new 
-GNU ARM Plug-in (Second Edition).
+TThis is a functional beta version of the new 
+GNU ARM Eclipse Plug-in (Second Edition).
 
 https://sourceforge.net/projects/gnuarmeclipse/
 
@@ -11,8 +11,12 @@ The recommended way is to use the Eclipse standard update mechanism:
 
 http://gnuarmeclipse.sourceforge.net/updates
 
-A quick and dirty way is to copy the plug-in .jar file to the 
-.../eclipse/plugins directory.
+The alternate solution to the online site is to download the archive 
+from SourceForge and to to point the Eclipse update mechanism to it
+(Help -> Software Updated -> Available Software -> Add Site -> Archive).
+
+A quick and dirty way is to extract the plug-in .jar file from the 
+downloaded archive and to copy it to the .../eclipse/plugins directory.
 
 
 Requirements
@@ -53,7 +57,13 @@ Debugging options for all tools were moved to a common "Debugging" section.
 The assembly step is now done with the more general 'gcc' instead of 'as'.
 
 Similarly, the link step is done by 'gcc/g++', instead of 'ld'.
+
  
+Bug Fixes & Changes since 0.5.3.200904072239
+--------------------------------------------
+
+- Discovery Options implemented for all toolchains. 
+
 
 Bug Fixes & Changes since 0.5.3.200903302247
 --------------------------------------------
@@ -61,30 +71,33 @@ Bug Fixes & Changes since 0.5.3.200903302247
 - empty makefile in C projects bug fixed 
 
 - the ARM icon is now visible in the Help -> About window.
+(only if installed via the update mechanism)
 
-- update site URL renamed from http://gnuarmeclipse.sourceforge.net/update
-to http://gnuarmeclipse.sourceforge.net/updates
+- update site URL renamed from 
+	http://gnuarmeclipse.sourceforge.net/update
+to 
+	http://gnuarmeclipse.sourceforge.net/updates
 
 
 Known Bugs
 ----------
 
-- Discovery Options are not yet properly implemented, the Per Language 
-scope should point to the 'per project scanner info profile 
-(GCCWinManagedMakePerProjectProfileC)' and the compiler command 
-should point to the proper tool like 'arm-none-eabi-gcc'. 
+- toolchain presence is not yet verified, so missing toolchains 
+are also offered for selection
+
+- 'Empty Project' template may not show for all platforms/configurations
+below ARM Cross Target Application/Static Library
 
 - screen update after selecting/deselecting additional tools requires 
 leaving that tab and returning
-
-- 'Empty Project' template not shown for ARM applications
 
 
 Any comments/suggestions will be highly appreciated.
 
 Regards,
 
-Liviu
+Liviu Ionescu
+
 ilg-ul@users.sourceforge.net
 ilg@livius.net
 
