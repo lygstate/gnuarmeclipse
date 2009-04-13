@@ -1293,7 +1293,6 @@
                dependencyContentType="org.eclipse.cdt.core.cHeader"
                dependencyExtensions="h"
                id="org.eclipse.cdt.cross.arm.gnu.assembler.input"
-               scannerConfigDiscoveryProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC|org.eclipse.cdt.make.core.GCCStandardMakePerFileProfile"
                sourceContentType="org.eclipse.cdt.core.asmSource"
                sources="s,S">
          </inputType>
@@ -1566,7 +1565,6 @@
                dependencyExtensions="h"
                id="org.eclipse.cdt.cross.arm.gnu.c.compiler.input"
                languageId="org.eclipse.cdt.core.gcc"
-               scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC|org.eclipse.cdt.make.core.GCCStandardMakePerFileProfile"
                sourceContentType="org.eclipse.cdt.core.cSource"
                sources="c"
                superClass="cdt.managedbuild.tool.gnu.c.compiler.input">
