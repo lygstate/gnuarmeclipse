@@ -1,31 +1,29 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?metadataRepository class='org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository' version='1.0.0'?>
-<repository name='file:/U:/ilg/Mobile Vault/Projects/workspace34-SDK/org.eclipse.cdt.cross.arm.gnu-updatesite/ - metadata' type='org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository' version='1.0.0'>
+<repository name='file:/U:/ilg/Mobile Vault/Projects/workspace34-SDK4/org.eclipse.cdt.cross.arm.gnu-updatesite/ - metadata' type='org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository' version='1'>
   <properties size='2'>
     <property name='p2.compressed' value='false'/>
-    <property name='p2.timestamp' value='1239133173739'/>
+    <property name='p2.timestamp' value='1239636015246'/>
   </properties>
-  <references size='4'>
+  <references size='2'>
     <repository url='http://gnuarmeclipse.sourceforge.net/updates' type='0' options='0'/>
-    <repository url='http://gnuarmeclipse.sourceforge.net/update' type='1' options='0'/>
     <repository url='http://gnuarmeclipse.sourceforge.net/updates' type='1' options='0'/>
-    <repository url='http://gnuarmeclipse.sourceforge.net/update' type='0' options='0'/>
   </references>
-  <units size='12'>
-    <unit id='org.eclipse.cdt.cross.arm.gnu.feature.group' version='0.5.3.200903302247' singleton='false'>
-      <update id='org.eclipse.cdt.cross.arm.gnu.feature.group' range='[0.0.0,0.5.3.200903302247)' severity='0'/>
+  <units size='8'>
+    <unit id='org.eclipse.cdt.cross.arm.gnu.feature.group' version='0.5.3.200904131820' singleton='false'>
+      <update id='org.eclipse.cdt.cross.arm.gnu.feature.group' range='[0.0.0,0.5.3.200904131820)' severity='0'/>
       <properties size='8'>
         <property name='org.eclipse.equinox.p2.name' value='GNU ARM C/C++ Development Support'/>
         <property name='org.eclipse.equinox.p2.description' value='%description'/>
         <property name='org.eclipse.equinox.p2.provider' value='%providerName'/>
         <property name='org.eclipse.equinox.p2.type.group' value='true'/>
-        <property name='df_LT.copyright' value='(c) 2009 Liviu Ionescu and others'/>
+        <property name='df_LT.copyright' value='Copyright © 2009 Liviu Ionescu and others.&#xA;Versions pre 0.5.3 Copyright © 2008 Wilfried Holzke and others.'/>
         <property name='df_LT.providerName' value='SourceForge Project'/>
         <property name='df_LT.description' value='This Plug-in is an Eclipse CDT Manged Build Extension for GNU ARM&#xA;Toolchains like CodeSourcery G++ Lite, GNUARM, WinARM, Yagarto.'/>
-        <property name='df_LT.licence' value='The &quot;GNU ARM Eclipse Plug-in&quot; is free software: you can redistribute it and/or&#xA;modify it under the terms of the GNU General Public License as published&#xA;by the Free Software Foundation, either version 3 of the License, or&#xA;(at your option) any later version.&#xA;&#xA;&quot;GNU ARM Eclipse Plug-in&quot; is distributed in the hope that it will be useful,&#xA;but WITHOUT ANY WARRANTY; without even the implied warranty of&#xA;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the&#xA;GNU General Public License for more details.&#xA;&#xA;You should have received a copy of the GNU General Public License&#xA;along with &quot;GNU ARM Eclipse Plug-in&quot; (in the user documentation and in the&#xA;file &quot;license.html&quot; within this plugin. &#xA;&#xA;If not, see &lt;http://www.gnu.org/licenses/gpl.html&gt;.'/>
+        <property name='df_LT.licence' value='The &quot;GNU ARM Eclipse Plug-in&quot; is free software: you can redistribute it and/or&#xA;modify it under the terms of the GNU General Public License as published&#xA;by the Free Software Foundation, either version 3 of the License, or&#xA;(at your option) any later version.&#xA;&#xA;&quot;GNU ARM Eclipse Plug-in&quot; is distributed in the hope that it will be useful,&#xA;but WITHOUT ANY WARRANTY; without even the implied warranty of&#xA;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the&#xA;GNU General Public License for more details.&#xA;&#xA;You should have received a copy of the GNU General Public License&#xA;along with &quot;GNU ARM Eclipse Plug-in&quot; (in the user documentation and in the&#xA;file &quot;license.html&quot; within this plugin. &#xA;&#xA;If not, see &lt;http://www.gnu.org/licenses/gpl.html&gt;.&#xA;'/>
       </properties>
       <provides size='2'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.cdt.cross.arm.gnu.feature.group' version='0.5.3.200903302247'/>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.cdt.cross.arm.gnu.feature.group' version='0.5.3.200904131820'/>
         <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
       </provides>
       <requires size='11'>
@@ -38,54 +36,14 @@
         <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.jface' range='3.4.0'/>
         <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.ui' range='3.4.0'/>
         <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.ui.console' range='3.3.0'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.cdt.cross.arm.gnu' range='[0.5.3.200903302247,0.5.3.200903302247]'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.cdt.cross.arm.gnu.feature.jar' range='[0.5.3.200903302247,0.5.3.200903302247]'>
+        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.cdt.cross.arm.gnu' range='[0.5.3.200904131820,0.5.3.200904131820]'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.cdt.cross.arm.gnu.feature.jar' range='[0.5.3.200904131820,0.5.3.200904131820]'>
           <filter>
             (org.eclipse.update.install.features=true)
           </filter>
         </required>
       </requires>
       <touchpoint id='null' version='0.0.0'/>
-      <licenses size='1'>
-        <license url='http://www.gnu.org/licenses/gpl.txt'>
-          %licence
-        </license>
-      </licenses>
-      <copyright>
-        %copyright
-      </copyright>
-    </unit>
-    <unit id='org.eclipse.cdt.cross.arm.gnu.feature.jar' version='0.5.3.200903302247'>
-      <update id='org.eclipse.cdt.cross.arm.gnu.feature.jar' range='[0.0.0,0.5.3.200903302247)' severity='0'/>
-      <properties size='7'>
-        <property name='org.eclipse.equinox.p2.name' value='GNU ARM C/C++ Development Support'/>
-        <property name='org.eclipse.equinox.p2.description' value='%description'/>
-        <property name='org.eclipse.equinox.p2.provider' value='%providerName'/>
-        <property name='df_LT.copyright' value='(c) 2009 Liviu Ionescu and others'/>
-        <property name='df_LT.providerName' value='SourceForge Project'/>
-        <property name='df_LT.description' value='This Plug-in is an Eclipse CDT Manged Build Extension for GNU ARM&#xA;Toolchains like CodeSourcery G++ Lite, GNUARM, WinARM, Yagarto.'/>
-        <property name='df_LT.licence' value='The &quot;GNU ARM Eclipse Plug-in&quot; is free software: you can redistribute it and/or&#xA;modify it under the terms of the GNU General Public License as published&#xA;by the Free Software Foundation, either version 3 of the License, or&#xA;(at your option) any later version.&#xA;&#xA;&quot;GNU ARM Eclipse Plug-in&quot; is distributed in the hope that it will be useful,&#xA;but WITHOUT ANY WARRANTY; without even the implied warranty of&#xA;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the&#xA;GNU General Public License for more details.&#xA;&#xA;You should have received a copy of the GNU General Public License&#xA;along with &quot;GNU ARM Eclipse Plug-in&quot; (in the user documentation and in the&#xA;file &quot;license.html&quot; within this plugin. &#xA;&#xA;If not, see &lt;http://www.gnu.org/licenses/gpl.html&gt;.'/>
-      </properties>
-      <provides size='4'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.cdt.cross.arm.gnu.feature.jar' version='0.5.3.200903302247'/>
-        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
-        <provided namespace='org.eclipse.update.feature' name='org.eclipse.cdt.cross.arm.gnu' version='0.5.3.200903302247'/>
-        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
-      </provides>
-      <filter>
-        (org.eclipse.update.install.features=true)
-      </filter>
-      <artifacts size='1'>
-        <artifact classifier='org.eclipse.update.feature' id='org.eclipse.cdt.cross.arm.gnu' version='0.5.3.200903302247'/>
-      </artifacts>
-      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
-      <touchpointData size='1'>
-        <instructions size='1'>
-          <instruction key='zipped'>
-            true
-          </instruction>
-        </instructions>
-      </touchpointData>
       <licenses size='1'>
         <license url='http://www.gnu.org/licenses/gpl.txt'>
           %licence
@@ -121,6 +79,46 @@
         </instructions>
       </touchpointData>
     </unit>
+    <unit id='org.eclipse.cdt.cross.arm.gnu.feature.jar' version='0.5.3.200904131820'>
+      <update id='org.eclipse.cdt.cross.arm.gnu.feature.jar' range='[0.0.0,0.5.3.200904131820)' severity='0'/>
+      <properties size='7'>
+        <property name='org.eclipse.equinox.p2.name' value='GNU ARM C/C++ Development Support'/>
+        <property name='org.eclipse.equinox.p2.description' value='%description'/>
+        <property name='org.eclipse.equinox.p2.provider' value='%providerName'/>
+        <property name='df_LT.copyright' value='Copyright © 2009 Liviu Ionescu and others.&#xA;Versions pre 0.5.3 Copyright © 2008 Wilfried Holzke and others.'/>
+        <property name='df_LT.providerName' value='SourceForge Project'/>
+        <property name='df_LT.description' value='This Plug-in is an Eclipse CDT Manged Build Extension for GNU ARM&#xA;Toolchains like CodeSourcery G++ Lite, GNUARM, WinARM, Yagarto.'/>
+        <property name='df_LT.licence' value='The &quot;GNU ARM Eclipse Plug-in&quot; is free software: you can redistribute it and/or&#xA;modify it under the terms of the GNU General Public License as published&#xA;by the Free Software Foundation, either version 3 of the License, or&#xA;(at your option) any later version.&#xA;&#xA;&quot;GNU ARM Eclipse Plug-in&quot; is distributed in the hope that it will be useful,&#xA;but WITHOUT ANY WARRANTY; without even the implied warranty of&#xA;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the&#xA;GNU General Public License for more details.&#xA;&#xA;You should have received a copy of the GNU General Public License&#xA;along with &quot;GNU ARM Eclipse Plug-in&quot; (in the user documentation and in the&#xA;file &quot;license.html&quot; within this plugin. &#xA;&#xA;If not, see &lt;http://www.gnu.org/licenses/gpl.html&gt;.&#xA;'/>
+      </properties>
+      <provides size='4'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.cdt.cross.arm.gnu.feature.jar' version='0.5.3.200904131820'/>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
+        <provided namespace='org.eclipse.update.feature' name='org.eclipse.cdt.cross.arm.gnu' version='0.5.3.200904131820'/>
+        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
+      </provides>
+      <filter>
+        (org.eclipse.update.install.features=true)
+      </filter>
+      <artifacts size='1'>
+        <artifact classifier='org.eclipse.update.feature' id='org.eclipse.cdt.cross.arm.gnu' version='0.5.3.200904131820'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='zipped'>
+            true
+          </instruction>
+        </instructions>
+      </touchpointData>
+      <licenses size='1'>
+        <license url='http://www.gnu.org/licenses/gpl.txt'>
+          %licence
+        </license>
+      </licenses>
+      <copyright>
+        %copyright
+      </copyright>
+    </unit>
     <unit id='tooling.osgi.bundle.default' version='1.0.0' singleton='false'>
       <hostRequirements size='1'>
         <required namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' range='0.0.0' multiple='true' greedy='false'/>
@@ -153,43 +151,6 @@
         </instructions>
       </touchpointData>
     </unit>
-    <unit id='org.eclipse.cdt.cross.arm.gnu' version='0.5.3.200903302247'>
-      <update id='org.eclipse.cdt.cross.arm.gnu' range='[0.0.0,0.5.3.200903302247)' severity='0'/>
-      <properties size='2'>
-        <property name='org.eclipse.equinox.p2.name' value='GNU ARM C/C++ Development Support'/>
-        <property name='org.eclipse.equinox.p2.provider' value='SourceForge Project'/>
-      </properties>
-      <provides size='3'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.cdt.cross.arm.gnu' version='0.5.3.200903302247'/>
-        <provided namespace='osgi.bundle' name='org.eclipse.cdt.cross.arm.gnu' version='0.5.3.200903302247'/>
-        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
-      </provides>
-      <requires size='9'>
-        <required namespace='osgi.bundle' name='org.eclipse.cdt.managedbuilder.core' range='5.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.cdt.ui' range='5.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.cdt.make.ui' range='5.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.cdt.core' range='5.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.core.resources' range='3.4.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.core.runtime' range='3.4.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.jface' range='3.4.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.ui' range='3.4.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.ui.console' range='3.3.0'/>
-      </requires>
-      <artifacts size='1'>
-        <artifact classifier='osgi.bundle' id='org.eclipse.cdt.cross.arm.gnu' version='0.5.3.200903302247'/>
-      </artifacts>
-      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
-      <touchpointData size='1'>
-        <instructions size='2'>
-          <instruction key='manifest'>
-            Bundle-Vendor: SourceForge Project&#xA;Bundle-ManifestVersion: 2&#xA;Bundle-Activator: org.eclipse.cdt.cross.arm.gnu.ARMPlugin&#xA;Bundle-RequiredExecutionEnvironment: J2SE-1.5&#xA;Bundle-ClassPath: bin/&#xA;Require-Bundle: org.eclipse.cdt.managedbuilder.core;bundle-version=&quot;5.0.0&quot;,org.eclipse.cdt.ui;bundle-version=&quot;5.0.0&quot;,org.eclipse.cdt.make.ui;bundle-version=&quot;5.0.0&quot;,org.eclipse.cdt.core;bundle-version=&quot;5.0.0&quot;,org.eclipse.core.resources;bundle-version=&quot;3.4.0&quot;,org.eclipse.core.runtime;bundle-version=&quot;3.4.0&quot;,org.eclipse.jface;bundle-version=&quot;3.4.0&quot;,org.eclipse.ui;bundle-version=&quot;3.4.0&quot;,org.eclipse.ui.console;bundle-version=&quot;3.3.0&quot;&#xA;Bundle-Name: GNU ARM C/C++ Development Support&#xA;Bundle-ActivationPolicy: lazy&#xA;Manifest-Version: 1.0&#xA;Bundle-SymbolicName: org.eclipse.cdt.cross.arm.gnu;singleton:=true&#xA;Bundle-Version: 0.5.3.200903302247
-          </instruction>
-          <instruction key='zipped'>
-            true
-          </instruction>
-        </instructions>
-      </touchpointData>
-    </unit>
     <unit id='tooling.org.eclipse.update.feature.default' version='1.0.0' singleton='false'>
       <hostRequirements size='1'>
         <required namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' range='0.0.0' optional='true' multiple='true' greedy='false'/>
@@ -215,6 +176,45 @@
           </instruction>
           <instruction key='uninstall'>
             uninstallFeature(feature:${artifact},featureId:default,featureVersion:default)
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+    <unit id='org.eclipse.cdt.cross.arm.gnu' version='0.5.3.200904131820'>
+      <update id='org.eclipse.cdt.cross.arm.gnu' range='[0.0.0,0.5.3.200904131820)' severity='0'/>
+      <properties size='2'>
+        <property name='org.eclipse.equinox.p2.name' value='GNU ARM C/C++ Development Support'/>
+        <property name='org.eclipse.equinox.p2.provider' value='SourceForge Project'/>
+      </properties>
+      <provides size='3'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.cdt.cross.arm.gnu' version='0.5.3.200904131820'/>
+        <provided namespace='osgi.bundle' name='org.eclipse.cdt.cross.arm.gnu' version='0.5.3.200904131820'/>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+      </provides>
+      <requires size='11'>
+        <required namespace='osgi.bundle' name='org.eclipse.cdt.managedbuilder.core' range='5.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.cdt.ui' range='5.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.cdt.make.ui' range='5.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.cdt.core' range='5.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.core.resources' range='3.4.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.core.runtime' range='3.4.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.jface' range='3.4.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.ui' range='3.4.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.ui.console' range='3.3.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.cdt.managedbuilder.gnu.ui' range='5.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.cdt.managedbuilder.ui' range='5.0.0'/>
+      </requires>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='org.eclipse.cdt.cross.arm.gnu' version='0.5.3.200904131820'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='2'>
+          <instruction key='manifest'>
+            Bundle-Vendor: SourceForge Project&#xA;Bundle-ManifestVersion: 2&#xA;Bundle-Activator: org.eclipse.cdt.cross.arm.gnu.ARMPlugin&#xA;Bundle-RequiredExecutionEnvironment: J2SE-1.5&#xA;Bundle-ClassPath: bin/&#xA;Require-Bundle: org.eclipse.cdt.managedbuilder.core;bundle-version=&quot;5.0.0&quot;,org.eclipse.cdt.ui;bundle-version=&quot;5.0.0&quot;,org.eclipse.cdt.make.ui;bundle-version=&quot;5.0.0&quot;,org.eclipse.cdt.core;bundle-version=&quot;5.0.0&quot;,org.eclipse.core.resources;bundle-version=&quot;3.4.0&quot;,org.eclipse.core.runtime;bundle-version=&quot;3.4.0&quot;,org.eclipse.jface;bundle-version=&quot;3.4.0&quot;,org.eclipse.ui;bundle-version=&quot;3.4.0&quot;,org.eclipse.ui.console;bundle-version=&quot;3.3.0&quot;,org.eclipse.cdt.managedbuilder.gnu.ui;bundle-version=&quot;5.0.0&quot;,org.eclipse.cdt.managedbuilder.ui;bundle-version=&quot;5.0.0&quot;&#xA;Bundle-Name: GNU ARM C/C++ Development Support&#xA;Bundle-ActivationPolicy: lazy&#xA;Manifest-Version: 1.0&#xA;Bundle-SymbolicName: org.eclipse.cdt.cross.arm.gnu;singleton:=true&#xA;Bundle-Version: 0.5.3.200904131820&#xA;
+          </instruction>
+          <instruction key='zipped'>
+            true
           </instruction>
         </instructions>
       </touchpointData>
@@ -362,140 +362,6 @@
         <provided namespace='java.package' name='org.xml.sax.helpers' version='0.0.0'/>
       </provides>
       <touchpoint id='org.eclipse.equinox.p2.native' version='1.0.0'/>
-    </unit>
-    <unit id='org.eclipse.cdt.cross.arm.gnu' version='0.0.0'>
-      <properties size='3'>
-        <property name='org.eclipse.equinox.p2.name' value='GNU ARM Features'/>
-        <property name='org.eclipse.equinox.p2.description' value='GNU ARM Features'/>
-        <property name='org.eclipse.equinox.p2.type.category' value='true'/>
-      </properties>
-      <provides size='1'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.cdt.cross.arm.gnu' version='0.0.0'/>
-      </provides>
-      <requires size='1'>
-        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.cdt.cross.arm.gnu.feature.group' range='[0.5.3.200903302247,0.5.3.200903302247]'/>
-      </requires>
-      <touchpoint id='null' version='0.0.0'/>
-    </unit>
-    <unit id='org.eclipse.cdt.cross.arm.gnu' version='0.5.3.200904072239'>
-      <update id='org.eclipse.cdt.cross.arm.gnu' range='[0.0.0,0.5.3.200904072239)' severity='0'/>
-      <properties size='2'>
-        <property name='org.eclipse.equinox.p2.name' value='GNU ARM C/C++ Development Support'/>
-        <property name='org.eclipse.equinox.p2.provider' value='SourceForge Project'/>
-      </properties>
-      <provides size='3'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.cdt.cross.arm.gnu' version='0.5.3.200904072239'/>
-        <provided namespace='osgi.bundle' name='org.eclipse.cdt.cross.arm.gnu' version='0.5.3.200904072239'/>
-        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
-      </provides>
-      <requires size='9'>
-        <required namespace='osgi.bundle' name='org.eclipse.cdt.managedbuilder.core' range='5.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.cdt.ui' range='5.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.cdt.make.ui' range='5.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.cdt.core' range='5.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.core.resources' range='3.4.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.core.runtime' range='3.4.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.jface' range='3.4.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.ui' range='3.4.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.ui.console' range='3.3.0'/>
-      </requires>
-      <artifacts size='1'>
-        <artifact classifier='osgi.bundle' id='org.eclipse.cdt.cross.arm.gnu' version='0.5.3.200904072239'/>
-      </artifacts>
-      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
-      <touchpointData size='1'>
-        <instructions size='2'>
-          <instruction key='manifest'>
-            Bundle-Vendor: SourceForge Project&#xA;Bundle-ManifestVersion: 2&#xA;Bundle-Activator: org.eclipse.cdt.cross.arm.gnu.ARMPlugin&#xA;Bundle-RequiredExecutionEnvironment: J2SE-1.5&#xA;Bundle-ClassPath: bin/&#xA;Require-Bundle: org.eclipse.cdt.managedbuilder.core;bundle-version=&quot;5.0.0&quot;,org.eclipse.cdt.ui;bundle-version=&quot;5.0.0&quot;,org.eclipse.cdt.make.ui;bundle-version=&quot;5.0.0&quot;,org.eclipse.cdt.core;bundle-version=&quot;5.0.0&quot;,org.eclipse.core.resources;bundle-version=&quot;3.4.0&quot;,org.eclipse.core.runtime;bundle-version=&quot;3.4.0&quot;,org.eclipse.jface;bundle-version=&quot;3.4.0&quot;,org.eclipse.ui;bundle-version=&quot;3.4.0&quot;,org.eclipse.ui.console;bundle-version=&quot;3.3.0&quot;&#xA;Bundle-Name: GNU ARM C/C++ Development Support&#xA;Bundle-ActivationPolicy: lazy&#xA;Manifest-Version: 1.0&#xA;Bundle-SymbolicName: org.eclipse.cdt.cross.arm.gnu;singleton:=true&#xA;Bundle-Version: 0.5.3.200904072239&#xA;
-          </instruction>
-          <instruction key='zipped'>
-            true
-          </instruction>
-        </instructions>
-      </touchpointData>
-    </unit>
-    <unit id='org.eclipse.cdt.cross.arm.gnu.feature.jar' version='0.5.3.200904072239'>
-      <update id='org.eclipse.cdt.cross.arm.gnu.feature.jar' range='[0.0.0,0.5.3.200904072239)' severity='0'/>
-      <properties size='7'>
-        <property name='org.eclipse.equinox.p2.name' value='GNU ARM C/C++ Development Support'/>
-        <property name='org.eclipse.equinox.p2.description' value='%description'/>
-        <property name='org.eclipse.equinox.p2.provider' value='%providerName'/>
-        <property name='df_LT.copyright' value='Copyright © 2009 Liviu Ionescu and others.&#xA;Versions pre 0.5.3 Copyright © 2008 Wilfried Holzke and others.'/>
-        <property name='df_LT.providerName' value='SourceForge Project'/>
-        <property name='df_LT.description' value='This Plug-in is an Eclipse CDT Manged Build Extension for GNU ARM&#xA;Toolchains like CodeSourcery G++ Lite, GNUARM, WinARM, Yagarto.'/>
-        <property name='df_LT.licence' value='The &quot;GNU ARM Eclipse Plug-in&quot; is free software: you can redistribute it and/or&#xA;modify it under the terms of the GNU General Public License as published&#xA;by the Free Software Foundation, either version 3 of the License, or&#xA;(at your option) any later version.&#xA;&#xA;&quot;GNU ARM Eclipse Plug-in&quot; is distributed in the hope that it will be useful,&#xA;but WITHOUT ANY WARRANTY; without even the implied warranty of&#xA;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the&#xA;GNU General Public License for more details.&#xA;&#xA;You should have received a copy of the GNU General Public License&#xA;along with &quot;GNU ARM Eclipse Plug-in&quot; (in the user documentation and in the&#xA;file &quot;license.html&quot; within this plugin. &#xA;&#xA;If not, see &lt;http://www.gnu.org/licenses/gpl.html&gt;.&#xA;'/>
-      </properties>
-      <provides size='4'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.cdt.cross.arm.gnu.feature.jar' version='0.5.3.200904072239'/>
-        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
-        <provided namespace='org.eclipse.update.feature' name='org.eclipse.cdt.cross.arm.gnu' version='0.5.3.200904072239'/>
-        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
-      </provides>
-      <filter>
-        (org.eclipse.update.install.features=true)
-      </filter>
-      <artifacts size='1'>
-        <artifact classifier='org.eclipse.update.feature' id='org.eclipse.cdt.cross.arm.gnu' version='0.5.3.200904072239'/>
-      </artifacts>
-      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
-      <touchpointData size='1'>
-        <instructions size='1'>
-          <instruction key='zipped'>
-            true
-          </instruction>
-        </instructions>
-      </touchpointData>
-      <licenses size='1'>
-        <license url='http://www.gnu.org/licenses/gpl.txt'>
-          %licence
-        </license>
-      </licenses>
-      <copyright>
-        %copyright
-      </copyright>
-    </unit>
-    <unit id='org.eclipse.cdt.cross.arm.gnu.feature.group' version='0.5.3.200904072239' singleton='false'>
-      <update id='org.eclipse.cdt.cross.arm.gnu.feature.group' range='[0.0.0,0.5.3.200904072239)' severity='0'/>
-      <properties size='8'>
-        <property name='org.eclipse.equinox.p2.name' value='GNU ARM C/C++ Development Support'/>
-        <property name='org.eclipse.equinox.p2.description' value='%description'/>
-        <property name='org.eclipse.equinox.p2.provider' value='%providerName'/>
-        <property name='org.eclipse.equinox.p2.type.group' value='true'/>
-        <property name='df_LT.copyright' value='Copyright © 2009 Liviu Ionescu and others.&#xA;Versions pre 0.5.3 Copyright © 2008 Wilfried Holzke and others.'/>
-        <property name='df_LT.providerName' value='SourceForge Project'/>
-        <property name='df_LT.description' value='This Plug-in is an Eclipse CDT Manged Build Extension for GNU ARM&#xA;Toolchains like CodeSourcery G++ Lite, GNUARM, WinARM, Yagarto.'/>
-        <property name='df_LT.licence' value='The &quot;GNU ARM Eclipse Plug-in&quot; is free software: you can redistribute it and/or&#xA;modify it under the terms of the GNU General Public License as published&#xA;by the Free Software Foundation, either version 3 of the License, or&#xA;(at your option) any later version.&#xA;&#xA;&quot;GNU ARM Eclipse Plug-in&quot; is distributed in the hope that it will be useful,&#xA;but WITHOUT ANY WARRANTY; without even the implied warranty of&#xA;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the&#xA;GNU General Public License for more details.&#xA;&#xA;You should have received a copy of the GNU General Public License&#xA;along with &quot;GNU ARM Eclipse Plug-in&quot; (in the user documentation and in the&#xA;file &quot;license.html&quot; within this plugin. &#xA;&#xA;If not, see &lt;http://www.gnu.org/licenses/gpl.html&gt;.&#xA;'/>
-      </properties>
-      <provides size='2'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.cdt.cross.arm.gnu.feature.group' version='0.5.3.200904072239'/>
-        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
-      </provides>
-      <requires size='11'>
-        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.cdt.managedbuilder.core' range='5.0.0'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.cdt.ui' range='5.0.0'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.cdt.make.ui' range='5.0.0'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.cdt.core' range='5.0.0'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.core.resources' range='3.4.0'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.core.runtime' range='3.4.0'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.jface' range='3.4.0'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.ui' range='3.4.0'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.ui.console' range='3.3.0'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.cdt.cross.arm.gnu' range='[0.5.3.200904072239,0.5.3.200904072239]'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.cdt.cross.arm.gnu.feature.jar' range='[0.5.3.200904072239,0.5.3.200904072239]'>
-          <filter>
-            (org.eclipse.update.install.features=true)
-          </filter>
-        </required>
-      </requires>
-      <touchpoint id='null' version='0.0.0'/>
-      <licenses size='1'>
-        <license url='http://www.gnu.org/licenses/gpl.txt'>
-          %licence
-        </license>
-      </licenses>
-      <copyright>
-        %copyright
-      </copyright>
     </unit>
   </units>
 </repository>
