@@ -1,50 +1,65 @@
 package org.eclipse.cdt.cross.arm.gnu.sourcery.windows;
 
+import java.io.File;
+
 import org.eclipse.cdt.managedbuilder.core.IManagedIsToolChainSupported;
+import org.eclipse.cdt.managedbuilder.core.ITool;
 import org.eclipse.cdt.managedbuilder.core.IToolChain;
-import org.eclipse.cdt.utils.WindowsRegistry;
 import org.eclipse.core.runtime.PluginVersionIdentifier;
 
 @SuppressWarnings("deprecation")
 public class IsToolChainSupported implements IManagedIsToolChainSupported {
 
-	static boolean bSuppChecked = false;
-	static boolean bToolchainIsSupported = false;
-
-	private static final String PROPERTY_OS_NAME = "os.name"; //$NON-NLS-1$
-	private static final String PROPERTY_OS_VALUE = "windows";//$NON-NLS-1$
-
-	private static final String REGISTRY_KEY = "\\HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Sourcery G++ Lite for ARM EABI\\InstallLocation\\"; //$NON-NLS-1$ 
-	private static final String PATH_NAME = "native"; //$NON-NLS-1$
+	static boolean ms_bSuppChecked = false;
+	static boolean ms_bToolchainIsSupported = false;
 
 	public boolean isSupported(IToolChain oToolChain,
 			PluginVersionIdentifier sVersion, String sInstance) {
 
-		if (bSuppChecked)
-			return bToolchainIsSupported;
+		if (ms_bSuppChecked)
+			return ms_bToolchainIsSupported;
 
-		bSuppChecked = true;
-		bToolchainIsSupported = false;
-		
-		if (!isWindows())
+		ms_bSuppChecked = true;
+		ms_bToolchainIsSupported = false;
+
+		if (!PathResolver.isWindows())
 			return false;
 
-		WindowsRegistry registry = WindowsRegistry.getRegistry();
-		if (null != registry) {
-			String s;
-			s = registry.getLocalMachineValue(REGISTRY_KEY, PATH_NAME);
+		String sToolPath;
+		sToolPath = PathResolver.getBinPath();
+		if (sToolPath != null) {
 
-			if (s != null) {
-				bToolchainIsSupported = true;
+			if (false) {
+				// experimental support to test each tool, but it is not appropriate
+				ITool aoTools[];
+				aoTools = oToolChain.getTools();
+				for (int i = 0; i < aoTools.length; ++i) {
+					ITool oTool;
+					oTool = aoTools[i];
+
+					if (true)
+						System.out.println(oTool.getName() + " "
+								+ oTool.getToolCommand() + " "
+								+ oTool.getNatureFilter() + " "
+								+ oTool.isEnabled() + " " + oTool.getId());
+
+					if (oTool.isEnabled()) {
+
+						String sTool;
+						sTool = sToolPath + "\\" + oTool.getToolCommand()
+								+ ".exe";
+						File oFile;
+						oFile = new File(sTool);
+						if (!oFile.exists() || oFile.isDirectory()) {
+							return false; // no tool
+						}
+					}
+				}
 			}
+
+			ms_bToolchainIsSupported = true;
 		}
 
-		return bToolchainIsSupported;
+		return ms_bToolchainIsSupported;
 	}
-
-	public static boolean isWindows() {
-		return (System.getProperty(PROPERTY_OS_NAME).toLowerCase()
-				.startsWith(PROPERTY_OS_VALUE));
-	}
-
 }

@@ -2672,8 +2672,10 @@
       </configuration>
       <toolChain
             archList="all"
+            configurationEnvironmentSupplier="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.ConfigurationEnvironmentSupplier"
             id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.toolchain.base"
             isAbstract="false"
+            isToolChainSupported="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.IsToolChainSupported"
             name="ARM Windows GCC (Sourcery G++ Lite)"
             osList="win32">
          <targetPlatform
