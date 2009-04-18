@@ -1,5 +1,6 @@
 package org.eclipse.cdt.cross.arm.gnu.sourcery.linux;
 
+import org.eclipse.cdt.cross.arm.gnu.Tools;
 import org.eclipse.cdt.managedbuilder.core.IManagedIsToolChainSupported;
 import org.eclipse.cdt.managedbuilder.core.IToolChain;
 import org.eclipse.core.runtime.PluginVersionIdentifier;
@@ -7,34 +8,38 @@ import org.eclipse.core.runtime.PluginVersionIdentifier;
 @SuppressWarnings("deprecation")
 public class IsToolChainSupported implements IManagedIsToolChainSupported {
 
-	static boolean bSuppChecked = false;
-	static boolean bToolchainIsSupported = false;
+	static boolean ms_bSuppChecked = false;
+	static boolean ms_bToolchainIsSupported = false;
 
-	private static final String PROPERTY_OS_NAME = "os.name"; //$NON-NLS-1$
-	private static final String PROPERTY_OS_VALUE = "linux";//$NON-NLS-1$
+	private static final String GCC_CS_ARM = "arm-none-linux-gnueabi-gcc"; //$NON-NLS-1$
 
-
+	/*
+	 * Called for each project and configuration at start-up, for each project
+	 * type at New Project, with isDirty() at edit, and !isDirty() after save.
+	 */
 	public boolean isSupported(IToolChain oToolChain,
 			PluginVersionIdentifier sVersion, String sInstance) {
 
-		if (bSuppChecked)
-			return bToolchainIsSupported;
+		if (ms_bSuppChecked)
+			return ms_bToolchainIsSupported;
 
-		bSuppChecked = true;
-		bToolchainIsSupported = false;
-		
-		if (!isLinux())
+		ms_bSuppChecked = true;
+		ms_bToolchainIsSupported = false;
+
+		if (!Tools.isLinux())
 			return false;
 
-		// TODO: compute bToolchainIsSupported properly
-		bToolchainIsSupported = true;
-		
-		return bToolchainIsSupported;
-	}
+		if (false)
+			System.out.println(oToolChain.getName() + " " + sInstance + " "
+					+ oToolChain.isDirty() + " " + oToolChain.isSystemObject()
+					+ " " + oToolChain.getId() + " "
+					+ oToolChain.getSuperClass());
 
-	public static boolean isLinux() {
-		return (System.getProperty(PROPERTY_OS_NAME).toLowerCase()
-				.startsWith(PROPERTY_OS_VALUE));
-	}
+		String sLines[];
+		sLines = Tools.exec(GCC_CS_ARM, oToolChain.getParent());
+		if (sLines != null)
+			ms_bToolchainIsSupported = true;
 
+		return ms_bToolchainIsSupported;
+	}
 }
