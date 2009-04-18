@@ -1,4 +1,21 @@
-[20090407]
+[2009-04-18]
+
+- '-nostdlib' enabled by default for linkers
+
+- 'CodeSourcery G++ Lite' for Windows toolchain presence tested (by 
+attempting to execute 'arm-none-eabi-gcc')
+
+- 'CodeSourcery G++ Lite' for Linux toolchain presence tested (by 
+attempting to execute 'arm-none-linux-gnueabi-gcc')
+
+- 'GNUARM' (and derivatives) toolchain presence tested (by 
+attempting to execute 'arm-elf-gcc')
+
+- PATH automatic discovery for Windows versions of 'CodeSourcery G++ Lite'
+and 'GNUARM 4.1.1', by using Windows Registry information. No need to have 
+them in the system PATH.
+
+[2009-04-07]
 
 - C Linker empty makefile bug fixed (spaces in secondaryOutputs/targetTool)
 
@@ -9,7 +26,7 @@ visible in the Help -> About window.
 to http://gnuarmeclipse.sourceforge.net/updates
 
 
-[20090403]
+[2009-04-03]
 
 - org.eclipse.cdt.core.templateAssociations (schema in org.eclipse.cdt.core)
 points to all toolchain bases, as specified in schema examples and used in
