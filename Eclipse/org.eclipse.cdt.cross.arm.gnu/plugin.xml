@@ -1912,7 +1912,7 @@
          <option
                category="org.eclipse.cdt.cross.arm.gnu.c.link.category.general"
                command="-nodefaultlibs"
-               defaultValue="true"
+               defaultValue="false"
                id="org.eclipse.cdt.cross.arm.gnu.c.link.option.nodeflibs"
                name="Do not use default libraries (-nodefaultlibs)"
                valueType="boolean">
@@ -1920,7 +1920,7 @@
          <option
                category="org.eclipse.cdt.cross.arm.gnu.c.link.category.general"
                command="-nostdlib"
-               defaultValue="false"
+               defaultValue="true"
                id="org.eclipse.cdt.cross.arm.gnu.c.link.option.nostdlibs"
                name="No startup or default libs (-nostdlib)"
                valueType="boolean">
@@ -2084,7 +2084,7 @@
          <option
                category="org.eclipse.cdt.cross.arm.gnu.cpp.link.category.general"
                command="-nodefaultlibs"
-               defaultValue="true"
+               defaultValue="false"
                id="org.eclipse.cdt.cross.arm.gnu.cpp.link.option.nodeflibs"
                name="Do not use default libraries (-nodefaultlibs)"
                valueType="boolean">
@@ -2092,7 +2092,7 @@
          <option
                category="org.eclipse.cdt.cross.arm.gnu.cpp.link.category.general"
                command="-nostdlib"
-               defaultValue="false"
+               defaultValue="true"
                id="org.eclipse.cdt.cross.arm.gnu.cpp.link.option.nostdlibs"
                name="No startup or default libs (-nostdlib)"
                valueType="boolean">
