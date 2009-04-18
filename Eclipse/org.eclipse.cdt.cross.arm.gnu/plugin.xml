@@ -3124,11 +3124,12 @@
          </configuration>
       </projectType>
             <toolChain
-            archList="all"
-            id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.toolchain.base"
-            isAbstract="false"
-            name="ARM Linux GCC (Sourcery G++ Lite)"
-            osList="linux">
+                  archList="all"
+                  id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.toolchain.base"
+                  isAbstract="false"
+                  isToolChainSupported="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.IsToolChainSupported"
+                  name="ARM Linux GCC (Sourcery G++ Lite)"
+                  osList="linux">
          <targetPlatform
                archList="all"
                binaryParser="org.eclipse.cdt.core.GNU_ELF"
@@ -3584,11 +3585,13 @@
       </projectType>
       
             <toolChain
-            archList="all"
-            id="org.eclipse.cdt.cross.arm.gnu.windows.toolchain.base"
-            isAbstract="false"
-            name="ARM Windows GCC (GNUARM, WinARM, Yagarto)"
-            osList="win32">
+                  archList="all"
+                  configurationEnvironmentSupplier="org.eclipse.cdt.cross.arm.gnu.windows.ConfigurationEnvironmentSupplier"
+                  id="org.eclipse.cdt.cross.arm.gnu.windows.toolchain.base"
+                  isAbstract="false"
+                  isToolChainSupported="org.eclipse.cdt.cross.arm.gnu.windows.IsToolChainSupported"
+                  name="ARM Windows GCC (GNUARM, WinARM, Yagarto)"
+                  osList="win32">
          <targetPlatform
                archList="all"
                binaryParser="org.eclipse.cdt.core.GNU_ELF"
