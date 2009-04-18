@@ -1,5 +1,6 @@
 package org.eclipse.cdt.cross.arm.gnu.sourcery.windows;
 
+import org.eclipse.cdt.cross.arm.gnu.Tools;
 import org.eclipse.cdt.managedbuilder.core.IConfiguration;
 import org.eclipse.cdt.managedbuilder.envvar.IBuildEnvironmentVariable;
 import org.eclipse.cdt.managedbuilder.envvar.IConfigurationEnvironmentVariableSupplier;
@@ -16,7 +17,7 @@ public class ConfigurationEnvironmentSupplier implements
 	public IBuildEnvironmentVariable getVariable(String variableName,
 			IConfiguration configuration, IEnvironmentVariableProvider provider) {
 
-		if (!PathResolver.isWindows()) //$NON-NLS-1$ 
+		if (!Tools.isWindows()) //$NON-NLS-1$ 
 			return null;
 
 		if (variableName == null)
