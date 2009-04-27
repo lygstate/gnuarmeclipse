@@ -16,9 +16,14 @@ import org.eclipse.cdt.utils.spawner.ProcessFactory;
 public class Tools {
 
 	private static final String PROPERTY_OS_NAME = "os.name"; //$NON-NLS-1$
-	private static final String PROPERTY_OS_VALUE_WINDOWS = "windows";//$NON-NLS-1$
-	private static final String PROPERTY_OS_VALUE_LINUX = "linux";//$NON-NLS-1$
-	private static final String PROPERTY_OS_VALUE_MACOSX = "macosx";//$NON-NLS-1$
+	public static final String PROPERTY_OS_VALUE_WINDOWS = "windows";//$NON-NLS-1$
+	public static final String PROPERTY_OS_VALUE_LINUX = "linux";//$NON-NLS-1$
+	public static final String PROPERTY_OS_VALUE_MACOSX = "macosx";//$NON-NLS-1$
+
+	public static boolean isPlatform(String sPlatform) {
+		return (System.getProperty(PROPERTY_OS_NAME).toLowerCase()
+				.startsWith(sPlatform));
+	}
 
 	public static boolean isWindows() {
 		return (System.getProperty(PROPERTY_OS_NAME).toLowerCase()
