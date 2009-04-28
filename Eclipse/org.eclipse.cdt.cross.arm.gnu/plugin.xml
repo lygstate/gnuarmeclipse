@@ -4041,6 +4041,7 @@
             archList="all"
             id="org.eclipse.cdt.cross.arm.gnu.linux.toolchain.base"
             isAbstract="false"
+            isToolChainSupported="org.eclipse.cdt.cross.arm.gnu.linux.IsToolChainSupported"
             name="ARM Linux GCC (GNUARM)"
             osList="linux">
          <targetPlatform
@@ -4489,11 +4490,12 @@
       </projectType>
       
             <toolChain
-            archList="all"
-            id="org.eclipse.cdt.cross.arm.gnu.macosx.toolchain.base"
-            isAbstract="false"
-            name="ARM Mac OS/X GCC (GNUARM)"
-            osList="macosx">
+                  archList="all"
+                  id="org.eclipse.cdt.cross.arm.gnu.macosx.toolchain.base"
+                  isAbstract="false"
+                  isToolChainSupported="org.eclipse.cdt.cross.arm.gnu.macosx.IsToolChainSupported"
+                  name="ARM Mac OS/X GCC (GNUARM)"
+                  osList="macosx">
          <targetPlatform
                archList="all"
                binaryParser="org.eclipse.cdt.core.GNU_ELF"
