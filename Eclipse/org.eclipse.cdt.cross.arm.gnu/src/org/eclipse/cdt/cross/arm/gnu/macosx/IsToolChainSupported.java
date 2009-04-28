@@ -1,4 +1,4 @@
-package org.eclipse.cdt.cross.arm.gnu.windows;
+package org.eclipse.cdt.cross.arm.gnu.macosx;
 
 import org.eclipse.cdt.cross.arm.gnu.Tools;
 
@@ -7,7 +7,7 @@ public class IsToolChainSupported extends
 
 	public String getPlatform()
 	{
-		return Tools.PROPERTY_OS_VALUE_WINDOWS;
+		return Tools.PROPERTY_OS_VALUE_MACOSX;
 	}
 
 }
