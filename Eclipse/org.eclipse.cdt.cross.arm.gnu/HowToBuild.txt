@@ -5,18 +5,53 @@
 - DO NOT update to the latest versions of Plug-in Development (if you do so, 
 launching Eclipse to test the plug-in might end with a strange error).
 
-- add 'C and C++ Development' plug-ins from the Ganymede update site
+- add 'C and C++ Development' plug-ins from the 'Ganymede update site'
 
-- add 'C and C++ Development Tools Source' from the CDT update site
+- add 'Eclipse C/C++ Development Tooling Source' from the CDT update site
+http://download.eclipse.org/tools/cdt/releases/ganymede, Uncategorized
+
 (without CDT sources the extension point schemas will not be available
 so attempts to add new elements to the extensions will not be possible,
 and only 'Generic' elements will be offered).
 
-- add SVN and SVN connector plug-ins (see Tortoise update site)
+- add Subversive SVN plug-in (the first three; usually no need for 
+the Uncategorized sources) from
+
+http://download.eclipse.org/technology/subversive/0.7/update-site/
+
+
+- add Polarion SVN connector plug-in (the first one; 
+usually no need for the Uncategorized sources) from
+
+http://community.polarion.com/projects/subversive/download/eclipse/2.0/update-site/
+
+on Windows, install the Win connectors; on Linux DO NOT try to install them,
+the default is the SVNKit.
+ 
+(see Tortoise update site at
+http://community.polarion.com/index.php?page=download&project=subversive)
+
+
+- on Linux,
+ 
+$ sudo apt-get install subversion 
+
+if necessary, also install:
+
+$ sudo apt-get install libsvn-java
+
+and then add this to your eclipse.ini:
+
+-Djava.library.path=/usr/lib/jni
+
+(step not confirmed)
+
 
 - SVN check out from 
 
-https://gnuarmeclipse.svn.sourceforge.net/svnroot/gnuarmeclipse/trunk/
+https://gnuarmeclipse.svn.sourceforge.net/svnroot/gnuarmeclipse/
+
+Browse: trunk
 
 the following 3 projects:
 
