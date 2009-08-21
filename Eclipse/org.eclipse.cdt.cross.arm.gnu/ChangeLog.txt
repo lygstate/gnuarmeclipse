@@ -1,15 +1,28 @@
+[2009-08-21]
+
+- patches from Freddie Chopin applied
+	- linker --gc-sections added
+	- linker -nostartfiles enabled for C, disabled for C++
+	- linker -nostdlibs disabled
+	- C++ compiler -no-rtti option added
+	- C/C++ compiler signed char as option, default is unsigned (compiler default)
+	
+- experimental toolchain presence support not completed, 
+temporarily disabled until properly implemented 
+	
+
 [2009-04-18]
 
 - '-nostdlib' enabled by default for linkers
 
 - 'CodeSourcery G++ Lite' for Windows toolchain presence tested (by 
-attempting to execute 'arm-none-eabi-gcc')
+attempting to execute 'arm-none-eabi-gcc') [experimental]
 
 - 'CodeSourcery G++ Lite' for Linux toolchain presence tested (by 
-attempting to execute 'arm-none-linux-gnueabi-gcc')
+attempting to execute 'arm-none-linux-gnueabi-gcc') [experimental]
 
 - 'GNUARM' (and derivatives) toolchain presence tested (by 
-attempting to execute 'arm-elf-gcc')
+attempting to execute 'arm-elf-gcc') [experimental]
 
 - PATH automatic discovery for Windows versions of 'CodeSourcery G++ Lite'
 and 'GNUARM 4.1.1', by using Windows Registry information. No need to have 
