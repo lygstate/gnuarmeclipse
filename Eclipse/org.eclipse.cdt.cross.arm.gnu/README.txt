@@ -60,7 +60,18 @@ The assembly step is now done with the more general 'gcc' instead of 'as'.
 
 Similarly, the link step is done by 'gcc/g++', instead of 'ld'.
 
- 
+
+Bug Fixes & Changes since 0.5.3.200904131820
+--------------------------------------------
+
+- patches from Freddie Chopin applied
+	- linker --gc-sections added
+	- linker -nostartfiles enabled for C, disabled for C++
+	- linker -nostdlibs disabled
+	- C++ compiler -no-rtti option added
+	- C/C++ compiler signed char as option, default is unsigned (compiler default)
+
+
 Bug Fixes & Changes since 0.5.3.200904072239
 --------------------------------------------
 
