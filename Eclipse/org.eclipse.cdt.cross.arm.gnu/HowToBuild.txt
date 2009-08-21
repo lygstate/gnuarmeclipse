@@ -44,20 +44,62 @@ and then add this to your eclipse.ini:
 
 -Djava.library.path=/usr/lib/jni
 
-(step not confirmed)
+(step not confirmed, I did my development on Windows)
+
+- create a new workspace
+
+- change workspace preferences
+	General -> Workspace
+		disable Build automatically
+		enable Refresh automatically
+		enable Save automatically before rebuild
+		Text file encoding: UTF-8
 
 
-- SVN check out from 
+- New Project -> Project from SVN 
 
-https://gnuarmeclipse.svn.sourceforge.net/svnroot/gnuarmeclipse/
+URL: 'https://gnuarmeclipse.svn.sourceforge.net/svnroot/gnuarmeclipse/'
 
-Browse: trunk
+Next -> Select Resource
 
-the following 3 projects:
+
+Browse: gnuarmeclipse -> trunk
+
+iterrate the following 3 projects:
 
 org.eclipse.cdt.cross.arm.gnu
 org.eclipse.cdt.cross.arm.gnu-feature
 org.eclipse.cdt.cross.arm.gnu-updatesite
+
+Select 'Head Revision'
+
+press Finish 
+
+Check Out As page:
+select 'Check out as a project with the name specified', Depth: Recursively
+
+press Finish
+
+(the project should be checked out now)
+
+
+- check if the references in the org.eclipse.cdt.cross.arm.gnu project were recognized.
+(open the project and check if JRE System Library and Plug-in Dependencies are populated)
+
+- Run As -> Eclipse Application; close new Eclipse instance
+
+- Project properties -> Run/Debug Settings -> Eclipse Application -> Edit
+	Plug-ins Tab
+		Launch with: 'plug-ins selected below only'
+		Select Workspace, org.eclipse.cdt.cross.arm.gnu
+		Deselect 'Target Platform'
+		Deselect 'Add new workspace plug-ins to this launch configuration automatically'
+	
+- Run As -> Eclipse Application
+	Help -> About Eclipse SDK -> Plug-in Details
+	(the 'GNU ARM C/C++ Development Support' must be present)
+
+
 
 - in gnu-updatesite remove features/* plugins/* artifacts.xml content.xml
 
