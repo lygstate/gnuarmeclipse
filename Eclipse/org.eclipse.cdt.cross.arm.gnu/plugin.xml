@@ -1529,11 +1529,10 @@
          </option>
          <option
                category="org.eclipse.cdt.cross.arm.gnu.c.compiler.category.other"
-               command="-funsigned-char"
-               commandFalse="-fsigned-char"
+               command="-fsigned-char"
                defaultValue="false"
-               id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.misc.unsignedchar"
-               name="&apos;char&apos; is unsigned (-funsigned-char)"
+               id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.misc.signedchar"
+               name="&apos;char&apos; is signed (-fsigned-char)"
                valueType="boolean">
          </option>
          <option
@@ -1819,11 +1818,18 @@
          </option>
          <option
                category="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.category.other"
-               command="-funsigned-char"
-               commandFalse="-fsigned-char"
+               command="-fno-rtti"
+               defaultValue="true"
+               id="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.misc.nortti"
+               name="Do not use RTTI (-fno-rtti)"
+               valueType="boolean">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.category.other"
+               command="-fsigned-char"
                defaultValue="false"
-               id="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.misc.unsignedchar"
-               name="&apos;char&apos; is unsigned (-funsigned-char)"
+               id="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.misc.signedchar"
+               name="&apos;char&apos; is signed (-fsigned-char)"
                valueType="boolean">
          </option>
          <option
@@ -1844,7 +1850,7 @@
          </option>
          <option
                category="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.category.other"
-               defaultValue="-c -fmessage-length=0 -fno-rtti"
+               defaultValue="-c -fmessage-length=0"
                id="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.other.otherflags"
                name="Other flags"
                valueType="string">
@@ -1904,7 +1910,7 @@
          <option
                category="org.eclipse.cdt.cross.arm.gnu.c.link.category.general"
                command="-nostartfiles"
-               defaultValue="false"
+               defaultValue="true"
                id="org.eclipse.cdt.cross.arm.gnu.c.link.option.nostart"
                name="Do not use standard start files (-nostartfiles)"
                valueType="boolean">
@@ -1920,9 +1926,17 @@
          <option
                category="org.eclipse.cdt.cross.arm.gnu.c.link.category.general"
                command="-nostdlib"
-               defaultValue="true"
+               defaultValue="false"
                id="org.eclipse.cdt.cross.arm.gnu.c.link.option.nostdlibs"
                name="No startup or default libs (-nostdlib)"
+               valueType="boolean">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.c.link.category.general"
+               command="-Xlinker --gc-sections"
+               defaultValue="false"
+               id="org.eclipse.cdt.cross.arm.gnu.c.link.option.gcsections"
+               name="Remove unused sections (-Xlinker --gc-sections)"
                valueType="boolean">
          </option>
          <option
@@ -2092,9 +2106,17 @@
          <option
                category="org.eclipse.cdt.cross.arm.gnu.cpp.link.category.general"
                command="-nostdlib"
-               defaultValue="true"
+               defaultValue="false"
                id="org.eclipse.cdt.cross.arm.gnu.cpp.link.option.nostdlibs"
                name="No startup or default libs (-nostdlib)"
+               valueType="boolean">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.cpp.link.category.general"
+               command="-Xlinker --gc-sections"
+               defaultValue="false"
+               id="org.eclipse.cdt.cross.arm.gnu.cpp.link.option.gcsections"
+               name="Remove unused sections (-Xlinker --gc-sections)"
                valueType="boolean">
          </option>
          <option
