@@ -1,50 +1,49 @@
 - install Sun JRE1.5 or later
 
-- install Eclipse for RCP/Plug-in Developers (eclipse-rcp-ganymede-SR2-win32.zip)
+- install Eclipse for RCP/Plug-in Developers (eclipse-rcp-galileo-win32.zip)
 
-- DO NOT update to the latest versions of Plug-in Development (if you do so, 
-launching Eclipse to test the plug-in might end with a strange error).
-
-- add 'C and C++ Development' plug-ins from the 'Ganymede update site'
+- add 'C and C++ Development' plug-ins from the 'Galileo' update site, 
+'Programming Languages' section
 
 - add 'Eclipse C/C++ Development Tooling Source' from the CDT update site
-http://download.eclipse.org/tools/cdt/releases/ganymede, Uncategorized
+
+http://download.eclipse.org/tools/cdt/releases/ganymede
+
+'Uncategorized' section
 
 (without CDT sources the extension point schemas will not be available
 so attempts to add new elements to the extensions will not be possible,
 and only 'Generic' elements will be offered).
 
-- add Subversive SVN plug-in (the first three; usually no need for 
-the Uncategorized sources) from
 
-http://download.eclipse.org/technology/subversive/0.7/update-site/
+- add 'Subversive SVN Team Provider' plug-ins from the 'Galileo' update site, 
+'Collaboration Tools' section
 
 
-- add Polarion SVN connector plug-in (the first one; 
-usually no need for the Uncategorized sources) from
 
-http://community.polarion.com/projects/subversive/download/eclipse/2.0/update-site/
+- add Subversive SVN Connectors from
 
-on Windows, install the Win connectors; on Linux DO NOT try to install them,
-the default is the SVNKit.
+http://community.polarion.com/projects/subversive/download/eclipse/2.0/galileo-site/ 
+
+on Windows, install only the two JavaHL Win32 connectors; 
+on Linux DO NOT try to install them, the default is the SVNKit.
+
+
+
+	- on Linux,
  
-(see Tortoise update site at
-http://community.polarion.com/index.php?page=download&project=subversive)
+	$ sudo apt-get install subversion 
 
+	if necessary, also install:
 
-- on Linux,
- 
-$ sudo apt-get install subversion 
+	$ sudo apt-get install libsvn-java
 
-if necessary, also install:
+	and then add this to your eclipse.ini:
 
-$ sudo apt-get install libsvn-java
+	-Djava.library.path=/usr/lib/jni
 
-and then add this to your eclipse.ini:
+	(step not confirmed, I did my development on Windows)
 
--Djava.library.path=/usr/lib/jni
-
-(step not confirmed, I did my development on Windows)
 
 - create a new workspace
 
@@ -86,8 +85,6 @@ press Finish
 - check if the references in the org.eclipse.cdt.cross.arm.gnu project were recognized.
 (open the project and check if JRE System Library and Plug-in Dependencies are populated)
 
-- Run As -> Eclipse Application; close new Eclipse instance
-
 - Project properties -> Run/Debug Settings -> Eclipse Application -> Edit
 	Plug-ins Tab
 		Launch with: 'plug-ins selected below only'
@@ -101,15 +98,15 @@ press Finish
 
 
 
-- in gnu-updatesite remove features/* plugins/* artifacts.xml content.xml
+- in gnu-updatesite remove features/* plugins/* artifacts.* content.*
+(do not touch SVN files)
 
 - open site.xml
 
 - press the 'Build All' button
 
-- features, plugins, artifacts.xml and content.xml should be rebuild
+- features/*.jar, plugins/*.jar, artifacts.jar and content.jar should be rebuild
 
 - pack the content of gnu-updatesite into a .zip archive
 
 - use this file as an archived update site
-
