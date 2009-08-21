@@ -6,16 +6,15 @@ import org.eclipse.cdt.managedbuilder.core.IToolChain;
 import org.eclipse.core.runtime.PluginVersionIdentifier;
 
 @SuppressWarnings("deprecation")
-public class IsToolChainSupported implements IManagedIsToolChainSupported {
+public abstract class IsToolChainSupported implements
+		IManagedIsToolChainSupported {
 
-	static final boolean DEBUG = true;
-
-	private boolean m_bSuppChecked;
-	private boolean m_bToolchainIsSupported;
+	static final boolean DEBUG = false;
 
 	public IsToolChainSupported() {
-		m_bSuppChecked = false;
-		m_bToolchainIsSupported = false;
+		if (DEBUG)
+			System.out.println(this.getClass().getName() + " "
+					+ this.getCompilerName());
 	}
 
 	public String getCompilerName() {
@@ -30,32 +29,42 @@ public class IsToolChainSupported implements IManagedIsToolChainSupported {
 	 * Called for each project and configuration at start-up, for each project
 	 * type at New Project, with isDirty() at edit, and !isDirty() after save.
 	 */
-	public boolean isSupported(IToolChain oToolChain,
-			PluginVersionIdentifier sVersion, String sInstance) {
+	public boolean isSupportedImpl(IToolChain oToolChain,
+			PluginVersionIdentifier sVersion, String sInstance,
+			IsToolchainData oStaticData) {
 
-		if (m_bSuppChecked)
-			return m_bToolchainIsSupported;
+		/* temporarily disabled */
+		if (true)
+			return true;
 
-		m_bSuppChecked = true;
-		m_bToolchainIsSupported = false;
+		if (oStaticData.m_bSuppChecked)
+			return oStaticData.m_bToolchainIsSupported;
+
+		oStaticData.m_bSuppChecked = true;
+		oStaticData.m_bToolchainIsSupported = false;
 
 		if (!Tools.isPlatform(getPlatform()))
 			return false;
 
-		if (DEBUG)
+		if (DEBUG) {
 			System.out.println(oToolChain.getName() + " " + sInstance + " "
 					+ oToolChain.isDirty() + " " + oToolChain.isSystemObject()
 					+ " " + oToolChain.getId() + " "
 					+ oToolChain.getSuperClass());
+			if (oStaticData.m_sBinPath != null)
+				System.out.println(oStaticData.m_sBinPath);
+		}
 
 		String sLines[];
-		sLines = Tools.exec(getCompilerName(), oToolChain.getParent());
+		sLines = Tools.exec(getCompilerName(), oToolChain.getParent(),
+				oStaticData.m_sBinPath);
 		if (sLines != null)
-			m_bToolchainIsSupported = true;
+			oStaticData.m_bToolchainIsSupported = false;
 
 		if (DEBUG)
-			System.out.println(m_bToolchainIsSupported);
+			System.out.println(oStaticData.m_bToolchainIsSupported);
 
-		return m_bToolchainIsSupported;
+		return oStaticData.m_bToolchainIsSupported;
 	}
+
 }

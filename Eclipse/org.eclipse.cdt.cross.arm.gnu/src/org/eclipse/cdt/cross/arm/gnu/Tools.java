@@ -42,7 +42,7 @@ public class Tools {
 
 	private static final String SP = " "; //$NON-NLS-1$
 
-	public static String[] exec(String cmd, IConfiguration cfg) {
+	public static String[] exec(String cmd, IConfiguration cfg, String sBinPath) {
 		try {
 			IEnvironmentVariable vars[] = ManagedBuildManager
 					.getEnvironmentVariableProvider().getVariables(cfg, true);
