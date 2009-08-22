@@ -15,6 +15,8 @@
 	
 - C/C++ compiler optimization default to -Os instead of -O3
 
+- Browse type 'file' removed from Map Filename, since it is not properly rendered
+
 	
 [2009-08-21]
 
