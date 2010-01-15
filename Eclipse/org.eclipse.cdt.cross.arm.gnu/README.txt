@@ -71,6 +71,8 @@ Bug Fixes & Changes since 0.5.3.200904131820
 	- C++ compiler -no-rtti option added
 	- C/C++ compiler signed char as option, default is unsigned (compiler default)
 
+- recompiled with Eclipse 3.5 & CDT 6.0
+
 
 Bug Fixes & Changes since 0.5.3.200904072239
 --------------------------------------------
