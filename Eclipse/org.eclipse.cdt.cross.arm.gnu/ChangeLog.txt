@@ -1,4 +1,7 @@
 
+[2010-01-15]
+	ported on Eclipse 3.5 SR1 (Galileo), with CDT 6.0
+	
 [2009-08-22]
 
 - C/C++ linker options added
