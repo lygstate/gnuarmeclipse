@@ -10,8 +10,12 @@ Installation
 
 The recommended way is to use the Eclipse standard update mechanism:
 
-Help -> Software Updated -> Available Software -> 
-Add Site -> http://gnuarmeclipse.sourceforge.net/updates
+Help -> Software Updated -> Available Software -> Add Site 
+
+	http://gnuarmeclipse.sourceforge.net/updates
+
+(be sure you uncheck 'Group items by category' and later accept
+the unsigned plug-in)
 
 The alternate solution to the online site is to download the archive 
 from SourceForge and to to point the Eclipse update mechanism to it
