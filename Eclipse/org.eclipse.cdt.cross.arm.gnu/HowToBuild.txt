@@ -1,36 +1,41 @@
 - install Sun JRE1.5 or later
 
-- install Eclipse for RCP/Plug-in Developers (eclipse-rcp-galileo-win32.zip)
+- download and install Eclipse for RCP/Plug-in Developers 
+http://www.eclipse.org/downloads/packages/eclipse-rcpplug-developers/galileosr1
+(eclipse-rcp-galileo-SR1-*.*)
 
-- add 'C and C++ Development' plug-ins from the 'Galileo' update site, 
-'Programming Languages' section
+- Help -> Install New Software
+	Work with 'Galileo' update site, 
+	'Programming Languages' section
+	'Eclipse C/C++ Development Tools'
 
-- add 'Eclipse C/C++ Development Tooling Source' from the CDT update site
-
-http://download.eclipse.org/tools/cdt/releases/ganymede
-
-'Uncategorized' section
+- Help -> Install New Software
+	Add...
+	http://download.eclipse.org/tools/cdt/releases/galileo 
+	'CDT Main Features' section
+	'Eclipse C/C++ Development Tools SDK'
 
 (without CDT sources the extension point schemas will not be available
 so attempts to add new elements to the extensions will not be possible,
 and only 'Generic' elements will be offered).
 
 
-- add 'Subversive SVN Team Provider' plug-ins from the 'Galileo' update site, 
-'Collaboration Tools' section
+- Help -> Install New Software
+	Work with 'Galileo' update site, 
+	'Collaboration Tools' section
+	'Subversive SVN Team Provider (Incubation)'
 
+- Help -> Install New Software
+	Add...
+	http://community.polarion.com/projects/subversive/download/eclipse/2.0/galileo-site/ 
+	'Subversive SVN Connectors' section
 
+on Windows, install:
+	'JavaHL 1.5.4 Win32 Binaries (Optional)'
+	'JavaHL 1.6.0 Win32 Binaries (Optional)'
 
-- add Subversive SVN Connectors from
-
-http://community.polarion.com/projects/subversive/download/eclipse/2.0/galileo-site/ 
-
-on Windows, install only the two JavaHL Win32 connectors; 
-on Linux DO NOT try to install them, the default is the SVNKit.
-
-
-
-	- on Linux,
+<questionable>
+on Linux, DO NOT try to install them, the default is the SVNKit.
  
 	$ sudo apt-get install subversion 
 
@@ -43,10 +48,12 @@ on Linux DO NOT try to install them, the default is the SVNKit.
 	-Djava.library.path=/usr/lib/jni
 
 	(step not confirmed, I did my development on Windows)
-
+</questionable>
 
 - create a new workspace
-
+	File -> Switch Workspace -> Other
+	enter path
+	
 - change workspace preferences
 	General -> Workspace
 		disable Build automatically
@@ -55,55 +62,66 @@ on Linux DO NOT try to install them, the default is the SVNKit.
 		Text file encoding: UTF-8
 
 
-- New Project -> Project from SVN 
+- File -> New -> New Project -> Project from SVN 
 
-URL: 'https://gnuarmeclipse.svn.sourceforge.net/svnroot/gnuarmeclipse/'
+	General:
+	URL: 'https://gnuarmeclipse.svn.sourceforge.net/svnroot/gnuarmeclipse/'
+	press Next 
 
-Next -> Select Resource
+	Select Resource
+	Browse: gnuarmeclipse -> trunk
 
+	iterate the following 3 projects:
 
-Browse: gnuarmeclipse -> trunk
+		org.eclipse.cdt.cross.arm.gnu
+		org.eclipse.cdt.cross.arm.gnu-feature
+		org.eclipse.cdt.cross.arm.gnu-updatesite
 
-iterrate the following 3 projects:
+	Select 'Head Revision'
 
-org.eclipse.cdt.cross.arm.gnu
-org.eclipse.cdt.cross.arm.gnu-feature
-org.eclipse.cdt.cross.arm.gnu-updatesite
+	press Finish 
 
-Select 'Head Revision'
+	Check Out As page:
+	select 'Check out as a project with the name specified', Depth: Recursively
 
-press Finish 
+	press Finish
 
-Check Out As page:
-select 'Check out as a project with the name specified', Depth: Recursively
-
-press Finish
-
-(the project should be checked out now)
+	(the project should be checked out now)
 
 
 - check if the references in the org.eclipse.cdt.cross.arm.gnu project were recognized.
 (open the project and check if JRE System Library and Plug-in Dependencies are populated)
 
-- Project properties -> Run/Debug Settings -> Eclipse Application -> Edit
+- select .gnu project
+	Project properties -> Run/Debug Settings
+	New -> Eclipse Application -> 
+		Name: Eclipse GNU ARM Plug-in
 	Plug-ins Tab
 		Launch with: 'plug-ins selected below only'
 		Select Workspace, org.eclipse.cdt.cross.arm.gnu
 		Deselect 'Target Platform'
 		Deselect 'Add new workspace plug-ins to this launch configuration automatically'
-	
-- Run As -> Eclipse Application
-	Help -> About Eclipse SDK -> Plug-in Details
+		Press 'Add required Plug-ins'
+		
+- Select .gnu project
+	Run -> Run As -> Eclipse Application -> Eclipse GNU ARM Plug-in
+	Help -> About Eclipse Platform -> Installation Details -> Plug-ins
 	(the 'GNU ARM C/C++ Development Support' must be present)
 
 
 
-- in gnu-updatesite remove features/* plugins/* artifacts.* content.*
-(do not touch SVN files)
+- in the file explorer go to the workspace location and 
+in org.eclipse.cdt.cross.arm.gnu-updatesite remove
+	features/* plugins/* artifacts.* content.*
+from the filesystem, not from SVN (removing from Eclipse will try to
+remove them from SVN too)
 
-- open site.xml
+
+- back to Eclipse, the gnu-updatesite project
+	open site.xml
 
 - press the 'Build All' button
+	since the sources were written on 3.4, you'll get about 84 warnings
 
 - features/*.jar, plugins/*.jar, artifacts.jar and content.jar should be rebuild
 
