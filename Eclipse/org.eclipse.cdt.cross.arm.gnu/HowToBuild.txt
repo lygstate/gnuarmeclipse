@@ -125,6 +125,26 @@ remove them from SVN too)
 
 - features/*.jar, plugins/*.jar, artifacts.jar and content.jar should be rebuild
 
-- pack the content of gnu-updatesite into a .zip archive
+- pack the content of gnu-updatesite into an archive called like
+	org.eclipse.cdt.cross.arm.gnu_updatesite.0.5.3.201001151708.zip
+and copy it in *.gnu-updatesite/deploy
 
-- use this file as an archived update site
+- commit all three projects to SVN
+
+- connect to Sourceforge and update web from SVN gnu-updatesite project
+	$ ssh ilg-ul,gnuarmeclipse@shell.sourceforge.net create
+	$ ./gnuarm-updates.sh
+
+- download .jar file from update site (http://gnuarmeclipse.sourceforge.net/updates)
+	we'll get something like:
+	org.eclipse.cdt.cross.arm.gnu_updatesite.0.5.3.201001151708.jar
+
+- upload new release to Sourceforge files management services 	
+	- go to 'https://sourceforge.net/project/admin/explorer.php?group_id=181918'
+	- select folder 'gnuarmeclipse (CDT 5.x SE)'
+	- create new folder with a name like '0.5.3.201001151708'
+	- upload README.txt and mark it as 'release notes'
+	- upload .jar file 
+	- assign release notes to it
+
+- post message on forum
