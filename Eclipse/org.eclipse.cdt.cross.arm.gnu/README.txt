@@ -24,6 +24,11 @@ from SourceForge and to to point the Eclipse update mechanism to it
 A quick and dirty way is to extract the plug-in .jar file from the 
 downloaded archive and to copy it to the .../eclipse/plugins directory.
 
+If you notice any problem while using the plug-in, please check the log at:
+	workspace/.metadata/.log
+
+If there are any exceptions related to org.eclipse.cdt.cross.arm.* classes, 
+please post the bugs to Sourceforge support forums.
 
 Requirements
 ------------
@@ -63,6 +68,16 @@ Debugging options for all tools were moved to a common "Debugging" section.
 The assembly step is now done with the more general 'gcc' instead of 'as'.
 
 Similarly, the link step is done by 'gcc/g++', instead of 'ld'.
+
+
+Current version: 0.5.3.201001261103
+-----------------------------------
+
+Bug Fixes & Changes since 0.5.3.201001151708
+--------------------------------------------
+
+- no functional changes, just a clean repack of the update site and
+of the published archive.
 
 
 Bug Fixes & Changes since 0.5.3.200904131820

@@ -131,13 +131,14 @@ and copy it in *.gnu-updatesite/deploy
 
 - commit all three projects to SVN
 
-- connect to Sourceforge and update web from SVN gnu-updatesite project
-	$ ssh ilg-ul,gnuarmeclipse@shell.sourceforge.net create
-	$ ./gnuarm-updates.sh
-
-- download .jar file from update site (http://gnuarmeclipse.sourceforge.net/updates)
-	we'll get something like:
-	org.eclipse.cdt.cross.arm.gnu_updatesite.0.5.3.201001151708.jar
+- pack the update site to an archive
+	- create a temporary directory 'updatesite' 
+	- in file explorer enter directory 'updatesite'
+	- svn export to the temporary directory, from
+		https://gnuarmeclipse.svn.sourceforge.net/svnroot/gnuarmeclipse/trunk/org.eclipse.cdt.cross.arm.gnu-updatesite
+	- remove the .project file
+	- pack the content of the directory into an archive called
+		org.eclipse.cdt.cross.arm.gnu_updatesite.0.5.3.201001151708.zip
 
 - upload new release to Sourceforge files management services 	
 	- go to 'https://sourceforge.net/project/admin/explorer.php?group_id=181918'
@@ -147,4 +148,18 @@ and copy it in *.gnu-updatesite/deploy
 	- upload .jar file 
 	- assign release notes to it
 
+- connect to Sourceforge and update web from SVN gnu-updatesite project
+	$ ssh ilg-ul,gnuarmeclipse@shell.sourceforge.net create
+	$ ./gnuarm-updates.sh
+
 - post message on forum
+
+---------------------------------------------------------------------------
+
+Checking the plug-in debug log
+
+If you notice any problem while using the plug-in, please check the log at:
+	workspace/.metadata/.log
+
+If there are any exceptions related to org.eclipse.cdt.cross.arm.* classes, 
+please post the bugs to Sourceforge.
