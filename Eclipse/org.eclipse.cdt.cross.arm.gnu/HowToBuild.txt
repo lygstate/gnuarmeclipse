@@ -110,11 +110,9 @@ on Linux, DO NOT try to install them, the default is the SVNKit.
 
 
 
-- in the file explorer go to the workspace location and 
-in org.eclipse.cdt.cross.arm.gnu-updatesite remove
-	features/* plugins/* artifacts.* content.*
-from the filesystem, not from SVN (removing from Eclipse will try to
-remove them from SVN too)
+- go to the workspace org.eclipse.cdt.cross.arm.gnu-updatesite project
+and remove
+	features/* plugins/* artifacts.jar content.jar
 
 
 - back to Eclipse, the gnu-updatesite project
@@ -124,10 +122,6 @@ remove them from SVN too)
 	since the sources were written on 3.4, you'll get about 84 warnings
 
 - features/*.jar, plugins/*.jar, artifacts.jar and content.jar should be rebuild
-
-- pack the content of gnu-updatesite into an archive called like
-	org.eclipse.cdt.cross.arm.gnu_updatesite.0.5.3.201001151708.zip
-and copy it in *.gnu-updatesite/deploy
 
 - commit all three projects to SVN
 
@@ -139,7 +133,8 @@ and copy it in *.gnu-updatesite/deploy
 	- remove the .project file
 	- pack the content of the directory into an archive called
 		org.eclipse.cdt.cross.arm.gnu_updatesite.0.5.3.201001151708.zip
-
+	- copy it in *.gnu-updatesite/deploy
+	
 - upload new release to Sourceforge files management services 	
 	- go to 'https://sourceforge.net/project/admin/explorer.php?group_id=181918'
 	- select folder 'gnuarmeclipse (CDT 5.x SE)'
