@@ -109,6 +109,8 @@ on Linux, DO NOT try to install them, the default is the SVNKit.
 	(the 'GNU ARM C/C++ Development Support' must be present)
 
 
+For each build
+--------------
 
 - go to the workspace org.eclipse.cdt.cross.arm.gnu-updatesite project
 and remove
