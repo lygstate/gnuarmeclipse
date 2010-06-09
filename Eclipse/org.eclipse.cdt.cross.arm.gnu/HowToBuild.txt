@@ -141,15 +141,15 @@ and remove
 	- go to 'https://sourceforge.net/project/admin/explorer.php?group_id=181918'
 	- select folder 'gnuarmeclipse (CDT 5.x SE)'
 	- create new folder with a name like '0.5.3.201001151708'
-	- upload README.txt and mark it as 'release notes'
-	- upload .jar file 
-	- assign release notes to it
+	- upload README.txt and (in Properties) mark it as 'Release note'
+	- upload .zip file 
+	- in Properties check Linux/Mac/Windows and assign release notes to it
 
 - connect to Sourceforge and update web from SVN gnu-updatesite project
 (the port and address for the third ssh are taken from the output of sf-help)
-	$ ssh ilg-ul,gnuarmeclipse@shell.sourceforge.net create
-	$ ssh ilg-ul,gnuarmeclipse@shell.sourceforge.net sf-help
-	$ ssh -p 22005 ilg-ul@shell2.sourceforge.net
+	$ ssh -t ilg-ul,gnuarmeclipse@shell.sourceforge.net create
+	[$ ssh ilg-ul,gnuarmeclipse@shell.sourceforge.net sf-help]
+	[$ ssh -p 22005 ilg-ul@shell2.sourceforge.net]
 	ilg-ul@shell-22005:~> ./gnuarm-updates.sh
 	$ ssh ilg-ul,gnuarmeclipse@shell.sourceforge.net shutdown
 
