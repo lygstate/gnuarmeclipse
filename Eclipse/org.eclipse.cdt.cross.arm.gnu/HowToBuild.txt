@@ -135,7 +135,7 @@ and remove
 	- remove the .project file
 	- pack the content of the directory into an archive called
 		org.eclipse.cdt.cross.arm.gnu_updatesite.0.5.3.201001151708.zip
-	- copy it in *.gnu-updatesite/deploy
+	- copy it in workspace/deploy
 	
 - upload new release to Sourceforge files management services 	
 	- go to 'https://sourceforge.net/project/admin/explorer.php?group_id=181918'
