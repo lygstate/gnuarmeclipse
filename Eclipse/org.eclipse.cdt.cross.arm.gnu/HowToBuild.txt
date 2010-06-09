@@ -146,14 +146,19 @@ and remove
 	- in Properties check Linux/Mac/Windows and assign release notes to it
 
 - connect to Sourceforge and update web from SVN gnu-updatesite project
-(the port and address for the third ssh are taken from the output of sf-help)
 	$ ssh -t ilg-ul,gnuarmeclipse@shell.sourceforge.net create
-	[$ ssh ilg-ul,gnuarmeclipse@shell.sourceforge.net sf-help]
-	[$ ssh -p 22005 ilg-ul@shell2.sourceforge.net]
 	ilg-ul@shell-22005:~> ./gnuarm-updates.sh
 	$ ssh ilg-ul,gnuarmeclipse@shell.sourceforge.net shutdown
+	check if newly built version was really published
 
-- post message on forum
+    [other useful commands:
+    	$ ssh ilg-ul,gnuarmeclipse@shell.sourceforge.net sf-help
+		$ ssh -p 22005 ilg-ul@shell2.sourceforge.net
+    (the port and address for the second ssh are taken from the 
+    output of sf-help)]
+    
+	
+- post message on Develop -> News, if needed
 
 ---------------------------------------------------------------------------
 
