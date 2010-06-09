@@ -1,4 +1,8 @@
 
+[2010-06-09]
+	GNU/Linux toolchain fixed
+	(changed from arm-none-linux-gnueabi-* to arm-none-eabi-*)
+
 [2010-01-15]
 	ported on Eclipse 3.5 SR1 (Galileo), with CDT 6.0
 	
@@ -42,7 +46,7 @@ temporarily disabled until properly implemented
 attempting to execute 'arm-none-eabi-gcc') [experimental]
 
 - 'CodeSourcery G++ Lite' for Linux toolchain presence tested (by 
-attempting to execute 'arm-none-linux-gnueabi-gcc') [experimental]
+attempting to execute 'arm-none-eabi-gcc') [experimental]
 
 - 'GNUARM' (and derivatives) toolchain presence tested (by 
 attempting to execute 'arm-elf-gcc') [experimental]
