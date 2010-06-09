@@ -42,12 +42,15 @@ Implementation notes
 --------------------
 
 Supported toolchains:
-- The CodeSourcery G++ Lite on Windows (arm-none-eabi-gcc)
-- The CodeSourcery G++ Lite on Linux (arm-none-linux-gnueabi-gcc)
 
-- GNUARM and derivatives on Windows (arm-elf-gcc)
-- GNUARM on Linux (arm-elf-gcc)
-- GNUARM on Mac OS/X (arm-elf-gcc)
+- The CodeSourcery G++ Lite for ARM EABI (arm-none-eabi-gcc) on
+	Windows
+	GNU/Linux
+
+- GNUARM and derivatives (arm-elf-gcc) on
+	Windows
+	GNU/Linux
+	Mac OS X
 
 Supported project types are:
 - applications (.elf, .hex)
@@ -66,9 +69,17 @@ The assembly step is now done with the more general 'gcc' instead of 'as'.
 Similarly, the link step is done by 'gcc/g++', instead of 'ld'.
 
 
-Current version: 0.5.3.201004202202
+Current version: 0.5.3.201006091313
 -----------------------------------
 
+Bug Fixes & Changes since 0.5.3.201004202202
+--------------------------------------------
+
+- the confusion between Host OS and Guest OS when selecting the 
+CodeSourcery G++ Lite toolchain was finally sorted out. 
+The basic toolchain when targeting for embedded systems is ARM EABI. 
+The arm-none-eabi toolchain is intended to generate programs 
+for running on ARM ported Linux, not embedded systems.
 
 Bug Fixes & Changes since 0.5.3.201001261103
 --------------------------------------------
@@ -127,7 +138,9 @@ are also offered for selection
 - screen update after selecting/deselecting additional tools requires 
 leaving that tab and returning
 
+
 Reporting problems
+------------------
 
 If you notice any problem while using the plug-in, please check the log at:
 	workspace/.metadata/.log
