@@ -21,7 +21,7 @@ public class IsToolChainSupported extends
 	}
 
 	public String getCompilerName() {
-		return "arm-none-linux-gnueabi-gcc";
+		return "arm-none-eabi-gcc";
 	}
 
 }
