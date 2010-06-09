@@ -80,7 +80,7 @@
          <run
                arguments="-E -P -v -dD ${plugin_state_location}/specs.c"
                class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"
-               command="arm-none-linux-gnueabi-gcc">
+               command="arm-none-eabi-gcc">
          </run>
          <scannerInfoConsoleParser
                class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser">
@@ -106,7 +106,7 @@
          <run
                arguments="-E -P -v -dD ${plugin_state_location}/specs.cpp"
                class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"
-               command="arm-none-linux-gnueabi-g++">
+               command="arm-none-eabi-g++">
          </run>
          <scannerInfoConsoleParser
                class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser">
@@ -126,7 +126,7 @@
       </buildOutputProvider>
       <scannerInfoProvider providerId="specsFile">
          <run
-               command="arm-none-linux-gnueabi-gcc"
+               command="arm-none-eabi-gcc"
                arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}"
                class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"/>
          <scannerInfoConsoleParser class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser"/>
@@ -3336,7 +3336,7 @@
                superClass="org.eclipse.cdt.cross.arm.gnu.base.option.addtools.printsize">
          </option>
          <tool
-               command="arm-none-linux-gnueabi-gcc"
+               command="arm-none-eabi-gcc"
                id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.assembler.base"
                isAbstract="false"
                name="ARM Sourcery Linux GCC Assembler"
@@ -3348,7 +3348,7 @@
             </inputType>
          </tool>
          <tool
-               command="arm-none-linux-gnueabi-gcc"
+               command="arm-none-eabi-gcc"
                id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.c.compiler.base"
                isAbstract="false"
                name="ARM Sourcery Linux GCC C Compiler"
@@ -3360,7 +3360,7 @@
             </inputType>
          </tool>
          <tool
-               command="arm-none-linux-gnueabi-g++"
+               command="arm-none-eabi-g++"
                id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.cpp.compiler.base"
                isAbstract="false"
                name="ARM Sourcery Linux GCC C++ Compiler"
@@ -3372,28 +3372,28 @@
             </inputType>
          </tool>
          <tool
-               command="arm-none-linux-gnueabi-gcc"
+               command="arm-none-eabi-gcc"
                id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.c.linker.base"
                isAbstract="false"
                name="ARM Sourcery Linux GCC C Linker"
                superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.c.linker">
          </tool>
          <tool
-               command="arm-none-linux-gnueabi-g++"
+               command="arm-none-eabi-g++"
                id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.cpp.linker.base"
                isAbstract="false"
                name="ARM Sourcery Linux GCC C++ Linker"
                superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.cpp.linker">
          </tool>
          <tool
-               command="arm-none-linux-gnueabi-ar"
+               command="arm-none-eabi-ar"
                id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.archiver.base"
                isAbstract="false"
                name="ARM Sourcery Linux GCC Archiver"
                superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.archiver">
          </tool>
          <tool
-               command="arm-none-linux-gnueabi-objcopy"
+               command="arm-none-eabi-objcopy"
                id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.createflash.base"
                isAbstract="false"
                name="ARM Sourcery Linux GNU Create Flash Image"
@@ -3414,7 +3414,7 @@
             </enablement>
          </tool>
          <tool
-               command="arm-none-linux-gnueabi-objdump"
+               command="arm-none-eabi-objdump"
                id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.createlisting.base"
                isAbstract="false"
                name="ARM Sourcery Linux GNU Create Listing"
@@ -3435,7 +3435,7 @@
             </enablement>
          </tool>
          <tool
-               command="arm-none-linux-gnueabi-size"
+               command="arm-none-eabi-size"
                id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.printsize.base"
                isAbstract="false"
                name="ARM Sourcery Linux GNU Print Size"
