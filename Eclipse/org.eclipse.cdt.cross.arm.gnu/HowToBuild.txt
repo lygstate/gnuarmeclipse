@@ -144,8 +144,12 @@ and remove
 	- assign release notes to it
 
 - connect to Sourceforge and update web from SVN gnu-updatesite project
+(the port and address for the third ssh are taken from the output of sf-help)
 	$ ssh ilg-ul,gnuarmeclipse@shell.sourceforge.net create
-	$ ./gnuarm-updates.sh
+	$ ssh ilg-ul,gnuarmeclipse@shell.sourceforge.net sf-help
+	$ ssh -p 22005 ilg-ul@shell2.sourceforge.net
+	ilg-ul@shell-22005:~> ./gnuarm-updates.sh
+	$ ssh ilg-ul,gnuarmeclipse@shell.sourceforge.net shutdown
 
 - post message on forum
 
