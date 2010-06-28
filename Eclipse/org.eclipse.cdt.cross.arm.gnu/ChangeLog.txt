@@ -73,4 +73,44 @@ points to all toolchain bases, as specified in schema examples and used in
 org.eclipse.cdt.managebuilder.gnu.ui. (not yet functional)
 
 
+[2009-04-07]
+
+- Discovery Options implemented for all toolchains.
+
+[2009-04-13]
+
+- patches from Freddie Chopin applied
+	- linker --gc-sections added
+	- linker -nostartfiles enabled for C, disabled for C++
+	- linker -nostdlibs disabled
+	- C++ compiler -no-rtti option added
+	- C/C++ compiler signed char as option, default is unsigned (compiler default)
+
+- recompiled with Eclipse 3.5 & CDT 6.0
+
+[2010-01-26]
+
+- license changed from GPL to EPL
+
+
+[2010-01-15]
+
+- no functional changes, just a clean repack of the update site and
+of the published archive.
+
+
+[2010-04-20]
+
+- the confusion between Host OS and Guest OS when selecting the 
+CodeSourcery G++ Lite toolchain was finally sorted out. 
+The basic toolchain when targeting for embedded systems is ARM EABI. 
+The arm-none-eabi toolchain is intended to generate programs 
+for running on ARM ported Linux, not embedded systems.
+
+
+[2010-06-28]
+
+- Properties on a source file triggered an error when selecting Tool Settings.
+This was due to a bug in ARMManagedCommandLineGenerator, where the parent
+of Tool may be ResourceConfiguration instead of ToolChain.
 

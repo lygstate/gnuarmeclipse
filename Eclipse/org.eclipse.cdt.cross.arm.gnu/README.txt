@@ -69,8 +69,16 @@ The assembly step is now done with the more general 'gcc' instead of 'as'.
 Similarly, the link step is done by 'gcc/g++', instead of 'ld'.
 
 
-Current version: 0.5.3.201006091313
+Current version: 0.5.3.201006282150
 -----------------------------------
+
+Bug Fixes & Changes since 0.5.3.201006091313
+--------------------------------------------
+
+- Properties on a source file triggered an error when selecting Tool Settings.
+This was due to a bug in ARMManagedCommandLineGenerator, where the parent
+of Tool may be ResourceConfiguration instead of ToolChain.
+
 
 Bug Fixes & Changes since 0.5.3.201004202202
 --------------------------------------------
