@@ -148,6 +148,7 @@ and remove
 - connect to Sourceforge and update web from SVN gnu-updatesite project
 	$ ssh -t ilg-ul,gnuarmeclipse@shell.sourceforge.net create
 	ilg-ul@shell-22005:~> ./gnuarm-updates.sh
+	ilg-ul@shell-22005:~> exit
 	$ ssh ilg-ul,gnuarmeclipse@shell.sourceforge.net shutdown
 	check if newly built version was really published
 
