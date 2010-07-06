@@ -78,6 +78,7 @@ Bug Fixes & Changes since 0.5.3.201006282150
 
 - CodeSourcery added to Mac OS X
 - Mac OS X missing GNUARM configuration reference fixed
+- (#3024374) individual properties processed
 
 
 Bug Fixes & Changes since 0.5.3.201006091313

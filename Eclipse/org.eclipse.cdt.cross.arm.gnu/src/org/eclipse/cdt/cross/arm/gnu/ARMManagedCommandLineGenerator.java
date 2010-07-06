@@ -47,7 +47,18 @@ public class ARMManagedCommandLineGenerator extends ManagedCommandLineGenerator 
 				.asList(((asFlags))))));
 
 		Object oParent = oTool.getParent();
-		if (oParent instanceof IToolChain) {
+		while (oParent != null && !(oParent instanceof IToolChain)) {
+			// climb up the hierarchy and search for IToolChain
+			Object oSuper;
+			oSuper = oTool.getSuperClass();
+			if (oSuper != null && (oSuper instanceof ITool)) {
+				oParent = ((ITool)oSuper).getParent();
+			} else {
+				oParent = null;
+			}
+		}
+		
+		if (oParent != null && (oParent instanceof IToolChain)) {
 			IToolChain oToolChain = (IToolChain) oParent;
 			// IConfiguration iconfiguration = itoolchain.getParent();
 			IOption aoOptions[] = oToolChain.getOptions();
