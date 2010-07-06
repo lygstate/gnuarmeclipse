@@ -70,7 +70,7 @@ The assembly step is now done with the more general 'gcc' instead of 'as'.
 Similarly, the link step is done by 'gcc/g++', instead of 'ld'.
 
 
-Current version: 0.5.3.201007061210
+Current version: 0.5.3.201007062110
 -----------------------------------
 
 Bug Fixes & Changes since 0.5.3.201006282150
@@ -79,7 +79,7 @@ Bug Fixes & Changes since 0.5.3.201006282150
 - CodeSourcery added to Mac OS X
 - Mac OS X missing GNUARM configuration reference fixed
 - (#3024374) individual properties processed
-
+- (#3024483) New Yagarto Toolchain uses EABI
 
 Bug Fixes & Changes since 0.5.3.201006091313
 --------------------------------------------

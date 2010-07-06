@@ -129,4 +129,6 @@ of Tool may be ResourceConfiguration instead of ToolChain.
 - Mac OS X missing GNUARM configuration reference fixed
 - (#3024374) individual properties processed; ITool.getParent() should climb up
 the hierarchy via getSuperClass(); this is also a better fix for #3021757.
+- (#3024483) New Yagarto Toolchain uses EABI; Yagarto toolchain split from 
+common Windows GCC configurations
 

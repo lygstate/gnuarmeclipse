@@ -2692,6 +2692,79 @@
             name="ARM Sourcery GNU Print Size"
             superClass="org.eclipse.cdt.cross.arm.gnu.printsize">
       </tool>
+      
+      <builder
+            command="make"
+            id="org.eclipse.cdt.cross.arm.gnu.yagarto.builder"
+            isAbstract="false"
+            isVariableCaseSensitive="false"
+            name="ARM Yagarto GNU Make builder"
+            superClass="org.eclipse.cdt.cross.arm.gnu.builder">
+      </builder>
+      <tool
+            command="arm-none-eabi-gcc"
+            id="org.eclipse.cdt.cross.arm.gnu.yagarto.assembler"
+            isAbstract="false"
+            name="ARM Yagarto GCC Assembler"
+            superClass="org.eclipse.cdt.cross.arm.gnu.assembler">
+      </tool>
+      <tool
+            command="arm-none-eabi-gcc"
+            id="org.eclipse.cdt.cross.arm.gnu.yagarto.c.compiler"
+            isAbstract="false"
+            name="ARM Yagarto GCC C Compiler"
+            superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler">
+      </tool>
+      <tool
+            command="arm-none-eabi-g++"
+            id="org.eclipse.cdt.cross.arm.gnu.yagarto.cpp.compiler"
+            isAbstract="false"
+            name="ARM Yagarto GCC C++ Compiler"
+            superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler">
+      </tool>
+      <tool
+            command="arm-none-eabi-gcc"
+            id="org.eclipse.cdt.cross.arm.gnu.yagarto.c.linker"
+            isAbstract="false"
+            name="ARM Yagarto GCC C Linker"
+            superClass="org.eclipse.cdt.cross.arm.gnu.c.linker">
+      </tool>
+      <tool
+            command="arm-none-eabi-g++"
+            id="org.eclipse.cdt.cross.arm.gnu.yagarto.cpp.linker"
+            isAbstract="false"
+            name="ARM Yagarto GCC C++ Linker"
+            superClass="org.eclipse.cdt.cross.arm.gnu.cpp.linker">
+      </tool>
+      <tool
+            command="arm-none-eabi-ar"
+            id="org.eclipse.cdt.cross.arm.gnu.yagarto.archiver"
+            isAbstract="false"
+            name="ARM Yagarto GCC Archiver"
+            superClass="org.eclipse.cdt.cross.arm.gnu.archiver">
+      </tool>
+      <tool
+            command="arm-none-eabi-objcopy"
+            id="org.eclipse.cdt.cross.arm.gnu.yagarto.createflash"
+            isAbstract="false"
+            name="ARM Yagarto GNU Create Flash Image"
+            superClass="org.eclipse.cdt.cross.arm.gnu.createflash">
+      </tool>
+      <tool
+            command="arm-none-eabi-objdump"
+            id="org.eclipse.cdt.cross.arm.gnu.yagarto.createlisting"
+            isAbstract="false"
+            name="ARM Yagarto GNU Create Listing"
+            superClass="org.eclipse.cdt.cross.arm.gnu.createlisting">
+      </tool>
+      <tool
+            command="arm-none-eabi-size"
+            id="org.eclipse.cdt.cross.arm.gnu.yagarto.printsize"
+            isAbstract="false"
+            name="ARM Yagarto GNU Print Size"
+            superClass="org.eclipse.cdt.cross.arm.gnu.printsize">
+      </tool>
+
       <configuration
             cleanCommand="rm -rf"
             errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser"
@@ -3178,6 +3251,477 @@
             </toolChain>
          </configuration>
       </projectType>
+      
+      <configuration
+            cleanCommand="rm -rf"
+            id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.configuration.base"
+            name="ARM Windows GCC (Yagarto) Configuration"
+            parent="org.eclipse.cdt.cross.arm.gnu.configuration.base">
+         <enablement
+               attribute="artifactExtension"
+               extensionAdjustment="false"
+               type="CONTAINER_ATTRIBUTE"
+               value="a">
+            <checkBuildProperty
+                  property="org.eclipse.cdt.build.core.buildArtefactType"
+                  value="org.eclipse.cdt.build.core.buildArtefactType.staticLib">
+            </checkBuildProperty>
+         </enablement>
+      </configuration>
+      <toolChain
+            archList="all"
+            configurationEnvironmentSupplier="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.ConfigurationEnvironmentSupplier"
+            id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.toolchain.base"
+            isAbstract="false"
+            isToolChainSupported="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.IsToolChainSupported"
+            name="ARM Windows GCC (Yagarto)"
+            osList="win32">
+         <targetPlatform
+               archList="all"
+               binaryParser="org.eclipse.cdt.core.GNU_ELF"
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.platform.base"
+               isAbstract="false"
+               name="Windows Platform"
+               osList="win32">
+         </targetPlatform>
+         <builder
+               command="make"
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.builder.base"
+               isAbstract="false"
+               isVariableCaseSensitive="false"
+               name="ARM Yagarto Windows GNU Make builder"
+               superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.builder">
+         </builder>
+         <optionCategory
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.category.target"
+               name="Target Processor">
+         </optionCategory>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.category.target"
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.option.target.processor"
+               name="Processor"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.processor">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.category.target"
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.option.target.thumb"
+               name="Thumb (-mthumb)"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.thumb">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.category.target"
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.option.target.thumbinterwork"
+               name="Thumb interwork (-mthumb-interwork)"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.thumbinterwork">
+         </option>
+         <optionCategory
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.category.debugging"
+               name="Debugging">
+         </optionCategory>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.category.debugging"
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.option.debugging.level"
+               name="Debug level"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.level">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.category.debugging"
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.option.debugging.format"
+               name="Debug format"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.format">
+            <enablement
+                  type="UI_ENABLEMENT|CMD_USAGE">
+               <not>
+                  <checkOption
+                        optionId="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.option.debugging.level"
+                        value="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.level.none">
+                  </checkOption>
+               </not>
+            </enablement>
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.category.debugging"
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.option.debugging.other"
+               name="Other debugging flags"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.other">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.category.debugging"
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.option.debugging.prof"
+               name="Generate prof information (-p)"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.prof">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.category.debugging"
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.option.debugging.gprof"
+               name="Generate gprof information (-pg)"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.gprof">
+         </option>
+         <optionCategory
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.category.addtools"
+               name="Additional Tools">
+         </optionCategory>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.category.addtools"
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.option.addtools.createflash"
+               name="Create Flash Image"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.addtools.createflash">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.category.addtools"
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.option.addtools.createlisting"
+               name="Create Extended Listing"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.addtools.createlisting">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.category.addtools"
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.option.addtools.printsize"
+               name="Print Size"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.addtools.printsize">
+         </option>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.assembler.base"
+               isAbstract="false"
+               name="ARM Yagarto Windows GCC Assembler"
+               superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.assembler">
+            <inputType
+                  id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.assembler.base.input"
+                  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC|org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinStandardMakePerFileProfile"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.assembler.input">
+            </inputType>
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.c.compiler.base"
+               isAbstract="false"
+               name="ARM Yagarto Windows GCC C Compiler"
+               superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.c.compiler">
+            <inputType
+                  id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.c.compiler.base.input"
+                  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC|org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinStandardMakePerFileProfile"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.input">
+            </inputType>
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.cpp.compiler.base"
+               isAbstract="false"
+               name="ARM Yagarto Windows GCC C++ Compiler"
+               superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.cpp.compiler">
+            <inputType
+                  id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.cpp.compiler.base.input"
+                  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileCPP|org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinStandardMakePerFileProfile"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.input">
+            </inputType>
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.c.linker.base"
+               isAbstract="false"
+               name="ARM Yagarto Windows GCC C Linker"
+               superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.c.linker">
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.cpp.linker.base"
+               isAbstract="false"
+               name="ARM Yagarto Windows GCC C++ Linker"
+               superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.cpp.linker">
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.archiver.base"
+               isAbstract="false"
+               name="ARM Yagarto Windows GCC Archiver"
+               superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.archiver">
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.createflash.base"
+               isAbstract="false"
+               name="ARM Yagarto Windows GNU Create Flash Image"
+               superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.createflash">
+            <enablement
+                  type="ALL">
+               <checkOption
+                     holderId="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.toolchain.base"
+                     optionId="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.option.addtools.createflash"
+                     value="true">
+               </checkOption>
+               <and>
+                  <checkBuildProperty
+                        property="org.eclipse.cdt.build.core.buildArtefactType"
+                        value="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application">
+                  </checkBuildProperty>
+               </and>
+            </enablement>
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.createlisting.base"
+               isAbstract="false"
+               name="ARM Yagarto Windows GNU Create Listing"
+               superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.createlisting">
+            <enablement
+                  type="ALL">
+               <checkOption
+                     holderId="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.toolchain.base"
+                     optionId="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.option.addtools.createlisting"
+                     value="true">
+               </checkOption>
+               <and>
+                  <checkBuildProperty
+                        property="org.eclipse.cdt.build.core.buildArtefactType"
+                        value="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application">
+                  </checkBuildProperty>
+               </and>
+            </enablement>
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.printsize.base"
+               isAbstract="false"
+               name="ARM Yagarto Windows GNU Print Size"
+               superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.printsize">
+            <enablement
+                  type="ALL">
+               <checkOption
+                     holderId="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.toolchain.base"
+                     optionId="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.option.addtools.printsize"
+                     value="true">
+               </checkOption>
+               <and>
+                  <checkBuildProperty
+                        property="org.eclipse.cdt.build.core.buildArtefactType"
+                        value="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application">
+                  </checkBuildProperty>
+               </and>
+            </enablement>
+         </tool>
+      </toolChain>
+      <projectType
+            buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application"
+            id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf"
+            isAbstract="true"
+            name="ARM Windows GCC (Yagarto) Application">
+         <configuration
+               artifactExtension="elf"
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.debug"
+               name="Debug"
+               parent="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.configuration.base">
+            <toolChain
+                  id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.toolchain.debug"
+                  isAbstract="false"
+                  secondaryOutputs="org.eclipse.cdt.cross.arm.gnu.createflash.output;org.eclipse.cdt.cross.arm.gnu.createlisting.output;org.eclipse.cdt.cross.arm.gnu.printsize.output"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.toolchain.base"
+                  targetTool="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.c.linker.debug;org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.cpp.linker.debug">
+               <targetPlatform
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.platform.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.platform.base">
+               </targetPlatform>
+               <builder
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.builder.debug"
+                     isAbstract="false"
+                     isVariableCaseSensitive="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.builder.base">
+               </builder>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.assembler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.assembler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.c.compiler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.c.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.cpp.compiler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.cpp.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.c.linker.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.c.linker.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.cpp.linker.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.cpp.linker.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.createflash.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.createflash.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.createlisting.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.createlisting.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.printsize.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.printsize.base">
+               </tool>
+            </toolChain>
+         </configuration>
+         <configuration
+               artifactExtension="elf"
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.release"
+               name="Release"
+               parent="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.configuration.base">
+            <toolChain
+                  id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.toolchain.release"
+                  isAbstract="false"
+                  secondaryOutputs="org.eclipse.cdt.cross.arm.gnu.createflash.output;org.eclipse.cdt.cross.arm.gnu.createlisting.output;org.eclipse.cdt.cross.arm.gnu.printsize.output"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.toolchain.base"
+                  targetTool="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.c.linker.release;org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.cpp.linker.release">
+               <targetPlatform
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.platform.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.platform.base">
+               </targetPlatform>
+               <builder
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.builder.release"
+                     isAbstract="false"
+                     isVariableCaseSensitive="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.builder.base">
+               </builder>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.assembler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.assembler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.c.compiler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.c.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.cpp.compiler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.cpp.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.c.linker.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.c.linker.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.cpp.linker.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.cpp.linker.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.createflash.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.createflash.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.createlisting.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.createlisting.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf.printsize.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.printsize.base">
+               </tool>
+            </toolChain>
+         </configuration>
+      </projectType>
+      <projectType
+            buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.staticLib"
+            id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.lib"
+            isAbstract="true"
+            name="ARM Windows GCC (Yagarto) Static Library">
+         <configuration
+               artifactExtension="a"
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.lib.debug"
+               name="Debug"
+               parent="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.configuration.base">
+            <toolChain
+                  id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.lib.toolchain.debug"
+                  isAbstract="false"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.toolchain.base"
+                  targetTool="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.lib.archiver.debug">
+               <targetPlatform
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.lib.platform.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.platform.base">
+               </targetPlatform>
+               <builder
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.lib.builder.debug"
+                     isAbstract="false"
+                     isVariableCaseSensitive="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.builder.base">
+               </builder>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.lib.assembler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.assembler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.lib.c.compiler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.c.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.lib.cpp.compiler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.cpp.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.lib.archiver.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.archiver.base">
+               </tool>
+            </toolChain>
+         </configuration>
+         <configuration
+               artifactExtension="a"
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.lib.release"
+               name="Release"
+               parent="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.configuration.base">
+            <toolChain
+                  id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.lib.toolchain.release"
+                  isAbstract="false"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.toolchain.base"
+                  targetTool="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.lib.archiver.release">
+               <targetPlatform
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.lib.platform.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.platform.base">
+               </targetPlatform>
+               <builder
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.lib.builder.release"
+                     isAbstract="false"
+                     isVariableCaseSensitive="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.builder.base">
+               </builder>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.lib.assembler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.assembler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.lib.c.compiler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.c.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.lib.cpp.compiler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.cpp.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.lib.archiver.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.archiver.base">
+               </tool>
+            </toolChain>
+         </configuration>
+      </projectType>
+      
       <configuration
             id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.configuration.base"
             name="ARM Linux GCC (Sourcery G++ Lite) Configuration"
@@ -3647,7 +4191,7 @@
       <configuration
             cleanCommand="rm -rf"
             id="org.eclipse.cdt.cross.arm.gnu.windows.configuration.base"
-            name="ARM Windows GCC (GNUARM, WinARM, Yagarto) Configuration"
+            name="ARM Windows GCC (GNUARM, WinARM) Configuration"
             parent="org.eclipse.cdt.cross.arm.gnu.configuration.base">
          <enablement
                attribute="artifactExtension"
@@ -3667,7 +4211,7 @@
                   id="org.eclipse.cdt.cross.arm.gnu.windows.toolchain.base"
                   isAbstract="false"
                   isToolChainSupported="org.eclipse.cdt.cross.arm.gnu.windows.IsToolChainSupported"
-                  name="ARM Windows GCC (GNUARM, WinARM, Yagarto)"
+                  name="ARM Windows GCC (GNUARM, WinARM)"
                   osList="win32">
          <targetPlatform
                archList="all"
@@ -3887,7 +4431,7 @@
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application"
             id="org.eclipse.cdt.cross.arm.gnu.windows.elf"
             isAbstract="true"
-            name="ARM Windows GCC (GNUARM, WinARM, Yagarto) Application">
+            name="ARM Windows GCC (GNUARM, WinARM) Application">
          <configuration
                artifactExtension="elf"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -4023,7 +4567,7 @@
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.staticLib"
             id="org.eclipse.cdt.cross.arm.gnu.windows.lib"
             isAbstract="true"
-            name="ARM Windows GCC (GNUARM, WinARM, Yagarto) Static Library">
+            name="ARM Windows GCC (GNUARM, WinARM) Static Library">
          <configuration
                artifactExtension="a"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
