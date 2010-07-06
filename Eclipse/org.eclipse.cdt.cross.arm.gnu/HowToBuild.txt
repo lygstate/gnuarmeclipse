@@ -1,60 +1,67 @@
 - install Sun JRE1.5 or later
 
-- download and install Eclipse for RCP/Plug-in Developers 
-http://www.eclipse.org/downloads/packages/eclipse-rcpplug-developers/galileosr1
-(eclipse-rcp-galileo-SR1-*.*)
+- from http://www.eclipse.org/downloads/packages/release/galileo/sr2 download and install 
+	'Eclipse for RCP/Plug-in Developers'
+
+	http://www.eclipse.org/downloads/packages/eclipse-rcpplug-developers/galileosr2
+		(eclipse-rcp-galileo-SR2-*.*)
+
+	(the general Eclipse download page is available at http://www.eclipse.org/downloads)
 
 - Help -> Install New Software
-	Work with 'Galileo' update site, 
+	Work with the 'Galileo' update site, 
 	'Programming Languages' section
-	'Eclipse C/C++ Development Tools'
+		'Eclipse C/C++ Development Tools'
 
 - Help -> Install New Software
 	Add...
 	http://download.eclipse.org/tools/cdt/releases/galileo 
 	'CDT Main Features' section
-	'Eclipse C/C++ Development Tools SDK'
+		'Eclipse C/C++ Development Tools SDK'
+	'CDT Optional Features'
+		All
 
-(without CDT sources the extension point schemas will not be available
+Notes: 
+- without the CDT sources, the extension point schemas will not be available
 so attempts to add new elements to the extensions will not be possible,
-and only 'Generic' elements will be offered).
+and only 'Generic' elements will be offered.
+- the CDT Optional Features might not be mandatory, I added them to have all
+available code at hand 
 
 
 - Help -> Install New Software
 	Work with 'Galileo' update site, 
 	'Collaboration Tools' section
-	'Subversive SVN Team Provider (Incubation)'
+		'Subversive SVN Team Provider (Incubation)'
 
 - Help -> Install New Software
 	Add...
-	http://community.polarion.com/projects/subversive/download/eclipse/2.0/galileo-site/ 
+	http://community.polarion.com/projects/subversive/download/eclipse/2.0/update-site/
 	'Subversive SVN Connectors' section
+		All
 
-on Windows, install:
-	'JavaHL 1.5.4 Win32 Binaries (Optional)'
-	'JavaHL 1.6.0 Win32 Binaries (Optional)'
+Notes:
+- although not all connectors work on all platforms, manually selecting some of them is
+error prone, so better install all of them and let the Eclipse try to figure out which 
+one to use
 
-<questionable>
-on Linux, DO NOT try to install them, the default is the SVNKit.
- 
-	$ sudo apt-get install subversion 
+- Check if a value is filled in: Properties -> Team -> SVN -> Tab: SVN Connector
 
-	if necessary, also install:
+	- on Windows, you should see something like:
+		'JavaHL 1.5.4 Win32 Binaries (Optional)'
 
-	$ sudo apt-get install libsvn-java
+	- on Mac, you should see something like:
+		'SVN Kit 1.2.3'
 
-	and then add this to your eclipse.ini:
-
-	-Djava.library.path=/usr/lib/jni
-
-	(step not confirmed, I did my development on Windows)
-</questionable>
+	- on Linux, I think you should see something like:
+		'SVN Kit 1.2.3'
+	(sorry, I don't have it at hand) 
 
 - create a new workspace
 	File -> Switch Workspace -> Other
 	enter path
 	
-- change workspace preferences
+- change the workspace preferences
 	General -> Workspace
 		disable Build automatically
 		enable Refresh automatically
@@ -69,13 +76,7 @@ on Linux, DO NOT try to install them, the default is the SVNKit.
 	press Next 
 
 	Select Resource
-	Browse: gnuarmeclipse -> trunk
-
-	iterate the following 3 projects:
-
-		org.eclipse.cdt.cross.arm.gnu
-		org.eclipse.cdt.cross.arm.gnu-feature
-		org.eclipse.cdt.cross.arm.gnu-updatesite
+	Browse: gnuarmeclipse -> trunk -> org.eclipse.cdt.cross.arm.gnu
 
 	Select 'Head Revision'
 
@@ -89,21 +90,35 @@ on Linux, DO NOT try to install them, the default is the SVNKit.
 	(the project should be checked out now)
 
 
-- check if the references in the org.eclipse.cdt.cross.arm.gnu project were recognized.
-(open the project and check if JRE System Library and Plug-in Dependencies are populated)
+- repeat for the following two more projects:
+	org.eclipse.cdt.cross.arm.gnu-feature
+	org.eclipse.cdt.cross.arm.gnu-updatesite
 
-- select .gnu project
+- check if the references in the org.eclipse.cdt.cross.arm.gnu project were recognized.
+Open the project and check if the following folders are populated
+	JRE System Library
+	Plug-in Dependencies are populated
+
+- select the .gnu project
 	Project properties -> Run/Debug Settings
 	New -> Eclipse Application -> 
 		Name: Eclipse GNU ARM Plug-in
-	Plug-ins Tab
+		Location: ${workspace_loc}/../GNUARM-test
+	Tab: Plug-ins
 		Launch with: 'plug-ins selected below only'
 		Select Workspace, org.eclipse.cdt.cross.arm.gnu
 		Deselect 'Target Platform'
 		Deselect 'Add new workspace plug-ins to this launch configuration automatically'
 		Press 'Add required Plug-ins'
+	Tab: Arguments
+		Program arguments: -consoleLog
+		VM arguments: -d32
+	Tab: Environment
+		PATH=/Users/ilg/arm-cs-tools/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+	OK
 		
-- Select .gnu project
+- Select the *.gnu project
 	Run -> Run As -> Eclipse Application -> Eclipse GNU ARM Plug-in
 	Help -> About Eclipse Platform -> Installation Details -> Plug-ins
 	(the 'GNU ARM C/C++ Development Support' must be present)
@@ -114,8 +129,10 @@ For each build
 
 - go to the workspace org.eclipse.cdt.cross.arm.gnu-updatesite project
 and remove
-	features/* plugins/* artifacts.jar content.jar
-
+	features/* 
+	plugins/* 
+	artifacts.jar 
+	content.jar
 
 - back to Eclipse, the gnu-updatesite project
 	open site.xml
