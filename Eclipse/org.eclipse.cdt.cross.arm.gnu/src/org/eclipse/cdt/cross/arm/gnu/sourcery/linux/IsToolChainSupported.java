@@ -6,7 +6,7 @@ import org.eclipse.core.runtime.PluginVersionIdentifier;
 
 @SuppressWarnings("deprecation")
 public class IsToolChainSupported extends
-		org.eclipse.cdt.cross.arm.gnu.common.IsToolChainSupported {
+		org.eclipse.cdt.cross.arm.gnu.sourcery.IsToolChainSupported {
 
 	static IsToolchainData ms_oData = null;
 
@@ -18,10 +18,6 @@ public class IsToolChainSupported extends
 		
 		return isSupportedImpl(oToolChain, sVersion, sInstance,
 				ms_oData);
-	}
-
-	public String getCompilerName() {
-		return "arm-none-eabi-gcc";
 	}
 
 }

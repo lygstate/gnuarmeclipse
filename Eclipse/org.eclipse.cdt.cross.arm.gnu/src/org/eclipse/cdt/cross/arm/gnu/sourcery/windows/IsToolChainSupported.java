@@ -24,10 +24,6 @@ public class IsToolChainSupported extends
 				ms_oData);
 	}
 	
-	public String getCompilerName() {
-		return "arm-none-eabi-gcc";
-	}
-
 	public String getPlatform() {
 		return Tools.PROPERTY_OS_VALUE_WINDOWS;
 	}
