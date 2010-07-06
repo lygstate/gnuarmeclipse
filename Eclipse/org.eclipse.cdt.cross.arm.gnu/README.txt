@@ -46,6 +46,7 @@ Supported toolchains:
 - The CodeSourcery G++ Lite for ARM EABI (arm-none-eabi-gcc) on
 	Windows
 	GNU/Linux
+	Mac OS X
 
 - GNUARM and derivatives (arm-elf-gcc) on
 	Windows
@@ -69,8 +70,15 @@ The assembly step is now done with the more general 'gcc' instead of 'as'.
 Similarly, the link step is done by 'gcc/g++', instead of 'ld'.
 
 
-Current version: 0.5.3.201006282150
+Current version: 0.5.3.201007061210
 -----------------------------------
+
+Bug Fixes & Changes since 0.5.3.201006282150
+--------------------------------------------
+
+- CodeSourcery added to Mac OS X
+- Mac OS X missing GNUARM configuration reference fixed
+
 
 Bug Fixes & Changes since 0.5.3.201006091313
 --------------------------------------------
