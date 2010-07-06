@@ -145,10 +145,8 @@ and remove
 - commit all three projects to SVN
 
 - pack the update site to an archive
-	- create a temporary directory 'updatesite' 
-	- in file explorer enter directory 'updatesite'
-	- svn export to the temporary directory, from
-		https://gnuarmeclipse.svn.sourceforge.net/svnroot/gnuarmeclipse/trunk/org.eclipse.cdt.cross.arm.gnu-updatesite
+	- svn export to a temporary folder called 'updatesite', from
+		$ svn export https://gnuarmeclipse.svn.sourceforge.net/svnroot/gnuarmeclipse/trunk/org.eclipse.cdt.cross.arm.gnu-updatesite updatesite
 	- remove the .project file
 	- pack the content of the directory into an archive called
 		org.eclipse.cdt.cross.arm.gnu_updatesite.0.5.3.201001151708.zip
