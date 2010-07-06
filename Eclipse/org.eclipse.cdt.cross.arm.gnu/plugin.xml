@@ -2712,55 +2712,7 @@
       <configuration
             cleanCommand="cs-rm -rf"
             id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.configuration.base"
-            name="ARM Sourcery Windows GCC Configuration"
-            parent="org.eclipse.cdt.cross.arm.gnu.configuration.base">
-         <enablement
-               attribute="artifactExtension"
-               extensionAdjustment="false"
-               type="CONTAINER_ATTRIBUTE"
-               value="a">
-            <checkBuildProperty
-                  property="org.eclipse.cdt.build.core.buildArtefactType"
-                  value="org.eclipse.cdt.build.core.buildArtefactType.staticLib">
-            </checkBuildProperty>
-         </enablement>
-      </configuration>
-      <configuration
-            cleanCommand="rm -rf"
-            id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.configuration.base"
-            name="ARM Sourcery Linux GCC Configuration"
-            parent="org.eclipse.cdt.cross.arm.gnu.configuration.base">
-         <enablement
-               attribute="artifactExtension"
-               extensionAdjustment="false"
-               type="CONTAINER_ATTRIBUTE"
-               value="a">
-            <checkBuildProperty
-                  property="org.eclipse.cdt.build.core.buildArtefactType"
-                  value="org.eclipse.cdt.build.core.buildArtefactType.staticLib">
-            </checkBuildProperty>
-         </enablement>
-      </configuration>
-      <configuration
-            cleanCommand="rm -rf"
-            id="org.eclipse.cdt.cross.arm.gnu.windows.configuration.base"
-            name="ARM Windows GCC Configuration"
-            parent="org.eclipse.cdt.cross.arm.gnu.configuration.base">
-         <enablement
-               attribute="artifactExtension"
-               extensionAdjustment="false"
-               type="CONTAINER_ATTRIBUTE"
-               value="a">
-            <checkBuildProperty
-                  property="org.eclipse.cdt.build.core.buildArtefactType"
-                  value="org.eclipse.cdt.build.core.buildArtefactType.staticLib">
-            </checkBuildProperty>
-         </enablement>
-      </configuration>
-      <configuration
-            cleanCommand="rm -rf"
-            id="org.eclipse.cdt.cross.arm.gnu.linux.configuration.base"
-            name="ARM Linux GCC Configuration"
+            name="ARM Windows GCC (Sourcery G++ Lite) Configuration"
             parent="org.eclipse.cdt.cross.arm.gnu.configuration.base">
          <enablement
                attribute="artifactExtension"
@@ -3000,7 +2952,7 @@
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application"
             id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf"
             isAbstract="true"
-            name="ARM Sourcery Windows GCC Application">
+            name="ARM Windows GCC (Sourcery G++ Lite) Application">
          <configuration
                artifactExtension="elf"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -3136,7 +3088,7 @@
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.staticLib"
             id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.lib"
             isAbstract="true"
-            name="ARM Sourcery Windows GCC Static Library">
+            name="ARM Windows GCC (Sourcery G++ Lite) Static Library">
          <configuration
                artifactExtension="a"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -3226,13 +3178,28 @@
             </toolChain>
          </configuration>
       </projectType>
-            <toolChain
-                  archList="all"
-                  id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.toolchain.base"
-                  isAbstract="false"
-                  isToolChainSupported="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.IsToolChainSupported"
-                  name="ARM Linux GCC (Sourcery G++ Lite)"
-                  osList="linux">
+      <configuration
+            id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.configuration.base"
+            name="ARM Linux GCC (Sourcery G++ Lite) Configuration"
+            parent="org.eclipse.cdt.cross.arm.gnu.configuration.base">
+         <enablement
+               attribute="artifactExtension"
+               extensionAdjustment="false"
+               type="CONTAINER_ATTRIBUTE"
+               value="a">
+            <checkBuildProperty
+                  property="org.eclipse.cdt.build.core.buildArtefactType"
+                  value="org.eclipse.cdt.build.core.buildArtefactType.staticLib">
+            </checkBuildProperty>
+         </enablement>
+      </configuration>
+      <toolChain
+            archList="all"
+            id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.toolchain.base"
+            isAbstract="false"
+            isToolChainSupported="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.IsToolChainSupported"
+            name="ARM Linux GCC (Sourcery G++ Lite)"
+            osList="linux">
          <targetPlatform
                archList="all"
                binaryParser="org.eclipse.cdt.core.GNU_ELF"
@@ -3336,7 +3303,6 @@
                superClass="org.eclipse.cdt.cross.arm.gnu.base.option.addtools.printsize">
          </option>
          <tool
-               command="arm-none-eabi-gcc"
                id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.assembler.base"
                isAbstract="false"
                name="ARM Sourcery Linux GCC Assembler"
@@ -3348,7 +3314,6 @@
             </inputType>
          </tool>
          <tool
-               command="arm-none-eabi-gcc"
                id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.c.compiler.base"
                isAbstract="false"
                name="ARM Sourcery Linux GCC C Compiler"
@@ -3360,7 +3325,6 @@
             </inputType>
          </tool>
          <tool
-               command="arm-none-eabi-g++"
                id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.cpp.compiler.base"
                isAbstract="false"
                name="ARM Sourcery Linux GCC C++ Compiler"
@@ -3372,28 +3336,24 @@
             </inputType>
          </tool>
          <tool
-               command="arm-none-eabi-gcc"
                id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.c.linker.base"
                isAbstract="false"
                name="ARM Sourcery Linux GCC C Linker"
                superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.c.linker">
          </tool>
          <tool
-               command="arm-none-eabi-g++"
                id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.cpp.linker.base"
                isAbstract="false"
                name="ARM Sourcery Linux GCC C++ Linker"
                superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.cpp.linker">
          </tool>
          <tool
-               command="arm-none-eabi-ar"
                id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.archiver.base"
                isAbstract="false"
                name="ARM Sourcery Linux GCC Archiver"
                superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.archiver">
          </tool>
          <tool
-               command="arm-none-eabi-objcopy"
                id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.createflash.base"
                isAbstract="false"
                name="ARM Sourcery Linux GNU Create Flash Image"
@@ -3414,7 +3374,6 @@
             </enablement>
          </tool>
          <tool
-               command="arm-none-eabi-objdump"
                id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.createlisting.base"
                isAbstract="false"
                name="ARM Sourcery Linux GNU Create Listing"
@@ -3435,7 +3394,6 @@
             </enablement>
          </tool>
          <tool
-               command="arm-none-eabi-size"
                id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.printsize.base"
                isAbstract="false"
                name="ARM Sourcery Linux GNU Print Size"
@@ -3460,7 +3418,7 @@
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application"
             id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.elf"
             isAbstract="true"
-            name="ARM Sourcery Linux GCC Application">
+            name="ARM Linux GCC (Sourcery G++ Lite) Application">
          <configuration
                artifactExtension="elf"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -3596,7 +3554,7 @@
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.staticLib"
             id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.lib"
             isAbstract="true"
-            name="ARM Sourcery Linux GCC Static Library">
+            name="ARM Linux GCC (Sourcery G++ Lite) Library">
          <configuration
                artifactExtension="a"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -3686,6 +3644,22 @@
             </toolChain>
          </configuration>
       </projectType>
+      <configuration
+            cleanCommand="rm -rf"
+            id="org.eclipse.cdt.cross.arm.gnu.windows.configuration.base"
+            name="ARM Windows GCC (GNUARM, WinARM, Yagarto) Configuration"
+            parent="org.eclipse.cdt.cross.arm.gnu.configuration.base">
+         <enablement
+               attribute="artifactExtension"
+               extensionAdjustment="false"
+               type="CONTAINER_ATTRIBUTE"
+               value="a">
+            <checkBuildProperty
+                  property="org.eclipse.cdt.build.core.buildArtefactType"
+                  value="org.eclipse.cdt.build.core.buildArtefactType.staticLib">
+            </checkBuildProperty>
+         </enablement>
+      </configuration>
       
             <toolChain
                   archList="all"
@@ -3913,7 +3887,7 @@
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application"
             id="org.eclipse.cdt.cross.arm.gnu.windows.elf"
             isAbstract="true"
-            name="ARM Windows GCC Application">
+            name="ARM Windows GCC (GNUARM, WinARM, Yagarto) Application">
          <configuration
                artifactExtension="elf"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -4049,7 +4023,7 @@
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.staticLib"
             id="org.eclipse.cdt.cross.arm.gnu.windows.lib"
             isAbstract="true"
-            name="ARM Windows GCC Static Library">
+            name="ARM Windows GCC (GNUARM, WinARM, Yagarto) Static Library">
          <configuration
                artifactExtension="a"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -4139,6 +4113,21 @@
             </toolChain>
          </configuration>
       </projectType>
+      <configuration
+            id="org.eclipse.cdt.cross.arm.gnu.linux.configuration.base"
+            name="ARM Linux GCC (GNUARM) Configuration"
+            parent="org.eclipse.cdt.cross.arm.gnu.configuration.base">
+         <enablement
+               attribute="artifactExtension"
+               extensionAdjustment="false"
+               type="CONTAINER_ATTRIBUTE"
+               value="a">
+            <checkBuildProperty
+                  property="org.eclipse.cdt.build.core.buildArtefactType"
+                  value="org.eclipse.cdt.build.core.buildArtefactType.staticLib">
+            </checkBuildProperty>
+         </enablement>
+      </configuration>
       
       <toolChain
             archList="all"
@@ -4365,7 +4354,7 @@
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application"
             id="org.eclipse.cdt.cross.arm.gnu.linux.elf"
             isAbstract="true"
-            name="ARM Linux GCC Application">
+            name="ARM Linux GCC (GNUARM) Application">
          <configuration
                artifactExtension="elf"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -4501,7 +4490,7 @@
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.staticLib"
             id="org.eclipse.cdt.cross.arm.gnu.linux.lib"
             isAbstract="true"
-            name="ARM Linux GCC Static Library">
+            name="ARM Linux GCC (GNUARM) Static Library">
          <configuration
                artifactExtension="a"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -4591,13 +4580,28 @@
             </toolChain>
          </configuration>
       </projectType>
+      <configuration
+            id="org.eclipse.cdt.cross.arm.gnu.macosx.configuration.base"
+            name="ARM Mac OS X GCC (GNUARM) Configuration"
+            parent="org.eclipse.cdt.cross.arm.gnu.configuration.base">
+         <enablement
+               attribute="artifactExtension"
+               extensionAdjustment="false"
+               type="CONTAINER_ATTRIBUTE"
+               value="a">
+            <checkBuildProperty
+                  property="org.eclipse.cdt.build.core.buildArtefactType"
+                  value="org.eclipse.cdt.build.core.buildArtefactType.staticLib">
+            </checkBuildProperty>
+         </enablement>
+      </configuration>
       
             <toolChain
                   archList="all"
                   id="org.eclipse.cdt.cross.arm.gnu.macosx.toolchain.base"
                   isAbstract="false"
                   isToolChainSupported="org.eclipse.cdt.cross.arm.gnu.macosx.IsToolChainSupported"
-                  name="ARM Mac OS/X GCC (GNUARM)"
+                  name="ARM Mac OS X GCC (GNUARM)"
                   osList="macosx">
          <targetPlatform
                archList="all"
@@ -4817,7 +4821,7 @@
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application"
             id="org.eclipse.cdt.cross.arm.gnu.macosx.elf"
             isAbstract="true"
-            name="ARM Mac OS/X GCC Application">
+            name="ARM Mac OS X GCC (GNUARM) Application">
          <configuration
                artifactExtension="elf"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -4953,7 +4957,7 @@
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.staticLib"
             id="org.eclipse.cdt.cross.arm.gnu.macosx.lib"
             isAbstract="true"
-            name="ARM Mac OS/X GCC Static Library">
+            name="ARM Mac OS X GCC (GNUARM) Static Library">
          <configuration
                artifactExtension="a"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -5039,6 +5043,472 @@
                      id="org.eclipse.cdt.cross.arm.gnu.macosx.lib.archiver.release"
                      isAbstract="false"
                      superClass="org.eclipse.cdt.cross.arm.gnu.macosx.archiver.base">
+               </tool>
+            </toolChain>
+         </configuration>
+      </projectType>
+      <configuration
+            id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.configuration.base"
+            name="ARM Mac OS X GCC (Sourcery G++ Lite) Configuration"
+            parent="org.eclipse.cdt.cross.arm.gnu.configuration.base">
+         <enablement
+               attribute="artifactExtension"
+               extensionAdjustment="false"
+               type="CONTAINER_ATTRIBUTE"
+               value="a">
+            <checkBuildProperty
+                  property="org.eclipse.cdt.build.core.buildArtefactType"
+                  value="org.eclipse.cdt.build.core.buildArtefactType.staticLib">
+            </checkBuildProperty>
+         </enablement>
+      </configuration>
+      <toolChain
+            archList="all"
+            id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.toolchain.base"
+            isAbstract="false"
+            isToolChainSupported="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.IsToolChainSupported"
+            name="ARM Mac OS X GCC (Sourcery G++ Lite)"
+            osList="macosx">
+         <targetPlatform
+               archList="all"
+               binaryParser="org.eclipse.cdt.core.GNU_ELF"
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.platform.base"
+               isAbstract="false"
+               name="Mac OS X Platform"
+               osList="macosx">
+         </targetPlatform>
+         <builder
+               command="make"
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.builder.base"
+               isAbstract="false"
+               isVariableCaseSensitive="false"
+               name="ARM Sourcery Mac OS X GNU Make builder"
+               superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.builder">
+         </builder>
+         <optionCategory
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.category.target"
+               name="Target Processor">
+         </optionCategory>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.category.target"
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.option.target.processor"
+               name="Processor"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.processor">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.category.target"
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.option.target.thumb"
+               name="Thumb (-mthumb)"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.thumb">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.category.target"
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.option.target.thumbinterwork"
+               name="Thumb interwork (-mthumb-interwork)"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.thumbinterwork">
+         </option>
+         <optionCategory
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.category.debugging"
+               name="Debugging">
+         </optionCategory>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.category.debugging"
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.option.debugging.level"
+               name="Debug level"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.level">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.category.debugging"
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.option.debugging.format"
+               name="Debug format"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.format">
+            <enablement
+                  type="UI_ENABLEMENT|CMD_USAGE">
+               <not>
+                  <checkOption
+                        optionId="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.option.debugging.level"
+                        value="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.level.none">
+                  </checkOption>
+               </not>
+            </enablement>
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.category.debugging"
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.option.debugging.other"
+               name="Other debugging flags"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.other">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.category.debugging"
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.option.debugging.prof"
+               name="Generate prof information (-p)"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.prof">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.category.debugging"
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.option.debugging.gprof"
+               name="Generate gprof information (-pg)">
+         </option>
+         <optionCategory
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.category.addtools"
+               name="Additional Tools">
+         </optionCategory>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.category.addtools"
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.option.addtools.createflash"
+               name="Create Flash Image"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.addtools.createflash">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.category.addtools"
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.option.addtools.createlisting"
+               name="Create Extended Listing"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.addtools.createlisting">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.category.addtools"
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.option.addtools.printsize"
+               name="Print Size"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.addtools.printsize">
+         </option>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.assembler.base"
+               isAbstract="false"
+               name="ARM Sourcery Mac OS X GCC Assembler"
+               superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.assembler">
+            <inputType
+                  id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.assembler.base.input"
+                  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCManagedMakePerProjectProfileC|org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCStandardMakePerFileProfile"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.assembler.input">
+            </inputType>
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.c.compiler.base"
+               isAbstract="false"
+               name="ARM Sourcery Mac OS X GCC C Compiler"
+               superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.c.compiler">
+            <inputType
+                  id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.c.compiler.base.input"
+                  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCManagedMakePerProjectProfileC|org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCStandardMakePerFileProfile"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.input">
+            </inputType>
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.cpp.compiler.base"
+               isAbstract="false"
+               name="ARM Sourcery Mac OS X GCC C++ Compiler"
+               superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.cpp.compiler">
+            <inputType
+                  id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.cpp.compiler.base.input"
+                  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCManagedMakePerProjectProfileCPP|org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCStandardMakePerFileProfile"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.input">
+            </inputType>
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.c.linker.base"
+               isAbstract="false"
+               name="ARM Sourcery Mac OS X GCC C Linker"
+               superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.c.linker">
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.cpp.linker.base"
+               isAbstract="false"
+               name="ARM Sourcery Mac OS X GCC C++ Linker"
+               superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.cpp.linker">
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.archiver.base"
+               isAbstract="false"
+               name="ARM Sourcery Mac OS X GCC Archiver"
+               superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.archiver">
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.createflash.base"
+               isAbstract="false"
+               name="ARM Sourcery Mac OS X GNU Create Flash Image"
+               superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.createflash">
+            <enablement
+                  type="ALL">
+               <checkOption
+                     holderId="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.toolchain.base"
+                     optionId="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.option.addtools.createflash"
+                     value="true">
+               </checkOption>
+               <and>
+                  <checkBuildProperty
+                        property="org.eclipse.cdt.build.core.buildArtefactType"
+                        value="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application">
+                  </checkBuildProperty>
+               </and>
+            </enablement>
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.createlisting.base"
+               isAbstract="false"
+               name="ARM Sourcery Mac OS X GNU Create Listing"
+               superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.createlisting">
+            <enablement
+                  type="ALL">
+               <checkOption
+                     holderId="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.toolchain.base"
+                     optionId="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.option.addtools.createlisting"
+                     value="true">
+               </checkOption>
+               <and>
+                  <checkBuildProperty
+                        property="org.eclipse.cdt.build.core.buildArtefactType"
+                        value="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application">
+                  </checkBuildProperty>
+               </and>
+            </enablement>
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.printsize.base"
+               isAbstract="false"
+               name="ARM Sourcery Mac OS X GNU Print Size"
+               superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.printsize">
+            <enablement
+                  type="ALL">
+               <checkOption
+                     holderId="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.toolchain.base"
+                     optionId="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.option.addtools.printsize"
+                     value="true">
+               </checkOption>
+               <and>
+                  <checkBuildProperty
+                        property="org.eclipse.cdt.build.core.buildArtefactType"
+                        value="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application">
+                  </checkBuildProperty>
+               </and>
+            </enablement>
+         </tool>
+      </toolChain>
+      <projectType
+            buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application"
+            id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf"
+            isAbstract="true"
+            name="ARM Mac OS X GCC (Sourcery G++ Lite) Application">
+         <configuration
+               artifactExtension="elf"
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.debug"
+               name="Debug"
+               parent="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.configuration.base">
+            <toolChain
+                  id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.toolchain.debug"
+                  isAbstract="false"
+                  secondaryOutputs="org.eclipse.cdt.cross.arm.gnu.createflash.output;org.eclipse.cdt.cross.arm.gnu.createlisting.output;org.eclipse.cdt.cross.arm.gnu.printsize.output"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.toolchain.base"
+                  targetTool="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.c.linker.debug;org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.cpp.linker.debug">
+               <targetPlatform
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.platform.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.platform.base">
+               </targetPlatform>
+               <builder
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.builder.debug"
+                     isAbstract="false"
+                     isVariableCaseSensitive="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.builder.base">
+               </builder>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.assembler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.assembler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.c.compiler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.c.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.cpp.compiler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.cpp.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.c.linker.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.c.linker.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.cpp.linker.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.cpp.linker.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.createflash.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.createflash.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.createlisting.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.createlisting.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.printsize.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.printsize.base">
+               </tool>
+            </toolChain>
+         </configuration>
+         <configuration
+               artifactExtension="elf"
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.release"
+               name="Release"
+               parent="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.configuration.base">
+            <toolChain
+                  id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.toolchain.release"
+                  isAbstract="false"
+                  secondaryOutputs="org.eclipse.cdt.cross.arm.gnu.createflash.output;org.eclipse.cdt.cross.arm.gnu.createlisting.output;org.eclipse.cdt.cross.arm.gnu.printsize.output"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.toolchain.base"
+                  targetTool="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.c.linker.release;org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.cpp.linker.release">
+               <targetPlatform
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.platform.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.platform.base">
+               </targetPlatform>
+               <builder
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.builder.release"
+                     isAbstract="false"
+                     isVariableCaseSensitive="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.builder.base">
+               </builder>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.assembler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.assembler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.c.compiler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.c.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.cpp.compiler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.cpp.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.c.linker.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.c.linker.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.cpp.linker.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.cpp.linker.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.createflash.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.createflash.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.createlisting.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.createlisting.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf.printsize.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.printsize.base">
+               </tool>
+            </toolChain>
+         </configuration>
+      </projectType>
+      <projectType
+            buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.staticLib"
+            id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.lib"
+            isAbstract="true"
+            name="ARM Mac OS X GCC (Sourcery G++ Lite) Library">
+         <configuration
+               artifactExtension="a"
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.lib.debug"
+               name="Debug"
+               parent="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.configuration.base">
+            <toolChain
+                  id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.lib.toolchain.debug"
+                  isAbstract="false"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.toolchain.base"
+                  targetTool="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.lib.archiver.debug">
+               <targetPlatform
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.lib.platform.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.platform.base">
+               </targetPlatform>
+               <builder
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.lib.builder.debug"
+                     isAbstract="false"
+                     isVariableCaseSensitive="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.builder.base">
+               </builder>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.lib.assembler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.assembler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.lib.c.compiler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.c.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.lib.cpp.compiler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.cpp.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.lib.archiver.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.archiver.base">
+               </tool>
+            </toolChain>
+         </configuration>
+         <configuration
+               artifactExtension="a"
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.lib.release"
+               name="Release"
+               parent="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.configuration.base">
+            <toolChain
+                  id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.lib.toolchain.release"
+                  isAbstract="false"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.toolchain.base"
+                  targetTool="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.lib.archiver.release">
+               <targetPlatform
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.lib.platform.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.platform.base">
+               </targetPlatform>
+               <builder
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.lib.builder.release"
+                     isAbstract="false"
+                     isVariableCaseSensitive="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.builder.base">
+               </builder>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.lib.assembler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.assembler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.lib.c.compiler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.c.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.lib.cpp.compiler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.cpp.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.lib.archiver.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.archiver.base">
                </tool>
             </toolChain>
          </configuration>
