@@ -190,4 +190,4 @@ If you notice any problem while using the plug-in, please check the log at:
 	workspace/.metadata/.log
 
 If there are any exceptions related to org.eclipse.cdt.cross.arm.* classes, 
-please post the bugs to Sourceforge.
+please post the bugs to SourceForge.
