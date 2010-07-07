@@ -1,4 +1,4 @@
-- install Sun JRE1.5 or later
+- if not running on a Mac, install Sun JRE1.5 or later
 
 - from http://www.eclipse.org/downloads/packages/release/galileo/sr2 download and install 
 	'Eclipse for RCP/Plug-in Developers'
@@ -114,21 +114,26 @@ Open the project and check if the following folders are populated
 		Program arguments: -consoleLog
 		VM arguments: -d32
 	Tab: Environment
-		PATH=/Users/ilg/arm-cs-tools/bin:/usr/bin:/bin:/usr/sbin:/sbin
-
-	OK
+		PATH=/Users/ilg/devkitARM/bin:/Users/ilg/arm-cs-tools/bin:/usr/bin:/bin:/usr/sbin:/sbin
+		PATH_CODESOURCERY=/Users/ilg/arm-cs-tools/bin
+		PATH_DEVKITARM=/Users/ilg/devkitARM/bin
+	click on OK
 		
 - Select the *.gnu project
 	Run -> Run As -> Eclipse Application -> Eclipse GNU ARM Plug-in
 	Help -> About Eclipse Platform -> Installation Details -> Plug-ins
 	(the 'GNU ARM C/C++ Development Support' must be present)
 
+- Run the newly added configuration
+
+- Check the plug-in debug log 'workspace/.metadata/.log'
+
 
 For each build
 --------------
 
 - go to the workspace org.eclipse.cdt.cross.arm.gnu-updatesite project
-and remove
+and remove the following files:
 	features/* 
 	plugins/* 
 	artifacts.jar 
@@ -138,14 +143,15 @@ and remove
 	open site.xml
 
 - press the 'Build All' button
-	since the sources were written on 3.4, you'll get about 84 warnings
+	since the sources were written on 3.4, you'll get about 127 warnings
 
 - features/*.jar, plugins/*.jar, artifacts.jar and content.jar should be rebuild
 
 - commit all three projects to SVN
 
 - pack the update site to an archive
-	- svn export to a temporary folder called 'updatesite', from
+	- svn export to a temporary folder called 'updatesite', with
+		$ cd /tmp
 		$ svn export https://gnuarmeclipse.svn.sourceforge.net/svnroot/gnuarmeclipse/trunk/org.eclipse.cdt.cross.arm.gnu-updatesite updatesite
 	- remove the .project file
 	- pack the content of the directory into an archive called

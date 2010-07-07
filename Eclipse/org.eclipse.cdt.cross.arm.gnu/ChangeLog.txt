@@ -120,15 +120,21 @@ for running on ARM ported Linux, not embedded systems.
 - Properties on a source file triggered an error when selecting Tool Settings.
 This was due to a bug in ARMManagedCommandLineGenerator, where the parent
 of Tool may be ResourceConfiguration instead of ToolChain.
+(bug #3024374 added a better support, by climbing the hierarchy)
 
 
 [2010-07-06]
 
-- ported on Mac OS X, Eclipse 3.5.2
+- development ported on Mac OS X, Eclipse 3.5.2
 - CodeSourcery added to Mac OS X
 - Mac OS X missing GNUARM configuration reference fixed
 - (#3024374) individual properties processed; ITool.getParent() should climb up
 the hierarchy via getSuperClass(); this is also a better fix for #3021757.
 - (#3024483) New Yagarto Toolchain uses EABI; Yagarto toolchain split from 
 common Windows GCC configurations
+
+[2010-07-07]
+
+- Yagarto discovery code was referring to CodeSourcery; fixed
+- (#3014562) support for devkitPro ARM toolchain added (arm-eabi-g++)
 

@@ -1,8 +1,7 @@
 
-This is a functional beta version of the new 
-GNU ARM Eclipse Plug-in (Second Edition).
+This is a functional version of the 'GNU ARM Eclipse Plug-in (Second Edition)'.
 
-https://sourceforge.net/projects/gnuarmeclipse/
+	https://sourceforge.net/projects/gnuarmeclipse/
 
 
 Installation
@@ -29,13 +28,15 @@ but this is not recommended.
 Requirements
 ------------
 
-- Eclipse 3.4
-- CDT 5.0.2 (!)
-- Java JRE 1.5
-- Cygwin (note: although CodeSourcery provides cs-make, if the sources 
-are organized in subdirectories, like 'src', the generated makefiles
-require additional shell support, so having Cygwin in the build path
-is a good choice).
+- Eclipse 3.4 (preferred 3.5.2)
+- CDT 5.0.2 (preferred 6.x)
+- Java JRE 1.5 (preferred 1.6)
+
+- Cygwin, if make/rm not provided 
+Note: although CodeSourcery provides cs-make, if the sources are 
+organized in subdirectories, like 'src', the generated makefiles
+might require additional shell support, so if you notice make 
+errors, having Cygwin in the build path is a good choice).
 
 
 Implementation notes
@@ -44,7 +45,7 @@ Implementation notes
 Supported toolchains:
 
 - The CodeSourcery G++ Lite for ARM EABI (arm-none-eabi-gcc) on
-	Windows
+	Windows (with provided cs-make/cs-rm)
 	GNU/Linux
 	Mac OS X
 
@@ -52,6 +53,15 @@ Supported toolchains:
 	Windows
 	GNU/Linux
 	Mac OS X
+	
+- Yagarto (arm-none-eabi-gcc) on
+	Windows
+	
+- devkitPro ARM (arm-eabi-gcc) on
+	Windows (no make/rm provided)
+	GNU/Linux
+	Mac OS X
+
 
 Supported project types are:
 - applications (.elf, .hex)
@@ -72,6 +82,14 @@ Similarly, the link step is done by 'gcc/g++', instead of 'ld'.
 
 Current version: 0.5.3.201007062110
 -----------------------------------
+
+Bug Fixes & Changes since 0.5.3.201007062110
+--------------------------------------------
+
+- support for devkitPro was added for all platforms (Windows/Linux/Mac OS X). 
+On Windows, the usual make/rm utilities are required; Cygwin provides very good 
+implementations of them. 
+- some Yagarto discovery bugs were fixed
 
 Bug Fixes & Changes since 0.5.3.201006282150
 --------------------------------------------
@@ -129,7 +147,7 @@ Bug Fixes & Changes since 0.5.3.200904072239
 --------------------------------------------
 
 - Discovery Options implemented for all toolchains.
-(Note: be sure you update to CDT 5.0.2, on 5.0.0 support
+(Note: be sure you update to CDT 5.0.2 or higher, on 5.0.0 support
 for Discovery is buggy).
  
 
@@ -164,7 +182,7 @@ If you notice any problem while using the plug-in, please check the log at:
 	workspace/.metadata/.log
 
 If there are any exceptions related to org.eclipse.cdt.cross.arm.* classes, 
-please post the bugs to Sourceforge support forums.
+please post the bugs to SourceForge support forums.
 
 
 Any comments/suggestions will be highly appreciated.
