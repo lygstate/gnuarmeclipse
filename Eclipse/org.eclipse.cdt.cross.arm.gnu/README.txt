@@ -80,7 +80,7 @@ The assembly step is now done with the more general 'gcc' instead of 'as'.
 Similarly, the link step is done by 'gcc/g++', instead of 'ld'.
 
 
-Current version: 0.5.3.201007062110
+Current version: 0.5.3.201007072245
 -----------------------------------
 
 Bug Fixes & Changes since 0.5.3.201007062110
