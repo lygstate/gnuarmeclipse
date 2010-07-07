@@ -151,7 +151,7 @@ and remove the following files:
 
 - pack the update site to an archive
 	- svn export to a temporary folder called 'updatesite', with
-		$ cd /tmp
+		$ cd ~/tmp
 		$ svn export https://gnuarmeclipse.svn.sourceforge.net/svnroot/gnuarmeclipse/trunk/org.eclipse.cdt.cross.arm.gnu-updatesite updatesite
 	- remove the .project file
 	- pack the content of the directory into an archive called
