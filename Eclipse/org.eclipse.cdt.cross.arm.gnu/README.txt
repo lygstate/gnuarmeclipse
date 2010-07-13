@@ -1,5 +1,5 @@
 
-This is a functional version of the 'GNU ARM Eclipse Plug-in (Second Edition)'.
+This is the 'GNU ARM Eclipse Plug-in (Second Edition)'.
 
 	https://sourceforge.net/projects/gnuarmeclipse/
 
@@ -80,8 +80,15 @@ The assembly step is now done with the more general 'gcc' instead of 'as'.
 Similarly, the link step is done by 'gcc/g++', instead of 'ld'.
 
 
-Current version: 0.5.3.201007072245
+Current version: 0.5.3.201007132006
 -----------------------------------
+
+
+Bug Fixes & Changes since 0.5.3.201007072245
+--------------------------------------------
+
+- assembler listing support added as -Wa,-adhlns="$@.lst" to source files
+
 
 Bug Fixes & Changes since 0.5.3.201007062110
 --------------------------------------------
@@ -91,6 +98,7 @@ On Windows, the usual make/rm utilities are required; Cygwin provides very good
 implementations of them. 
 - some Yagarto discovery bugs were fixed
 
+
 Bug Fixes & Changes since 0.5.3.201006282150
 --------------------------------------------
 
@@ -98,6 +106,7 @@ Bug Fixes & Changes since 0.5.3.201006282150
 - Mac OS X missing GNUARM configuration reference fixed
 - (#3024374) individual properties processed
 - (#3024483) New Yagarto Toolchain uses EABI
+
 
 Bug Fixes & Changes since 0.5.3.201006091313
 --------------------------------------------
@@ -168,11 +177,33 @@ to
 Known Bugs
 ----------
 
+As with any software, this plug-in has its share of problems:
+
+Major bugs:
+
+- do not set the build properties for a folder; by doing this, 
+global project properties like unchecking the -mthumb, or changing 
+debugging setting will be ignored for source files below the folder
+
+- do not set the build properties for a source file; by doing this, 
+the build process will terminate prematurely, and no HEX file will 
+be created.
+ 
+- do not change the toolchain for a project; by doing this you will 
+permanently damage the project. There is not known way to repair 
+such a broken project; you have to create a new project and copy 
+content.
+
+- do not use the plug-in on Eclipse 3.6 Helios, since the Discovery 
+Options are not working.
+
+Other problems:
+
 - toolchain presence is not yet verified, so missing toolchains 
 are also offered for selection
 
-- screen update after selecting/deselecting additional tools requires 
-leaving that tab and returning
+- screen update after selecting/deselecting additional tools 
+requires leaving that tab and returning
 
 
 Reporting problems
