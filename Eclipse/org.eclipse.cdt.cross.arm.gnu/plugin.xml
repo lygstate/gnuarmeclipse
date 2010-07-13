@@ -36,6 +36,9 @@
                id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.toolchain.base">
          </toolChain>
          <toolChain
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.toolchain.base">
+         </toolChain>
+         <toolChain
                id="org.eclipse.cdt.cross.arm.gnu.windows.toolchain.base">
          </toolChain>
          <toolChain
@@ -43,6 +46,18 @@
          </toolChain>
          <toolChain
                id="org.eclipse.cdt.cross.arm.gnu.macosx.toolchain.base">
+         </toolChain>
+         <toolChain
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.toolchain.base">
+         </toolChain>
+         <toolChain
+               id="org.eclipse.cdt.cross.arm.gnu.devkitpro.windows.toolchain.base">
+         </toolChain>
+         <toolChain
+               id="org.eclipse.cdt.cross.arm.gnu.devkitpro.linux.toolchain.base">
+         </toolChain>
+         <toolChain
+               id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.toolchain.base">
          </toolChain>
       </template>
    </extension>
