@@ -1503,6 +1503,13 @@
                valueType="string">
          </option>
          <option
+               command="-Wa,"
+               defaultValue="-adhlns=&quot;$@.lst&quot;"
+               id="org.eclipse.cdt.cross.arm.gnu.base.option.other.lstfilename"
+               name="Assembler Listing"
+               valueType="string">
+         </option>
+         <option
                id="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.other"
                name="Other debugging flags"
                valueType="string">
@@ -1669,6 +1676,11 @@
                id="org.eclipse.cdt.cross.arm.gnu.assembler.option.xflags"
                name="Assembler flags"
                valueType="stringList">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.assembler.category.other"
+               id="org.eclipse.cdt.cross.arm.gnu.assembler.option.misc.lstfilename"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.other.lstfilename">
          </option>
          <option
                category="org.eclipse.cdt.cross.arm.gnu.assembler.category.other"
@@ -1931,6 +1943,11 @@
                   id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.misc.std.gnu99"
                   name="ISO C99 with GNU Extensions (-std=gnu99)">
             </enumeratedOptionValue>
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.c.compiler.category.other"
+               id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.misc.lstfilename"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.other.lstfilename">
          </option>
          <option
                category="org.eclipse.cdt.cross.arm.gnu.c.compiler.category.other"
@@ -2236,6 +2253,11 @@
                   id="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.misc.std.gnucpp0x"
                   name="ISO 2009 C++ with GNU Extensions (-std=gnu++0x)">
             </enumeratedOptionValue>
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.category.other"
+               id="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.misc.lstfilename"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.other.lstfilename">
          </option>
          <option
                category="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.category.other"
