@@ -1,30 +1,41 @@
 PRJNAME="gnuarmeclipse"
-DESTDIR="/home/groups/g/gn/gnuarmeclipse/htdocs/updates"
+DESTDIR_WWW="/home/groups/g/gn/gnuarmeclipse/htdocs"
+DESTDIR_UPDATE="$DESTDIR_WWW/updates"
 
 if [ $# -ge 1 ]
 then
     if [ $1 = 'test' ]
     then
-       DESTDIR+="-test"
+       DESTDIR_UPDATE+="-test"
     fi
 fi
 
-URL="https://$PRJNAME.svn.sourceforge.net/svnroot/$PRJNAME/trunk/Eclipse/current/"
-URL+="org.eclipse.cdt.cross.arm.gnu-updatesite"
+URL_TRUNK="https://$PRJNAME.svn.sourceforge.net/svnroot/$PRJNAME/trunk"
+URL_UPDATE="$URL_TRUNK/Eclipse/current/"
+URL_UPDATE+="org.eclipse.cdt.cross.arm.gnu-updatesite"
+URL_WWW="$URL_TRUNK/www/"
 TDIR="/tmp/ilg-$$"
+TDIR_UPDATE="/tmp/ilg-$$/updates"
 
-echo $PRJNAME $URL $TDIR $DESTDIR
+echo $PRJNAME $URL_UPDATE $TDIR $DESTDIR_UPDATE
 
 #exit
 
-svn export $URL $TDIR
-rm -rf $DESTDIR/*
-mv $TDIR/* $DESTDIR
+svn export $URL_WWW $TDIR
+echo cp $TDIR/* $DESTDIR_WWW
+cp -a $TDIR/* $DESTDIR_WWW
+ls -l $DESTDIR_WWW
 
-rm -rf $DESTDIR/.project
-find $DESTDIR/* -type f -exec chmod 0664 {} \;
-find $DESTDIR/* -type d -exec chmod 2775 {} \;
-chgrp -R $PRJNAME $DESTDIR/*
+#exit
+
+svn export $URL_UPDATE $TDIR_UPDATE
+rm -rf $DESTDIR_UPDATE/*
+mv $TDIR_UPDATE/* $DESTDIR_UPDATE
+
+rm -rf $DESTDIR_UPDATE/.project
+find $DESTDIR_UPDATE/* -type f -exec chmod 0664 {} \;
+find $DESTDIR_UPDATE/* -type d -exec chmod 2775 {} \;
+chgrp -R $PRJNAME $DESTDIR_UPDATE/*
 rm -rf $TDIR
-echo "Copied to $DESTDIR"
+echo "Copied to $DESTDIR_UPDATE"
 
