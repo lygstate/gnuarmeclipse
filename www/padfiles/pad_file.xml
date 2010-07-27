@@ -81,7 +81,7 @@
 			<Application_Order_URL />
 			<Application_Screenshot_URL>http://sourceforge.net/apps/mediawiki/gnuarmeclipse/index.php?title=File:Project.png</Application_Screenshot_URL>
 			<Application_Icon_URL>http://sourceforge.net/apps/mediawiki/gnuarmeclipse/index.php?title=File:MediaWikiSidebarLogo.png</Application_Icon_URL>
-			<Application_XML_File_URL>http://sourceforge.net/projects/gnuarmeclipse/padfiles/pad_file.xml</Application_XML_File_URL>
+			<Application_XML_File_URL>http://gnuarmeclipse.sourceforge.net/padfiles/pad_file.xml</Application_XML_File_URL>
 		</Application_URLs>
 		<Download_URLs>
 			<Primary_Download_URL>http://sourceforge.net/projects/gnuarmeclipse/files/</Primary_Download_URL>
