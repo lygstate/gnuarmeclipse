@@ -3,13 +3,12 @@
    <description url="http://gnuarmeclipse.sourceforge.net/updates">
       GNU ARM Eclipse Plug-in Update Site
    </description>
-   <feature url="features/org.eclipse.cdt.cross.arm.gnu_0.5.3.201007291947.jar" id="org.eclipse.cdt.cross.arm.gnu" version="0.5.3.201007291947" os="linux,macosx,win32">
-      <category name="org.eclipse.cdt.cross.arm.gnu"/>
+   <feature url="features/org.eclipse.cdt.cross.arm.gnu_0.5.3.201007292133.jar" id="org.eclipse.cdt.cross.arm.gnu" version="0.5.3.201007292133" os="linux,macosx,win32">
+      <category name="org.eclipse.cdt.cross.gnu"/>
    </feature>
-   <category-def name="org.eclipse.cdt.cross.arm.gnu" label="GNU ARM Features">
+   <category-def name="org.eclipse.cdt.cross.gnu" label="CDT GNU Cross Development Tools">
       <description>
-         GNU ARM Features
+         CDT GNU Cross Development Tools
       </description>
    </category-def>
-   <category-def name="org.eclipse.cdt.cross.gnu" label="CDT GNU Cross Development Tools"/>
 </site>
