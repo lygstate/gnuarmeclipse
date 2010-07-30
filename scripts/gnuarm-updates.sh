@@ -51,10 +51,17 @@ then
   myCopy $DESTDIR_UPDATE-test
 else
   # myCopy $DESTDIR_UPDATE 
-  myCopy $DESTDIR_UPDATE-test 
+  # myCopy $DESTDIR_UPDATE-test 
 
   cd $TDIR_UPDATE
-  zip -v -b $TDIR a.zip *
+  ARCHNAME=`basename plugins/*.jar .jar`
+  echo $ARCHNAME
+
+  zip -v $ARCHNAME.zip *
+  ls -l
+  DESTDIR_FRS=/home/frs/project/g/gn/gnuarmeclipse/gnuarmeclipse/0.5.3
+  mkdir -p $DESTDIR_FRS
+  cp $ARCHNAME.zip $DESTDIR_FRS
 fi
 
 rm -rf $TDIR
