@@ -48,9 +48,9 @@ function myCopy()
 
 if [ $ISTEST = 'true' ]
 then
-  myCopy($DESTDIR_UPDATE-test)
+  myCopy $DESTDIR_UPDATE-test
 else
-  myCopy($DESTDIR_UPDATE)
-  myCopy($DESTDIR_UPDATE-test)
+  myCopy $DESTDIR_UPDATE 
+  myCopy $DESTDIR_UPDATE-test 
 fi
 
