@@ -2,7 +2,7 @@ PRJNAME="gnuarmeclipse"
 DESTDIR_WWW="/home/groups/g/gn/gnuarmeclipse/htdocs"
 DESTDIR_UPDATE="$DESTDIR_WWW/updates"
 
-ISTEST=''
+ISTEST='false'
 
 if [ $# -ge 1 ]
 then
