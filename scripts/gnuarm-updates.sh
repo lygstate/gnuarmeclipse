@@ -31,17 +31,17 @@ ls -l $DESTDIR_WWW
 #exit
 
 svn export $URL_UPDATE $TDIR_UPDATE
+rm -rf $TDIR_UPDATE/.project
+rm -rf $TDIR_UPDATE/build.xml
 
 function myCopy()
 {
   rm -rf $1/*
   cp -a $TDIR_UPDATE/* $1
 
-  rm -rf $1/.project
   find $1/* -type f -exec chmod 0664 {} \;
   find $1/* -type d -exec chmod 2775 {} \;
   chgrp -R $PRJNAME $1/*
-  rm -rf $TDIR
   echo "Copied to $1"
 }
 
@@ -50,7 +50,11 @@ if [ $ISTEST = 'true' ]
 then
   myCopy $DESTDIR_UPDATE-test
 else
-  myCopy $DESTDIR_UPDATE 
+  # myCopy $DESTDIR_UPDATE 
   myCopy $DESTDIR_UPDATE-test 
+
+  cd $TDIR_UPDATE
+  zip -v -b $TDIR a.zip *
 fi
 
+rm -rf $TDIR
