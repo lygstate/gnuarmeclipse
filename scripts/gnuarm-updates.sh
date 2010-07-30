@@ -2,11 +2,13 @@ PRJNAME="gnuarmeclipse"
 DESTDIR_WWW="/home/groups/g/gn/gnuarmeclipse/htdocs"
 DESTDIR_UPDATE="$DESTDIR_WWW/updates"
 
+ISTEST=''
+
 if [ $# -ge 1 ]
 then
     if [ $1 = 'test' ]
     then
-       DESTDIR_UPDATE+="-test"
+       ISTEST='true'
     fi
 fi
 
@@ -29,13 +31,26 @@ ls -l $DESTDIR_WWW
 #exit
 
 svn export $URL_UPDATE $TDIR_UPDATE
-rm -rf $DESTDIR_UPDATE/*
-mv $TDIR_UPDATE/* $DESTDIR_UPDATE
 
-rm -rf $DESTDIR_UPDATE/.project
-find $DESTDIR_UPDATE/* -type f -exec chmod 0664 {} \;
-find $DESTDIR_UPDATE/* -type d -exec chmod 2775 {} \;
-chgrp -R $PRJNAME $DESTDIR_UPDATE/*
-rm -rf $TDIR
-echo "Copied to $DESTDIR_UPDATE"
+function myCopy()
+{
+  rm -rf $1/*
+  cp -a $TDIR_UPDATE/* $1
+
+  rm -rf $1/.project
+  find $1/* -type f -exec chmod 0664 {} \;
+  find $1/* -type d -exec chmod 2775 {} \;
+  chgrp -R $PRJNAME $1/*
+  rm -rf $TDIR
+  echo "Copied to $1"
+}
+
+
+if [ $ISTEST = 'true' ]
+then
+  myCopy($DESTDIR_UPDATE-test)
+else
+  myCopy($DESTDIR_UPDATE)
+  myCopy($DESTDIR_UPDATE-test)
+fi
 
