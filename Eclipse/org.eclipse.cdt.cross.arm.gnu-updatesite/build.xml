@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="project" default="clean">
+  <target name="clean">
+    <delete file="artifacts.jar"/>
+    <delete file="content.jar"/>
+  	<delete>
+  		<fileset dir="features" includes="*.jar" />
+  		<fileset dir="plugins" includes="*.jar" />
+  	</delete>
+  </target>
+</project>
