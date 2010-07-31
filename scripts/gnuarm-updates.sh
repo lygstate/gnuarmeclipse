@@ -16,8 +16,8 @@ URL_TRUNK="https://$PRJNAME.svn.sourceforge.net/svnroot/$PRJNAME/trunk"
 URL_UPDATE="$URL_TRUNK/Eclipse/current/"
 URL_UPDATE+="org.eclipse.cdt.cross.arm.gnu-updatesite"
 URL_WWW="$URL_TRUNK/www/"
-TDIR="/tmp/ilg-$$"
-TDIR_UPDATE="/tmp/ilg-$$/updates"
+TDIR="tmp/ilg-$$"
+TDIR_UPDATE="$TDIR/updates"
 
 echo $PRJNAME $URL_UPDATE $TDIR $DESTDIR_UPDATE
 
@@ -41,7 +41,7 @@ function myCopy()
 
   find $1/* -type f -exec chmod 0664 {} \;
   find $1/* -type d -exec chmod 2775 {} \;
-  chgrp -R $PRJNAME $1/*
+  chgrp -R -v $PRJNAME $1/*
   echo "Copied to $1"
 }
 
@@ -50,18 +50,18 @@ if [ $ISTEST = 'true' ]
 then
   myCopy $DESTDIR_UPDATE-test
 else
-  # myCopy $DESTDIR_UPDATE 
-  # myCopy $DESTDIR_UPDATE-test 
+  myCopy $DESTDIR_UPDATE 
+  myCopy $DESTDIR_UPDATE-test 
 
   cd $TDIR_UPDATE
   ARCHNAME=`basename plugins/*.jar .jar`
   echo $ARCHNAME
 
-  zip -v $ARCHNAME.zip *
+  zip -v -r $ARCHNAME.zip *
   ls -l
   DESTDIR_FRS=/home/frs/project/g/gn/gnuarmeclipse/gnuarmeclipse/0.5.3
-  mkdir -p $DESTDIR_FRS
-  cp $ARCHNAME.zip $DESTDIR_FRS
+  mkdir -v -p $DESTDIR_FRS
+  cp -v $ARCHNAME.zip $DESTDIR_FRS
 fi
 
 rm -rf $TDIR
