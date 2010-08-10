@@ -1418,6 +1418,7 @@
                defaultValue="true"
                id="org.eclipse.cdt.cross.arm.gnu.base.option.addtools.createflash"
                name="Create Flash Image"
+               valueHandler="org.eclipse.cdt.cross.arm.gnu.ARMAdditionalToolsManagedOptionValueHandler"
                valueType="boolean">
             <enablement
                   type="ALL">
@@ -1431,6 +1432,7 @@
                id="org.eclipse.cdt.cross.arm.gnu.base.option.addtools.createlisting"
                name="Create Extended Listing"
                value="true"
+               valueHandler="org.eclipse.cdt.cross.arm.gnu.ARMAdditionalToolsManagedOptionValueHandler"
                valueType="boolean">
             <enablement
                   type="ALL">
@@ -1444,6 +1446,7 @@
                id="org.eclipse.cdt.cross.arm.gnu.base.option.addtools.printsize"
                name="Print Size"
                value="true"
+               valueHandler="org.eclipse.cdt.cross.arm.gnu.ARMAdditionalToolsManagedOptionValueHandler"
                valueType="boolean">
             <enablement
                   type="ALL">
