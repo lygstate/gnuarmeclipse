@@ -29,13 +29,13 @@
     <title>How to build</title>
     <id>19</id>
     <revision>
-      <id>258</id>
-      <timestamp>2010-08-13T09:05:04Z</timestamp>
+      <id>275</id>
+      <timestamp>2010-08-29T10:42:28Z</timestamp>
       <contributor>
         <username>Ilg-ul</username>
         <id>7</id>
       </contributor>
-      <comment>/* Build the plug-in */</comment>
+      <comment>/* Publish to the update site and to the SourceForge Files section */</comment>
       <text xml:space="preserve">This page is for developers and describes the procedure we follow to build the plug-in from sources and to publish it on SourceForge.
 
 ==Install &amp; Configure Eclipse==
@@ -214,7 +214,7 @@ Test this version as much as possible on all platforms.
  $ ssh ilg-ul,gnuarmeclipse@shell.sourceforge.net shutdown
 &lt;/pre&gt;
 (the port and address for the second ssh are taken from the output of sf-help)
-* go to the SourceForge [https://sourceforge.net/project/admin/explorer.php?group_id=181918 Files section] and check for the presence of the new archive
+* go to the SourceForge [http://sourceforge.net/project/admin/explorer.php?group_id=181918 Files section] and check for the presence of the new archive
 * in Properties, check Linux/Mac/Windows
 
 ==Spread the news==
