@@ -1,0 +1,71 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.3/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.3/ http://www.mediawiki.org/xml/export-0.3.xsd" version="0.3" xml:lang="en">
+  <siteinfo>
+    <sitename>gnuarmeclipse</sitename>
+    <base>http://sourceforge.net/apps/mediawiki/gnuarmeclipse/index.php?title=Main_Page</base>
+    <generator>MediaWiki 1.15.1</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2">Media</namespace>
+      <namespace key="-1">Special</namespace>
+      <namespace key="0" />
+      <namespace key="1">Talk</namespace>
+      <namespace key="2">User</namespace>
+      <namespace key="3">User talk</namespace>
+      <namespace key="4">gnuarmeclipse</namespace>
+      <namespace key="5">gnuarmeclipse talk</namespace>
+      <namespace key="6">File</namespace>
+      <namespace key="7">File talk</namespace>
+      <namespace key="8">MediaWiki</namespace>
+      <namespace key="9">MediaWiki talk</namespace>
+      <namespace key="10">Template</namespace>
+      <namespace key="11">Template talk</namespace>
+      <namespace key="12">Help</namespace>
+      <namespace key="13">Help talk</namespace>
+      <namespace key="14">Category</namespace>
+      <namespace key="15">Category talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Features</title>
+    <id>17</id>
+    <revision>
+      <id>228</id>
+      <timestamp>2010-08-12T19:06:18Z</timestamp>
+      <contributor>
+        <username>Ilg-ul</username>
+        <id>7</id>
+      </contributor>
+      <text xml:space="preserve">This plug-in allows to build embedded ARM applications, using the managed project features of Eclipse CDT, i.e. there is no need to manually create and maintain a makefile.
+
+==Extra steps==
+In addition to building the ELF file, this plug-in can also build a binary file (HEX) to be programmed in the processor flash.
+
+Since resources are usually limited, the plug-in displays the program size, and a listing.
+
+[[File:extra-steps.png|center|frame|Extra build steps]]
+
+==Discovery Options &amp; Indexing==
+
+Frankly, this is mainly a CDT feature, the plug-in merit is to provide the CDT with the right path to the GNU C/C++ compilers.
+
+To understand Discovery Options, we need to understand what '''Indexing''' is. In order to allow Eclipse user to navigate to definitions, to declarations, to allow smart completion, refactoring and all these nice features, the CDT needs to have '''exactly''' the same knowledge of the source files as the compiler. For this, it also needs to know the system headers used at compile time. GCC provides a magic combination of options to do this (''-E -P -v -dD ${plugin_state_location}/specs.c''), so the CDT needs to issue some compiler commands. The plug-in provides the name of these commands, for each toolchain and platform.
+
+This feature also provides a quick check if you configured properly your environment: after creating a new project, you should see the special folder '''Includes''' in the root of your project, containing the paths of the system include files used by your compiler. If you don't see this, you probably have a PATH problem.
+ 
+==Toolchain Discovery &amp; Multiple Toolchains==
+This feature currently has experimental status, and is not fully implemented.
+
+The idea is to automatically discover as much information about existing toolchains without having to add them in the global PATH. The first use of this information would be, when creating new projects, to be able to offer for selection only the existing toolchains. The second use of this would be to allow multiple toolchains to coexist.
+
+As long as you use only one version of a single toolchain, usually there are no major risks by adding the toolchain path to the global PATH, since most of the toolchain programs have names prefixed with something like ''arm-none-eabi-*''. However, toolchains development is dynamic, and soon you'll need to use both the old and the new version of a toolchain, at least to run some tests. 
+
+Once you do this, you'll appreciate the plug-in feature to run without having the toolchain path in the global PATH, but allow for each project to use a separate path to the specific toolchain in use.
+
+Currently this can be done manually by editing the PATH variable in the Project -&gt; Properties -&gt; C/C++ Build -&gt; Environment.
+
+Due to the large diversity of platforms and toolchains, an uniform approach is not possible, but some help can still be provided.
+
+As mentioned, this feature is currently experimental, and needs further investigations.</text>
+    </revision>
+  </page>
+</mediawiki>

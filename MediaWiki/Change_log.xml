@@ -1,0 +1,146 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.3/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.3/ http://www.mediawiki.org/xml/export-0.3.xsd" version="0.3" xml:lang="en">
+  <siteinfo>
+    <sitename>gnuarmeclipse</sitename>
+    <base>http://sourceforge.net/apps/mediawiki/gnuarmeclipse/index.php?title=Main_Page</base>
+    <generator>MediaWiki 1.15.1</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2">Media</namespace>
+      <namespace key="-1">Special</namespace>
+      <namespace key="0" />
+      <namespace key="1">Talk</namespace>
+      <namespace key="2">User</namespace>
+      <namespace key="3">User talk</namespace>
+      <namespace key="4">gnuarmeclipse</namespace>
+      <namespace key="5">gnuarmeclipse talk</namespace>
+      <namespace key="6">File</namespace>
+      <namespace key="7">File talk</namespace>
+      <namespace key="8">MediaWiki</namespace>
+      <namespace key="9">MediaWiki talk</namespace>
+      <namespace key="10">Template</namespace>
+      <namespace key="11">Template talk</namespace>
+      <namespace key="12">Help</namespace>
+      <namespace key="13">Help talk</namespace>
+      <namespace key="14">Category</namespace>
+      <namespace key="15">Category talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Change log</title>
+    <id>25</id>
+    <revision>
+      <id>196</id>
+      <timestamp>2010-08-11T13:12:00Z</timestamp>
+      <contributor>
+        <username>Ilg-ul</username>
+        <id>7</id>
+      </contributor>
+      <comment>/* 2010-08-10 */</comment>
+      <text xml:space="preserve">==2009==
+===2009-08-22===
+* C/C++ linker options added
+::--Xlinker --print-gc-sections
+::--Xlinker --print-map
+::--Xlinker --cref
+* C/C++ compiler options added
+::-fno-inline-functions
+* C++ compiler options added
+::-Wabi
+::-Weffc++
+* C/C++ compiler optimization default to -Os instead of -O3
+* browse type 'file' removed from Map Filename, since it is not properly rendered
+	
+===2009-08-21===
+* patches from Freddie Chopin applied
+::C/C++ linker --gc-sections added
+::C/C++ linker -nostartfiles enabled for C, disabled for C++
+::C/C++ linker -nostdlibs disabled
+::C++ compiler -no-rtti option added
+::C/C++ compiler signed char as option, default is unsigned (compiler default)
+* experimental toolchain presence support not completed, temporarily disabled until properly implemented 
+	
+===2009-04-18===
+* '-nostdlib' enabled by default for linkers
+* 'CodeSourcery G++ Lite' for Windows toolchain presence tested (by attempting to execute 'arm-none-eabi-gcc') [experimental]
+* 'CodeSourcery G++ Lite' for Linux toolchain presence tested (by attempting to execute 'arm-none-eabi-gcc') [experimental]
+* 'GNUARM' (and derivatives) toolchain presence tested (by attempting to execute 'arm-elf-gcc') [experimental]
+* PATH automatic discovery for Windows versions of 'CodeSourcery G++ Lite' and 'GNUARM 4.1.1', by using Windows Registry information. No need to have them in the system PATH.
+
+===2009-04-07===
+* C Linker empty makefile bug fixed (spaces in secondaryOutputs/targetTool)
+* about.* files moved here from the feature project; the ARM icon is now visible in the Help -&gt; About window.
+* update site URL renamed from http://gnuarmeclipse.sourceforge.net/update to http://gnuarmeclipse.sourceforge.net/updates
+
+===2009-04-03===
+* org.eclipse.cdt.core.templateAssociations (schema in org.eclipse.cdt.core) points to all toolchain bases, as specified in schema examples and used in org.eclipse.cdt.managebuilder.gnu.ui. (not yet functional)
+
+===2009-04-07===
+* Discovery Options implemented for all toolchains.
+
+===2009-04-13===
+* patches from Freddie Chopin applied
+::linker --gc-sections added
+::linker -nostartfiles enabled for C, disabled for C++
+::linker -nostdlibs disabled
+::C++ compiler -no-rtti option added
+::C/C++ compiler signed char as option, default is unsigned (compiler default)
+* recompiled with Eclipse 3.5 &amp; CDT 6.0
+
+==2010==
+===2010-01-15===
+* ported on Eclipse 3.5 SR1 (Galileo), with CDT 6.0
+
+===2010-01-26===
+* license changed from GPL to EPL
+
+===2010-01-15===
+* no functional changes, just a clean repack of the update site and of the published archive.
+
+===2010-04-20===
+* the confusion between Host OS and Guest OS when selecting the CodeSourcery G++ Lite toolchain was finally sorted out. The basic toolchain when targeting for embedded systems is ARM EABI. The arm-none-eabi toolchain is intended to generate programs for running on ARM ported Linux, not embedded systems.
+
+===2010-06-09===
+* GNU/Linux CodeSourcery toolchain fixed (changed from arm-none-linux-gnueabi-* to arm-none-eabi-*)
+
+===2010-06-28===
+* properties on a source file triggered an error when selecting Tool Settings. This was due to a bug in ARMManagedCommandLineGenerator, where the parent of Tool may be ResourceConfiguration instead of ToolChain (bug #3024374 added a better support, by climbing the hierarchy).
+
+===2010-07-06===
+* development ported on Mac OS X, Eclipse 3.5.2
+* CodeSourcery added to Mac OS X
+* Mac OS X missing GNUARM configuration reference fixed
+* (#3024374) individual properties processed; ITool.getParent() should climb up the hierarchy via getSuperClass(); this is also a better fix for #3021757.
+* (#3024483) New Yagarto Toolchain uses EABI; Yagarto toolchain split from common Windows GCC configurations
+
+===2010-07-07===
+* Yagarto discovery code was referring to CodeSourcery; fixed
+* (#3014562) support for devkitPro ARM toolchain added (arm-eabi-g++)
+
+===2010-07-13===
+* (#3028902) assembler listing support added to source files as 
+::Wa,-adhlns=&quot;$@.lst&quot;
+
+===2010-07-15===
+* the Wiki page [[How to build]] and this page (Change log) were created from project text files.
+
+===2010-07-29===
+version 0.5.3.201007292300 released
+* the Java code is compiled with 1.5 restrictions, otherwise it does not work on most platforms (#3036456)
+* the update site was regenerated from scratch, without build.properties and it seems the categories are now displayed (#2833594)
+* the files ChangeLog.txt, HowToBuild.txt were removed from the repository
+* the file README.txt was simplified
+
+===2010-07-31===
+version 0.5.3.201007311800 released
+* the download area was reorganised, files are now published in subfolders like '''gnuarmeclipse/0.5.3'''
+* the old files were moved to Previous Releases
+* the gnuarm-update.sh script was updated to publish both to the update site and to the download area
+* the missing category in the update site seems to be a bug in the Eclipse p2 code; the workaround is to remove the fature and reassign it before the build
+* this release shows the category as '''CDT GNU Cross Development Tools'''
+
+===2010-08-10===
+* (#2744055) code to identify options change added; interface update code still to be found.
+* the license code in the feature project was fixed (the first line contained a space after the final '\', terminating it prematurely)</text>
+    </revision>
+  </page>
+</mediawiki>

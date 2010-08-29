@@ -1,0 +1,227 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.3/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.3/ http://www.mediawiki.org/xml/export-0.3.xsd" version="0.3" xml:lang="en">
+  <siteinfo>
+    <sitename>gnuarmeclipse</sitename>
+    <base>http://sourceforge.net/apps/mediawiki/gnuarmeclipse/index.php?title=Main_Page</base>
+    <generator>MediaWiki 1.15.1</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2">Media</namespace>
+      <namespace key="-1">Special</namespace>
+      <namespace key="0" />
+      <namespace key="1">Talk</namespace>
+      <namespace key="2">User</namespace>
+      <namespace key="3">User talk</namespace>
+      <namespace key="4">gnuarmeclipse</namespace>
+      <namespace key="5">gnuarmeclipse talk</namespace>
+      <namespace key="6">File</namespace>
+      <namespace key="7">File talk</namespace>
+      <namespace key="8">MediaWiki</namespace>
+      <namespace key="9">MediaWiki talk</namespace>
+      <namespace key="10">Template</namespace>
+      <namespace key="11">Template talk</namespace>
+      <namespace key="12">Help</namespace>
+      <namespace key="13">Help talk</namespace>
+      <namespace key="14">Category</namespace>
+      <namespace key="15">Category talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>How to build</title>
+    <id>19</id>
+    <revision>
+      <id>258</id>
+      <timestamp>2010-08-13T09:05:04Z</timestamp>
+      <contributor>
+        <username>Ilg-ul</username>
+        <id>7</id>
+      </contributor>
+      <comment>/* Build the plug-in */</comment>
+      <text xml:space="preserve">This page is for developers and describes the procedure we follow to build the plug-in from sources and to publish it on SourceForge.
+
+==Install &amp; Configure Eclipse==
+===Install Java===
+If not running on a Mac (where Java is already in the standard setup), install Sun JDK 1.5 or preferably later. When running a later version, be sure you set the Eclipse compliance level to 1.5, to remain compatible with most of the other platforms in use.
+===Install Eclipse RCP===
+This instance of Eclipse will be used for actual development.
+* go to [http://www.eclipse.org/downloads/ Eclipse download site] 
+* download '''Eclipse for RCP and RAP Developers''' (eclipse-rcp-helios-macosx-cocoa-x86_64.tar.gz)
+* unpack the archive
+* rename eclipse to eclipse-3.6-rcp-cdt
+* enable
+:CDT: http://download.eclipse.org/tools/cdt/releases/helios
+* '''Help''' → '''Install New Software'''
+:Work with: CDT
+::CDT Main Features
+:::All
+* restart
+* '''Help''' → '''Install New Software'''
+:Work with: CDT
+::CDT Optional Features
+:::All
+* restart
+
+Notes: 
+- without the CDT sources, the extension point schemas will not be available
+so attempts to add new elements to the extensions will not be possible,
+and only 'Generic' elements will be offered.
+- the CDT Optional Features might not be mandatory, I added them to have all
+available code at hand 
+
+* '''Help''' → '''Install New Software''' 
+:Work with: Helios
+::Collaboration
+:::Subversive SVN Team Provider (Incubation) 0.7.9
+* restart
+
+* open the 'Install Connectors' window (Eclipse → Preferences → Team → SVN)
+:select all
+
+* restart
+
+Notes:
+- although not all connectors work on all platforms, manually selecting some of them is
+error prone, so better install all of them and let the Eclipse try to figure out which 
+one to use
+
+* Check if a value is filled in: '''Properties''' → '''Team''' → '''SVN''' → Tab: '''SVN Connector'''
+** on Windows, you should see something like 'JavaHL 1.5.4 Win32 Binaries (Optional)'
+** on Mac, you should see something like 'SVN Kit 1.2.3'
+** on Linux, I think you should see something like 'SVN Kit 1.2.3' (sorry, I don't have it at hand) 
+===Create and configure the workspace===
+* create a new workspace
+:File → Switch Workspace → Other
+::enter path
+* change the workspace preferences
+:General → Workspace
+::disable Build automatically
+:::enable Refresh automatically
+:::enable Save automatically before rebuild
+:::Text file encoding: UTF-8
+:General → Editors → Text Editors
+::enable Show Line Numbers
+::enable Show Print Margin (80)
+
+===Install Eclipse CDT===
+This separate instance of Eclipse will be used to test the plug-in.
+* go to [http://www.eclipse.org/downloads/ Eclipse download site] 
+* download '''Eclipse IDE for C/C++ Developers''' (eclipse-cpp-helios-macosx-cocoa-x86_64.tar.gz)
+* unpack the archive
+* rename eclipse to eclipse-3.6-cdt
+
+==Load the plug-in sources==
+
+* export the '''Team Project Workspace Set.psf''' from SVN
+&lt;pre&gt;
+ svn export https://gnuarmeclipse.svn.sourceforge.net/svnroot/gnuarmeclipse/trunk/Eclipse/current/Team\ Project\ Workspace\ Set.psf
+&lt;/pre&gt;
+* Eclipse Menu: File → Import
+:Import windows: select Team → Team Project Set
+:press the Next button
+:browse and select the Team Project Workspace Set.psf file
+:press the Finish button
+* check if the following three projects were imported:
+:org.eclipse.cdt.cross.arm.gnu
+:org.eclipse.cdt.cross.arm.gnu-feature
+:org.eclipse.cdt.cross.arm.gnu-updatesite
+
+* check if the references in the org.eclipse.cdt.cross.arm.gnu project were recognised.
+* select the .gnu project
+* check if the following folders
+::JRE System Library
+::Plug-in Dependencies
+:are populated
+
+* Project properties → Run/Debug Settings
+:New → Eclipse Application 
+::Name: Eclipse GNU ARM Plug-in
+::Location: ${workspace_loc}/../GNU ARM Runtime
+:Tab: Plug-ins
+::Launch with: 'plug-ins selected below only'
+::Select Workspace, org.eclipse.cdt.cross.arm.gnu
+::Deselect 'Target Platform'
+::Deselect 'Add new workspace plug-ins to this launch configuration automatically'
+::Press 'Add required Plug-ins'
+:Tab: Arguments
+::Program arguments: -consoleLog
+::VM arguments: -d32
+:Tab: Environment
+::PATH=/Users/ilg/devkitARM/bin:/Users/ilg/arm-cs-tools/bin:/usr/bin:/bin:/usr/sbin:/sbin
+::PATH_CODESOURCERY=/Users/ilg/arm-cs-tools/bin
+::PATH_DEVKITARM=/Users/ilg/devkitARM/bin
+::click the Apply button
+:click the OK button
+		
+* select the *.gnu project
+:Project properties → Java Compiler
+::JDK Compliance
+:::Compiler compliance level: 1.5
+Note: this is mandatory when running Eclipse on a JDK 1.6, otherwise the plug-in will not work on JDK 1.5 (the log will record exceptions when trying to load the org.eclipse.cdt.cross.arm.gnu* classes.
+
+* select the *.gnu project
+:Run → Run As → Eclipse Application → Eclipse GNU ARM Plug-in
+:Help → About Eclipse Platform → Installation Details → Plug-ins
+:(the 'GNU ARM C/C++ Development Support' must be present)
+
+* Run the newly added configuration
+
+* Check the plug-in debug log 'workspace/.metadata/.log'
+
+==Build the plug-in==
+
+* in the project explorer, select the org.eclipse.cdt.cross.arm.gnu-updatesite project 
+* ''Eclipse'' menu: '''Project''' → '''Clean'''. The custom ant code should remove the following files:
+:features/* 
+:plugins/* 
+:artifacts.jar 
+:content.jar
+* in the project explorer, the same gnu-updatesite project, double click on site.xml to open it
+* select the feature below the category and remove it via '''RightClick''' → '''Remove'''
+* add the feature org.eclipse.cdt.cross.arm.gnu_0.5.3.qualifier again, below the category
+* press the '''Build All''' button (since the sources were written on 3.4, you'll get more than hundred warnings)
+* check if features/*.jar, plugins/*.jar, artifacts.jar and content.jar were rebuild
+* commit all three projects to SVN
+Note: removing and adding the feature is required due to a bug in Eclipse; only fresh builds show categories while installing the plug-in.
+
+==Publish to the test update site==
+
+* connect to Sourceforge and update web from SVN gnu-updatesite project
+&lt;pre&gt;
+ $ ssh -t ilg-ul,gnuarmeclipse@shell.sourceforge.net create
+ ilg-ul@shell-22005:~&gt; ./gnuarm-updates.sh test
+ ilg-ul@shell-22005:~&gt; shutdown
+&lt;/pre&gt;
+* check if newly built version was really published
+
+The test version should be available at http://gnuarmeclipse.sourceforge.net/updates-test
+
+Test this version as much as possible on all platforms.
+
+==Publish to the update site and to the SourceForge Files section==
+
+* connect to the SourceForge shell service and update the web with content from the SVN gnu-updatesite project, using the supplied script
+&lt;pre&gt;
+ $ ssh -t ilg-ul,gnuarmeclipse@shell.sourceforge.net create
+ ilg-ul@shell-22005:~&gt; ./gnuarm-updates.sh
+ ilg-ul@shell-22005:~&gt; shutdown
+&lt;/pre&gt;
+* check if the freshly built version was really published, by opening the following link in Firefox http://gnuarmeclipse.sourceforge.net/updates
+* other useful commands:
+&lt;pre&gt;
+ $ ssh ilg-ul,gnuarmeclipse@shell.sourceforge.net sf-help
+ ...
+ $ ssh -p 22005 ilg-ul@shell2.sourceforge.net
+ ...
+ $ ssh ilg-ul,gnuarmeclipse@shell.sourceforge.net shutdown
+&lt;/pre&gt;
+(the port and address for the second ssh are taken from the output of sf-help)
+* go to the SourceForge [https://sourceforge.net/project/admin/explorer.php?group_id=181918 Files section] and check for the presence of the new archive
+* in Properties, check Linux/Mac/Windows
+
+==Spread the news==
+	
+* post a message on Develop → [http://sourceforge.net/news/?group_id=181918 News], if needed</text>
+    </revision>
+  </page>
+</mediawiki>
+
+ 	  	 

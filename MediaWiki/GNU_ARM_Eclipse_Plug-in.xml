@@ -1,0 +1,86 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.3/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.3/ http://www.mediawiki.org/xml/export-0.3.xsd" version="0.3" xml:lang="en">
+  <siteinfo>
+    <sitename>gnuarmeclipse</sitename>
+    <base>http://sourceforge.net/apps/mediawiki/gnuarmeclipse/index.php?title=Main_Page</base>
+    <generator>MediaWiki 1.15.1</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2">Media</namespace>
+      <namespace key="-1">Special</namespace>
+      <namespace key="0" />
+      <namespace key="1">Talk</namespace>
+      <namespace key="2">User</namespace>
+      <namespace key="3">User talk</namespace>
+      <namespace key="4">gnuarmeclipse</namespace>
+      <namespace key="5">gnuarmeclipse talk</namespace>
+      <namespace key="6">File</namespace>
+      <namespace key="7">File talk</namespace>
+      <namespace key="8">MediaWiki</namespace>
+      <namespace key="9">MediaWiki talk</namespace>
+      <namespace key="10">Template</namespace>
+      <namespace key="11">Template talk</namespace>
+      <namespace key="12">Help</namespace>
+      <namespace key="13">Help talk</namespace>
+      <namespace key="14">Category</namespace>
+      <namespace key="15">Category talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>GNU ARM Eclipse Plug-in</title>
+    <id>1</id>
+    <revision>
+      <id>272</id>
+      <timestamp>2010-08-29T06:26:28Z</timestamp>
+      <contributor>
+        <username>Ilg-ul</username>
+        <id>7</id>
+      </contributor>
+      <comment>/* Credits */</comment>
+      <text xml:space="preserve">=Introduction=
+This plug-in is an [http://www.eclipse.org/cdt/ Eclipse CDT] Manged Build Extension for GNU ARM Toolchains like CodeSourcery G++ Lite, GNUARM, WinARM, Yagarto, devkitPro.
+
+[[File: project.png|center|frame|Project properties]]
+
+For more details please visit the [[Features]] page.
+
+=Supported Toolchains=
+==CodeSourcery G++ Lite for ARM EABI==
+The [http://www.codesourcery.com/sgpp/lite/arm CodeSourcery G++ Lite for ARM EABI] toolchain (arm-none-eabi-gcc) runs on
+* Windows (with provided cs-make/cs-rm)
+* GNU/Linux
+* Mac OS X
+[http://www.codesourcery.com CodeSourcery] is probably the prominent maintainer of the GNU GCC Toolchain for ARM processors. They have several commercial offerings, but they also provide '''CodeSourcery G++ Lite for ARM EABI''', a complete set of command-line tools, the perfect match for the GNU ARM Eclipse Plug-in. For Windows and Linux hosts, the Lite editions are available as binary distributions that simply install and are ready to use. For Mac OS X, you need to build them from sources available on the CodeSourcery site.
+
+Unless you have no specific requirements that better match another toolchain, the recommended choice would be CodeSourcery, it seems to be the most up-to-date and the most actively maintained.
+
+==GNUARM==
+The [http://www.gnuarm.com/ GNUARM] toolchain and derivatives (arm-elf-gcc) runs on
+* Windows
+* GNU/Linux
+* Mac OS X
+'''GNUARM''' was the original port of GCC for ARM. According to their site, the last version was 4.1.1, released in 2006,.
+
+==Yagarto==
+The [http://www.yagarto.de/ Yagarto] toolchain (arm-none-eabi-gcc) runs on
+* Windows
+'''Yagarto''' is another SourceForge project, specifically designed to run on Windows without the Cygwin package.
+
+==devkitPro ARM==	
+The [http://sourceforge.net/projects/devkitpro/ devkitPro ARM] toolchain (arm-eabi-gcc) runs on
+* Windows (no make/rm provided)
+* GNU/Linux
+* Mac OS X
+'''devkitPro''' is also a SourceForge project, and provides multi-platform development tools for various processors, including ARM.
+
+=Credits=
+This plug-in is currently maintained by [mailto:ilg@livius.net Liviu Ionescu] (this email address is given for courtesy, for all correspondence related to this plug-in please use the project [http://sourceforge.net/tracker/?group_id=181918 Trackers] or [http://sourceforge.net/projects/gnuarmeclipse/forums Forums]).
+
+The project [http://en.wikipedia.org/wiki/Portable_Application_Description PAD file] is publically available [http://gnuarmeclipse.sourceforge.net/padfiles/pad_file.xml here].
+
+Many thanks to Wilfried Holzke who created this project and maintained versions prior to 0.5.3.
+
+=Feedback=
+If you have further questions and this wiki does not provide the right answers for them, just let us know (using the [http://sourceforge.net/tracker/?group_id=181918&amp;atid=1431858 Wiki Content Tracker]) and we'll do our best to improve the content.</text>
+    </revision>
+  </page>
+</mediawiki>

@@ -1,0 +1,62 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.3/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.3/ http://www.mediawiki.org/xml/export-0.3.xsd" version="0.3" xml:lang="en">
+  <siteinfo>
+    <sitename>gnuarmeclipse</sitename>
+    <base>http://sourceforge.net/apps/mediawiki/gnuarmeclipse/index.php?title=Main_Page</base>
+    <generator>MediaWiki 1.15.1</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2">Media</namespace>
+      <namespace key="-1">Special</namespace>
+      <namespace key="0" />
+      <namespace key="1">Talk</namespace>
+      <namespace key="2">User</namespace>
+      <namespace key="3">User talk</namespace>
+      <namespace key="4">gnuarmeclipse</namespace>
+      <namespace key="5">gnuarmeclipse talk</namespace>
+      <namespace key="6">File</namespace>
+      <namespace key="7">File talk</namespace>
+      <namespace key="8">MediaWiki</namespace>
+      <namespace key="9">MediaWiki talk</namespace>
+      <namespace key="10">Template</namespace>
+      <namespace key="11">Template talk</namespace>
+      <namespace key="12">Help</namespace>
+      <namespace key="13">Help talk</namespace>
+      <namespace key="14">Category</namespace>
+      <namespace key="15">Category talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Known problems</title>
+    <id>13</id>
+    <revision>
+      <id>273</id>
+      <timestamp>2010-08-29T06:29:54Z</timestamp>
+      <contributor>
+        <username>Ilg-ul</username>
+        <id>7</id>
+      </contributor>
+      <comment>/* Advices (to avoid problems) */</comment>
+      <text xml:space="preserve">==Major bugs==
+
+* do not set the build properties for a folder; by doing this, global project properties like unchecking the -mthumb, or changing debugging setting will be ignored for source files below the folder. Even if the options are not affected, the build process will terminate prematurely, and no HEX file will be created (this is a CDT bug, not a plug-in bug).
+
+* do not set the build properties for a source file; by doing this, the build process will terminate prematurely, and no HEX file will be created (this is a CDT bug, not a plug-in bug).
+ 
+* do not change the toolchain for a project; by doing this you will permanently damage the project. There is not known way to repair such a broken project; you have to create a new project and copy the content (probably a CDT bug too, but further tests are required).
+
+==Annoying bugs==
+
+* on Mac OS X, when the path to the toolchain is set locally in the Eclipse environment, the famous Discovery Options are not working properly (the special folder '''Includes''' is not shown). When setting the path outside Eclipse, the Discovery Options work as expected. As this was also reported on Windows, I guess it is a CDT bug.
+
+==Other problems==
+
+* the toolchain presence is not yet verified, so missing toolchains are also offered for selection
+
+* after selecting/deselecting additional tools, the screen is not updated, i.e. the tools do not appear/disappear. To force a screen update, just leave that tab and return.
+
+==Advices (to avoid problems)==
+
+* if multiple toolchains (versions of a toolchain) are used, if you add all of them in the global PATH, be sure you do not run into name clashes; ideally the problem would be solved by defining the toolchain path for each project, with Project -&gt; Properties -&gt; C/C++ Build -&gt; Environment, but considering the bug that affects the CDT Discovery Options, this is not possible for the moment.</text>
+    </revision>
+  </page>
+</mediawiki>

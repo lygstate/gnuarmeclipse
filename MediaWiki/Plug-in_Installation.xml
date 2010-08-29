@@ -1,0 +1,95 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.3/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.3/ http://www.mediawiki.org/xml/export-0.3.xsd" version="0.3" xml:lang="en">
+  <siteinfo>
+    <sitename>gnuarmeclipse</sitename>
+    <base>http://sourceforge.net/apps/mediawiki/gnuarmeclipse/index.php?title=Main_Page</base>
+    <generator>MediaWiki 1.15.1</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2">Media</namespace>
+      <namespace key="-1">Special</namespace>
+      <namespace key="0" />
+      <namespace key="1">Talk</namespace>
+      <namespace key="2">User</namespace>
+      <namespace key="3">User talk</namespace>
+      <namespace key="4">gnuarmeclipse</namespace>
+      <namespace key="5">gnuarmeclipse talk</namespace>
+      <namespace key="6">File</namespace>
+      <namespace key="7">File talk</namespace>
+      <namespace key="8">MediaWiki</namespace>
+      <namespace key="9">MediaWiki talk</namespace>
+      <namespace key="10">Template</namespace>
+      <namespace key="11">Template talk</namespace>
+      <namespace key="12">Help</namespace>
+      <namespace key="13">Help talk</namespace>
+      <namespace key="14">Category</namespace>
+      <namespace key="15">Category talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Plug-in Installation</title>
+    <id>10</id>
+    <revision>
+      <id>274</id>
+      <timestamp>2010-08-29T07:18:57Z</timestamp>
+      <contributor>
+        <username>Ilg-ul</username>
+        <id>7</id>
+      </contributor>
+      <text xml:space="preserve">==Prerequisites==
+===Eclipse===
+This plug-in was initially developed on Eclipse 3.3, then moved to later versions. Currently, the plug-in requires Eclipse 3.4 with CDT 5.0.2, but the development environment was recently moved to Mac OS X, using the '''Eclipse 3.6 Helios''', and '''JDK 1.6'''.
+
+If you start a new project now, it is better that you go directly to 3.6 Helios, otherwise you can continue using 3.5 Galileo for a while.
+
+There are plans for some major updates in the plug-in, but there is not yet clear what will be the minimum requirements.
+
+===Java===
+As for Java, the minimum is JDK 1.5, with '''JDK 1.6''' working just fine. The '''OpenJDK Java 6''' used in Ubuntu 10.04 is also fine.
+
+==Plug-in installation==
+The following samples are from Eclipse 3.6 Helios. Previous versions might behave slightly differently, but the idea is the same.
+
+===The recommended way===
+The recommended way to install this plug-in is to use the Eclipse standard install/update mechanism:
+
+* ''Eclipse'' menu: '''Help''' → '''Install New Software'''
+** in the ''Install'' window, click the '''Add...''' button (on future updates, just select the URL)
+*** fill in '''Location:''' with http://gnuarmeclipse.sourceforge.net/updates
+*** click the '''OK''' button
+** the main window will list ''There are no categorized items''
+** disable the '''Group items by category''' option
+** in the main window, select the '''GNU ARM C/C++ Development Support'''
+** click the '''Next''' button
+** accept the unsigned plug-in
+
+Once you define the update site URL, further updates are greatly simplified (Help -&gt; Check For Updates).
+
+===The alternate way===
+The alternate solution to the online site is to download the archive from [http://sourceforge.net/projects/gnuarmeclipse/files/ SourceForge Files] and to point the Eclipse update mechanism to the local file:
+
+* ''Eclipse'' menu: '''Help''' → '''Install New Software'''
+** in the ''Install'' window, click the '''Add...''' button
+*** in the ''Add Repository'' window, click the '''Archive...''' button
+**** in the ''Repository archive'' window, select the downloaded .zip archive
+**** click the '''OK''' button
+*** click the '''OK''' button
+
+This method has the disadvantage that for future updates you need to manually download each one and manually reinstall.
+
+===Your own way===
+For those who really know what they are doing, a quick and dirty way is to extract the plug-in .jar file from the downloaded archive and to copy it to the .../eclipse/plugins directory, but this is is strongly discouraged.
+
+===Previews===
+For previews, experimental releases are posted to a separate update site:
+
+:http://gnuarmeclipse.sourceforge.net/updates-test
+
+Sometimes you can use this site to test some features that are not completely implemented, or that might change before a final version is released.
+
+This site is not always updated; use it carefully, back up your workspace, and do not use it for production projects.
+
+==Rate and Review==
+If you successfully installed and used this plug-in, we'd be honoured to receive your '''Thumbs up''', and eventually a short review (in the main [http://sourceforge.net/projects/gnuarmeclipse Project page]).</text>
+    </revision>
+  </page>
+</mediawiki>
