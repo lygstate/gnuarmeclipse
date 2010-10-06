@@ -1322,9 +1322,19 @@
                   name="arm1176jzf-s">
             </enumeratedOptionValue>
             <enumeratedOptionValue
+                  command="-mcpu=cortex-a5"
+                  id="org.eclipse.cdt.cross.arm.gnu.base.option.mcpu.cortex-a5"
+                  name="cortex-a5">
+            </enumeratedOptionValue>
+            <enumeratedOptionValue
                   command="-mcpu=cortex-a8"
                   id="org.eclipse.cdt.cross.arm.gnu.base.option.mcpu.cortex-a8"
                   name="cortex-a8">
+            </enumeratedOptionValue>
+            <enumeratedOptionValue
+                  command="-mcpu=cortex-a9"
+                  id="org.eclipse.cdt.cross.arm.gnu.base.option.mcpu.cortex-a9"
+                  name="cortex-a9">
             </enumeratedOptionValue>
             <enumeratedOptionValue
                   command="-mcpu=cortex-r4"
@@ -1343,6 +1353,16 @@
                   name="cortex-m3">
             </enumeratedOptionValue>
             <enumeratedOptionValue
+                  command="-mcpu=cortex-m1"
+                  id="org.eclipse.cdt.cross.arm.gnu.base.option.mcpu.cortex-m1"
+                  name="cortex-m1">
+            </enumeratedOptionValue>
+            <enumeratedOptionValue
+                  command="-mcpu=cortex-m0"
+                  id="org.eclipse.cdt.cross.arm.gnu.base.option.mcpu.cortex-m0"
+                  name="cortex-m0">
+            </enumeratedOptionValue>
+            <enumeratedOptionValue
                   command="-mcpu=xscale"
                   id="org.eclipse.cdt.cross.arm.gnu.base.option.mcpu.xscale"
                   name="xscale">
@@ -1353,9 +1373,19 @@
                   name="iwmmxt">
             </enumeratedOptionValue>
             <enumeratedOptionValue
+                  command="-mcpu=iwmmxt2"
+                  id="org.eclipse.cdt.cross.arm.gnu.base.option.mcpu.iwmmxt2"
+                  name="iwmmxt2">
+            </enumeratedOptionValue>
+            <enumeratedOptionValue
                   command="-mcpu=ep9312"
                   id="org.eclipse.cdt.cross.arm.gnu.base.option.mcpu.ep9312"
                   name="ep9312">
+            </enumeratedOptionValue>
+            <enumeratedOptionValue
+                  command="-mcpu=marvell-f"
+                  id="org.eclipse.cdt.cross.arm.gnu.base.option.mcpu.marvell-f"
+                  name="marvell-f">
             </enumeratedOptionValue>
          </option>
          <option
