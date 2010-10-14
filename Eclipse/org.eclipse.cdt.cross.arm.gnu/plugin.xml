@@ -1347,6 +1347,12 @@
                   name="cortex-r4f">
             </enumeratedOptionValue>
             <enumeratedOptionValue
+                  command="-mcpu=cortex-m4"
+                  id="org.eclipse.cdt.cross.arm.gnu.base.option.mcpu.cortex-m4"
+                  isDefault="true"
+                  name="cortex-m4">
+            </enumeratedOptionValue>
+            <enumeratedOptionValue
                   command="-mcpu=cortex-m3"
                   id="org.eclipse.cdt.cross.arm.gnu.base.option.mcpu.cortex-m3"
                   isDefault="true"
