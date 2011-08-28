@@ -3,9 +3,8 @@ package org.eclipse.cdt.cross.arm.gnu.common;
 import org.eclipse.cdt.cross.arm.gnu.Tools;
 import org.eclipse.cdt.managedbuilder.core.IManagedIsToolChainSupported;
 import org.eclipse.cdt.managedbuilder.core.IToolChain;
-import org.eclipse.core.runtime.PluginVersionIdentifier;
+import org.osgi.framework.Version;
 
-@SuppressWarnings("deprecation")
 public abstract class IsToolChainSupported implements
 		IManagedIsToolChainSupported {
 
@@ -30,7 +29,7 @@ public abstract class IsToolChainSupported implements
 	 * type at New Project, with isDirty() at edit, and !isDirty() after save.
 	 */
 	public boolean isSupportedImpl(IToolChain oToolChain,
-			PluginVersionIdentifier sVersion, String sInstance,
+			Version oVersion, String sInstance,
 			IsToolchainData oStaticData) {
 
 		/* temporarily disabled */
