@@ -3551,8 +3551,7 @@
       <projectType
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application"
             id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf"
-            isAbstract="true"
-            name="ARM Windows GCC (Sourcery G++ Lite) Application">
+            isAbstract="true">
          <configuration
                artifactExtension="elf"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -3687,8 +3686,7 @@
       <projectType
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.staticLib"
             id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.lib"
-            isAbstract="true"
-            name="ARM Windows GCC (Sourcery G++ Lite) Static Library">
+            isAbstract="true">
          <configuration
                artifactExtension="a"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -4017,8 +4015,7 @@
       <projectType
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application"
             id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.elf"
-            isAbstract="true"
-            name="ARM Linux GCC (Sourcery G++ Lite) Application">
+            isAbstract="true">
          <configuration
                artifactExtension="elf"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -4153,8 +4150,7 @@
       <projectType
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.staticLib"
             id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.lib"
-            isAbstract="true"
-            name="ARM Linux GCC (Sourcery G++ Lite) Library">
+            isAbstract="true">
          <configuration
                artifactExtension="a"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -4483,8 +4479,7 @@
       <projectType
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application"
             id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.elf"
-            isAbstract="true"
-            name="ARM Mac OS X GCC (Sourcery G++ Lite) Application">
+            isAbstract="true">
          <configuration
                artifactExtension="elf"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -4619,8 +4614,7 @@
       <projectType
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.staticLib"
             id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.lib"
-            isAbstract="true"
-            name="ARM Mac OS X GCC (Sourcery G++ Lite) Library">
+            isAbstract="true">
          <configuration
                artifactExtension="a"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -4954,8 +4948,7 @@
       <projectType
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application"
             id="org.eclipse.cdt.cross.arm.gnu.windows.elf"
-            isAbstract="true"
-            name="ARM Windows GCC (GNUARM, WinARM) Application">
+            isAbstract="true">
          <configuration
                artifactExtension="elf"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -5090,8 +5083,7 @@
       <projectType
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.staticLib"
             id="org.eclipse.cdt.cross.arm.gnu.windows.lib"
-            isAbstract="true"
-            name="ARM Windows GCC (GNUARM, WinARM) Static Library">
+            isAbstract="true">
          <configuration
                artifactExtension="a"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -5421,8 +5413,7 @@
       <projectType
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application"
             id="org.eclipse.cdt.cross.arm.gnu.linux.elf"
-            isAbstract="true"
-            name="ARM Linux GCC (GNUARM) Application">
+            isAbstract="true">
          <configuration
                artifactExtension="elf"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -5557,8 +5548,7 @@
       <projectType
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.staticLib"
             id="org.eclipse.cdt.cross.arm.gnu.linux.lib"
-            isAbstract="true"
-            name="ARM Linux GCC (GNUARM) Static Library">
+            isAbstract="true">
          <configuration
                artifactExtension="a"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -5888,8 +5878,7 @@
       <projectType
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application"
             id="org.eclipse.cdt.cross.arm.gnu.macosx.elf"
-            isAbstract="true"
-            name="ARM Mac OS X GCC (GNUARM) Application">
+            isAbstract="true">
          <configuration
                artifactExtension="elf"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -6024,8 +6013,7 @@
       <projectType
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.staticLib"
             id="org.eclipse.cdt.cross.arm.gnu.macosx.lib"
-            isAbstract="true"
-            name="ARM Mac OS X GCC (GNUARM) Static Library">
+            isAbstract="true">
          <configuration
                artifactExtension="a"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -6357,8 +6345,7 @@
       <projectType
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application"
             id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.elf"
-            isAbstract="true"
-            name="ARM Windows GCC (Yagarto) Application">
+            isAbstract="true">
          <configuration
                artifactExtension="elf"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -6493,8 +6480,7 @@
       <projectType
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.staticLib"
             id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.lib"
-            isAbstract="true"
-            name="ARM Windows GCC (Yagarto) Static Library">
+            isAbstract="true">
          <configuration
                artifactExtension="a"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -6828,8 +6814,7 @@
       <projectType
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application"
             id="org.eclipse.cdt.cross.arm.gnu.devkitpro.windows.elf"
-            isAbstract="true"
-            name="ARM Windows GCC (devkitPro) Application">
+            isAbstract="true">
          <configuration
                artifactExtension="elf"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -6964,8 +6949,7 @@
       <projectType
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.staticLib"
             id="org.eclipse.cdt.cross.arm.gnu.devkitpro.windows.lib"
-            isAbstract="true"
-            name="ARM Windows GCC (devkitPro) Static Library">
+            isAbstract="true">
          <configuration
                artifactExtension="a"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -7294,8 +7278,7 @@
       <projectType
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application"
             id="org.eclipse.cdt.cross.arm.gnu.devkitpro.linux.elf"
-            isAbstract="true"
-            name="ARM Linux GCC (devkitPro) Application">
+            isAbstract="true">
          <configuration
                artifactExtension="elf"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -7430,8 +7413,7 @@
       <projectType
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.staticLib"
             id="org.eclipse.cdt.cross.arm.gnu.devkitpro.linux.lib"
-            isAbstract="true"
-            name="ARM Linux GCC (devkitPro) Library">
+            isAbstract="true">
          <configuration
                artifactExtension="a"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -7760,8 +7742,7 @@
       <projectType
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application"
             id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.elf"
-            isAbstract="true"
-            name="ARM Mac OS X GCC (devkitPro) Application">
+            isAbstract="true">
          <configuration
                artifactExtension="elf"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
@@ -7896,8 +7877,7 @@
       <projectType
             buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.staticLib"
             id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib"
-            isAbstract="true"
-            name="ARM Mac OS X GCC (devkitPro) Library">
+            isAbstract="true">
          <configuration
                artifactExtension="a"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
