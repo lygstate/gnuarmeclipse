@@ -1,8 +1,10 @@
 #! /bin/bash
 
 # This script generates the Code Sourcery ARM EABI Toolchain on MAC OS X 10.7
+# The new toolchain is installed at
+# "$HOME/Developer/Cross/arm-cs-tools-$MENTOR_RELEASE-$TODAY"
 
-# It uses James Sneyder's Mafefile, available from
+# The implementation uses James Sneyder's Mafefile, available from
 # https://github.com/jsnyder/arm-eabi-toolchain
 
 # The build process also requires some special packages, that will be
@@ -24,7 +26,8 @@ MENTOR_RELEASE=1802
 JSNYDER_GIT_LONG_ID=706e73495baecc7959d1a6768dd74178788dcdc5
 JSNYDER_GIT_SHORT_ID=706e734
 
-TEST="-test"
+# Useful when testing
+#TEST="-test"
 
 # ----------------------------------------------------------------------------- 
 
@@ -96,7 +99,7 @@ END_OF_FILE
 # Numeric representation of today, like 20110704
 TODAY=`date "+%Y%m%d"`
 
-BUILD_FOLDER="arm-cs-tools-$MENTOR_RELEASE-$TODAY-p"
+BUILD_FOLDER="arm-cs-tools-$MENTOR_RELEASE-$TODAY"
 
 mkdir -p "$BUILD_FOLDER"
 
