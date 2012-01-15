@@ -13,7 +13,7 @@
 		<State_Province />
 		<Zip_Postal_Code />
 		<Country>Romania</Country>
-		<Company_WebSite_URL>http://ilegeul.livius.net</Company_WebSite_URL>
+		<Company_WebSite_URL>http://www.livius.net</Company_WebSite_URL>
 		<Contact_Info>
 			<Author_First_Name>Liviu</Author_First_Name>
 			<Author_Last_Name>Ionescu</Author_Last_Name>
@@ -68,11 +68,23 @@
 	<Program_Descriptions>
 		<English>
 			<Keywords>arm, eclipse, gnu, plug-in</Keywords>
-			<Char_Desc_45 />
-			<Char_Desc_80 />
+			<Char_Desc_45>Eclipse CDT Manged Build Extension </Char_Desc_45>
+			<Char_Desc_80>Eclipse CDT Manged Build Extension for GNU ARM Toolchains</Char_Desc_80>
 			<Char_Desc_250>This plug-in is an Eclipse CDT Manged Build Extension for GNU ARM Toolchains like CodeSourcery G++ Lite, GNUARM, WinARM, Yagarto, devkitPro.</Char_Desc_250>
 			<Char_Desc_450 />
-			<Char_Desc_2000 />
+			<Char_Desc_2000>This plug-in is an Eclipse CDT Manged Build Extension for GNU ARM Toolchains.
+
+The supported toolchains are:
+- The CodeSourcery G++ Lite for ARM EABI (arm-none-eabi-gcc)
+- GNUARM and derivatives (arm-elf-gcc)
+- Yagarto (arm-none-eabi-gcc)
+- devkitPro ARM (arm-eabi-gcc)
+
+In addition to building the ELF file, this plug-in can also build a binary file (HEX) to be programmed in the processor flash.
+
+The plug-in requires Eclipse 3.5 or 3.6, running on JDK 1.5 or 1.6.
+
+Support is provided via the SourceForge tracker pages.</Char_Desc_2000>
 		</English>
 	</Program_Descriptions>
 	<Web_Info>
