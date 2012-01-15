@@ -29,13 +29,13 @@
     <title>Change log</title>
     <id>25</id>
     <revision>
-      <id>196</id>
-      <timestamp>2010-08-11T13:12:00Z</timestamp>
+      <id>297</id>
+      <timestamp>2010-10-14T09:28:54Z</timestamp>
       <contributor>
         <username>Ilg-ul</username>
         <id>7</id>
       </contributor>
-      <comment>/* 2010-08-10 */</comment>
+      <comment>/* 2010-10-14 */</comment>
       <text xml:space="preserve">==2009==
 ===2009-08-22===
 * C/C++ linker options added
@@ -140,7 +140,15 @@ version 0.5.3.201007311800 released
 
 ===2010-08-10===
 * (#2744055) code to identify options change added; interface update code still to be found.
-* the license code in the feature project was fixed (the first line contained a space after the final '\', terminating it prematurely)</text>
+* the license code in the feature project was fixed (the first line contained a space after the final '\', terminating it prematurely)
+
+===2010-10-06===
+version 0.5.3.201010061939 released
+* (#3077091) new -mcpu= values: cortex-a5, cortex-a9, cortex-m1, cortex-m0, iwmmxt2, marvell-f
+
+===2010-10-14===
+verson 0.5.3.201010141144 released
+* (#3087264) new -mcpu= values: cortex-m4</text>
     </revision>
   </page>
 </mediawiki>

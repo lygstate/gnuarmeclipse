@@ -29,13 +29,13 @@
     <title>How to build</title>
     <id>19</id>
     <revision>
-      <id>275</id>
-      <timestamp>2010-08-29T10:42:28Z</timestamp>
+      <id>298</id>
+      <timestamp>2010-10-14T09:30:30Z</timestamp>
       <contributor>
         <username>Ilg-ul</username>
         <id>7</id>
       </contributor>
-      <comment>/* Publish to the update site and to the SourceForge Files section */</comment>
+      <comment>/* Update the Change log */</comment>
       <text xml:space="preserve">This page is for developers and describes the procedure we follow to build the plug-in from sources and to publish it on SourceForge.
 
 ==Install &amp; Configure Eclipse==
@@ -175,9 +175,10 @@ Note: this is mandatory when running Eclipse on a JDK 1.6, otherwise the plug-in
 :artifacts.jar 
 :content.jar
 * in the project explorer, the same gnu-updatesite project, double click on site.xml to open it
-* select the feature below the category and remove it via '''RightClick''' → '''Remove'''
-* add the feature org.eclipse.cdt.cross.arm.gnu_0.5.3.qualifier again, below the category
-* press the '''Build All''' button (since the sources were written on 3.4, you'll get more than hundred warnings)
+* select the feature below the org.eclipse.cdt.cross.gnu category and remove it via '''RightClick''' → '''Remove'''
+* select the org.eclipse.cdt.cross.gnu category
+* click on the '''Add Feature''' button, select org.eclipse.cdt.cross.arm.gnu_0.5.3.qualifier from the list and click '''OK'''
+* click on the '''Build All''' button (since the sources were written on 3.4, you'll get more than hundred warnings)
 * check if features/*.jar, plugins/*.jar, artifacts.jar and content.jar were rebuild
 * commit all three projects to SVN
 Note: removing and adding the feature is required due to a bug in Eclipse; only fresh builds show categories while installing the plug-in.
@@ -187,6 +188,8 @@ Note: removing and adding the feature is required due to a bug in Eclipse; only 
 * connect to Sourceforge and update web from SVN gnu-updatesite project
 &lt;pre&gt;
  $ ssh -t ilg-ul,gnuarmeclipse@shell.sourceforge.net create
+ ilg-ul,gnuarmeclipse@shell.sourceforge.net's password: 
+ ...
  ilg-ul@shell-22005:~&gt; ./gnuarm-updates.sh test
  ilg-ul@shell-22005:~&gt; shutdown
 &lt;/pre&gt;
@@ -201,10 +204,12 @@ Test this version as much as possible on all platforms.
 * connect to the SourceForge shell service and update the web with content from the SVN gnu-updatesite project, using the supplied script
 &lt;pre&gt;
  $ ssh -t ilg-ul,gnuarmeclipse@shell.sourceforge.net create
+ ilg-ul,gnuarmeclipse@shell.sourceforge.net's password: 
+ ...
  ilg-ul@shell-22005:~&gt; ./gnuarm-updates.sh
  ilg-ul@shell-22005:~&gt; shutdown
 &lt;/pre&gt;
-* check if the freshly built version was really published, by opening the following link in Firefox http://gnuarmeclipse.sourceforge.net/updates
+* check if the freshly built version was really published, by opening the following link in Firefox http://gnuarmeclipse.sourceforge.net/updates (Safari does not show this page and triggers the ''Document could not be loaded by browser.'' error).
 * other useful commands:
 &lt;pre&gt;
  $ ssh ilg-ul,gnuarmeclipse@shell.sourceforge.net sf-help
@@ -214,14 +219,30 @@ Test this version as much as possible on all platforms.
  $ ssh ilg-ul,gnuarmeclipse@shell.sourceforge.net shutdown
 &lt;/pre&gt;
 (the port and address for the second ssh are taken from the output of sf-help)
-* go to the SourceForge [http://sourceforge.net/project/admin/explorer.php?group_id=181918 Files section] and check for the presence of the new archive
-* in Properties, check Linux/Mac/Windows
+* go to the SourceForge [http://sourceforge.net/project/admin/explorer.php?group_id=181918 Files section], the gnuarmeclipse/0.5.3 folder and check for the presence of the new archive
+* for the new archive, click on the Properties icon (the wheel), and select Properties; check Linux/Mac/Windows and click on the Save button.
+
+==Update the Change log==
+* go to the end of the wiki [http://sourceforge.net/apps/mediawiki/gnuarmeclipse/index.php?title=Change_log Change log] page and add a new entry
+: Use the following format:
+::===2010-10-14===
+::verson 0.5.3.201010141144 released
+::&lt;nowiki&gt;* (#3087264) new -mcpu= values: cortex-a4&lt;/nowiki&gt;
+
+==Close related bugs/feature requests==
+* go to the [http://sourceforge.net/tracker/?group_id=181918 tracker] page and close all related tickets
+:Use the following format:
+::fixed in 0.5.3.201010141144
 
 ==Spread the news==
 	
-* post a message on Develop → [http://sourceforge.net/news/?group_id=181918 News], if needed</text>
+* post a message on Develop → [http://sourceforge.net/news/?group_id=181918 News], if needed
+
+:Use the following format:
+::Subject: Version 0.5.3.201010061939 released
+::Changes from previous version:
+::- the license code in the feature project was fixed (the first line contained a space after the final '\', terminating it prematurely)
+::- new -mcpu= values: cortex-a5, cortex-a9, cortex-m1, cortex-m0, iwmmxt2, marvell-f</text>
     </revision>
   </page>
 </mediawiki>
-
- 	  	 
