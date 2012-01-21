@@ -240,6 +240,16 @@ then
 fi
 
 # ----------------------------------------------------------------------------- 
+# Use this to clean all build temporary folders
+
+if [ $last = "clean" ]
+then
+  cd "$JSNYDER_ZIP_FOLDER"
+  make clean
+  exit 0
+fi
+
+# ----------------------------------------------------------------------------- 
 
 # Keep different versions in different folders
 TODAY_DESTINATION_FOLDER="$HOME/Developer/Cross/$BUILD_FOLDER"
@@ -254,15 +264,6 @@ then
   rm -rf "$TODAY_DESTINATION_FOLDER"
 fi
 
-# ----------------------------------------------------------------------------- 
-# Use this to clean all build temporary folders
-
-if [ $last = "clean" ]
-then
-  cd "$JSNYDER_ZIP_FOLDER"
-  make clean
-  exit 0
-fi
 
 # ----------------------------------------------------------------------------- 
 # Get Homebrew, if not already present
