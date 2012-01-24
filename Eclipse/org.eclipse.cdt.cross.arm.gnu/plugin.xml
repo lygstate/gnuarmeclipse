@@ -30,15 +30,6 @@
       <template
             id="org.eclipse.cdt.build.core.templates.EmptyProject">
          <toolChain
-               id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.toolchain.base">
-         </toolChain>
-         <toolChain
-               id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.toolchain.base">
-         </toolChain>
-         <toolChain
-               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.toolchain.base">
-         </toolChain>
-         <toolChain
                id="org.eclipse.cdt.cross.arm.gnu.windows.toolchain.base">
          </toolChain>
          <toolChain
@@ -48,7 +39,19 @@
                id="org.eclipse.cdt.cross.arm.gnu.macosx.toolchain.base">
          </toolChain>
          <toolChain
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.toolchain.base">
+         </toolChain>
+         <toolChain
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.toolchain.base">
+         </toolChain>
+         <toolChain
+               id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.toolchain.base">
+         </toolChain>
+         <toolChain
                id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.toolchain.base">
+         </toolChain>
+         <toolChain
+               id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.toolchain.base">
          </toolChain>
          <toolChain
                id="org.eclipse.cdt.cross.arm.gnu.devkitpro.windows.toolchain.base">
@@ -935,6 +938,121 @@
             profileId="org.eclipse.cdt.cross.arm.gnu.ARM_DK_GCCWinStandardMakePerFileProfile">
       </profilePage>
    </extension>
+
+<!-- -->
+<extension
+    id="ARM_YG_GCCManagedMakePerProjectProfileC"
+    name="ARM Yagarto GNU C/C++ managed make per project SCD profile"
+    point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+    <scannerInfoCollector
+        class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMGCCScannerInfoCollector"
+        scope="project">
+    </scannerInfoCollector>
+    <buildOutputProvider>
+        <open></open>
+        <scannerInfoConsoleParser
+            class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMManagedGCCScannerInfoConsoleParser">
+        </scannerInfoConsoleParser>
+    </buildOutputProvider>
+    <scannerInfoProvider
+        providerId="specsFile">
+        <run
+            arguments="-E -P -v -dD ${plugin_state_location}/specs.c"
+            class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"
+            command="arm-none-eabi-gcc">
+        </run>
+        <scannerInfoConsoleParser
+            class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser">
+        </scannerInfoConsoleParser>
+    </scannerInfoProvider>
+</extension>
+<extension
+    id="ARM_YG_GCCManagedMakePerProjectProfileCPP"
+    name="ARM Yagarto GNU C/C++ managed make per project SCD profile"
+    point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+    <scannerInfoCollector
+        class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMGCCScannerInfoCollector"
+        scope="project">
+    </scannerInfoCollector>
+    <buildOutputProvider>
+        <open></open>
+        <scannerInfoConsoleParser
+            class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMManagedGCCScannerInfoConsoleParser">
+        </scannerInfoConsoleParser>
+    </buildOutputProvider>
+    <scannerInfoProvider
+        providerId="specsFile">
+        <run
+            arguments="-E -P -v -dD ${plugin_state_location}/specs.cpp"
+            class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"
+            command="arm-none-eabi-g++">
+        </run>
+        <scannerInfoConsoleParser
+            class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser">
+        </scannerInfoConsoleParser>
+    </scannerInfoProvider>
+</extension>
+<extension
+    id="ARM_YG_GCCStandardMakePerProjectProfile"
+    name="ARM Yagarto GNU C/C++ Scanner Info per project profile"
+    point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+    <scannerInfoCollector
+    class="org.eclipse.cdt.make.internal.core.scannerconfig2.PerProjectSICollector"
+    scope="project"/>
+    <buildOutputProvider>
+        <open/>
+        <scannerInfoConsoleParser class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCScannerInfoConsoleParser"/>
+    </buildOutputProvider>
+    <scannerInfoProvider providerId="specsFile">
+        <run
+        command="arm-none-eabi-gcc"
+        arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}"
+        class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"/>
+        <scannerInfoConsoleParser class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser"/>
+    </scannerInfoProvider>
+</extension>
+<extension
+    id="ARM_YG_GCCStandardMakePerFileProfile"
+    name="ARM Yagarto GNU C/C++ Scanner Info per file profile"
+    point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+    <scannerInfoCollector
+    class="org.eclipse.cdt.make.internal.core.scannerconfig2.PerFileSICollector"
+    scope="file"/>
+    <buildOutputProvider>
+        <open/>
+        <scannerInfoConsoleParser class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCPerFileBOPConsoleParser"/>
+    </buildOutputProvider>
+    <scannerInfoProvider providerId="makefileGenerator">
+        <run
+        arguments="-f ${project_name}_scd.mk"
+        command="make"
+        class="org.eclipse.cdt.make.internal.core.scannerconfig2.SCDMakefileGenerator"/>
+        <scannerInfoConsoleParser class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCPerFileSIPConsoleParser"/>
+    </scannerInfoProvider>
+</extension>
+<extension
+    point="org.eclipse.cdt.make.ui.DiscoveryProfilePage">
+    <profilePage
+        class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
+        name="Managed Build System - per project scanner info profile (Yagarto/C)"
+        profileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC">
+    </profilePage>
+    <profilePage
+        class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
+        name="Managed Build System - per project scanner info profile (Yagarto/C++)"
+        profileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileCPP">
+    </profilePage>
+    <profilePage
+        class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
+        name="GCC per project scanner info profile (Yagarto)"
+        profileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCStandardMakePerProjectProfile">
+    </profilePage>
+    <profilePage
+        class="org.eclipse.cdt.make.ui.dialogs.GCCPerFileSCDProfilePage"
+        name="GCC per file scanner info profile (Yagarto)"
+        profileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCStandardMakePerFileProfile">
+    </profilePage>
+</extension>
 
    <!-- -->
    <extension
@@ -7968,6 +8086,470 @@
          </configuration>
       </projectType>
       
+<configuration
+    id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.configuration.base"
+    name="ARM Mac OS X GCC (Yagarto) Configuration"
+    parent="org.eclipse.cdt.cross.arm.gnu.configuration.base">
+    <enablement
+        attribute="artifactExtension"
+        extensionAdjustment="false"
+        type="CONTAINER_ATTRIBUTE"
+        value="a">
+        <checkBuildProperty
+            property="org.eclipse.cdt.build.core.buildArtefactType"
+            value="org.eclipse.cdt.build.core.buildArtefactType.staticLib">
+        </checkBuildProperty>
+    </enablement>
+</configuration>
+<toolChain
+    archList="all"
+    id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.toolchain.base"
+    isAbstract="false"
+    isToolChainSupported="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.IsToolChainSupported"
+    name="ARM Mac OS X GCC (Yagarto)"
+    osList="macosx">
+    <targetPlatform
+        archList="all"
+        binaryParser="org.eclipse.cdt.core.GNU_ELF"
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.platform.base"
+        isAbstract="false"
+        name="Mac OS X Platform"
+        osList="macosx">
+    </targetPlatform>
+    <builder
+        command="make"
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.builder.base"
+        isAbstract="false"
+        isVariableCaseSensitive="false"
+        name="ARM Yagarto Mac OS X GNU Make builder"
+        superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.builder">
+    </builder>
+    <optionCategory
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.category.target"
+        name="Target Processor">
+    </optionCategory>
+    <option
+        category="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.category.target"
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.option.target.processor"
+        name="Processor"
+        superClass="org.eclipse.cdt.cross.arm.gnu.base.option.processor">
+    </option>
+    <option
+        category="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.category.target"
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.option.target.thumb"
+        name="Thumb (-mthumb)"
+        superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.thumb">
+    </option>
+    <option
+        category="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.category.target"
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.option.target.thumbinterwork"
+        name="Thumb interwork (-mthumb-interwork)"
+        superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.thumbinterwork">
+    </option>
+    <optionCategory
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.category.debugging"
+        name="Debugging">
+    </optionCategory>
+    <option
+        category="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.category.debugging"
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.option.debugging.level"
+        name="Debug level"
+        superClass="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.level">
+    </option>
+    <option
+        category="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.category.debugging"
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.option.debugging.format"
+        name="Debug format"
+        superClass="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.format">
+        <enablement
+            type="UI_ENABLEMENT|CMD_USAGE">
+            <not>
+                <checkOption
+                    optionId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.option.debugging.level"
+                    value="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.level.none">
+                </checkOption>
+            </not>
+        </enablement>
+    </option>
+    <option
+        category="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.category.debugging"
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.option.debugging.other"
+        name="Other debugging flags"
+        superClass="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.other">
+    </option>
+    <option
+        category="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.category.debugging"
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.option.debugging.prof"
+        name="Generate prof information (-p)"
+        superClass="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.prof">
+    </option>
+    <option
+        category="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.category.debugging"
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.option.debugging.gprof"
+        name="Generate gprof information (-pg)">
+    </option>
+    <optionCategory
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.category.addtools"
+        name="Additional Tools">
+    </optionCategory>
+    <option
+        category="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.category.addtools"
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.option.addtools.createflash"
+        name="Create Flash Image"
+        superClass="org.eclipse.cdt.cross.arm.gnu.base.option.addtools.createflash">
+    </option>
+    <option
+        category="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.category.addtools"
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.option.addtools.createlisting"
+        name="Create Extended Listing"
+        superClass="org.eclipse.cdt.cross.arm.gnu.base.option.addtools.createlisting">
+    </option>
+    <option
+        category="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.category.addtools"
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.option.addtools.printsize"
+        name="Print Size"
+        superClass="org.eclipse.cdt.cross.arm.gnu.base.option.addtools.printsize">
+    </option>
+    <tool
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.assembler.base"
+        isAbstract="false"
+        name="ARM Yagarto Mac OS X GCC Assembler"
+        superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.assembler">
+        <inputType
+            id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.assembler.base.input"
+            scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC|org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCStandardMakePerFileProfile"
+            superClass="org.eclipse.cdt.cross.arm.gnu.assembler.input">
+        </inputType>
+    </tool>
+    <tool
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.c.compiler.base"
+        isAbstract="false"
+        name="ARM Yagarto Mac OS X GCC C Compiler"
+        superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.c.compiler">
+        <inputType
+            id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.c.compiler.base.input"
+            scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC|org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCStandardMakePerFileProfile"
+            superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.input">
+        </inputType>
+    </tool>
+    <tool
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.cpp.compiler.base"
+        isAbstract="false"
+        name="ARM Yagarto Mac OS X GCC C++ Compiler"
+        superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.cpp.compiler">
+        <inputType
+            id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.cpp.compiler.base.input"
+            scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileCPP|org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCStandardMakePerFileProfile"
+            superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.input">
+        </inputType>
+    </tool>
+    <tool
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.c.linker.base"
+        isAbstract="false"
+        name="ARM Yagarto Mac OS X GCC C Linker"
+        superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.c.linker">
+    </tool>
+    <tool
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.cpp.linker.base"
+        isAbstract="false"
+        name="ARM Yagarto Mac OS X GCC C++ Linker"
+        superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.cpp.linker">
+    </tool>
+    <tool
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.archiver.base"
+        isAbstract="false"
+        name="ARM Yagarto Mac OS X GCC Archiver"
+        superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.archiver">
+    </tool>
+    <tool
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.createflash.base"
+        isAbstract="false"
+        name="ARM Yagarto Mac OS X GNU Create Flash Image"
+        superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.createflash">
+        <enablement
+            type="ALL">
+            <checkOption
+                holderId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.toolchain.base"
+                optionId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.option.addtools.createflash"
+                value="true">
+            </checkOption>
+            <and>
+                <checkBuildProperty
+                    property="org.eclipse.cdt.build.core.buildArtefactType"
+                    value="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application">
+                </checkBuildProperty>
+            </and>
+        </enablement>
+    </tool>
+    <tool
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.createlisting.base"
+        isAbstract="false"
+        name="ARM Yagarto Mac OS X GNU Create Listing"
+        superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.createlisting">
+        <enablement
+            type="ALL">
+            <checkOption
+                holderId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.toolchain.base"
+                optionId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.option.addtools.createlisting"
+                value="true">
+            </checkOption>
+            <and>
+                <checkBuildProperty
+                    property="org.eclipse.cdt.build.core.buildArtefactType"
+                    value="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application">
+                </checkBuildProperty>
+            </and>
+        </enablement>
+    </tool>
+    <tool
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.printsize.base"
+        isAbstract="false"
+        name="ARM Yagarto Mac OS X GNU Print Size"
+        superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.printsize">
+        <enablement
+            type="ALL">
+            <checkOption
+                holderId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.toolchain.base"
+                optionId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.option.addtools.printsize"
+                value="true">
+            </checkOption>
+            <and>
+                <checkBuildProperty
+                    property="org.eclipse.cdt.build.core.buildArtefactType"
+                    value="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application">
+                </checkBuildProperty>
+            </and>
+        </enablement>
+    </tool>
+</toolChain>
+<projectType
+    buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application"
+    id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf"
+    isAbstract="true">
+    <configuration
+        artifactExtension="elf"
+        buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug"
+        name="Debug"
+        parent="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.configuration.base">
+        <toolChain
+            id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.toolchain.debug"
+            isAbstract="false"
+            secondaryOutputs="org.eclipse.cdt.cross.arm.gnu.createflash.output;org.eclipse.cdt.cross.arm.gnu.createlisting.output;org.eclipse.cdt.cross.arm.gnu.printsize.output"
+            superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.toolchain.base"
+            targetTool="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.linker.debug;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.cpp.linker.debug">
+            <targetPlatform
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.platform.debug"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.platform.base">
+            </targetPlatform>
+            <builder
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.builder.debug"
+                isAbstract="false"
+                isVariableCaseSensitive="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.builder.base">
+            </builder>
+            <tool
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.assembler.debug"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.assembler.base">
+            </tool>
+            <tool
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.compiler.debug"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.c.compiler.base">
+            </tool>
+            <tool
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.cpp.compiler.debug"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.cpp.compiler.base">
+            </tool>
+            <tool
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.linker.debug"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.c.linker.base">
+            </tool>
+            <tool
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.cpp.linker.debug"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.cpp.linker.base">
+            </tool>
+            <tool
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.createflash.debug"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.createflash.base">
+            </tool>
+            <tool
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.createlisting.debug"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.createlisting.base">
+            </tool>
+            <tool
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.printsize.debug"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.printsize.base">
+            </tool>
+        </toolChain>
+    </configuration>
+    <configuration
+        artifactExtension="elf"
+        buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.release"
+        name="Release"
+        parent="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.configuration.base">
+        <toolChain
+            id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.toolchain.release"
+            isAbstract="false"
+            secondaryOutputs="org.eclipse.cdt.cross.arm.gnu.createflash.output;org.eclipse.cdt.cross.arm.gnu.createlisting.output;org.eclipse.cdt.cross.arm.gnu.printsize.output"
+            superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.toolchain.base"
+            targetTool="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.linker.release;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.cpp.linker.release">
+            <targetPlatform
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.platform.release"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.platform.base">
+            </targetPlatform>
+            <builder
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.builder.release"
+                isAbstract="false"
+                isVariableCaseSensitive="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.builder.base">
+            </builder>
+            <tool
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.assembler.release"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.assembler.base">
+            </tool>
+            <tool
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.compiler.release"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.c.compiler.base">
+            </tool>
+            <tool
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.cpp.compiler.release"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.cpp.compiler.base">
+            </tool>
+            <tool
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.linker.release"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.c.linker.base">
+            </tool>
+            <tool
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.cpp.linker.release"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.cpp.linker.base">
+            </tool>
+            <tool
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.createflash.release"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.createflash.base">
+            </tool>
+            <tool
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.createlisting.release"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.createlisting.base">
+            </tool>
+            <tool
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.printsize.release"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.printsize.base">
+            </tool>
+        </toolChain>
+    </configuration>
+</projectType>
+<projectType
+    buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.staticLib"
+    id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.lib"
+    isAbstract="true">
+    <configuration
+        artifactExtension="a"
+        buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.lib.debug"
+        name="Debug"
+        parent="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.configuration.base">
+        <toolChain
+            id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.lib.toolchain.debug"
+            isAbstract="false"
+            superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.toolchain.base"
+            targetTool="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.lib.archiver.debug">
+            <targetPlatform
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.lib.platform.debug"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.platform.base">
+            </targetPlatform>
+            <builder
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.lib.builder.debug"
+                isAbstract="false"
+                isVariableCaseSensitive="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.builder.base">
+            </builder>
+            <tool
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.lib.assembler.debug"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.assembler.base">
+            </tool>
+            <tool
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.lib.c.compiler.debug"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.c.compiler.base">
+            </tool>
+            <tool
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.lib.cpp.compiler.debug"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.cpp.compiler.base">
+            </tool>
+            <tool
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.lib.archiver.debug"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.archiver.base">
+            </tool>
+        </toolChain>
+    </configuration>
+    <configuration
+        artifactExtension="a"
+        buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+        id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.lib.release"
+        name="Release"
+        parent="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.configuration.base">
+        <toolChain
+            id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.lib.toolchain.release"
+            isAbstract="false"
+            superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.toolchain.base"
+            targetTool="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.lib.archiver.release">
+            <targetPlatform
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.lib.platform.release"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.platform.base">
+            </targetPlatform>
+            <builder
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.lib.builder.release"
+                isAbstract="false"
+                isVariableCaseSensitive="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.builder.base">
+            </builder>
+            <tool
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.lib.assembler.release"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.assembler.base">
+            </tool>
+            <tool
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.lib.c.compiler.release"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.c.compiler.base">
+            </tool>
+            <tool
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.lib.cpp.compiler.release"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.cpp.compiler.base">
+            </tool>
+            <tool
+                id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.lib.archiver.release"
+                isAbstract="false"
+                superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.archiver.base">
+            </tool>
+        </toolChain>
+    </configuration>
+</projectType>
             
    </extension>
 
