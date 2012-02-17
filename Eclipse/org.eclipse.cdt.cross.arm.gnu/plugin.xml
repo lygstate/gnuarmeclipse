@@ -62,6 +62,15 @@
          <toolChain
                id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.toolchain.base">
          </toolChain>
+         <toolChain
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.toolchain.base">
+         </toolChain>
+         <toolChain
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.toolchain.base">
+         </toolChain>
+         <toolChain
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.toolchain.base">
+         </toolChain>
       </template>
    </extension>
    <extension
@@ -80,7 +89,7 @@
       </propertyValue>
    </extension>
    
-   <!-- -->
+   <!-- Configuration discovery profiles -->
    <extension
          id="ARM_CS_GCCManagedMakePerProjectProfileC"
          name="ARM Sourcery GNU C/C++ managed make per project SCD profile"
@@ -175,22 +184,22 @@
          point="org.eclipse.cdt.make.ui.DiscoveryProfilePage">
       <profilePage
             class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
-            name="Managed Build System - per project scanner info profile (Sourcery G++ Lite/C)"
+            name="Managed Build System - per project scanner info profile (Sourcery G++ Lite ARM/C)"
             profileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCManagedMakePerProjectProfileC">
       </profilePage>
       <profilePage
             class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
-            name="Managed Build System - per project scanner info profile (Sourcery G++ Lite/C++)"
+            name="Managed Build System - per project scanner info profile (Sourcery G++ Lite ARM/C++)"
             profileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCManagedMakePerProjectProfileCPP">
       </profilePage>
       <profilePage
             class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
-            name="GCC per project scanner info profile (Sourcery G++ Lite)"
+            name="GCC per project scanner info profile (Sourcery G++ Lite ARM)"
             profileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCStandardMakePerProjectProfile">
       </profilePage>
       <profilePage
             class="org.eclipse.cdt.make.ui.dialogs.GCCPerFileSCDProfilePage"
-            name="GCC per file scanner info profile (Sourcery G++ Lite)"
+            name="GCC per file scanner info profile (Sourcery G++ Lite ARM)"
             profileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCStandardMakePerFileProfile">
       </profilePage>
    </extension>
@@ -304,22 +313,22 @@
          point="org.eclipse.cdt.make.ui.DiscoveryProfilePage">
       <profilePage
             class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
-            name="Managed Build System - per project scanner info profile (Sourcery G++ Lite Windows/C)"
+            name="Managed Build System - per project scanner info profile (Sourcery G++ Lite Windows ARM/C)"
             profileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC">
       </profilePage>
       <profilePage
             class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
-            name="Managed Build System - per project scanner info profile (Sourcery G++ Lite Windows/C++)"
+            name="Managed Build System - per project scanner info profile (Sourcery G++ Lite Windows ARM/C++)"
             profileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileCPP">
       </profilePage>
       <profilePage
             class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
-            name="GCC per project scanner info profile (Sourcery G++ Lite Windows)"
+            name="GCC per project scanner info profile (Sourcery G++ Lite Windows ARM)"
             profileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinStandardMakePerProjectProfile">
       </profilePage>
       <profilePage
             class="org.eclipse.cdt.make.ui.dialogs.GCCPerFileSCDProfilePage"
-            name="GCC per file scanner info profile (Sourcery G++ Lite Windows)"
+            name="GCC per file scanner info profile (Sourcery G++ Lite Windows ARM)"
             profileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinStandardMakePerFileProfile">
       </profilePage>
    </extension>
@@ -675,22 +684,22 @@
          point="org.eclipse.cdt.make.ui.DiscoveryProfilePage">
       <profilePage
             class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
-            name="Managed Build System - per project scanner info profile (Yagarto Windows/C)"
+            name="Managed Build System - per project scanner info profile (Yagarto Windows ARM/C)"
             profileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCWinManagedMakePerProjectProfileC">
       </profilePage>
       <profilePage
             class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
-            name="Managed Build System - per project scanner info profile (Yagarto Windows/C++)"
+            name="Managed Build System - per project scanner info profile (Yagarto Windows ARM/C++)"
             profileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCWinManagedMakePerProjectProfileCPP">
       </profilePage>
       <profilePage
             class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
-            name="GCC per project scanner info profile (Yagarto Windows)"
+            name="GCC per project scanner info profile (Yagarto Windows ARM)"
             profileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCWinStandardMakePerProjectProfile">
       </profilePage>
       <profilePage
             class="org.eclipse.cdt.make.ui.dialogs.GCCPerFileSCDProfilePage"
-            name="GCC per file scanner info profile (Yagarto Windows)"
+            name="GCC per file scanner info profile (Yagarto Windows ARM)"
             profileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCWinStandardMakePerFileProfile">
       </profilePage>
    </extension>
@@ -790,22 +799,22 @@
          point="org.eclipse.cdt.make.ui.DiscoveryProfilePage">
       <profilePage
             class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
-            name="Managed Build System - per project scanner info profile (devkitPro/C)"
+            name="Managed Build System - per project scanner info profile (devkitPro ARM/C)"
             profileId="org.eclipse.cdt.cross.arm.gnu.ARM_DK_GCCManagedMakePerProjectProfileC">
       </profilePage>
       <profilePage
             class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
-            name="Managed Build System - per project scanner info profile (devkitPro/C++)"
+            name="Managed Build System - per project scanner info profile (devkitPro ARM/C++)"
             profileId="org.eclipse.cdt.cross.arm.gnu.ARM_DK_GCCManagedMakePerProjectProfileCPP">
       </profilePage>
       <profilePage
             class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
-            name="GCC per project scanner info profile (devkitPro)"
+            name="GCC per project scanner info profile (devkitPro ARM)"
             profileId="org.eclipse.cdt.cross.arm.gnu.ARM_DK_GCCStandardMakePerProjectProfile">
       </profilePage>
       <profilePage
             class="org.eclipse.cdt.make.ui.dialogs.GCCPerFileSCDProfilePage"
-            name="GCC per file scanner info profile (devkitPro)"
+            name="GCC per file scanner info profile (devkitPro ARM)"
             profileId="org.eclipse.cdt.cross.arm.gnu.ARM_DK_GCCStandardMakePerFileProfile">
       </profilePage>
    </extension>
@@ -919,22 +928,22 @@
          point="org.eclipse.cdt.make.ui.DiscoveryProfilePage">
       <profilePage
             class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
-            name="Managed Build System - per project scanner info profile (devkitPro Windows/C)"
+            name="Managed Build System - per project scanner info profile (devkitPro Windows ARM/C)"
             profileId="org.eclipse.cdt.cross.arm.gnu.ARM_DK_GCCWinManagedMakePerProjectProfileC">
       </profilePage>
       <profilePage
             class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
-            name="Managed Build System - per project scanner info profile (devkitPro Windows/C++)"
+            name="Managed Build System - per project scanner info profile (devkitPro Windows ARM/C++)"
             profileId="org.eclipse.cdt.cross.arm.gnu.ARM_DK_GCCWinManagedMakePerProjectProfileCPP">
       </profilePage>
       <profilePage
             class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
-            name="GCC per project scanner info profile (devkitPro Windows)"
+            name="GCC per project scanner info profile (devkitPro Windows ARM)"
             profileId="org.eclipse.cdt.cross.arm.gnu.ARM_DK_GCCWinStandardMakePerProjectProfile">
       </profilePage>
       <profilePage
             class="org.eclipse.cdt.make.ui.dialogs.GCCPerFileSCDProfilePage"
-            name="GCC per file scanner info profile (devkitPro Windows)"
+            name="GCC per file scanner info profile (devkitPro Windows ARM)"
             profileId="org.eclipse.cdt.cross.arm.gnu.ARM_DK_GCCWinStandardMakePerFileProfile">
       </profilePage>
    </extension>
@@ -1034,27 +1043,281 @@
     point="org.eclipse.cdt.make.ui.DiscoveryProfilePage">
     <profilePage
         class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
-        name="Managed Build System - per project scanner info profile (Yagarto/C)"
+        name="Managed Build System - per project scanner info profile (Yagarto ARM/C)"
         profileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC">
     </profilePage>
     <profilePage
         class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
-        name="Managed Build System - per project scanner info profile (Yagarto/C++)"
+        name="Managed Build System - per project scanner info profile (Yagarto ARM/C++)"
         profileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileCPP">
     </profilePage>
     <profilePage
         class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
-        name="GCC per project scanner info profile (Yagarto)"
+        name="GCC per project scanner info profile (Yagarto ARM)"
         profileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCStandardMakePerProjectProfile">
     </profilePage>
     <profilePage
         class="org.eclipse.cdt.make.ui.dialogs.GCCPerFileSCDProfilePage"
-        name="GCC per file scanner info profile (Yagarto)"
+        name="GCC per file scanner info profile (Yagarto ARM)"
         profileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCStandardMakePerFileProfile">
     </profilePage>
 </extension>
 
    <!-- -->
+   <extension
+         id="ARM_SUM_GCCManagedMakePerProjectProfileC"
+         name="Summon ARM GNU C/C++ managed make per project SCD profile"
+         point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+      <scannerInfoCollector
+            class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMGCCScannerInfoCollector"
+            scope="project">
+      </scannerInfoCollector>
+      <buildOutputProvider>
+         <open></open>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMManagedGCCScannerInfoConsoleParser">
+         </scannerInfoConsoleParser>
+      </buildOutputProvider>
+      <scannerInfoProvider
+            providerId="specsFile">
+         <run
+               arguments="-E -P -v -dD ${plugin_state_location}/specs.c"
+               class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"
+               command="arm-none-eabi-gcc">
+         </run>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser">
+         </scannerInfoConsoleParser>
+      </scannerInfoProvider>
+   </extension>
+   <extension
+         id="ARM_SUM_GCCManagedMakePerProjectProfileCPP"
+         name="Summon ARM GNU C/C++ managed make per project SCD profile"
+         point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+      <scannerInfoCollector
+            class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMGCCScannerInfoCollector"
+            scope="project">
+      </scannerInfoCollector>
+      <buildOutputProvider>
+         <open></open>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMManagedGCCScannerInfoConsoleParser">
+         </scannerInfoConsoleParser>
+      </buildOutputProvider>
+      <scannerInfoProvider
+            providerId="specsFile">
+         <run
+               arguments="-E -P -v -dD ${plugin_state_location}/specs.cpp"
+               class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"
+               command="arm-none-eabi-g++">
+         </run>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser">
+         </scannerInfoConsoleParser>
+      </scannerInfoProvider>
+   </extension>
+   <extension
+         id="ARM_SUM_GCCStandardMakePerProjectProfile"
+         name="Summon ARM GNU C/C++ Scanner Info per project profile"
+         point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+      <scannerInfoCollector
+            class="org.eclipse.cdt.make.internal.core.scannerconfig2.PerProjectSICollector"
+            scope="project">
+      </scannerInfoCollector>
+      <buildOutputProvider>
+         <open></open>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCScannerInfoConsoleParser">
+         </scannerInfoConsoleParser>
+      </buildOutputProvider>
+      <scannerInfoProvider
+            providerId="specsFile">
+         <run
+               arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}"
+               class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"
+               command="arm-none-eabi-gcc">
+         </run>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser">
+         </scannerInfoConsoleParser>
+      </scannerInfoProvider>
+   </extension>
+   <extension
+         id="ARM_SUM_GCCStandardMakePerFileProfile"
+         name="Summon ARM GNU C/C++ Scanner Info per file profile"
+         point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+      <scannerInfoCollector
+            class="org.eclipse.cdt.make.internal.core.scannerconfig2.PerFileSICollector"
+            scope="file">
+      </scannerInfoCollector>
+      <buildOutputProvider>
+         <open></open>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCPerFileBOPConsoleParser">
+         </scannerInfoConsoleParser>
+      </buildOutputProvider>
+      <scannerInfoProvider
+            providerId="makefileGenerator">
+         <run
+               arguments="-f ${project_name}_scd.mk"
+               class="org.eclipse.cdt.make.internal.core.scannerconfig2.SCDMakefileGenerator"
+               command="make">
+         </run>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCPerFileSIPConsoleParser">
+         </scannerInfoConsoleParser>
+      </scannerInfoProvider>
+   </extension>
+   <extension
+         point="org.eclipse.cdt.make.ui.DiscoveryProfilePage">
+      <profilePage
+            class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
+            name="Managed Build System - per project scanner info profile (Summon ARM/C)"
+            profileId="org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCManagedMakePerProjectProfileC">
+      </profilePage>
+      <profilePage
+            class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
+            name="Managed Build System - per project scanner info profile (Summon ARM/C++)"
+            profileId="org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCManagedMakePerProjectProfileCPP">
+      </profilePage>
+      <profilePage
+            class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
+            name="GCC per project scanner info profile (Summon ARM)"
+            profileId="org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCStandardMakePerProjectProfile">
+      </profilePage>
+      <profilePage
+            class="org.eclipse.cdt.make.ui.dialogs.GCCPerFileSCDProfilePage"
+            name="GCC per file scanner info profile (Summon ARM)"
+            profileId="org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCStandardMakePerFileProfile">
+      </profilePage>
+   </extension>
+   <extension
+         id="ARM_SUM_GCCWinManagedMakePerProjectProfileC"
+         name="Summon ARM GNU C/C++ managed make per project SCD profile (Windows)"
+         point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+      <scannerInfoCollector
+            class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMGnuWinScannerInfoCollector"
+            scope="project">
+      </scannerInfoCollector>
+      <buildOutputProvider>
+         <open></open>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMManagedGCCScannerInfoConsoleParser">
+         </scannerInfoConsoleParser>
+      </buildOutputProvider>
+      <scannerInfoProvider
+            providerId="specsFile">
+         <run
+               arguments="-E -P -v -dD ${plugin_state_location}/specs.c"
+               class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"
+               command="arm-none-eabi-gcc">
+         </run>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser">
+         </scannerInfoConsoleParser>
+      </scannerInfoProvider>
+   </extension>
+   <extension
+         id="ARM_SUM_GCCWinManagedMakePerProjectProfileCPP"
+         name="Summon ARM GNU C/C++ managed make per project SCD profile (Windows)"
+         point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+      <scannerInfoCollector
+            class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMGnuWinScannerInfoCollector"
+            scope="project">
+      </scannerInfoCollector>
+      <buildOutputProvider>
+         <open></open>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMManagedGCCScannerInfoConsoleParser">
+         </scannerInfoConsoleParser>
+      </buildOutputProvider>
+      <scannerInfoProvider
+            providerId="specsFile">
+         <run
+               arguments="-E -P -v -dD ${plugin_state_location}/specs.cpp"
+               class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"
+               command="arm-none-eabi-g++">
+         </run>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser">
+         </scannerInfoConsoleParser>
+      </scannerInfoProvider>
+   </extension>
+   <extension
+         id="ARM_SUM_GCCWinStandardMakePerProjectProfile"
+         name="Summon ARM GNU C/C++ Scanner Info per project profile (Windows)"
+         point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+      <scannerInfoCollector
+            class="org.eclipse.cdt.make.internal.core.scannerconfig2.PerProjectSICollector"
+            scope="project">
+      </scannerInfoCollector>
+      <buildOutputProvider>
+         <open></open>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCScannerInfoConsoleParser">
+         </scannerInfoConsoleParser>
+      </buildOutputProvider>
+      <scannerInfoProvider
+            providerId="specsFile">
+         <run
+               arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}"
+               class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"
+               command="arm-none-eabi-gcc">
+         </run>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser">
+         </scannerInfoConsoleParser>
+      </scannerInfoProvider>
+   </extension>
+   <extension
+         id="ARM_SUM_GCCWinStandardMakePerFileProfile"
+         name="Summon ARM GNU C/C++ Scanner Info per file profile (Windows)"
+         point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+      <scannerInfoCollector
+            class="org.eclipse.cdt.make.internal.core.scannerconfig2.PerFileSICollector"
+            scope="file">
+      </scannerInfoCollector>
+      <buildOutputProvider>
+         <open></open>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCPerFileBOPConsoleParser">
+         </scannerInfoConsoleParser>
+      </buildOutputProvider>
+      <scannerInfoProvider
+            providerId="makefileGenerator">
+         <run
+               arguments="-f ${project_name}_scd.mk"
+               class="org.eclipse.cdt.make.internal.core.scannerconfig2.SCDMakefileGenerator"
+               command="make">
+         </run>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCPerFileSIPConsoleParser">
+         </scannerInfoConsoleParser>
+      </scannerInfoProvider>
+   </extension>
+   <extension
+         point="org.eclipse.cdt.make.ui.DiscoveryProfilePage">
+      <profilePage
+            class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
+            name="Managed Build System - per project scanner info profile (Summon ARM Windows/C)"
+            profileId="org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCWinManagedMakePerProjectProfileC">
+      </profilePage>
+      <profilePage
+            class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
+            name="Managed Build System - per project scanner info profile (Summon ARM Windows/C++)"
+            profileId="org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCWinManagedMakePerProjectProfileCPP">
+      </profilePage>
+      <profilePage
+            class="org.eclipse.cdt.make.ui.dialogs.GCCPerProjectSCDProfilePage"
+            name="GCC per project scanner info profile (Summon ARM Windows)"
+            profileId="org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCWinStandardMakePerProjectProfile">
+      </profilePage>
+      <profilePage
+            class="org.eclipse.cdt.make.ui.dialogs.GCCPerFileSCDProfilePage"
+            name="GCC per file scanner info profile (Summon ARM Windows)"
+            profileId="org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCWinStandardMakePerFileProfile">
+      </profilePage>
+   </extension>
    <extension
          id="ARM_GCC_BuildDefinitions"
          name="Managed Build Definitions"
@@ -1473,7 +1736,6 @@
             <enumeratedOptionValue
                   command="-mcpu=cortex-m3"
                   id="org.eclipse.cdt.cross.arm.gnu.base.option.mcpu.cortex-m3"
-                  isDefault="true"
                   name="cortex-m3">
             </enumeratedOptionValue>
             <enumeratedOptionValue
@@ -1623,6 +1885,118 @@
                id="org.eclipse.cdt.cross.arm.gnu.base.option.target.thumbinterwork"
                name="Thumb interwork (-mthumb-interwork)"
                valueType="boolean">
+         </option>
+         <option id="org.eclipse.cdt.cross.arm.gnu.base.option.target.endiannes"
+         		 name="Endiannes"
+         		 valueType="enumerated">
+           <enumeratedOptionValue id="org.eclipse.cdt.cross.arm.gnu.base.option.target.endiannes.default"
+           						  name="Toolchain Default"
+           						  isDefault="true"/>
+           <enumeratedOptionValue id="org.eclipse.cdt.cross.arm.gnu.base.option.target.endiannes.little"
+           						  name="Little Endian (-mlittle-endian)"
+           						  command="-mlittle-endian"/>
+           <enumeratedOptionValue id="org.eclipse.cdt.cross.arm.gnu.base.option.target.endiannes.big"
+           						  name="Big Endian (-mbig-endian)"
+           						  command="-mbig-endian"/>
+         </option>
+         <option id="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.abi"
+                 name="Float ABI"
+                 valueType="enumerated">
+           <enumeratedOptionValue id="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.abi.default"
+                                  isDefault="true"
+                                  name="Toolchain Default">
+           </enumeratedOptionValue>
+           <enumeratedOptionValue command="-mfloat-abi=soft"
+                                  id="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.abi.soft"
+                                  name="Library (-mfloat-abi=soft)"></enumeratedOptionValue>
+           <enumeratedOptionValue command="-mfloat-abi=softfp"
+                                  id="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.abi.softfp"
+                                  name="Library with FP (-mfloat-abi=softfp)"></enumeratedOptionValue>
+           <enumeratedOptionValue command="-mfloat-abi=hard"
+                                  id="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.abi.hard"
+                                  name="FP instructions (-mfloat-abi=hard)"></enumeratedOptionValue>
+         </option>
+         <option id="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit"
+                 name="FPU Type"
+                 valueType="enumerated">
+           <enumeratedOptionValue id="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit.default"
+                                  isDefault="true"
+                                  name="Toolchain Default">
+           </enumeratedOptionValue>
+           <enumeratedOptionValue command="-mfpu=fpa"
+                                  id="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit.fpa"
+                                  name="FPA (-mfpu=fpa)"></enumeratedOptionValue>
+           <enumeratedOptionValue command="-mfpu=fpe2"
+                                  id="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit.fpe2"
+                                  name="FPE2 (-mfpu=fpe2)"></enumeratedOptionValue>
+           <enumeratedOptionValue command="-mfpu=fpe3"
+                                  id="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit.fpe3"
+                                  name="FPE3 (-mfpu=fpe3)"></enumeratedOptionValue>
+           <enumeratedOptionValue command="-mfpu=maverick"
+                                  id="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit.maverick"
+                                  name="Maverick (-mfpu=maverick)"></enumeratedOptionValue>
+           <enumeratedOptionValue command="-mfpu=vfp"
+                                  id="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit.vfp"
+                                  name="VFP (-mfpu=vfp)"></enumeratedOptionValue>
+           <enumeratedOptionValue command="-mfpu=vfpv3"
+                                  id="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit.vfpv3"
+                                  name="VFPv3 (-mfpu=vfpv3)"></enumeratedOptionValue>
+           <enumeratedOptionValue command="-mfpu=vfpv3-fp16"
+                                  id="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit.vfpv3fp16"
+                                  name="VFPv3-FP16 (VFP3) (-mfpu=vfpv3-fp16)">
+           </enumeratedOptionValue>
+           <enumeratedOptionValue command="-mfpu=vfpv3-d16"
+                                  id="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit.vfpv3d16"
+                                  name="VFPv3-D16 (-mfpu=vfpv3-d16)"></enumeratedOptionValue>
+           <enumeratedOptionValue command="-mfpu=vfpv3-d16-fp16"
+                                  id="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit.vfpv3d16fp16"
+                                  name="VFPv3-D16-FP16 (-mfpu=vfpv3-d16-fp16)">
+           </enumeratedOptionValue>
+           <enumeratedOptionValue command="-mfpu=vfpv3xd"
+                                  id="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit.vfpv3xd"
+                                  name="VFPv3XD (-mfpu=vfpv3xd)"></enumeratedOptionValue>
+           <enumeratedOptionValue command="-mfpu=vfpv3xd-fp16"
+                                  id="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit.vfpv3xdfp16"
+                                  name="VFPv3XD-FP16 (-mfpu=vfpv3xd-fp16)">
+           </enumeratedOptionValue>
+           <enumeratedOptionValue command="-mfpu=neon"
+                                  id="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit.neon"
+                                  name="Neon (-mfpu=neon)"></enumeratedOptionValue>
+           <enumeratedOptionValue command="-mfpu=neon-fp16"
+                                  id="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit.neonfp16"
+                                  name="Neon-FP16 (-mfpu=neon-fp16)"></enumeratedOptionValue>
+           <enumeratedOptionValue command="-mfpu=vfpv4"
+                                  id="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit.vfpv4"
+                                  name="VFPv4 (-mfpu=vfpv4)"></enumeratedOptionValue>
+           <enumeratedOptionValue command="-mfpu=vfpv4-d16"
+                                  id="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit.vfpv4d16"
+                                  name="VFPv4-D16 (-mfpu=vfpv4-d16)"></enumeratedOptionValue>
+           <enumeratedOptionValue command="-mfpu=fpv4-sp-d16"
+                                  id="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit.fpv4spd16"
+                                  name="FPv4-SP-D16 (-mfpu=fpv4-sp-d16)">
+           </enumeratedOptionValue>
+           <enumeratedOptionValue command="-mfpu=neon-vfpv4"
+                                  id="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit.neonvfpv4"
+                                  name="Neon-VFPv4 (-mfpu=neon-vfpv4)">
+           </enumeratedOptionValue>
+           <enablement attribute="value"
+                       extensionAdjustment="false"
+                       type="UI_ENABLEMENT|CMD_USAGE"
+                       value="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit.default">
+             <not>
+               <checkOption optionId="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.abi"
+                            value="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.abi.default">
+               </checkOption>
+             </not>
+             <and>
+                <not>
+                   <checkOption
+                         optionId="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.abi"
+                         value="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.abi.soft">
+                   </checkOption>
+                </not>
+             </and>
+           </enablement>
          </option>
          <option
                command="-p"
@@ -1867,13 +2241,16 @@
                dependencyContentType="org.eclipse.cdt.core.cHeader"
                dependencyExtensions="h"
                id="org.eclipse.cdt.cross.arm.gnu.assembler.input"
+               languageId="org.eclipse.cdt.core.assembly"
                sourceContentType="org.eclipse.cdt.core.asmSource"
-               sources="s,S">
+               sources="s,S,asm"
+               superClass="cdt.managedbuild.tool.gnu.assembler.input">
          </inputType>
          <outputType
                buildVariable="OBJS"
                id="org.eclipse.cdt.cross.arm.gnu.assembler.output"
-               outputs="o">
+               outputs="o"
+               superClass="cdt.managedbuild.tool.gnu.assembler.output">
          </outputType>
       </tool>
       <tool
@@ -1991,7 +2368,7 @@
                command="-fdata-sections"
                defaultValue="false"
                id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.datasections"
-               name="Function sections (-fdata-sections)"
+               name="Data sections (-fdata-sections)"
                resourceFilter="all"
                valueType="boolean">
          </option>
@@ -2285,7 +2662,7 @@
                command="-fdata-sections"
                defaultValue="false"
                id="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.optimization.datasections"
-               name="Function sections (-fdata-sections)"
+               name="Data sections (-fdata-sections)"
                resourceFilter="all"
                valueType="boolean">
          </option>
@@ -3408,6 +3785,78 @@
             superClass="org.eclipse.cdt.cross.arm.gnu.printsize">
       </tool>
       <!---->
+      <builder
+            command="make"
+            id="org.eclipse.cdt.cross.arm.gnu.summon.builder"
+            isAbstract="false"
+            isVariableCaseSensitive="false"
+            name="ARM Summon GNU Make builder"
+            superClass="org.eclipse.cdt.cross.arm.gnu.builder">
+      </builder>
+      <tool
+            command="arm-none-eabi-gcc"
+            id="org.eclipse.cdt.cross.arm.gnu.summon.assembler"
+            isAbstract="false"
+            name="ARM Summon GCC Assembler"
+            superClass="org.eclipse.cdt.cross.arm.gnu.assembler">
+      </tool>
+      <tool
+            command="arm-none-eabi-gcc"
+            id="org.eclipse.cdt.cross.arm.gnu.summon.c.compiler"
+            isAbstract="false"
+            name="ARM Summon GCC C Compiler"
+            superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler">
+      </tool>
+      <tool
+            command="arm-none-eabi-g++"
+            id="org.eclipse.cdt.cross.arm.gnu.summon.cpp.compiler"
+            isAbstract="false"
+            name="ARM Summon GCC C++ Compiler"
+            superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler">
+      </tool>
+      <tool
+            command="arm-none-eabi-gcc"
+            id="org.eclipse.cdt.cross.arm.gnu.summon.c.linker"
+            isAbstract="false"
+            name="ARM Summon GCC C Linker"
+            superClass="org.eclipse.cdt.cross.arm.gnu.c.linker">
+      </tool>
+      <tool
+            command="arm-none-eabi-g++"
+            id="org.eclipse.cdt.cross.arm.gnu.summon.cpp.linker"
+            isAbstract="false"
+            name="ARM Summon GCC C++ Linker"
+            superClass="org.eclipse.cdt.cross.arm.gnu.cpp.linker">
+      </tool>
+      <tool
+            command="arm-none-eabi-ar"
+            id="org.eclipse.cdt.cross.arm.gnu.summon.archiver"
+            isAbstract="false"
+            name="ARM Summon GCC Archiver"
+            superClass="org.eclipse.cdt.cross.arm.gnu.archiver">
+      </tool>
+      <tool
+            command="arm-none-eabi-objcopy"
+            id="org.eclipse.cdt.cross.arm.gnu.summon.createflash"
+            isAbstract="false"
+            name="ARM Summon GNU Create Flash Image"
+            superClass="org.eclipse.cdt.cross.arm.gnu.createflash">
+      </tool>
+      <tool
+            command="arm-none-eabi-objdump"
+            id="org.eclipse.cdt.cross.arm.gnu.summon.createlisting"
+            isAbstract="false"
+            name="ARM Summon GNU Create Listing"
+            superClass="org.eclipse.cdt.cross.arm.gnu.createlisting">
+      </tool>
+      <tool
+            command="arm-none-eabi-size"
+            id="org.eclipse.cdt.cross.arm.gnu.summon.printsize"
+            isAbstract="false"
+            name="ARM Summon GNU Print Size"
+            superClass="org.eclipse.cdt.cross.arm.gnu.printsize">
+      </tool>
+      <!---->
 
       <configuration
             cleanCommand="rm -rf"
@@ -3488,6 +3937,24 @@
                id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.target.thumbinterwork"
                name="Thumb interwork (-mthumb-interwork)"
                superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.thumbinterwork">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.target.endiannes"
+                 isAbstract="false"
+                 name="Endiannes"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.endiannes">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.target.fpu.abi"
+                 isAbstract="false"
+                 name="Float ABI"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.abi">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.target.fpu.unit"
+                 isAbstract="false"
+                 name="FPU Type"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit">
          </option>
          <optionCategory
                id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.category.debugging"
@@ -3954,6 +4421,24 @@
                name="Thumb interwork (-mthumb-interwork)"
                superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.thumbinterwork">
          </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.option.target.endiannes"
+                 isAbstract="false"
+                 name="Endiannes"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.endiannes">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.option.target.fpu.abi"
+                 isAbstract="false"
+                 name="Float ABI"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.abi">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.option.target.fpu.unit"
+                 isAbstract="false"
+                 name="FPU Type"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit">
+         </option>
          <optionCategory
                id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.category.debugging"
                name="Debugging">
@@ -4417,6 +4902,24 @@
                id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.option.target.thumbinterwork"
                name="Thumb interwork (-mthumb-interwork)"
                superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.thumbinterwork">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.option.target.endiannes"
+                 isAbstract="false"
+                 name="Endiannes"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.endiannes">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.option.target.fpu.abi"
+                 isAbstract="false"
+                 name="Float ABI"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.abi">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.option.target.fpu.unit"
+                 isAbstract="false"
+                 name="FPU Type"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit">
          </option>
          <optionCategory
                id="org.eclipse.cdt.cross.arm.gnu.sourcery.macosx.category.debugging"
@@ -4887,6 +5390,24 @@
                name="Thumb interwork (-mthumb-interwork)"
                superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.thumbinterwork">
          </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.windows.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.windows.option.target.endiannes"
+                 isAbstract="false"
+                 name="Endiannes"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.endiannes">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.windows.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.windows.option.target.fpu.abi"
+                 isAbstract="false"
+                 name="Float ABI"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.abi">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.windows.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.windows.option.target.fpu.unit"
+                 isAbstract="false"
+                 name="FPU Type"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit">
+         </option>
          <optionCategory
                id="org.eclipse.cdt.cross.arm.gnu.windows.category.debugging"
                name="Debugging">
@@ -5351,6 +5872,24 @@
                id="org.eclipse.cdt.cross.arm.gnu.linux.option.target.thumbinterwork"
                name="Thumb interwork (-mthumb-interwork)"
                superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.thumbinterwork">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.linux.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.linux.option.target.endiannes"
+                 isAbstract="false"
+                 name="Endiannes"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.endiannes">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.linux.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.linux.option.target.fpu.abi"
+                 isAbstract="false"
+                 name="Float ABI"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.abi">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.linux.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.linux.option.target.fpu.unit"
+                 isAbstract="false"
+                 name="FPU Type"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit">
          </option>
          <optionCategory
                id="org.eclipse.cdt.cross.arm.gnu.linux.category.debugging"
@@ -5817,6 +6356,24 @@
                name="Thumb interwork (-mthumb-interwork)"
                superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.thumbinterwork">
          </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.macosx.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.macosx.option.target.endiannes"
+                 isAbstract="false"
+                 name="Endiannes"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.endiannes">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.macosx.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.macosx.option.target.fpu.abi"
+                 isAbstract="false"
+                 name="Float ABI"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.abi">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.macosx.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.macosx.option.target.fpu.unit"
+                 isAbstract="false"
+                 name="FPU Type"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit">
+         </option>
          <optionCategory
                id="org.eclipse.cdt.cross.arm.gnu.macosx.category.debugging"
                name="Debugging">
@@ -6282,6 +6839,24 @@
                id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.option.target.thumbinterwork"
                name="Thumb interwork (-mthumb-interwork)"
                superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.thumbinterwork">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.option.target.endiannes"
+                 isAbstract="false"
+                 name="Endiannes"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.endiannes">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.option.target.fpu.abi"
+                 isAbstract="false"
+                 name="Float ABI"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.abi">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.option.target.fpu.unit"
+                 isAbstract="false"
+                 name="FPU Type"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit">
          </option>
          <optionCategory
                id="org.eclipse.cdt.cross.arm.gnu.yagarto.windows.category.debugging"
@@ -6752,6 +7327,24 @@
                name="Thumb interwork (-mthumb-interwork)"
                superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.thumbinterwork">
          </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.devkitpro.windows.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.devkitpro.windows.option.target.endiannes"
+                 isAbstract="false"
+                 name="Endiannes"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.endiannes">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.devkitpro.windows.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.devkitpro.windows.option.target.fpu.abi"
+                 isAbstract="false"
+                 name="Float ABI"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.abi">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.devkitpro.windows.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.devkitpro.windows.option.target.fpu.unit"
+                 isAbstract="false"
+                 name="FPU Type"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit">
+         </option>
          <optionCategory
                id="org.eclipse.cdt.cross.arm.gnu.devkitpro.windows.category.debugging"
                name="Debugging">
@@ -7217,6 +7810,24 @@
                name="Thumb interwork (-mthumb-interwork)"
                superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.thumbinterwork">
          </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.devkitpro.linux.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.devkitpro.linux.option.target.endiannes"
+                 isAbstract="false"
+                 name="Endiannes"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.endiannes">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.devkitpro.linux.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.devkitpro.linux.option.target.fpu.abi"
+                 isAbstract="false"
+                 name="Float ABI"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.abi">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.devkitpro.linux.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.devkitpro.linux.option.target.fpu.unit"
+                 isAbstract="false"
+                 name="FPU Type"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit">
+         </option>
          <optionCategory
                id="org.eclipse.cdt.cross.arm.gnu.devkitpro.linux.category.debugging"
                name="Debugging">
@@ -7680,6 +8291,24 @@
                id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.option.target.thumbinterwork"
                name="Thumb interwork (-mthumb-interwork)"
                superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.thumbinterwork">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.option.target.endiannes"
+                 isAbstract="false"
+                 name="Endiannes"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.endiannes">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.option.target.fpu.abi"
+                 isAbstract="false"
+                 name="Float ABI"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.abi">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.devkitpro.option.category.target.fpu.unit"
+                 isAbstract="false"
+                 name="FPU Type"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit">
          </option>
          <optionCategory
                id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.category.debugging"
@@ -8146,6 +8775,24 @@
         name="Thumb interwork (-mthumb-interwork)"
         superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.thumbinterwork">
     </option>
+    <option category="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.category.target"
+            id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.option.target.endiannes"
+            isAbstract="false"
+            name="Endiannes"
+            superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.endiannes">
+    </option>
+    <option category="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.category.target"
+            id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.option.target.fpu.abi"
+            isAbstract="false"
+            name="Float ABI"
+            superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.abi">
+    </option>
+    <option category="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.category.target"
+            id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.option.target.fpu.unit"
+            isAbstract="false"
+            name="FPU Type"
+            superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit">
+    </option>
     <optionCategory
         id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.category.debugging"
         name="Debugging">
@@ -8550,6 +9197,1457 @@
         </toolChain>
     </configuration>
 </projectType>
+
+      <configuration
+            cleanCommand="rm -rf"
+            id="org.eclipse.cdt.cross.arm.gnu.summon.windows.configuration.base"
+            name="ARM Windows GCC (Summon) Configuration"
+            parent="org.eclipse.cdt.cross.arm.gnu.configuration.base">
+         <enablement
+               attribute="artifactExtension"
+               extensionAdjustment="false"
+               type="CONTAINER_ATTRIBUTE"
+               value="a">
+            <checkBuildProperty
+                  property="org.eclipse.cdt.build.core.buildArtefactType"
+                  value="org.eclipse.cdt.build.core.buildArtefactType.staticLib">
+            </checkBuildProperty>
+         </enablement>
+      </configuration>
+      <toolChain
+            archList="all"
+            configurationEnvironmentSupplier="org.eclipse.cdt.cross.arm.gnu.summon.windows.ConfigurationEnvironmentSupplier"
+            id="org.eclipse.cdt.cross.arm.gnu.summon.windows.toolchain.base"
+            isAbstract="false"
+            isToolChainSupported="org.eclipse.cdt.cross.arm.gnu.summon.windows.IsToolChainSupported"
+            name="ARM Windows GCC (Summon)"
+            osList="win32">
+         <targetPlatform
+               archList="all"
+               binaryParser="org.eclipse.cdt.core.GNU_ELF"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.platform.base"
+               isAbstract="false"
+               name="Windows Platform"
+               osList="win32">
+         </targetPlatform>
+         <builder
+               command="make"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.builder.base"
+               isAbstract="false"
+               isVariableCaseSensitive="false"
+               name="Summon ARM Windows GNU Make builder"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.builder">
+         </builder>
+         <optionCategory
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.category.target"
+               name="Target Processor">
+         </optionCategory>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.windows.category.target"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.option.target.processor"
+               name="Processor"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.processor">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.windows.category.target"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.option.target.thumb"
+               name="Thumb (-mthumb)"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.thumb">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.windows.category.target"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.option.target.thumbinterwork"
+               name="Thumb interwork (-mthumb-interwork)"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.thumbinterwork">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.summon.windows.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.summon.windows.option.target.endiannes"
+                 isAbstract="false"
+                 name="Endiannes"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.endiannes">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.summon.windows.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.summon.windows.option.target.fpu.abi"
+                 isAbstract="false"
+                 name="Float ABI"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.abi">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.summon.windows.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.summon.windows.option.target.fpu.unit"
+                 isAbstract="false"
+                 name="FPU Type"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit">
+         </option>
+         <optionCategory
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.category.debugging"
+               name="Debugging">
+         </optionCategory>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.windows.category.debugging"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.option.debugging.level"
+               name="Debug level"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.level">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.windows.category.debugging"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.option.debugging.format"
+               name="Debug format"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.format">
+            <enablement
+                  type="UI_ENABLEMENT|CMD_USAGE">
+               <not>
+                  <checkOption
+                        optionId="org.eclipse.cdt.cross.arm.gnu.summon.windows.option.debugging.level"
+                        value="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.level.none">
+                  </checkOption>
+               </not>
+            </enablement>
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.windows.category.debugging"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.option.debugging.other"
+               name="Other debugging flags"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.other">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.windows.category.debugging"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.option.debugging.prof"
+               name="Generate prof information (-p)"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.prof">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.windows.category.debugging"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.option.debugging.gprof"
+               name="Generate gprof information (-pg)"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.gprof">
+         </option>
+         <optionCategory
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.category.addtools"
+               name="Additional Tools">
+         </optionCategory>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.windows.category.addtools"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.option.addtools.createflash"
+               name="Create Flash Image"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.addtools.createflash">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.windows.category.addtools"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.option.addtools.createlisting"
+               name="Create Extended Listing"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.addtools.createlisting">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.windows.category.addtools"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.option.addtools.printsize"
+               name="Print Size"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.addtools.printsize">
+         </option>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.assembler.base"
+               isAbstract="false"
+               name="ARM Summon Windows GCC Assembler"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.assembler">
+            <inputType
+                  id="org.eclipse.cdt.cross.arm.gnu.summon.windows.assembler.base.input"
+                  scannerConfigDiscoveryProfileId="|org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCWinStandardMakePerFileProfile"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.assembler.input">
+            </inputType>
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.c.compiler.base"
+               isAbstract="false"
+               name="ARM Summon Windows GCC C Compiler"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.c.compiler">
+            <inputType
+                  id="org.eclipse.cdt.cross.arm.gnu.summon.windows.c.compiler.base.input"
+                  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCWinManagedMakePerProjectProfileC|org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCWinStandardMakePerFileProfile"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.input">
+            </inputType>
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.cpp.compiler.base"
+               isAbstract="false"
+               name="ARM Summon Windows GCC C++ Compiler"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.cpp.compiler">
+            <inputType
+                  id="org.eclipse.cdt.cross.arm.gnu.summon.windows.cpp.compiler.base.input"
+                  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCWinManagedMakePerProjectProfileCPP|org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCWinStandardMakePerFileProfile"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.input">
+            </inputType>
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.c.linker.base"
+               isAbstract="false"
+               name="ARM Summon Windows GCC C Linker"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.c.linker">
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.cpp.linker.base"
+               isAbstract="false"
+               name="ARM Summon Windows GCC C++ Linker"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.cpp.linker">
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.archiver.base"
+               isAbstract="false"
+               name="ARM Summon Windows GCC Archiver"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.archiver">
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.createflash.base"
+               isAbstract="false"
+               name="ARM Summon Windows GNU Create Flash Image"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.createflash">
+            <enablement
+                  type="ALL">
+               <checkOption
+                     holderId="org.eclipse.cdt.cross.arm.gnu.summon.windows.toolchain.base"
+                     optionId="org.eclipse.cdt.cross.arm.gnu.summon.windows.option.addtools.createflash"
+                     value="true">
+               </checkOption>
+               <and>
+                  <checkBuildProperty
+                        property="org.eclipse.cdt.build.core.buildArtefactType"
+                        value="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application">
+                  </checkBuildProperty>
+               </and>
+            </enablement>
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.createlisting.base"
+               isAbstract="false"
+               name="ARM Summon Windows GNU Create Listing"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.createlisting">
+            <enablement
+                  type="ALL">
+               <checkOption
+                     holderId="org.eclipse.cdt.cross.arm.gnu.summon.windows.toolchain.base"
+                     optionId="org.eclipse.cdt.cross.arm.gnu.summon.windows.option.addtools.createlisting"
+                     value="true">
+               </checkOption>
+               <and>
+                  <checkBuildProperty
+                        property="org.eclipse.cdt.build.core.buildArtefactType"
+                        value="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application">
+                  </checkBuildProperty>
+               </and>
+            </enablement>
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.printsize.base"
+               isAbstract="false"
+               name="ARM Summon Windows GNU Print Size"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.printsize">
+            <enablement
+                  type="ALL">
+               <checkOption
+                     holderId="org.eclipse.cdt.cross.arm.gnu.summon.windows.toolchain.base"
+                     optionId="org.eclipse.cdt.cross.arm.gnu.summon.windows.option.addtools.printsize"
+                     value="true">
+               </checkOption>
+               <and>
+                  <checkBuildProperty
+                        property="org.eclipse.cdt.build.core.buildArtefactType"
+                        value="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application">
+                  </checkBuildProperty>
+               </and>
+            </enablement>
+         </tool>
+      </toolChain>
+      <projectType
+            buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application"
+            id="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf"
+            isAbstract="true">
+         <configuration
+               artifactExtension="elf"
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.debug"
+               name="Debug"
+               parent="org.eclipse.cdt.cross.arm.gnu.summon.windows.configuration.base">
+            <toolChain
+                  id="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.toolchain.debug"
+                  isAbstract="false"
+                  secondaryOutputs="org.eclipse.cdt.cross.arm.gnu.createflash.output;org.eclipse.cdt.cross.arm.gnu.createlisting.output;org.eclipse.cdt.cross.arm.gnu.printsize.output"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.toolchain.base"
+                  targetTool="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.c.linker.debug;org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.cpp.linker.debug">
+               <targetPlatform
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.platform.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.platform.base">
+               </targetPlatform>
+               <builder
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.builder.debug"
+                     isAbstract="false"
+                     isVariableCaseSensitive="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.builder.base">
+               </builder>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.assembler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.assembler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.c.compiler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.c.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.cpp.compiler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.cpp.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.c.linker.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.c.linker.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.cpp.linker.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.cpp.linker.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.createflash.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.createflash.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.createlisting.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.createlisting.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.printsize.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.printsize.base">
+               </tool>
+            </toolChain>
+         </configuration>
+         <configuration
+               artifactExtension="elf"
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.release"
+               name="Release"
+               parent="org.eclipse.cdt.cross.arm.gnu.summon.windows.configuration.base">
+            <toolChain
+                  id="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.toolchain.release"
+                  isAbstract="false"
+                  secondaryOutputs="org.eclipse.cdt.cross.arm.gnu.createflash.output;org.eclipse.cdt.cross.arm.gnu.createlisting.output;org.eclipse.cdt.cross.arm.gnu.printsize.output"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.toolchain.base"
+                  targetTool="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.c.linker.release;org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.cpp.linker.release">
+               <targetPlatform
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.platform.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.platform.base">
+               </targetPlatform>
+               <builder
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.builder.release"
+                     isAbstract="false"
+                     isVariableCaseSensitive="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.builder.base">
+               </builder>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.assembler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.assembler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.c.compiler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.c.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.cpp.compiler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.cpp.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.c.linker.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.c.linker.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.cpp.linker.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.cpp.linker.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.createflash.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.createflash.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.createlisting.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.createlisting.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.elf.printsize.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.printsize.base">
+               </tool>
+            </toolChain>
+         </configuration>
+      </projectType>
+      <projectType
+            buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.staticLib"
+            id="org.eclipse.cdt.cross.arm.gnu.summon.windows.lib"
+            isAbstract="true">
+         <configuration
+               artifactExtension="a"
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.lib.debug"
+               name="Debug"
+               parent="org.eclipse.cdt.cross.arm.gnu.summon.windows.configuration.base">
+            <toolChain
+                  id="org.eclipse.cdt.cross.arm.gnu.summon.windows.lib.toolchain.debug"
+                  isAbstract="false"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.toolchain.base"
+                  targetTool="org.eclipse.cdt.cross.arm.gnu.summon.windows.lib.archiver.debug">
+               <targetPlatform
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.lib.platform.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.platform.base">
+               </targetPlatform>
+               <builder
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.lib.builder.debug"
+                     isAbstract="false"
+                     isVariableCaseSensitive="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.builder.base">
+               </builder>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.lib.assembler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.assembler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.lib.c.compiler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.c.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.lib.cpp.compiler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.cpp.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.lib.archiver.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.archiver.base">
+               </tool>
+            </toolChain>
+         </configuration>
+         <configuration
+               artifactExtension="a"
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.windows.lib.release"
+               name="Release"
+               parent="org.eclipse.cdt.cross.arm.gnu.summon.windows.configuration.base">
+            <toolChain
+                  id="org.eclipse.cdt.cross.arm.gnu.summon.windows.lib.toolchain.release"
+                  isAbstract="false"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.toolchain.base"
+                  targetTool="org.eclipse.cdt.cross.arm.gnu.summon.windows.lib.archiver.release">
+               <targetPlatform
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.lib.platform.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.platform.base">
+               </targetPlatform>
+               <builder
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.lib.builder.release"
+                     isAbstract="false"
+                     isVariableCaseSensitive="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.builder.base">
+               </builder>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.lib.assembler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.assembler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.lib.c.compiler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.c.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.lib.cpp.compiler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.cpp.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.windows.lib.archiver.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.windows.archiver.base">
+               </tool>
+            </toolChain>
+         </configuration>
+      </projectType>
+      <!---->
+      <configuration
+            id="org.eclipse.cdt.cross.arm.gnu.summon.linux.configuration.base"
+            name="ARM Linux GCC (Summon) Configuration"
+            parent="org.eclipse.cdt.cross.arm.gnu.configuration.base">
+         <enablement
+               attribute="artifactExtension"
+               extensionAdjustment="false"
+               type="CONTAINER_ATTRIBUTE"
+               value="a">
+            <checkBuildProperty
+                  property="org.eclipse.cdt.build.core.buildArtefactType"
+                  value="org.eclipse.cdt.build.core.buildArtefactType.staticLib">
+            </checkBuildProperty>
+         </enablement>
+      </configuration>
+      <toolChain
+            archList="all"
+            id="org.eclipse.cdt.cross.arm.gnu.summon.linux.toolchain.base"
+            isAbstract="false"
+            isToolChainSupported="org.eclipse.cdt.cross.arm.gnu.summon.linux.IsToolChainSupported"
+            name="ARM Linux GCC (Summon)"
+            osList="linux">
+         <targetPlatform
+               archList="all"
+               binaryParser="org.eclipse.cdt.core.GNU_ELF"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.platform.base"
+               isAbstract="false"
+               name="Linux Platform"
+               osList="linux">
+         </targetPlatform>
+         <builder
+               command="make"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.builder.base"
+               isAbstract="false"
+               isVariableCaseSensitive="false"
+               name="Summon ARM Linux GNU Make builder"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.builder">
+         </builder>
+         <optionCategory
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.category.target"
+               name="Target Processor">
+         </optionCategory>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.linux.category.target"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.option.target.processor"
+               name="Processor"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.processor">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.linux.category.target"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.option.target.thumb"
+               name="Thumb (-mthumb)"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.thumb">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.linux.category.target"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.option.target.thumbinterwork"
+               name="Thumb interwork (-mthumb-interwork)"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.thumbinterwork">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.summon.linux.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.summon.linux.option.target.endiannes"
+                 isAbstract="false"
+                 name="Endiannes"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.endiannes">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.summon.linux.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.summon.linux.option.target.fpu.abi"
+                 isAbstract="false"
+                 name="Float ABI"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.abi">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.summon.linux.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.summon.linux.option.target.fpu.unit"
+                 isAbstract="false"
+                 name="FPU Type"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit">
+         </option>
+         <optionCategory
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.category.debugging"
+               name="Debugging">
+         </optionCategory>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.linux.category.debugging"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.option.debugging.level"
+               name="Debug level"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.level">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.linux.category.debugging"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.option.debugging.format"
+               name="Debug format"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.format">
+            <enablement
+                  type="UI_ENABLEMENT|CMD_USAGE">
+               <not>
+                  <checkOption
+                        optionId="org.eclipse.cdt.cross.arm.gnu.summon.linux.option.debugging.level"
+                        value="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.level.none">
+                  </checkOption>
+               </not>
+            </enablement>
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.linux.category.debugging"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.option.debugging.other"
+               name="Other debugging flags"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.other">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.linux.category.debugging"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.option.debugging.prof"
+               name="Generate prof information (-p)"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.prof">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.linux.category.debugging"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.option.debugging.gprof"
+               name="Generate gprof information (-pg)">
+         </option>
+         <optionCategory
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.category.addtools"
+               name="Additional Tools">
+         </optionCategory>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.linux.category.addtools"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.option.addtools.createflash"
+               name="Create Flash Image"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.addtools.createflash">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.linux.category.addtools"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.option.addtools.createlisting"
+               name="Create Extended Listing"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.addtools.createlisting">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.linux.category.addtools"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.option.addtools.printsize"
+               name="Print Size"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.addtools.printsize">
+         </option>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.assembler.base"
+               isAbstract="false"
+               name="ARM Summon Linux GCC Assembler"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.assembler">
+            <inputType
+                  id="org.eclipse.cdt.cross.arm.gnu.summon.linux.assembler.base.input"
+                  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCManagedMakePerProjectProfileC|org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCStandardMakePerFileProfile"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.assembler.input">
+            </inputType>
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.c.compiler.base"
+               isAbstract="false"
+               name="ARM Summon Linux GCC C Compiler"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.c.compiler">
+            <inputType
+                  id="org.eclipse.cdt.cross.arm.gnu.summon.linux.c.compiler.base.input"
+                  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCManagedMakePerProjectProfileC|org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCStandardMakePerFileProfile"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.input">
+            </inputType>
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.cpp.compiler.base"
+               isAbstract="false"
+               name="ARM Summon Linux GCC C++ Compiler"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.cpp.compiler">
+            <inputType
+                  id="org.eclipse.cdt.cross.arm.gnu.summon.linux.cpp.compiler.base.input"
+                  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCManagedMakePerProjectProfileCPP|org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCStandardMakePerFileProfile"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.input">
+            </inputType>
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.c.linker.base"
+               isAbstract="false"
+               name="ARM Summon Linux GCC C Linker"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.c.linker">
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.cpp.linker.base"
+               isAbstract="false"
+               name="ARM Summon Linux GCC C++ Linker"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.cpp.linker">
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.archiver.base"
+               isAbstract="false"
+               name="ARM Summon Linux GCC Archiver"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.archiver">
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.createflash.base"
+               isAbstract="false"
+               name="ARM Summon Linux GNU Create Flash Image"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.createflash">
+            <enablement
+                  type="ALL">
+               <checkOption
+                     holderId="org.eclipse.cdt.cross.arm.gnu.summon.linux.toolchain.base"
+                     optionId="org.eclipse.cdt.cross.arm.gnu.summon.linux.option.addtools.createflash"
+                     value="true">
+               </checkOption>
+               <and>
+                  <checkBuildProperty
+                        property="org.eclipse.cdt.build.core.buildArtefactType"
+                        value="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application">
+                  </checkBuildProperty>
+               </and>
+            </enablement>
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.createlisting.base"
+               isAbstract="false"
+               name="ARM Summon Linux GNU Create Listing"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.createlisting">
+            <enablement
+                  type="ALL">
+               <checkOption
+                     holderId="org.eclipse.cdt.cross.arm.gnu.summon.linux.toolchain.base"
+                     optionId="org.eclipse.cdt.cross.arm.gnu.summon.linux.option.addtools.createlisting"
+                     value="true">
+               </checkOption>
+               <and>
+                  <checkBuildProperty
+                        property="org.eclipse.cdt.build.core.buildArtefactType"
+                        value="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application">
+                  </checkBuildProperty>
+               </and>
+            </enablement>
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.printsize.base"
+               isAbstract="false"
+               name="ARM Summon Linux GNU Print Size"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.printsize">
+            <enablement
+                  type="ALL">
+               <checkOption
+                     holderId="org.eclipse.cdt.cross.arm.gnu.summon.linux.toolchain.base"
+                     optionId="org.eclipse.cdt.cross.arm.gnu.summon.linux.option.addtools.printsize"
+                     value="true">
+               </checkOption>
+               <and>
+                  <checkBuildProperty
+                        property="org.eclipse.cdt.build.core.buildArtefactType"
+                        value="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application">
+                  </checkBuildProperty>
+               </and>
+            </enablement>
+         </tool>
+      </toolChain>
+      <projectType
+            buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application"
+            id="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf"
+            isAbstract="true">
+         <configuration
+               artifactExtension="elf"
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.debug"
+               name="Debug"
+               parent="org.eclipse.cdt.cross.arm.gnu.summon.linux.configuration.base">
+            <toolChain
+                  id="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.toolchain.debug"
+                  isAbstract="false"
+                  secondaryOutputs="org.eclipse.cdt.cross.arm.gnu.createflash.output;org.eclipse.cdt.cross.arm.gnu.createlisting.output;org.eclipse.cdt.cross.arm.gnu.printsize.output"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.toolchain.base"
+                  targetTool="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.c.linker.debug;org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.cpp.linker.debug">
+               <targetPlatform
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.platform.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.platform.base">
+               </targetPlatform>
+               <builder
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.builder.debug"
+                     isAbstract="false"
+                     isVariableCaseSensitive="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.builder.base">
+               </builder>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.assembler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.assembler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.c.compiler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.c.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.cpp.compiler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.cpp.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.c.linker.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.c.linker.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.cpp.linker.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.cpp.linker.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.createflash.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.createflash.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.createlisting.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.createlisting.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.printsize.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.printsize.base">
+               </tool>
+            </toolChain>
+         </configuration>
+         <configuration
+               artifactExtension="elf"
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.release"
+               name="Release"
+               parent="org.eclipse.cdt.cross.arm.gnu.summon.linux.configuration.base">
+            <toolChain
+                  id="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.toolchain.release"
+                  isAbstract="false"
+                  secondaryOutputs="org.eclipse.cdt.cross.arm.gnu.createflash.output;org.eclipse.cdt.cross.arm.gnu.createlisting.output;org.eclipse.cdt.cross.arm.gnu.printsize.output"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.toolchain.base"
+                  targetTool="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.c.linker.release;org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.cpp.linker.release">
+               <targetPlatform
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.platform.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.platform.base">
+               </targetPlatform>
+               <builder
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.builder.release"
+                     isAbstract="false"
+                     isVariableCaseSensitive="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.builder.base">
+               </builder>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.assembler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.assembler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.c.compiler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.c.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.cpp.compiler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.cpp.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.c.linker.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.c.linker.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.cpp.linker.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.cpp.linker.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.createflash.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.createflash.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.createlisting.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.createlisting.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.elf.printsize.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.printsize.base">
+               </tool>
+            </toolChain>
+         </configuration>
+      </projectType>
+      <projectType
+            buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.staticLib"
+            id="org.eclipse.cdt.cross.arm.gnu.summon.linux.lib"
+            isAbstract="true">
+         <configuration
+               artifactExtension="a"
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.lib.debug"
+               name="Debug"
+               parent="org.eclipse.cdt.cross.arm.gnu.summon.linux.configuration.base">
+            <toolChain
+                  id="org.eclipse.cdt.cross.arm.gnu.summon.linux.lib.toolchain.debug"
+                  isAbstract="false"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.toolchain.base"
+                  targetTool="org.eclipse.cdt.cross.arm.gnu.summon.linux.lib.archiver.debug">
+               <targetPlatform
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.lib.platform.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.platform.base">
+               </targetPlatform>
+               <builder
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.lib.builder.debug"
+                     isAbstract="false"
+                     isVariableCaseSensitive="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.builder.base">
+               </builder>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.lib.assembler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.assembler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.lib.c.compiler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.c.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.lib.cpp.compiler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.cpp.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.lib.archiver.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.archiver.base">
+               </tool>
+            </toolChain>
+         </configuration>
+         <configuration
+               artifactExtension="a"
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.linux.lib.release"
+               name="Release"
+               parent="org.eclipse.cdt.cross.arm.gnu.summon.linux.configuration.base">
+            <toolChain
+                  id="org.eclipse.cdt.cross.arm.gnu.summon.linux.lib.toolchain.release"
+                  isAbstract="false"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.toolchain.base"
+                  targetTool="org.eclipse.cdt.cross.arm.gnu.summon.linux.lib.archiver.release">
+               <targetPlatform
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.lib.platform.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.platform.base">
+               </targetPlatform>
+               <builder
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.lib.builder.release"
+                     isAbstract="false"
+                     isVariableCaseSensitive="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.builder.base">
+               </builder>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.lib.assembler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.assembler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.lib.c.compiler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.c.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.lib.cpp.compiler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.cpp.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.linux.lib.archiver.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.linux.archiver.base">
+               </tool>
+            </toolChain>
+         </configuration>
+      </projectType>
+      <configuration
+            id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.configuration.base"
+            name="ARM Mac OS X GCC (Summon) Configuration"
+            parent="org.eclipse.cdt.cross.arm.gnu.configuration.base">
+         <enablement
+               attribute="artifactExtension"
+               extensionAdjustment="false"
+               type="CONTAINER_ATTRIBUTE"
+               value="a">
+            <checkBuildProperty
+                  property="org.eclipse.cdt.build.core.buildArtefactType"
+                  value="org.eclipse.cdt.build.core.buildArtefactType.staticLib">
+            </checkBuildProperty>
+         </enablement>
+      </configuration>
+      <toolChain
+            archList="all"
+            id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.toolchain.base"
+            isAbstract="false"
+            isToolChainSupported="org.eclipse.cdt.cross.arm.gnu.summon.macosx.IsToolChainSupported"
+            name="ARM Mac OS X GCC (Summon)"
+            osList="macosx">
+         <targetPlatform
+               archList="all"
+               binaryParser="org.eclipse.cdt.core.GNU_ELF"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.platform.base"
+               isAbstract="false"
+               name="Mac OS X Platform"
+               osList="macosx">
+         </targetPlatform>
+         <builder
+               command="make"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.builder.base"
+               isAbstract="false"
+               isVariableCaseSensitive="false"
+               name="Summon ARM Mac OS X GNU Make builder"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.builder">
+         </builder>
+         <optionCategory
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.category.target"
+               name="Target Processor">
+         </optionCategory>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.macosx.category.target"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.option.target.processor"
+               name="Processor"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.processor">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.macosx.category.target"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.option.target.thumb"
+               name="Thumb (-mthumb)"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.thumb">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.macosx.category.target"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.option.target.thumbinterwork"
+               name="Thumb interwork (-mthumb-interwork)"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.thumbinterwork">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.summon.macosx.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.option.target.endiannes"
+                 isAbstract="false"
+                 name="Endiannes"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.endiannes">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.summon.macosx.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.option.target.fpu.abi"
+                 isAbstract="false"
+                 name="Float ABI"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.abi">
+         </option>
+         <option category="org.eclipse.cdt.cross.arm.gnu.summon.macosx.category.target"
+                 id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.option.target.fpu.unit"
+                 isAbstract="false"
+                 name="FPU Type"
+                 superClass="org.eclipse.cdt.cross.arm.gnu.base.option.target.fpu.unit">
+         </option>
+         <optionCategory
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.category.debugging"
+               name="Debugging">
+         </optionCategory>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.macosx.category.debugging"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.option.debugging.level"
+               name="Debug level"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.level">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.macosx.category.debugging"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.option.debugging.format"
+               name="Debug format"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.format">
+            <enablement
+                  type="UI_ENABLEMENT|CMD_USAGE">
+               <not>
+                  <checkOption
+                        optionId="org.eclipse.cdt.cross.arm.gnu.summon.macosx.option.debugging.level"
+                        value="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.level.none">
+                  </checkOption>
+               </not>
+            </enablement>
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.macosx.category.debugging"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.option.debugging.other"
+               name="Other debugging flags"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.other">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.macosx.category.debugging"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.option.debugging.prof"
+               name="Generate prof information (-p)"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.prof">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.macosx.category.debugging"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.option.debugging.gprof"
+               name="Generate gprof information (-pg)">
+         </option>
+         <optionCategory
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.category.addtools"
+               name="Additional Tools">
+         </optionCategory>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.macosx.category.addtools"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.option.addtools.createflash"
+               name="Create Flash Image"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.addtools.createflash">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.macosx.category.addtools"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.option.addtools.createlisting"
+               name="Create Extended Listing"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.addtools.createlisting">
+         </option>
+         <option
+               category="org.eclipse.cdt.cross.arm.gnu.summon.macosx.category.addtools"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.option.addtools.printsize"
+               name="Print Size"
+               superClass="org.eclipse.cdt.cross.arm.gnu.base.option.addtools.printsize">
+         </option>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.assembler.base"
+               isAbstract="false"
+               name="ARM Summon Mac OS X GCC Assembler"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.assembler">
+            <inputType
+                  id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.assembler.base.input"
+                  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCManagedMakePerProjectProfileC|org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCStandardMakePerFileProfile"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.assembler.input">
+            </inputType>
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.c.compiler.base"
+               isAbstract="false"
+               name="ARM Summon Mac OS X GCC C Compiler"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.c.compiler">
+            <inputType
+                  id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.c.compiler.base.input"
+                  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCManagedMakePerProjectProfileC|org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCStandardMakePerFileProfile"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.input">
+            </inputType>
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.cpp.compiler.base"
+               isAbstract="false"
+               name="ARM Summon Mac OS X GCC C++ Compiler"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.cpp.compiler">
+            <inputType
+                  id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.cpp.compiler.base.input"
+                  scannerConfigDiscoveryProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCManagedMakePerProjectProfileCPP|org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCStandardMakePerFileProfile"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.input">
+            </inputType>
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.c.linker.base"
+               isAbstract="false"
+               name="ARM Summon Mac OS X GCC C Linker"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.c.linker">
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.cpp.linker.base"
+               isAbstract="false"
+               name="ARM Summon Mac OS X GCC C++ Linker"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.cpp.linker">
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.archiver.base"
+               isAbstract="false"
+               name="ARM Summon Mac OS X GCC Archiver"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.archiver">
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.createflash.base"
+               isAbstract="false"
+               name="ARM Summon Mac OS X GNU Create Flash Image"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.createflash">
+            <enablement
+                  type="ALL">
+               <checkOption
+                     holderId="org.eclipse.cdt.cross.arm.gnu.summon.macosx.toolchain.base"
+                     optionId="org.eclipse.cdt.cross.arm.gnu.summon.macosx.option.addtools.createflash"
+                     value="true">
+               </checkOption>
+               <and>
+                  <checkBuildProperty
+                        property="org.eclipse.cdt.build.core.buildArtefactType"
+                        value="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application">
+                  </checkBuildProperty>
+               </and>
+            </enablement>
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.createlisting.base"
+               isAbstract="false"
+               name="ARM Summon Mac OS X GNU Create Listing"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.createlisting">
+            <enablement
+                  type="ALL">
+               <checkOption
+                     holderId="org.eclipse.cdt.cross.arm.gnu.summon.macosx.toolchain.base"
+                     optionId="org.eclipse.cdt.cross.arm.gnu.summon.macosx.option.addtools.createlisting"
+                     value="true">
+               </checkOption>
+               <and>
+                  <checkBuildProperty
+                        property="org.eclipse.cdt.build.core.buildArtefactType"
+                        value="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application">
+                  </checkBuildProperty>
+               </and>
+            </enablement>
+         </tool>
+         <tool
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.printsize.base"
+               isAbstract="false"
+               name="Summon ARM Mac OS X GNU Print Size"
+               superClass="org.eclipse.cdt.cross.arm.gnu.summon.printsize">
+            <enablement
+                  type="ALL">
+               <checkOption
+                     holderId="org.eclipse.cdt.cross.arm.gnu.summon.macosx.toolchain.base"
+                     optionId="org.eclipse.cdt.cross.arm.gnu.summon.macosx.option.addtools.printsize"
+                     value="true">
+               </checkOption>
+               <and>
+                  <checkBuildProperty
+                        property="org.eclipse.cdt.build.core.buildArtefactType"
+                        value="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application">
+                  </checkBuildProperty>
+               </and>
+            </enablement>
+         </tool>
+      </toolChain>
+      <projectType
+            buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application"
+            id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf"
+            isAbstract="true">
+         <configuration
+               artifactExtension="elf"
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.debug"
+               name="Debug"
+               parent="org.eclipse.cdt.cross.arm.gnu.summon.macosx.configuration.base">
+            <toolChain
+                  id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.toolchain.debug"
+                  isAbstract="false"
+                  secondaryOutputs="org.eclipse.cdt.cross.arm.gnu.createflash.output;org.eclipse.cdt.cross.arm.gnu.createlisting.output;org.eclipse.cdt.cross.arm.gnu.printsize.output"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.toolchain.base"
+                  targetTool="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.c.linker.debug;org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.cpp.linker.debug">
+               <targetPlatform
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.platform.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.platform.base">
+               </targetPlatform>
+               <builder
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.builder.debug"
+                     isAbstract="false"
+                     isVariableCaseSensitive="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.builder.base">
+               </builder>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.assembler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.assembler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.c.compiler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.c.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.cpp.compiler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.cpp.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.c.linker.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.c.linker.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.cpp.linker.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.cpp.linker.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.createflash.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.createflash.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.createlisting.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.createlisting.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.printsize.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.printsize.base">
+               </tool>
+            </toolChain>
+         </configuration>
+         <configuration
+               artifactExtension="elf"
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.release"
+               name="Release"
+               parent="org.eclipse.cdt.cross.arm.gnu.summon.macosx.configuration.base">
+            <toolChain
+                  id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.toolchain.release"
+                  isAbstract="false"
+                  secondaryOutputs="org.eclipse.cdt.cross.arm.gnu.createflash.output;org.eclipse.cdt.cross.arm.gnu.createlisting.output;org.eclipse.cdt.cross.arm.gnu.printsize.output"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.toolchain.base"
+                  targetTool="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.c.linker.release;org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.cpp.linker.release">
+               <targetPlatform
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.platform.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.platform.base">
+               </targetPlatform>
+               <builder
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.builder.release"
+                     isAbstract="false"
+                     isVariableCaseSensitive="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.builder.base">
+               </builder>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.assembler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.assembler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.c.compiler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.c.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.cpp.compiler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.cpp.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.c.linker.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.c.linker.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.cpp.linker.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.cpp.linker.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.createflash.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.createflash.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.createlisting.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.createlisting.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.printsize.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.printsize.base">
+               </tool>
+            </toolChain>
+         </configuration>
+      </projectType>
+      <projectType
+            buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.staticLib"
+            id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.lib"
+            isAbstract="true">
+         <configuration
+               artifactExtension="a"
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.lib.debug"
+               name="Debug"
+               parent="org.eclipse.cdt.cross.arm.gnu.summon.macosx.configuration.base">
+            <toolChain
+                  id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.lib.toolchain.debug"
+                  isAbstract="false"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.toolchain.base"
+                  targetTool="org.eclipse.cdt.cross.arm.gnu.summon.macosx.lib.archiver.debug">
+               <targetPlatform
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.lib.platform.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.platform.base">
+               </targetPlatform>
+               <builder
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.lib.builder.debug"
+                     isAbstract="false"
+                     isVariableCaseSensitive="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.builder.base">
+               </builder>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.lib.assembler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.assembler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.lib.c.compiler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.c.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.lib.cpp.compiler.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.cpp.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.lib.archiver.debug"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.archiver.base">
+               </tool>
+            </toolChain>
+         </configuration>
+         <configuration
+               artifactExtension="a"
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+               id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.lib.release"
+               name="Release"
+               parent="org.eclipse.cdt.cross.arm.gnu.summon.macosx.configuration.base">
+            <toolChain
+                  id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.lib.toolchain.release"
+                  isAbstract="false"
+                  superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.toolchain.base"
+                  targetTool="org.eclipse.cdt.cross.arm.gnu.summon.macosx.lib.archiver.release">
+               <targetPlatform
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.lib.platform.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.platform.base">
+               </targetPlatform>
+               <builder
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.lib.builder.release"
+                     isAbstract="false"
+                     isVariableCaseSensitive="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.builder.base">
+               </builder>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.lib.assembler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.assembler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.lib.c.compiler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.c.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.lib.cpp.compiler.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.cpp.compiler.base">
+               </tool>
+               <tool
+                     id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.lib.archiver.release"
+                     isAbstract="false"
+                     superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.archiver.base">
+               </tool>
+            </toolChain>
+         </configuration>
+      </projectType>
             
    </extension>
 
