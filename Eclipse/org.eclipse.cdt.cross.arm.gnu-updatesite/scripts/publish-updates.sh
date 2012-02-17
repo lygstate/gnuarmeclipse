@@ -1,6 +1,7 @@
 #! /bin/bash
 
-# This script publishes the org.eclipse.cdt.cross.arm.gnu-updatesite site
+# This script runs on Mac OS X ans is intended to 
+# publishes the org.eclipse.cdt.cross.arm.gnu-updatesite site
 # to the File Release System (FRS) folder on SourceForge
 
 if [ $# -gt 0 ] && [ "$1" = "test" ]
