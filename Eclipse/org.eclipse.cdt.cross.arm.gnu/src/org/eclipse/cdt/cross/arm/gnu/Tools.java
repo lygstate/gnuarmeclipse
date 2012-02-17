@@ -12,6 +12,7 @@ import org.eclipse.cdt.managedbuilder.core.ManagedBuildManager;
 import org.eclipse.cdt.managedbuilder.gnu.ui.GnuUIPlugin;
 import org.eclipse.cdt.utils.WindowsRegistry;
 import org.eclipse.cdt.utils.spawner.ProcessFactory;
+import org.eclipse.core.runtime.Status;
 
 public class Tools {
 
@@ -38,6 +39,37 @@ public class Tools {
 	public static boolean isMacOSX() {
 		return (System.getProperty(PROPERTY_OS_NAME).toLowerCase()
 				.startsWith(PROPERTY_OS_VALUE_MACOSX));
+	}
+	
+	public static String getManualInstallPath(String check) {
+		String installPath = null;
+		if (check == null || check.isEmpty())
+			return installPath;
+		
+		try {
+			String sysPath = null;
+			sysPath = System.getenv("PATH");
+			
+			String delim = System.getProperty("path.separator");
+			if ( delim != null && delim.length() > 0 && sysPath != null && sysPath.length() > 0) {
+				String[] paths = sysPath.split(delim);
+				if (paths != null && paths.length > 0) {
+					for (String p : paths)
+					{
+						if (p.contains(check)) {
+							int start = p.indexOf(check);
+							installPath = p.substring(0, start + check.length());
+							GnuUIPlugin.getDefault();
+							GnuUIPlugin.getDefault().log( new Status(0, ARMPlugin.PLUGIN_ID, "getManualInstallPath(): " + installPath));
+							break;
+						}
+					}
+				}
+			}
+		} catch (Exception e) {
+			GnuUIPlugin.getDefault().log(e);
+		}
+		return installPath;
 	}
 
 	private static final String SP = " "; //$NON-NLS-1$
