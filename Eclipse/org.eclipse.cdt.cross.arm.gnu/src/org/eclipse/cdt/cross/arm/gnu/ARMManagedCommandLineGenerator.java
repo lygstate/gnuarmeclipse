@@ -10,11 +10,15 @@ import org.eclipse.cdt.managedbuilder.core.ITool;
 import org.eclipse.cdt.managedbuilder.core.IToolChain;
 import org.eclipse.cdt.managedbuilder.internal.core.ManagedCommandLineGenerator;
 
+@SuppressWarnings("restriction")
 public class ARMManagedCommandLineGenerator extends ManagedCommandLineGenerator {
 
 	private static final String OPTION_SUFIX_PROCESSOR = ".option.target.processor";
 	private static final String OPTION_SUFIX_THUMB = ".option.target.thumb";
 	private static final String OPTION_SUFIX_THUMB_INTERWORK = ".option.target.thumbinterwork";
+	private static final String OPTION_SUFFIX_ENDIANNES = ".option.target.endiannes";
+	private static final String OPTION_SUFFIX_FLOAT_ABI = ".option.target.fpu.abi";
+	private static final String OPTION_SUFFIX_FLOAT_UNIT = ".option.target.fpu.unit";
 	private static final String OPTION_SUFIX_DEBUGGING_LEVEL = ".option.debugging.level";
 	private static final String OPTION_SUFIX_DEBUGGING_FORMAT = ".option.debugging.format";
 	private static final String OPTION_SUFIX_DEBUGGING_OTHER = ".option.debugging.other";
@@ -71,6 +75,15 @@ public class ARMManagedCommandLineGenerator extends ManagedCommandLineGenerator 
 
 			String sThumbInterwork;
 			sThumbInterwork = null;
+			
+			String sProcessorEndiannes;
+			sProcessorEndiannes = null;
+			
+			String sFloatAbi;
+			sFloatAbi = null;
+			
+			String sFloatUnit;
+			sFloatUnit = null;
 
 			String sDebugLevel;
 			sDebugLevel = null;
@@ -122,6 +135,15 @@ public class ARMManagedCommandLineGenerator extends ManagedCommandLineGenerator 
 					if (sID.endsWith(OPTION_SUFIX_PROCESSOR)
 							|| sID.indexOf(OPTION_SUFIX_PROCESSOR + ".") > 0) {
 						sProcessor = sEnumCommand;
+					} else if (sID.endsWith(OPTION_SUFFIX_ENDIANNES)
+							|| sID.indexOf(OPTION_SUFFIX_ENDIANNES + ".") > 0) {
+						sProcessorEndiannes = sCommand;
+					} else if (sID.endsWith(OPTION_SUFFIX_FLOAT_ABI)
+							|| sID.indexOf(OPTION_SUFFIX_FLOAT_ABI + ".") > 0) {
+						sFloatAbi = sEnumCommand;
+					} else if (sID.endsWith(OPTION_SUFFIX_FLOAT_UNIT)
+							|| sID.indexOf(OPTION_SUFFIX_FLOAT_UNIT + ".") > 0) {
+						sFloatUnit = sEnumCommand;
 					} else if (sID.endsWith(OPTION_SUFIX_DEBUGGING_LEVEL)
 							|| sID.indexOf(OPTION_SUFIX_DEBUGGING_LEVEL + ".") > 0) {
 						sDebugLevel = sEnumCommand;
@@ -180,6 +202,14 @@ public class ARMManagedCommandLineGenerator extends ManagedCommandLineGenerator 
 				oList.add(sThumb);
 			if (sThumbInterwork != null && sThumbInterwork.length() > 0)
 				oList.add(sThumbInterwork);
+			if (sProcessorEndiannes != null && sProcessorEndiannes.length() > 0)
+				oList.add(sProcessorEndiannes);
+			if (sFloatAbi != null && sFloatAbi.length() > 0) {
+				oList.add(sFloatAbi);
+				
+				if (sFloatUnit != null && sFloatUnit.length() > 0)
+					oList.add(sFloatUnit);
+			}
 			if (sDebugLevel != null && sDebugLevel.length() > 0) {
 				oList.add(sDebugLevel);
 
