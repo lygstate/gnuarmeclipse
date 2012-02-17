@@ -34,4 +34,9 @@ then
   RSYNC_OPTS+=" -n"
 fi
 
+echo "Rsync-ing SourceForge $SF_FOLDER site"
 (cd ..; rsync -e ssh $RSYNC_OPTS $SOURCE_LIST $SF_DESTINATION)
+
+echo "Checking result"
+curl -L http://sourceforge.net/projects/gnuarmeclipse/files/$SF_FOLDER/site.xml
+
