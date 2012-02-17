@@ -1066,7 +1066,7 @@
    <!-- -->
    <extension
          id="ARM_SUM_GCCManagedMakePerProjectProfileC"
-         name="Summon ARM GNU C/C++ managed make per project SCD profile"
+         name="ARM Summon GNU C/C++ managed make per project SCD profile"
          point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
       <scannerInfoCollector
             class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMGCCScannerInfoCollector"
@@ -1092,7 +1092,7 @@
    </extension>
    <extension
          id="ARM_SUM_GCCManagedMakePerProjectProfileCPP"
-         name="Summon ARM GNU C/C++ managed make per project SCD profile"
+         name="ARM Summon GNU C/C++ managed make per project SCD profile"
          point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
       <scannerInfoCollector
             class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMGCCScannerInfoCollector"
@@ -1118,7 +1118,7 @@
    </extension>
    <extension
          id="ARM_SUM_GCCStandardMakePerProjectProfile"
-         name="Summon ARM GNU C/C++ Scanner Info per project profile"
+         name="ARM Summon GNU C/C++ Scanner Info per project profile"
          point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
       <scannerInfoCollector
             class="org.eclipse.cdt.make.internal.core.scannerconfig2.PerProjectSICollector"
@@ -1144,7 +1144,7 @@
    </extension>
    <extension
          id="ARM_SUM_GCCStandardMakePerFileProfile"
-         name="Summon ARM GNU C/C++ Scanner Info per file profile"
+         name="ARM Summon GNU C/C++ Scanner Info per file profile"
          point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
       <scannerInfoCollector
             class="org.eclipse.cdt.make.internal.core.scannerconfig2.PerFileSICollector"
@@ -1193,7 +1193,7 @@
    </extension>
    <extension
          id="ARM_SUM_GCCWinManagedMakePerProjectProfileC"
-         name="Summon ARM GNU C/C++ managed make per project SCD profile (Windows)"
+         name="ARM Summon GNU C/C++ managed make per project SCD profile (Windows)"
          point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
       <scannerInfoCollector
             class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMGnuWinScannerInfoCollector"
@@ -1219,7 +1219,7 @@
    </extension>
    <extension
          id="ARM_SUM_GCCWinManagedMakePerProjectProfileCPP"
-         name="Summon ARM GNU C/C++ managed make per project SCD profile (Windows)"
+         name="ARM Summon GNU C/C++ managed make per project SCD profile (Windows)"
          point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
       <scannerInfoCollector
             class="org.eclipse.cdt.cross.arm.gnu.scannerconfig.ARMGnuWinScannerInfoCollector"
@@ -1245,7 +1245,7 @@
    </extension>
    <extension
          id="ARM_SUM_GCCWinStandardMakePerProjectProfile"
-         name="Summon ARM GNU C/C++ Scanner Info per project profile (Windows)"
+         name="ARM Summon GNU C/C++ Scanner Info per project profile (Windows)"
          point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
       <scannerInfoCollector
             class="org.eclipse.cdt.make.internal.core.scannerconfig2.PerProjectSICollector"
@@ -1271,7 +1271,7 @@
    </extension>
    <extension
          id="ARM_SUM_GCCWinStandardMakePerFileProfile"
-         name="Summon ARM GNU C/C++ Scanner Info per file profile (Windows)"
+         name="ARM Summon GNU C/C++ Scanner Info per file profile (Windows)"
          point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
       <scannerInfoCollector
             class="org.eclipse.cdt.make.internal.core.scannerconfig2.PerFileSICollector"
@@ -9235,7 +9235,7 @@
                id="org.eclipse.cdt.cross.arm.gnu.summon.windows.builder.base"
                isAbstract="false"
                isVariableCaseSensitive="false"
-               name="Summon ARM Windows GNU Make builder"
+               name="ARM Summon Windows GNU Make builder"
                superClass="org.eclipse.cdt.cross.arm.gnu.summon.builder">
          </builder>
          <optionCategory
@@ -9719,7 +9719,7 @@
                id="org.eclipse.cdt.cross.arm.gnu.summon.linux.builder.base"
                isAbstract="false"
                isVariableCaseSensitive="false"
-               name="Summon ARM Linux GNU Make builder"
+               name="ARM Summon Linux GNU Make builder"
                superClass="org.eclipse.cdt.cross.arm.gnu.summon.builder">
          </builder>
          <optionCategory
@@ -10201,7 +10201,7 @@
                id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.builder.base"
                isAbstract="false"
                isVariableCaseSensitive="false"
-               name="Summon ARM Mac OS X GNU Make builder"
+               name="ARM Summon Mac OS X GNU Make builder"
                superClass="org.eclipse.cdt.cross.arm.gnu.summon.builder">
          </builder>
          <optionCategory
@@ -10402,7 +10402,7 @@
          <tool
                id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.printsize.base"
                isAbstract="false"
-               name="Summon ARM Mac OS X GNU Print Size"
+               name="ARM Summon Mac OS X GNU Print Size"
                superClass="org.eclipse.cdt.cross.arm.gnu.summon.printsize">
             <enablement
                   type="ALL">
