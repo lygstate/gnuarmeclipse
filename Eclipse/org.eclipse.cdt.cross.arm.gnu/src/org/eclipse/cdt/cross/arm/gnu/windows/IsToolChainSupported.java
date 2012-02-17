@@ -2,7 +2,6 @@ package org.eclipse.cdt.cross.arm.gnu.windows;
 
 import org.eclipse.cdt.cross.arm.gnu.Tools;
 import org.eclipse.cdt.cross.arm.gnu.common.IsToolchainData;
-import org.eclipse.cdt.cross.arm.gnu.sourcery.windows.PathResolver;
 import org.eclipse.cdt.managedbuilder.core.IToolChain;
 import org.osgi.framework.Version;
 
