@@ -15,7 +15,7 @@ public class PathResolver implements IBuildPathResolver {
 	private static String ms_sBinSummon = null;
 
 	private static final String DELIMITER_WIN = ";"; //$NON-NLS-1$
-	private static final String ARM_TOOLCHAIN_BASEDIR = "arm-toolchain"; //$NON-NLS-1$
+	private static final String ARM_TOOLCHAIN_BASEDIR = "summon-arm-toolchain"; //$NON-NLS-1$
 
 
 	public String[] resolveBuildPaths(int pathType, String variableName,
