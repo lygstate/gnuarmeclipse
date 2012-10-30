@@ -1,21 +1,30 @@
 #! /bin/bash
 
 # This script generates the Code Sourcery ARM EABI Toolchain on MAC OS X 10.7
+#
+# The main trick here is the possibility to build previous versions, required
+# when maintaining older projects that no longer build with newer version.
+#
 # The new toolchain is installed at
 # "$HOME/Developer/Cross/arm-cs-tools-$MENTOR_RELEASE-$TODAY"
-
+#
 # The implementation uses James Sneyder's Mafefile, available from
 # https://github.com/jsnyder/arm-eabi-toolchain
-
+#
 # The build process also requires some special packages, that will be
 # installed in a non-system folder, to avoid poluting the system
-
+#
 # There are many releases for Code Sourcery, and many releases of jsnyder's
 # Makefile, so we need to identify them propely.
-
-# The MENTOR_RELEASE is the internal calue used by Mentor, and 
+#
+# The MENTOR_RELEASE is the internal value used by Mentor, and 
 # can be obtained from the Mentor URLs
-# https://sourcery.mentor.com/sgpp/lite/arm/portal/release2032
+# https://sourcery.mentor.com/sgpp/lite/arm/portal/release2188
+#
+# Change log:
+# 20121030 - add 2012.03-56 e3f4013, functional on OS X 10.7.5, Xcode 4.5.1
+#            switch from zip archive to git 
+#
 
 if [ $# -gt 0 ] && [ $1 = "--help" ]
 then
@@ -26,6 +35,7 @@ then
   echo "    $0 [clean]"
   echo "        Build the latest Mentor/CS version with the latest JS release."
   echo
+  echo "    $0 2012.03-56 e3f4013 [clean]"
   echo "    $0 2011.09-69 0084249 [clean]"
   echo "    $0 2011.03-49 0084249 [clean]"
   echo "    $0 2011.03-49 706e734 [clean]"
@@ -34,20 +44,28 @@ then
   echo "Adding 'clean' to the end performs a 'make clean' on the given configuration."
   echo
 
+  # There is also an undocummented 'patch' option, used to build patches
+
   exit 0
 fi
 
 last=$(eval "echo \$$#")
 
-if [ $# -gt 0 ]
+if [ $# -gt 0 -a "$last" != "clean" -a "$last" != "patch" ]
 then
   MENTOR_STRING=$1
 else
   # Point to the latest Mentor/CodeSourcery release
-  MENTOR_STRING="2011.09-69"
+  MENTOR_STRING="2012.03-56"
 fi
 
-if [ "$MENTOR_STRING" = "2011.09-69" ]
+# Add new branches before existing ones
+
+if [ "$MENTOR_STRING" = "2012.03-56" ]
+then
+  # The Sourcery CodeBench Lite 2012.03-56, released 2012-06-11, GCC 4.6.3
+  MENTOR_RELEASE=2188
+elif [ "$MENTOR_STRING" = "2011.09-69" ]
 then
   # The Sourcery CodeBench Lite 2011.09-69, released 2011-12-19
   MENTOR_RELEASE=2032
@@ -60,16 +78,22 @@ else
   exit 1
 fi
 
-if [ $# -gt 1 ]
+if [ $# -gt 1 -a "$last" != "clean" -a "$last" != "patch" ]
 then
   JS_RELEASE=$2
 else
   # Point to the latest CodeSourcery release
-  JS_RELEASE="0084249"
+  JS_RELEASE="e3f4013"
 fi
 
-# Identify the James Sneyder Makefile Git version from the first 7 chars
-if [ $JS_RELEASE = "0084249" ]
+# Identify the James Sneyder Makefile Git version from the first chars
+
+# Add new branches before existing ones
+
+if [ $JS_RELEASE = "e3f4013" ]
+then
+  JSNYDER_GIT_ID="e3f4013a2c6c985e91df862615e9df268556cf2e"
+elif [ $JS_RELEASE = "0084249" ]
 then
   JSNYDER_GIT_ID="00842493ba858c3bc45f6b01f239694f921f2a49"
 elif [ $JS_RELEASE = "706e734" ]
@@ -94,7 +118,42 @@ echo "Building Mentor/CS release $MENTOR_STRING with JS release $JS_RELEASE"
 
 patch_makefile () {
 
-if [ $JS_RELEASE = "706e734" ]
+# Add new branches before existing ones
+
+if [ $JS_RELEASE = "e3f4013" ]
+then
+# The quotes are used to avoid substitutions inside the string
+(cat << "END_OF_FILE" | patch) || exit 1
+--- Makefile	2012-10-30 21:56:07.000000000 +0200
++++ ../../Makefile	2012-10-30 21:56:42.000000000 +0200
+@@ -66,7 +66,7 @@
+
+
+ ####    BUILD LABELING / TAGGING      #####
+-BUILD_ID	= $(shell git describe --always)
++BUILD_ID	?= $(shell git describe --always)
+ TODAY           = $(shell date "+%Y%m%d")
+
+ ifeq ($(strip $(BUILD_ID)),)
+END_OF_FILE
+
+elif [ $JS_RELEASE = "0084249" ]
+then
+
+# The quotes are used to avoid substitutions inside the string
+(cat << "END_OF_FILE" | patch) || exit 1
+--- Makefile	2012-01-18 18:06:14.000000000 +0200
++++ ../../Makefile	2012-01-21 18:30:30.000000000 +0200
+@@ -50,7 +50,7 @@
+SOURCE_URL 	= http://sourcery.mentor.com/sgpp/lite/arm/portal/package$(SOURCE_PACKAGE)/public/arm-none-eabi/$(LOCAL_SOURCE)
+BIN_URL 	= http://sourcery.mentor.com/sgpp/lite/arm/portal/package$(BIN_PACKAGE)/public/arm-none-eabi/$(LOCAL_BIN)
+
+-SOURCE_MD5_CHCKSUM = ebe25afa276211d0e88b7ff0d03c5345
++SOURCE_MD5_CHCKSUM ?= ebe25afa276211d0e88b7ff0d03c5345
+BIN_MD5_CHECKSUM ?= 2f2d73429ce70dfb848d7b44b3d24d3f
+END_OF_FILE
+
+elif [ $JS_RELEASE = "706e734" ]
 then
 
 # The quotes are used to avoid substitutions inside the string
@@ -156,22 +215,6 @@ then
  	$(MAKE) -C gcc install-common install-cpp install- install-driver install-headers
 END_OF_FILE
 
-elif [ $JS_RELEASE = "0084249" ]
-then
-
-# The quotes are used to avoid substitutions inside the string
-(cat << "END_OF_FILE" | patch) || exit 1
---- Makefile	2012-01-18 18:06:14.000000000 +0200
-+++ ../../Makefile	2012-01-21 18:30:30.000000000 +0200
-@@ -50,7 +50,7 @@
- SOURCE_URL 	= http://sourcery.mentor.com/sgpp/lite/arm/portal/package$(SOURCE_PACKAGE)/public/arm-none-eabi/$(LOCAL_SOURCE)
- BIN_URL 	= http://sourcery.mentor.com/sgpp/lite/arm/portal/package$(BIN_PACKAGE)/public/arm-none-eabi/$(LOCAL_BIN)
-
--SOURCE_MD5_CHCKSUM = ebe25afa276211d0e88b7ff0d03c5345
-+SOURCE_MD5_CHCKSUM ?= ebe25afa276211d0e88b7ff0d03c5345
- BIN_MD5_CHECKSUM ?= 2f2d73429ce70dfb848d7b44b3d24d3f
-END_OF_FILE
-
 else
   echo "No need to patch Makefile"
 fi
@@ -191,55 +234,82 @@ cd $BUILD_FOLDER
 
 # Get jsnyder's Makefile
 
-JSNYDER_URL="https://github.com/jsnyder/arm-eabi-toolchain/zipball/$JSNYDER_GIT_ID"
+JSNYDER_URL_BASE="https://github.com/jsnyder/arm-eabi-toolchain"
 
 JSNYDER_ZIP_FOLDER="jsnyder-arm-eabi-toolchain-$JS_RELEASE"
-JSNYDER_ZIP_FILE="$JSNYDER_ZIP_FOLDER.zip"
 
 if [ ! -d "$JSNYDER_ZIP_FOLDER" ]
 then
-  # Fetch James Sneyder archive
-  if [ ! -f "$JSNYDER_ZIP_FILE" ]
+  if [ true ]
   then
-    # Fetch $JSNYDER_ZIP_FILE
-    curl -L $JSNYDER_URL -o "$JSNYDER_ZIP_FILE"
-  fi
-
-  # Unpack $JSNYDER_ZIP_FILE
-  unzip "$JSNYDER_ZIP_FILE"
-  
-  pushd "$JSNYDER_ZIP_FOLDER"
-  cp -a Makefile Makefile.orig  
-
-  MAKEFILE_REFERENCE="../../Makefile-$JS_RELEASE.reference"
-  if [ "$last" = "patch" ]
-  then
-    if [ -f "../../Makefile" ]
-    then
-      echo "Generating the patch file"
-      diff -u Makefile "../../Makefile" >"../../Makefile.patch"
-      mv ../../Makefile "$MAKEFILE_REFERENCE"
-      popd
-      echo "Check for Makefile.patch" 
-      rm -rf "$JSNYDER_ZIP_FOLDER"
-      exit 0
-    else
-      popd
-      echo "The correct Makefile should be present in the current folder"
-      exit 1
-    fi
+    # Clone James Sneyder's git repository
+    git clone "$JSNYDER_URL_BASE".git "$JSNYDER_ZIP_FOLDER"
+    pushd "$JSNYDER_ZIP_FOLDER"
+    # Move to desired version
+    git checkout "$JSNYDER_GIT_ID"
+    popd
   else
-    patch_makefile
-    if [ -f "$MAKEFILE_REFERENCE" ]
+    # Old version, using archives instead of git repository
+    JSNYDER_URL="$JSNYDER_URL_BASE/zipball/$JSNYDER_GIT_ID"
+    JSNYDER_ZIP_FILE="$JSNYDER_ZIP_FOLDER.zip"
+    # Fetch James Sneyder archive
+    if [ ! -f "$JSNYDER_ZIP_FILE" ]
     then
-      echo "Comparing patched file with reference"
-      diff "$MAKEFILE_REFERENCE" Makefile || exit 1
+      # Fetch $JSNYDER_ZIP_FILE
+      curl -L $JSNYDER_URL -o "$JSNYDER_ZIP_FILE"
     fi
+
+    # Unpack $JSNYDER_ZIP_FILE
+    unzip "$JSNYDER_ZIP_FILE"
   fi
+
+  pushd "$JSNYDER_ZIP_FOLDER"
+  # Make a backup of the original Makefile
+  cp -a Makefile Makefile.orig
   popd
 fi
 
-# ----------------------------------------------------------------------------- 
+# -----------------------------------------------------------------------------
+
+# Process patching the Makefile
+
+pushd "$JSNYDER_ZIP_FOLDER"
+
+if [ "$last" = "patch" ]
+then
+  # For this to work,
+  # - copy the Makefile to ../../Makefile
+  # edit ../../Makefile
+  # run the script in "patch" mode
+
+  MAKEFILE_REFERENCE="../../Makefile-$JS_RELEASE.reference"
+  if [ -f "../../Makefile" ]
+  then
+    echo "Generating the patch file"
+    diff -u Makefile "../../Makefile" >"../../Makefile.patch"
+    mv ../../Makefile "$MAKEFILE_REFERENCE"
+    popd
+    echo "Integrate the Makefile.patch from the current folder into the script"
+    rm -rf "$JSNYDER_ZIP_FOLDER"
+    exit 0
+  else
+    popd
+    echo "The patched Makefile should be present in the current folder"
+    exit 1
+  fi
+else
+  cp Makefile.orig Makefile
+  patch_makefile
+  if [ -f "$MAKEFILE_REFERENCE" ]
+  then
+    echo "Comparing patched file with reference"
+    diff "$MAKEFILE_REFERENCE" Makefile || exit 1
+  fi
+fi
+popd
+
+
+# -----------------------------------------------------------------------------
 # Use this to clean all build temporary folders
 
 if [ $last = "clean" ]
@@ -280,7 +350,12 @@ then
   curl -Lsf http://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C$BREW_FOLDER/local
 fi
 
-if [ "$JS_RELEASE" = "0084249" ]
+# Add new branches before existing ones
+
+if [ "$JS_RELEASE" = "e3f4013" ]
+then
+  BREW_REQUIRED="mpfr gmp libmpc libelf texinfo"
+elif [ "$JS_RELEASE" = "0084249" ]
 then
   BREW_REQUIRED="mpfr gmp libmpc libelf texinfo"
 elif [ "$JS_RELEASE" = "706e734" ]
@@ -316,7 +391,14 @@ fi
 
 # Define extra dependencies, in case they are not in the system path 
 DEPENDENCY_DIR=$BREW_FOLDER/local
-if [ "$JS_RELEASE" = "0084249" ]
+
+# Add new branches before existing ones
+
+if [ "$JS_RELEASE" = "e3f4013" ]
+then
+  export DEPENDENCIES="--with-mpc=$DEPENDENCY_DIR --with-mpfr=$DEPENDENCY_DIR --with-gmp=$DEPENDENCY_DIR --with-libelf=$DEPENDENCY_DIR"
+  export BUILD_ID="$JS_RELEASE"
+elif [ "$JS_RELEASE" = "0084249" ]
 then
   export DEPENDENCIES="--with-mpc=$DEPENDENCY_DIR --with-mpfr=$DEPENDENCY_DIR --with-gmp=$DEPENDENCY_DIR --with-libelf=$DEPENDENCY_DIR"
 elif [ "$JS_RELEASE" = "706e734" ]
@@ -342,7 +424,22 @@ export PROCS=`sysctl hw.ncpu | awk '{print $2}'`
 # ----------------------------------------------------------------------------- 
 # Customise for various releases
 
-if [ $MENTOR_RELEASE = 2032 ]
+# The SOURCE_PACKAGE is the 'Source TAR' package
+# The BIN_PACKAGE is the 'IA32 GNU/Linux TAR' package
+
+# Add new branches before existing ones
+
+if [ $MENTOR_RELEASE = 2188 ]
+then
+  export CS_BASE=2012.03
+  export CS_REV=56
+  export GCC_VERSION=4.6
+  export MPC_VERSION=0.8.1
+  export SOURCE_PACKAGE=10384
+  export BIN_PACKAGE=10385
+  export SOURCE_MD5_CHCKSUM=14d65b1caa956de8d5a64c9c99c8b81e
+  export BIN_MD5_CHECKSUM=f2fcb35a9e09b0f96e058a0176c80444
+elif [ $MENTOR_RELEASE = 2032 ]
 then
   export CS_BASE=2011.09
   export CS_REV=69
@@ -372,11 +469,12 @@ cd "$JSNYDER_ZIP_FOLDER"
 # Build the tools, using the new Xcode 4.1 compiler
 # Leave the newlib at the end, since it might fail :-(
 
+# Add new branches before existing ones
 
-if [ $JS_RELEASE = "706e734" ]
+if [ $JS_RELEASE = "e3f4013" ]
 then
   time ( \
-    (CC=clang make cross-binutils cross-gcc cross-g++ cross-newlib) \
+    (CC=clang make cross-binutils cross-gcc cross-newlib) \
     && (make cross-gdb) \
     && (make install-bin-extras) \
   )
@@ -384,6 +482,13 @@ elif [ "$JS_RELEASE" = "0084249" ]
 then
   time ( \
     (CC=clang make cross-binutils cross-gcc cross-newlib) \
+    && (make cross-gdb) \
+    && (make install-bin-extras) \
+  )
+elif [ $JS_RELEASE = "706e734" ]
+then
+  time ( \
+    (CC=clang make cross-binutils cross-gcc cross-g++ cross-newlib) \
     && (make cross-gdb) \
     && (make install-bin-extras) \
   )
